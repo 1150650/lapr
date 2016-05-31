@@ -2,11 +2,11 @@ package lapr.project.controller;
 
 import java.util.List;
 import javax.swing.JList;
-import pprog.model.Candidatura;
-import pprog.model.CentroExposicoes;
-import pprog.model.Exposicao;
-import pprog.model.ListaCandidaturas;
-import pprog.model.ListaExposicoes;
+import lapr.project.model.Candidatura;
+import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
+import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.ListaExposicoes;
 
 public class CriarCandidaturaController {
 

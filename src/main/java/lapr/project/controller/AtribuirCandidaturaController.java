@@ -7,7 +7,7 @@ package lapr.project.controller;
 
 import java.util.List;
 import javax.swing.JOptionPane;
-import pprog.model.*;
+import lapr.project.model.*;
 
 /**
  *
