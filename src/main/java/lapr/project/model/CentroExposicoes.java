@@ -1,6 +1,5 @@
 package lapr.project.model;
 
-import lapr.project.ui.ModeloListaExposicoes;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JList;
