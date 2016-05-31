@@ -22,9 +22,6 @@ public class DecidirCandidaturaFAEController {
         this.ce = centroexpo;
     }
 
-  //  public void candidaturaSelecionada(Candidatura canditura) {
-  //      this.c = canditura;
-  //  }
 
     public void selecionarCandidatura(Candidatura candidatura) {
         this.c = candidatura;
