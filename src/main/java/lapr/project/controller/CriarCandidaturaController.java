@@ -8,6 +8,7 @@ import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
 import lapr.project.model.ListaExposicoes;
 
+
 public class CriarCandidaturaController {
 
     private CentroExposicoes centroExposicoes;
