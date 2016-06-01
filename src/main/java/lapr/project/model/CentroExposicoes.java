@@ -16,13 +16,14 @@ public class CentroExposicoes {
      */
     private JList JListExposicoes;
     
+    private ListaStands listaStands;
     
 /**
  * Contrutor do centro de exposicoes
  */
     public CentroExposicoes() {
         this.listaExposicoes = new ListaExposicoes();
-
+this.listaStands= new ListaStands ();
     }
     
 /**
