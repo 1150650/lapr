@@ -78,12 +78,5 @@ public class ListaCandidaturas {
         return new Candidatura();
     }
     
-    /*public List<Candidatura> criarListaCandidaturasTeste(){
-        Candidatura c1 = new Candidatura("khj", "kjh", 425615478, 51, "hgk", 2);
-
-        List<Candidatura> listaCandidaturas = new ArrayList<Candidatura>();
-        listaCandidaturas.add(c1);
-
-        return listaCandidaturas;
-    }*/
+  
 }

@@ -45,8 +45,5 @@ public class ModeloListaCandidaturas extends AbstractListModel {
         return listaCandidatura.contem(candidatura);
     }
     
-   /* public void sort(){
-        listaCandidatura.ordenarPorPosicao();
-   */ 
 
 }
