@@ -5,48 +5,58 @@
  */
 package lapr.project.model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Diogo
  */
 public class Utilizador {
-    
+
     private String nome, email, username, password;
-    
-    
-    public Utilizador(String nome, String email, String username, String password){
+
+    public Utilizador(String nome, String email, String username, String password) {
         setNome(nome);
         setEmail(email);
         setUsername(username);
         setPassword(password);
     }
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    
-    public String getUsername(){
+
+    public String getUsername() {
         return username;
     }
-    
-    public String getPassword(){
+
+    public String getPassword() {
         return password;
     }
-    
+
     private void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException("Nome inválido!");
         }
         this.nome = nome;
-    
+
     }
+
     //PERGUNTAR SE PODEMOS USAR REGEX
+
     private void setEmail(String email) {
-        
+        String FUNCAO_OBJ = "(.*)[@](.*)((.com)|(.pt))$";
+        Pattern FUNCAO_OBJETIVO = Pattern.compile(FUNCAO_OBJ);
+        Matcher verificar = FUNCAO_OBJETIVO.matcher(email);
+        if (!verificar.find()) {
+            throw new IllegalArgumentException("Email inválido!");
+        }
+        this.email = email;
     }
 
     private void setUsername(String username) {
@@ -57,15 +67,28 @@ public class Utilizador {
     }
 
     private void setPassword(String password) {
+        if (password.length() < 8) {
+            throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
+        }
+        char ch; boolean temMinuscula = false, temMaiuscula = false, temNumero = false, temEspecial = false;
+        for (int i = 0; i < password.length(); i++ ) {
+            ch = password.charAt(i);
+            if (Character.isLowerCase(ch)) temMinuscula = true;
+            if (Character.isUpperCase(ch)) temMaiuscula = true;
+            if (Character.isDigit(ch)) temNumero = true;
+        }
+        if (password.matches(".*[,.;:-].*")) temEspecial = true;
         
+        if(temMinuscula == false || temMaiuscula == false || temNumero==false || temEspecial == false){
+            throw new IllegalArgumentException("Password inválida! Deve conter "
+                    + "pelo menos uma letra minuscula, uma letra maiuscula, "
+                    + "um número e um carater especial(,.;:-)");
+        }
     }
     //PERGUNTAR PARA QUE SERVE
-   // private boolean valida(){
-        
+    // private boolean valida(){
+
   //  }
-    
-    
-    
     @Override
     public String toString() {
         return String.format("Nome: %s%nEmail: %s%nUsername: %s", nome, email, username);
