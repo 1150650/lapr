@@ -5,10 +5,83 @@
  */
 package lapr.project.model;
 
-/**
- *
- * @author Diogo
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class RegistoUtilizadores {
+    private List<Utilizador> registoUtilizadores;
+    private Utilizador u;
+    
+    
+    public RegistoUtilizadores(){
+        registoUtilizadores = new ArrayList <>();
+    }
+    
+    public Utilizador criarUtilizador(String nome, String email, String username, String password){
+        u = new Utilizador(nome, email, username, password);
+        return u;
+    }
+    
+    public Utilizador obterUtilizador(int indice) {
+        return registoUtilizadores.get(indice);
+    }
+    
+    public int tamanho() {
+        return this.registoUtilizadores.size();
+    }
+
+    public void registaUtilizador(Utilizador u) {
+       boolean valida = validaUtilizador(u);
+       if (valida==true){
+       addUtilizador(u);
+       }
+    }
+
+    private boolean validaUtilizador(Utilizador u) {
+        boolean validaEmail = validaEmail(u);
+        boolean validaUsername = validaUsername(u);
+        if(validaEmail == true && validaUsername==true){
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean validaEmail(Utilizador u){
+        boolean valida = true;
+        for(int i=0; i<registoUtilizadores.size(); i++){
+            if (!u.getEmail().equalsIgnoreCase(obterUtilizador(i).getEmail())){
+                valida=true;
+            } else{
+                valida = false;
+                throw new IllegalArgumentException("O email já está registado no sistema.");
+            }
+        }
+        return valida;
+    }
+    
+    private boolean validaUsername(Utilizador u) {
+        boolean valida = true;
+        for(int i=0; i<registoUtilizadores.size(); i++){
+            if (!u.getUsername().equalsIgnoreCase(obterUtilizador(i).getUsername())){
+                valida=true;
+            } else{
+                valida = false;
+                throw new IllegalArgumentException("Já existe um utilizador com esse username");
+            }
+        }
+        return valida;
+    }
+    
+    private void addUtilizador(Utilizador u) {
+        registoUtilizadores.add(u);
+    }
+
+    
+
+    
+    
+    
+    
     
 }

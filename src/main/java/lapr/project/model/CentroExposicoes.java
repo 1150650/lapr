@@ -18,6 +18,8 @@ public class CentroExposicoes {
     
     private ListaStands listaStands;
     
+    private RegistoUtilizadores listaUtilizadores;
+    
 /**
  * Contrutor do centro de exposicoes
  */
@@ -48,6 +50,10 @@ this.listaStands= new ListaStands ();
      */
     public JList getJListExposicoes() {
         return JListExposicoes;
+    }
+    
+    public RegistoUtilizadores getRegistoUtilizadores(){
+        return listaUtilizadores;
     }
 
     /**
