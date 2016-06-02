@@ -22,8 +22,8 @@ public class ConfirmarUtilizadorController {
 
     public ConfirmarUtilizadorController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
-        registoUtilizadores = getRegistoUtilizadoresNConf();
-        registoUtilizadoresNConfirmado = getRegistoUtilizadores();
+        registoUtilizadores = centroExposicoes.getRegistoUtilizadoresNConf();
+        registoUtilizadoresNConfirmado = centroExposicoes.getRegistoUtilizadores();
     }
 
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
@@ -42,7 +42,7 @@ public class ConfirmarUtilizadorController {
         registoUtilizadoresNConfirmado.removerUtilizador(u);
     }
     
-    public void addUtilizador(Utilizador u){
+    public void addUtilizadorConf(Utilizador u){
         registoUtilizadores.registaUtilizador(u);
     }
 }
