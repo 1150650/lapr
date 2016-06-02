@@ -5,6 +5,9 @@
  */
 package lapr.project.model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author Diogo
@@ -46,7 +49,13 @@ public class Utilizador {
     }
     //PERGUNTAR SE PODEMOS USAR REGEX
     private void setEmail(String email) {
-        
+        String FUNCAO_OBJ = "(.*)[@](.*)((.com)|(.pt))$";
+        Pattern FUNCAO_OBJETIVO = Pattern.compile(FUNCAO_OBJ);
+        Matcher verificar = FUNCAO_OBJETIVO.matcher(email);
+        if (!verificar.find()) {
+            throw new IllegalArgumentException("Email inválido!");
+        }
+        this.email = email;
     }
 
     private void setUsername(String username) {
