@@ -18,7 +18,9 @@ public class CentroExposicoes {
     
     private ListaStands listaStands;
     
-    private RegistoUtilizadores listaUtilizadores;
+    private RegistoUtilizadores registoUtilizadorNConf;
+    
+    private RegistoUtilizadores registoUtilizadores;
     
 /**
  * Contrutor do centro de exposicoes
@@ -53,7 +55,7 @@ this.listaStands= new ListaStands ();
     }
     
     public RegistoUtilizadores getRegistoUtilizadores(){
-        return listaUtilizadores;
+        return registoUtilizadores;
     }
 
     /**
@@ -69,6 +71,14 @@ this.listaStands= new ListaStands ();
             string[i] = listaExposicoes.obterExposicao(i);
         }
         return string;
+    }
+
+    /**
+     * Retorna o registo de Utilizadores que ainda não foram confirmados 
+     * @return 
+     */
+    public RegistoUtilizadores getRegistoUtilizadoresNConf() {
+        return registoUtilizadorNConf;
     }
 
 }

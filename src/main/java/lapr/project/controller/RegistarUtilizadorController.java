@@ -24,7 +24,7 @@ public class RegistarUtilizadorController {
     }
     
     public void getRegistoUtilizadores(){
-        ru = centroExposicoes.getRegistoUtilizadores();
+        ru = centroExposicoes.getRegistoUtilizadoresNConf();
     }
     
     public void criarUtilizador(String nome, String email, String username, String password) {
