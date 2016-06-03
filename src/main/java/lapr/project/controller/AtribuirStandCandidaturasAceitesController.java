@@ -8,17 +8,32 @@ package lapr.project.controller;
 import java.util.List;
 import lapr.project.model.Candidatura;
 import lapr.project.model.Exposicao;
-import lapr.project.model.Stand;
+import lapr.project.model.*;
 
 /**
  *
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class AtribuirStandCandidaturasAceitesController {
+    
+    private CentroExposicoes centroExposicoes;
+    private Exposicao exposicao;
+    private ListaStands listaStands;
+    private ListaCandidaturas listaCandidaturas;
+    private RegistoExposicoes registoExposicoes;
+ 
+    
+    public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){
+        this.centroExposicoes = centroExposicoes;
+        this.exposicao = exposicao;
+        listaCandidaturas = exposicao.getListaCandidatura();
+        listaStands = centroExposicoes.getListaStands();
+        registoExposicoes = centroExposicoes.getRegistoExposicoes();
+    }
 
-    public List getExposicoesOrganizador(String Id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
+    public List getExposicoesOrganizador(int index) {
+        Utilizador utilizador = centroExposicoes.getRegistoUtilizadores().obterUtilizador(index);
+        return registoExposicoes.getExposicoesOrganizador(utilizador);
     }
 
     public List getCandidaturasAceites(Exposicao exposicao) {
