@@ -11,6 +11,7 @@ public class Exposicao {
     private String local;
     private ListaCandidaturas listaCandidaturas;
     private ListaFAE listaFAE;
+    private ExposiçãoState m_state;
 
     public Exposicao() {
         listaCandidaturas = new ListaCandidaturas();
