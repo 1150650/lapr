@@ -10,23 +10,38 @@ package lapr.project.model;
  * @author JOAO
  */
 public class Stand {
-       private String localizacao;
-    
-    public Stand (){
-        
+
+    private String localizacao;
+
+    private Candidatura candidatura;
+
+    public Stand() {
+
     }
-    
-    public String getLocalizacao(){
+
+    public String getLocalizacao() {
         return localizacao;
-        
+
     }
-    
-    public void setLocalizacao(String localizao){
-        this.localizacao=localizacao;
+
+    public void setLocalizacao(String localizao) {
+        this.localizacao = localizacao;
     }
-    
+
     @Override
     public String toString() {
-        return String.format("Stand com a localização : "+localizacao);
+        return String.format("Stand com a localização : " + localizacao);
+    }
+
+    public boolean hasCandidatura() {
+        if (candidatura == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    void addCandidatura(Candidatura candidatura) {
+        this.candidatura=candidatura;
     }
 }
