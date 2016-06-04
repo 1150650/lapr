@@ -18,6 +18,8 @@ public class CentroExposicoes {
     
     private ListaStands listaStands;
     
+    private ListaTipoDeConflito listaTipoDeConflito;
+    
     private RegistoUtilizadores registoUtilizadorNConf;
     
     private RegistoUtilizadores registoUtilizadores;
@@ -27,7 +29,8 @@ public class CentroExposicoes {
  */
     public CentroExposicoes() {
         this.listaExposicoes = new ListaExposicoes();
-this.listaStands= new ListaStands ();
+     this.listaStands= new ListaStands ();
+     this.listaTipoDeConflito= new ListaTipoDeConflito();
     }
     
 /**
@@ -45,6 +48,17 @@ this.listaStands= new ListaStands ();
     public Exposicao[] getArrayExposicao() {
         return listaExposicoes.getArray();
     }
+    
+     public ListaStands getListastands() {
+        return listaStands;
+    }
+     
+     
+      public ListaTipoDeConflito getListaTipoDeConflito() {
+          
+        return listaTipoDeConflito;
+    }
+
 
     /**
      * Retorna a JList da lista de exposições

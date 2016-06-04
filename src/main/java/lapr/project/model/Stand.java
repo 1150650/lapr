@@ -11,7 +11,7 @@ package lapr.project.model;
  */
 public class Stand {
 
-    private String localizacao;
+    private String descricao;
 
     private Candidatura candidatura;
 
@@ -19,18 +19,18 @@ public class Stand {
 
     }
 
-    public String getLocalizacao() {
-        return localizacao;
+    public String getDescricao() {
+        return descricao;
 
     }
 
-    public void setLocalizacao(String localizao) {
-        this.localizacao = localizacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
     public String toString() {
-        return String.format("Stand com a localização : " + localizacao);
+        return String.format("Stand com a localização : " + descricao);
     }
 
     public boolean hasCandidatura() {

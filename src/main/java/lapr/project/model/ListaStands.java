@@ -29,7 +29,7 @@ public class ListaStands {
         return listaStands.get(indice);
     }
     
-    public List<Exposicao> getListaStands() {
+    public List<Stand> getListaStands() {
         return new ArrayList(listaStands);
     }
     
