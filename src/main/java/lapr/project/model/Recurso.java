@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author JOAO
  */
-class Recurso {
+public class Recurso {
      private String recurso;
     
     public Recurso(String recurso){
