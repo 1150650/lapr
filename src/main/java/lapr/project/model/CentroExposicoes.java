@@ -24,6 +24,8 @@ public class CentroExposicoes {
     
     private RegistoUtilizadores registoUtilizadores;
     
+    private ListaRecursos listarecursos;
+    
 /**
  * Contrutor do centro de exposicoes
  */
@@ -31,6 +33,7 @@ public class CentroExposicoes {
         this.listaExposicoes = new ListaExposicoes();
      this.listaStands= new ListaStands ();
      this.listaTipoDeConflito= new ListaTipoDeConflito();
+     this.listarecursos= new ListaRecursos ();
     }
     
 /**

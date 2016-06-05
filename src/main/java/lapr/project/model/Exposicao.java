@@ -10,6 +10,7 @@ public class Exposicao {
     private Date dataFim;
     private String local;
     private ListaCandidaturas listaCandidaturas;
+    private ListaDemonstracoes listaDemonstracao;
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
 
@@ -25,6 +26,7 @@ public class Exposicao {
         setLocal(local);
         listaCandidaturas = new ListaCandidaturas();
         listaFAE = new ListaFAE();
+        listaDemonstracao = new ListaDemonstracoes();
     }
 
     public String getTitulo() {
@@ -49,6 +51,10 @@ public class Exposicao {
 
     public ListaCandidaturas getListaCandidaturas() {
         return listaCandidaturas;
+    }
+
+    public ListaDemonstracoes getListaDemonstracoes() {
+        return listaDemonstracao;
     }
 
     public ListaFAE getListaFAE() {
@@ -101,9 +107,9 @@ public class Exposicao {
         this.listaCandidaturas.adicionarCandidatura(d);
 
     }
-    
-     public Candidatura[] mostrarLista() {
-       Candidatura[] string = new Candidatura[listaCandidaturas.tamanho()];
+
+    public Candidatura[] mostrarLista() {
+        Candidatura[] string = new Candidatura[listaCandidaturas.tamanho()];
 
         int tamanho = listaCandidaturas.tamanho();
         for (int i = 0; i < tamanho; i++) {
