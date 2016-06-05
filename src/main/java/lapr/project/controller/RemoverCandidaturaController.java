@@ -27,13 +27,13 @@ public class RemoverCandidaturaController {
 
     }
     
-    public ListaExposicoes getListaExposicoes (){
-        return this.centroexpo.getListaExposicoes();
+    public Exposicao[] getListaExposicoes (){
+        return this.centroexpo.mostrarLista();
     }
     
-    public ListaCandidaturas getListaCandidaturas (int indice){
-        this.indice=indice;
-        return this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidatura();
+    public Candidatura[] getListaCandidaturas (Exposicao expo){
+        this.indice=this.centroexpo.getListaExposicoes().indiceDe(expo);
+        return this.centroexpo.getListaExposicoes().obterExposicao(indice).mostrarLista();
     }
     
     public void removerCandidatura (Candidatura c){
