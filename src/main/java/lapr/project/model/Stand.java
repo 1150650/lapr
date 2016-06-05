@@ -25,6 +25,9 @@ public class Stand {
     }
 
     public void setDescricao(String descricao) {
+        if (descricao == null || descricao.trim().isEmpty()) {
+            throw new IllegalArgumentException("Descricao inválida!");
+        }
         this.descricao = descricao;
     }
 

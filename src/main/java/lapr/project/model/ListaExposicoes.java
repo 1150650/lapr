@@ -35,5 +35,8 @@ public class ListaExposicoes {
         return listaExposicoes.toArray( new Exposicao[listaExposicoes.size()] );
     }
    
+     public int indiceDe(Exposicao e) {
+        return listaExposicoes.indexOf(e);
+    }
     
 }

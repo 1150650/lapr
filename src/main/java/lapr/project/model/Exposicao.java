@@ -101,4 +101,15 @@ public class Exposicao {
         this.listaCandidaturas.adicionarCandidatura(d);
 
     }
+    
+     public Candidatura[] mostrarLista() {
+       Candidatura[] string = new Candidatura[listaCandidaturas.tamanho()];
+
+        int tamanho = listaCandidaturas.tamanho();
+        for (int i = 0; i < tamanho; i++) {
+
+            string[i] = listaCandidaturas.obterCandidatura(i);
+        }
+        return string;
+    }
 }
