@@ -98,31 +98,10 @@ public class ListaAtribuicoes {
         this.listaAtribuiçao.clear();
         this.listaAtribuiçao = listaAtribuiçao;
     }
-
-    public void ExperienciaPorFAE(ListaCandidaturas lstCandidaturas, ListaFAE lstFae) {
-        lstFae.ordenarListaFAE();
-        int nFaes = lstFae.tamanho();
-        int nCandidaturas = lstCandidaturas.tamanho();
-        int j = 0;
-        int nFaeExperientes = (int) 2 * nFaes / 3;
-        int k = nFaeExperientes + 1;
-        int nCandidaturasFaeExperientes = (int) 2 * nCandidaturas / 3;
-        for (int i = 0; i < nCandidaturasFaeExperientes; i++) {
-            listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(j), lstCandidaturas.obterCandidatura(i)));
-            j++;
-            if (j == nFaeExperientes) {
-                j = 0;
-            }
-        }
-        for (int i = nCandidaturasFaeExperientes + 1; i < nCandidaturas; i++) {
-            listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(k), lstCandidaturas.obterCandidatura(i)));
-            k++;
-            if (k == nFaes) {
-                k = nFaeExperientes + 1;
-            }
-        }
-    }
-
+    
+    /**
+     * Adiciona ao FAE as suas candidaturas para decidir
+     */
     public void adicionarAtribuiçoesFAE() {
         int j;
         for (j = 0; j < listaAtribuiçao.size(); j++) {
