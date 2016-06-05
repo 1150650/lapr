@@ -35,8 +35,15 @@ public class RegistoExposicoes {
         return listaExposicoes.toArray( new Exposicao[listaExposicoes.size()] );
     }
     
-    public List getExposicoesOrganizador(){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List getExposicoesOrganizador(Utilizador utilizador){
+        List<Exposicao> exposicoesDoOrganizador = new ArrayList<Exposicao>();
+               
+        for(Exposicao expo : listaExposicoes){
+            if(expo.getListaOrganizadores().isUserOrganizador(utilizador)){
+            exposicoesDoOrganizador.add(expo);
+            }
+       }
+        return exposicoesDoOrganizador;
     }
    
     
