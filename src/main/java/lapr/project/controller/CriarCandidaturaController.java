@@ -7,6 +7,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
 import lapr.project.model.ListaExposicoes;
+import lapr.project.model.Utilizador;
 
 
 public class CriarCandidaturaController {
@@ -15,9 +16,11 @@ public class CriarCandidaturaController {
     private ListaCandidaturas listaCandidaturas;
     private Exposicao exposicaoSelecionada;
     private Candidatura c;
+    private Utilizador u;
 
-    public CriarCandidaturaController(CentroExposicoes ce) {
+    public CriarCandidaturaController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
+        this.u=u;
 
     }
 
@@ -37,7 +40,7 @@ public class CriarCandidaturaController {
         c = listaCandidaturas.novaCandidatura();
     }
 
-    public void setDados(Candidatura candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
+    public void setDados(Candidatura candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites,Utilizador representante) {
         this.c = candidatura;
         this.c.setNomeEmpresa(nomeEmpresa);
         this.c.setMorada(morada);
@@ -45,6 +48,7 @@ public class CriarCandidaturaController {
         this.c.setAreaPretendida(areaPretendida);
         this.c.setProdutos(produtos);
         this.c.setQuantidadeConvites(nConvites);
+        this.c.setRepresentante(representante);
 
     }
 

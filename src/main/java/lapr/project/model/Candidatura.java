@@ -5,6 +5,11 @@ import java.util.List;
 public class Candidatura {
 
     /**
+     * Referência para o Utilizador que submete a nova candidatura
+     */
+    private Utilizador representante;
+
+    /**
      * Lista de Avalialões de uma candidatura
      */
     private ListaAvaliacoes listaAvaliacao;
@@ -39,11 +44,10 @@ public class Candidatura {
      */
     private int quantidadeConvites;
 
-    
-    public Candidatura(){
-         this.listaAvaliacao=new ListaAvaliacoes();
+    public Candidatura() {
+        this.listaAvaliacao = new ListaAvaliacoes();
     }
-    
+
     /**
      * Construtor com parametros de um objeto do tipo Candidatura
      *
@@ -52,9 +56,8 @@ public class Candidatura {
      * @param telemovel telemovel
      * @param areaPretendida area
      * @param produtos produtos
-     * @param quantidadeConvites convites    
-    /**
-     * Construtor com parametros de um objeto do tipo Candidatura
+     * @param quantidadeConvites convites /** Construtor com parametros de um
+     * objeto do tipo Candidatura
      *
      * @param nomeEmpresa empresa
      * @param morada morada
@@ -63,8 +66,6 @@ public class Candidatura {
      * @param produtos produtos
      * @param quantidadeConvites convites
      */
-    
-    
     public Candidatura(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
         setNomeEmpresa(nomeEmpresa);
         setMorada(morada);
@@ -72,7 +73,7 @@ public class Candidatura {
         setAreaPretendida(areaPretendida);
         setProdutos(produtos);
         setQuantidadeConvites(quantidadeConvites);
-        this.listaAvaliacao=new ListaAvaliacoes();
+        this.listaAvaliacao = new ListaAvaliacoes();
     }
 
     /**
@@ -128,8 +129,23 @@ public class Candidatura {
     public int getQuantidadeConvites() {
         return quantidadeConvites;
     }
-        public ListaAvaliacoes getListaAvaliacoes() {
+
+    public ListaAvaliacoes getListaAvaliacoes() {
         return listaAvaliacao;
+    }
+
+    /**
+     * @return O utilizador (Representante que submete a candidatura)
+     */
+    public Utilizador getRepresentante() {
+        return representante;
+    }
+
+    /**
+     * @param representante altera o parametro do representante
+     */
+    public void setRepresentante(Utilizador representante) {
+        this.representante = representante;
     }
 
     /**
@@ -193,12 +209,13 @@ public class Candidatura {
     public String toString() {
         return String.format("Empresa:%s Telemóvel:%d", nomeEmpresa, telemovel);
     }
-    
+
     /**
      * Mostra todas as especificaçoes da candidatura
+     *
      * @return string
      */
     public String apresentarDados() {
         return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Area Pretendida:" + areaPretendida + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
-    }  
+    }
 }

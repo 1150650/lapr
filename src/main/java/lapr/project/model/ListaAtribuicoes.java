@@ -31,7 +31,7 @@ public class ListaAtribuicoes {
      * Para retornar uma atribuiçao sabendo a sua posição
      *
      * @param indice atribuicao
-     * @return atribuicao 
+     * @return atribuicao
      */
     public Atribuicao obterAtribuiçao(int indice) {
         return listaAtribuiçao.get(indice);
@@ -99,17 +99,6 @@ public class ListaAtribuicoes {
         this.listaAtribuiçao = listaAtribuiçao;
     }
 
-    public void CargaEquitativaPorFAE(ListaCandidaturas lstCandidaturas, ListaFAE lstFae) {
-        int j = 0;
-        for (int i = 0; i < lstCandidaturas.tamanho(); i++) {
-            listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(j), lstCandidaturas.obterCandidatura(i)));
-            j++;
-            if (j == lstFae.tamanho()) {
-                j = 0;
-            }
-        }
-    }
-
     public void ExperienciaPorFAE(ListaCandidaturas lstCandidaturas, ListaFAE lstFae) {
         lstFae.ordenarListaFAE();
         int nFaes = lstFae.tamanho();
@@ -126,28 +115,12 @@ public class ListaAtribuicoes {
             }
         }
         for (int i = nCandidaturasFaeExperientes + 1; i < nCandidaturas; i++) {
-            listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(k),lstCandidaturas.obterCandidatura(i)));
+            listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(k), lstCandidaturas.obterCandidatura(i)));
             k++;
             if (k == nFaes) {
                 k = nFaeExperientes + 1;
             }
         }
-    }
-
-    public void NumeroFAEporCandidatura(ListaCandidaturas lstCandidaturas, ListaFAE lstFae, int candPorFAE) {
-        for (int i = 0; i < lstCandidaturas.tamanho(); i++) {
-            for (int j = 0; j < candPorFAE; j++) {
-                listaAtribuiçao.add(new Atribuicao(lstFae.obterFAE(gerarFAE(lstFae)),lstCandidaturas.obterCandidatura(i)));
-            }
-        }
-    }
-
-    private int gerarFAE(ListaFAE lstFae) {
-        int posicao = (int) (Math.random() * 100);
-        while (posicao > lstFae.tamanho()-1) {
-            posicao = (int) (Math.random() * 100);
-        }
-        return posicao;
     }
 
     public void adicionarAtribuiçoesFAE() {
