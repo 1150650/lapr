@@ -5,10 +5,29 @@
  */
 package lapr.project.utils;
 
+import java.util.List;
+
 /**
  *
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class RankingStatistics {
-    
+
+    private double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listMedia) {
+        double media = calcularMedia(listMedia);
+        double total = 0;
+        for (int avaliacao : listInteger) {
+            total = total + Math.abs(avaliacao - media);
+        }
+        return total / listInteger.size();
+    }
+
+    private double calcularMedia(List<Integer> listInteger) {
+        double total = 0;
+        for (int avaliacao : listInteger) {
+            total = total + avaliacao;
+        }
+        return total / listInteger.size();
+    }
+
 }
