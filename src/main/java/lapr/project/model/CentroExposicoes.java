@@ -18,7 +18,7 @@ public class CentroExposicoes {
     
     private ListaStands listaStands;
     
-    private ListaTipoDeConflito listaTipoDeConflito;
+    private RegistoTipoDeConflito listaTipoDeConflito;
     
     private RegistoUtilizadores registoUtilizadorNConf;
     
@@ -32,7 +32,7 @@ public class CentroExposicoes {
     public CentroExposicoes() {
         this.listaExposicoes = new RegistoExposicoes();
      this.listaStands= new ListaStands ();
-     this.listaTipoDeConflito= new ListaTipoDeConflito();
+     this.listaTipoDeConflito= new RegistoTipoDeConflito();
      this.listarecursos= new ListaRecursos ();
     }
     
@@ -57,7 +57,7 @@ public class CentroExposicoes {
     }
      
      
-      public ListaTipoDeConflito getListaTipoDeConflito() {
+      public RegistoTipoDeConflito getListaTipoDeConflito() {
           
         return listaTipoDeConflito;
     }
