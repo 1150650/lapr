@@ -6,7 +6,7 @@
 package lapr.project.controller;
 
 import lapr.project.model.CentroExposicoes;
-import lapr.project.model.ListaTipoDeConflito;
+import lapr.project.model.RegistoTipoDeConflito;
 import lapr.project.model.TipoDeConflito;
 
 /**
@@ -16,7 +16,7 @@ import lapr.project.model.TipoDeConflito;
 public class DefinirTpoDeConflitoController {
      private CentroExposicoes centroexpo ;
      private TipoDeConflito tipodeconflito ;
-     private ListaTipoDeConflito listaTipoDeConflitos ;
+     private RegistoTipoDeConflito listaTipoDeConflitos ;
      
      
      
