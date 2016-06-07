@@ -21,6 +21,8 @@ public class AtribuirStandCandidaturasAceitesController {
     private ListaStands listaStands;
     private ListaCandidaturas listaCandidaturas;
     private RegistoExposicoes registoExposicoes;
+    private Candidatura candidatura;
+    private Stand stand;
  
     
     public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){
@@ -31,29 +33,31 @@ public class AtribuirStandCandidaturasAceitesController {
         this.registoExposicoes = centroExposicoes.getListaExposicoes();
     }
 
-    public List getExposicoesOrganizador(int index) {
-        Utilizador utilizador = centroExposicoes.getRegistoUtilizadores().obterUtilizador(index);
+    public List getExposicoesOrganizador(Utilizador  utilizador) {
         return registoExposicoes.getExposicoesOrganizador(utilizador);
     }
 
     public List getCandidaturasAceites(Exposicao exposicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.exposicao = exposicao;
+        listaCandidaturas = this.exposicao.getListaCandidaturas();
+        return listaCandidaturas.getCandidaturasAceites();
     }
 
     public void setCandidatura(Candidatura candidatura) {
-
+        this.candidatura = candidatura;
     }
 
-    public List getListaStandsDisponiveis(Exposicao exposicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List getListaStandsDisponiveis() {
+        this.listaStands = centroExposicoes.getListastands();
+        return listaStands.getListaStandsDisponiveis();
     }
     
     public void setStand(Stand stand){
-        
+        this.stand = stand;
     }
     
     public void registaStandCandidatura(){
-        
+        listaStands.registaStandCandidatura(stand, candidatura);
     }
 
 }

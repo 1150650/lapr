@@ -43,6 +43,14 @@ public class ListaStands {
      public Stand novoStand(){
         return new Stand();
     }
+
+    public List getListaStandsDisponiveis() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void registaStandCandidatura(Stand stand, Candidatura candidatura) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

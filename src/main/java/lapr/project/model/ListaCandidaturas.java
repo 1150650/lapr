@@ -78,5 +78,15 @@ public class ListaCandidaturas {
         return new Candidatura();
     }
     
+    public List getCandidaturasAceites(){
+        List<Candidatura> listaCandidaturasAceites = new ArrayList<Candidatura>();
+        for(Candidatura c : listaCandidaturas){
+            if(c.estadoAceite()){
+               listaCandidaturasAceites.add(c);
+            }
+        }
+        return listaCandidaturasAceites;
+    }
+    
   
 }
