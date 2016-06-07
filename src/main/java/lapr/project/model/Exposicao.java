@@ -13,6 +13,7 @@ public class Exposicao {
     private ListaDemonstracoes listaDemonstracao;
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
+    private ListaOrganizadores listaOrganizadores;
 
     public Exposicao() {
         listaCandidaturas = new ListaCandidaturas();
@@ -117,5 +118,9 @@ public class Exposicao {
             string[i] = listaCandidaturas.obterCandidatura(i);
         }
         return string;
+    }
+
+    public ListaOrganizadores getListaOrganizadores() {
+        return listaOrganizadores;
     }
 }

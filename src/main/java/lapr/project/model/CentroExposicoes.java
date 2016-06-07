@@ -9,7 +9,7 @@ public class CentroExposicoes {
     /**
      * Criação de instância da lista de exposições
      */
-    private ListaExposicoes listaExposicoes;
+    private RegistoExposicoes listaExposicoes;
 
     /**
      * Criação de uma instância de uma JList
@@ -22,7 +22,7 @@ public class CentroExposicoes {
     
     private RegistoUtilizadores registoUtilizadorNConf;
     
-    private RegistoUtilizadores registoUtilizadores;
+    private RegistoUtilizadores registoUtilizadoresConf;
     
     private ListaRecursos listarecursos;
     
@@ -30,7 +30,7 @@ public class CentroExposicoes {
  * Contrutor do centro de exposicoes
  */
     public CentroExposicoes() {
-        this.listaExposicoes = new ListaExposicoes();
+        this.listaExposicoes = new RegistoExposicoes();
      this.listaStands= new ListaStands ();
      this.listaTipoDeConflito= new ListaTipoDeConflito();
      this.listarecursos= new ListaRecursos ();
@@ -40,7 +40,7 @@ public class CentroExposicoes {
  * Retorna a lista de exposições do centro de exposições
  * @return lista de exposições
  */
-    public ListaExposicoes getListaExposicoes() {
+    public RegistoExposicoes getListaExposicoes() {
         return listaExposicoes;
     }
 
@@ -71,8 +71,8 @@ public class CentroExposicoes {
         return JListExposicoes;
     }
     
-    public RegistoUtilizadores getRegistoUtilizadores(){
-        return registoUtilizadores;
+    public RegistoUtilizadores getRegistoUtilizadoresConf(){
+        return registoUtilizadoresConf;
     }
 
     /**
@@ -97,5 +97,7 @@ public class CentroExposicoes {
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
         return registoUtilizadorNConf;
     }
+
+
 
 }

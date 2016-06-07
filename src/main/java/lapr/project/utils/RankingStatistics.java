@@ -5,12 +5,10 @@
  */
 package lapr.project.utils;
 
-
-
 /**
  *
- * @author Filipe
+ * @author Filipe <FilipeCorreia.1150524>
  */
-public class Statistics {
+public class RankingStatistics {
     
 }
