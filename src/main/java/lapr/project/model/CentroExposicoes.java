@@ -9,7 +9,7 @@ public class CentroExposicoes {
     /**
      * Criação de instância da lista de exposições
      */
-    private ListaExposicoes listaExposicoes;
+    private RegistoExposicoes listaExposicoes;
 
     /**
      * Criação de uma instância de uma JList
@@ -30,7 +30,7 @@ public class CentroExposicoes {
  * Contrutor do centro de exposicoes
  */
     public CentroExposicoes() {
-        this.listaExposicoes = new ListaExposicoes();
+        this.listaExposicoes = new RegistoExposicoes();
      this.listaStands= new ListaStands ();
      this.listaTipoDeConflito= new ListaTipoDeConflito();
      this.listarecursos= new ListaRecursos ();
@@ -40,7 +40,7 @@ public class CentroExposicoes {
  * Retorna a lista de exposições do centro de exposições
  * @return lista de exposições
  */
-    public ListaExposicoes getListaExposicoes() {
+    public RegistoExposicoes getListaExposicoes() {
         return listaExposicoes;
     }
 
