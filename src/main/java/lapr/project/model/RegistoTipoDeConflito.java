@@ -12,13 +12,13 @@ import java.util.List;
  *
  * @author JOAO
  */
-public class ListaTipoDeConflito {
+public class RegistoTipoDeConflito {
     
     
      private List<TipoDeConflito> listaTipoDeConflito;
 
 
-    public ListaTipoDeConflito() {
+    public RegistoTipoDeConflito() {
         listaTipoDeConflito = new ArrayList <>();
     }
     

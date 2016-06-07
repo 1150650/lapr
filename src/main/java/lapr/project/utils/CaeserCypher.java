@@ -12,8 +12,8 @@ package lapr.project.utils;
 public class CaeserCypher {
     
     private String password ;
-     private String passwordencriptada ;
-     private String passworddesencritada ;
+     private String passwordEncriptada ;
+     private String passwordDesencriptada ;
     
     private final int nivel =2;
     
@@ -21,35 +21,35 @@ public class CaeserCypher {
         this.password=password ;
     }
     
-    public void encriptar (){
-        passwordencriptada = "";
+    public String encriptar (){
+        passwordEncriptada = "";
     int len = password.length();
     for(int x = 0; x < len; x++){
         char c = (char)(password.charAt(x) + nivel);
         if (c > 'z')
-            passwordencriptada += (char)(password.charAt(x) - (26-nivel));
+            passwordEncriptada += (char)(password.charAt(x) - (26-nivel));
         else
-            passwordencriptada += (char)(password.charAt(x) + nivel);
+            passwordEncriptada += (char)(password.charAt(x) + nivel);
     }
-    
+    return passwordEncriptada;
 }
        public String toString (){
-           return  passwordencriptada  +"   "+ passworddesencritada ;
+           return  passwordEncriptada  +"   "+ passwordDesencriptada ;
         
         
         
     }
     
-     public void desencriptar (){
-        passworddesencritada = "";
-    int len = passwordencriptada.length();
+     public String desencriptar (){
+        passwordDesencriptada = "";
+    int len = passwordEncriptada.length();
     for(int x = 0; x < len; x++){
         char c = (char)(password.charAt(x) - nivel);
         if (c > 'z')
-            passworddesencritada += (char)(passwordencriptada.charAt(x) - (26+nivel));
+            passwordDesencriptada += (char)(passwordEncriptada.charAt(x) - (26+nivel));
         else
-            passworddesencritada += (char)(passwordencriptada.charAt(x) - nivel);
+            passwordDesencriptada += (char)(passwordEncriptada.charAt(x) - nivel);
     }
-    
+    return passwordDesencriptada;
 }
 }

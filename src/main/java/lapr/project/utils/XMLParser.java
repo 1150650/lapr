@@ -1,4 +1,4 @@
-package lapr.project.utils;
+    package lapr.project.utils;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.StringWriter;
 import java.util.Properties;
-
+    
 /**
  * Class that allows converting XML to String and read/write to files.
  * Created by Nuno Bettencourt [NMB] on 29/05/16.
