@@ -14,7 +14,12 @@ public final class Avaliacao {
     /**
      * Avaliacao da Candidatura
      */
-    private String avaliacao;
+    private boolean avaliacao;
+
+    /**
+     * Vetor de inteiros relativamente as perguntas feitas ao FAE
+     */
+    private int[] conhecimentoFAE;
 
     /**
      * Justificacao da Candidatura
@@ -24,7 +29,7 @@ public final class Avaliacao {
     /**
      * Avaliacao por omissao
      */
-    private static final String AVALIACAO_POR_OMISSAO = "Sem Avaliacao";
+    private static final boolean AVALIACAO_POR_OMISSAO = false;
 
     /**
      * Justificacao por omissao
@@ -37,7 +42,7 @@ public final class Avaliacao {
      * @param avaliacao avaliacao submetida pelo fae
      * @param justificacao Justificação da decisão
      */
-    public Avaliacao(String avaliacao, String justificacao) {
+    public Avaliacao(boolean avaliacao, String justificacao) {
         setAvaliacao(avaliacao);
         setJustificacao(justificacao);
     }
@@ -55,7 +60,7 @@ public final class Avaliacao {
      *
      * @param avaliacao avaliacao
      */
-    public void setAvaliacao(String avaliacao) {
+    public void setAvaliacao(boolean avaliacao) {
         this.avaliacao = avaliacao;
     }
 
@@ -69,7 +74,7 @@ public final class Avaliacao {
     /**
      * @return the avaliacao
      */
-    public String getAvaliacao() {
+    public boolean getAvaliacao() {
         return avaliacao;
     }
 
@@ -87,5 +92,9 @@ public final class Avaliacao {
      */
     public String toString() {
         return "Avaliação: " + avaliacao + "\n Justificação: " + justificacao;
+    }
+
+    public void setConhecimentosFAE(int[] conhecimentosFAE) {
+        this.conhecimentoFAE = conhecimentosFAE;
     }
 }

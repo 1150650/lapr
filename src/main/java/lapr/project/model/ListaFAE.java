@@ -87,7 +87,7 @@ public class ListaFAE {
         return listaFae;
     }
 
-    public FAE obterFAEPeloIdentificador(String identificador) {
+    public FAE obterFAEId(String identificador) {
         int i;
         
 

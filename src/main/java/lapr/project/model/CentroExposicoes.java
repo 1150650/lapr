@@ -22,7 +22,7 @@ public class CentroExposicoes {
     
     private RegistoUtilizadores registoUtilizadorNConf;
     
-    private RegistoUtilizadores registoUtilizadores;
+    private RegistoUtilizadores registoUtilizadoresConf;
     
     private ListaRecursos listarecursos;
     
@@ -71,8 +71,8 @@ public class CentroExposicoes {
         return JListExposicoes;
     }
     
-    public RegistoUtilizadores getRegistoUtilizadores(){
-        return registoUtilizadores;
+    public RegistoUtilizadores getRegistoUtilizadoresConf(){
+        return registoUtilizadoresConf;
     }
 
     /**
@@ -97,5 +97,7 @@ public class CentroExposicoes {
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
         return registoUtilizadorNConf;
     }
+
+
 
 }
