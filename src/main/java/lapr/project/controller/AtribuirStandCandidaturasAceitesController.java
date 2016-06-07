@@ -20,7 +20,7 @@ public class AtribuirStandCandidaturasAceitesController {
     private Exposicao exposicao;
     private ListaStands listaStands;
     private ListaCandidaturas listaCandidaturas;
-    private ListaExposicoes registoExposicoes;
+    private RegistoExposicoes registoExposicoes;
  
     
     public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){

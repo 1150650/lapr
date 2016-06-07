@@ -45,6 +45,10 @@ public class RegistoExposicoes {
        }
         return exposicoesDoOrganizador;
     }
+    
+      public int indiceDe(Exposicao e) {
+        return listaExposicoes.indexOf(e);
+    }
    
     
 }

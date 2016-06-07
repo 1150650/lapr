@@ -6,7 +6,7 @@ import lapr.project.model.Candidatura;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
-import lapr.project.model.ListaExposicoes;
+import lapr.project.model.RegistoExposicoes;
 import lapr.project.model.Utilizador;
 
 
@@ -24,7 +24,7 @@ public class CriarCandidaturaController {
 
     }
 
-    public ListaExposicoes getListaExposicoes() {
+    public RegistoExposicoes getListaExposicoes() {
         return centroExposicoes.getListaExposicoes();
     }
 
