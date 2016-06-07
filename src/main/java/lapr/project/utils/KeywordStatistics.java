@@ -14,13 +14,13 @@ import lapr.project.model.ListaKeywords;
  *
  * @author Filipe
  */
-public class Statistics {
+public class KeywordStatistics {
 
     private ListaKeywords lstkeyword;
     private ListaKeywords lstkeywordnotDuplicat;
     private ArrayList<String> lstrepeticoeskeyword;
 
-    public Statistics() {
+    public KeywordStatistics() {
 
     }
 
@@ -52,28 +52,27 @@ public class Statistics {
             }
         }
     }
- public void escreverNoFicherioCSV () throws IOException{
-     int i;
-     
-      FileWriter writer = new FileWriter("StatisticsKeyword.csv");
-		 
-	    writer.append("Keyword");
-	    writer.append(';');
-	    writer.append("Numero De Vezes");
-	    writer.append('\n');
-           
-           for (i = 0; i < lstkeywordnotDuplicat.tamanho(); i++){
-               writer.append(lstkeywordnotDuplicat.obterKeyword(i).exportContentToString());
-               writer.append(';');
-               writer.append(lstrepeticoeskeyword.get(i));
-               writer.append('\n');
-	  
-           }
-			
-	    writer.flush();
-	    writer.close();
-     
-     
-     
- }
+
+    public void escreverNoFicherioCSV() throws IOException {
+        int i;
+
+        FileWriter writer = new FileWriter("StatisticsKeyword.csv");
+
+        writer.append("Keyword");
+        writer.append(';');
+        writer.append("Numero De Vezes");
+        writer.append('\n');
+
+        for (i = 0; i < lstkeywordnotDuplicat.tamanho(); i++) {
+            writer.append(lstkeywordnotDuplicat.obterKeyword(i).exportContentToString());
+            writer.append(';');
+            writer.append(lstrepeticoeskeyword.get(i));
+            writer.append('\n');
+
+        }
+
+        writer.flush();
+        writer.close();
+
+    }
 }
