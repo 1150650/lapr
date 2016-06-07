@@ -7,6 +7,7 @@ package lapr.project.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import lapr.project.utils.CaeserCypher;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.util.regex.Pattern;
 public class Utilizador {
 
     private String nome, email, username, password;
+    private CaeserCypher encriptacao;
 
     public Utilizador(String nome, String email, String username, String password) {
         setNome(nome);
@@ -84,6 +86,9 @@ public class Utilizador {
                     + "pelo menos uma letra minuscula, uma letra maiuscula, "
                     + "um número e um carater especial(,.;:-)");
         }
+        
+        encriptacao = new CaeserCypher(password);
+        this.password = encriptacao.encriptar();
     }
     //PERGUNTAR PARA QUE SERVE
     // private boolean valida(){
