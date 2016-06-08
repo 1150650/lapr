@@ -14,6 +14,7 @@ public class Exposicao {
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
     private ListaOrganizadores listaOrganizadores;
+    private ListaConflitos listaConflitos;
 
     public Exposicao() {
         listaCandidaturas = new ListaCandidaturas();
@@ -100,10 +101,6 @@ public class Exposicao {
         return String.format("Título: %s; Local: %s", titulo, local);
     }
 
-    public ListaCandidaturas getListaCandidatura() {
-        return listaCandidaturas;
-    }
-
     public void adicinarCanidatura(Candidatura d) {
         this.listaCandidaturas.adicionarCandidatura(d);
 
@@ -122,5 +119,9 @@ public class Exposicao {
 
     public ListaOrganizadores getListaOrganizadores() {
         return listaOrganizadores;
+    }
+
+    ListaConflitos getListaConflitos() {
+        return listaConflitos;
     }
 }

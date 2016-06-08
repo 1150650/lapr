@@ -103,5 +103,9 @@ public class ListaFAE {
 
         return FAESelecionado;
     }
+    
+    public List getListaFAEs(){
+        return listaFAE;
+    }
 
 }

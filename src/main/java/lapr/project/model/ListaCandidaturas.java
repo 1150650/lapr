@@ -88,5 +88,9 @@ public class ListaCandidaturas {
         return listaCandidaturasAceites;
     }
     
+    public List getListaCandidaturas(){
+        return listaCandidaturas;
+    }
+    
   
 }

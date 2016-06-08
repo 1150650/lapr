@@ -26,6 +26,8 @@ public class CentroExposicoes {
     
     private ListaRecursos listarecursos;
     
+    private ListaTiposConflito listaTiposConflito;
+    
 /**
  * Contrutor do centro de exposicoes
  */
@@ -96,6 +98,10 @@ public class CentroExposicoes {
      */
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
         return registoUtilizadorNConf;
+    }
+    
+    public ListaTiposConflito getListaTiposConflito(){
+        return listaTiposConflito;
     }
 
 
