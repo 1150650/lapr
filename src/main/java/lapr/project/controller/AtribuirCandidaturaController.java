@@ -1,7 +1,6 @@
 
 package lapr.project.controller;
 
-import java.util.List;
 import javax.swing.JOptionPane;
 import lapr.project.model.*;
 
@@ -47,7 +46,7 @@ public class AtribuirCandidaturaController {
         return lstCandidaturas;
     }
 
-    public void MecanismoSelecionado(int indice) {
+    public void mecanismoSelecionado(int indice) {
         lstAtribuicoes = new ListaAtribuicoes();
         if (indice == 0) {
             lstAtribuicoes.CargaEquitativaPorFAE(lstCandidaturas, listaFae);
@@ -74,9 +73,9 @@ public class AtribuirCandidaturaController {
 
     public int verificarIndex(String index) {
         int opcao;
-        if (index.equalsIgnoreCase("Atribuir de forma Equitativa")) {
+        if ("Atribuir de forma Equitativa".equalsIgnoreCase(index)) {
             opcao = 0;
-        } else if (index.equalsIgnoreCase("Atribuir Numero Igual de Candidaturas aos FAE")) {
+        } else if ("Atribuir Numero Igual de Candidaturas aos FAE".equalsIgnoreCase(index)) {
             opcao = 2;
         } else {
             opcao = 1;

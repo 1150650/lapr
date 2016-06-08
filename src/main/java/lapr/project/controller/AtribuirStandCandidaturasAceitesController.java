@@ -28,7 +28,7 @@ public class AtribuirStandCandidaturasAceitesController {
     public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){
         this.centroExposicoes = centroExposicoes;
         this.exposicao = exposicao;
-        this.listaCandidaturas = exposicao.getListaCandidatura();
+        this.listaCandidaturas = exposicao.getListaCandidaturas();
         this.listaStands = centroExposicoes.getListastands();
         this.registoExposicoes = centroExposicoes.getListaExposicoes();
     }
