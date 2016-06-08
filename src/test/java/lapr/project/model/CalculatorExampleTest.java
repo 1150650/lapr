@@ -21,6 +21,7 @@ public class CalculatorExampleTest {
 		CalculatorExample calculator = new CalculatorExample();
 		int result = calculator.sum(firstOperand, secondOperand);
 		assertEquals(expected, result);
+                 
 	}
 
 }

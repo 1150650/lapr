@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class RankingStatistics {
 
-    private double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listMedia) {
+    public double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listMedia) {
         double media = calcularMedia(listMedia);
         double total = 0;
         for (int avaliacao : listInteger) {
@@ -22,7 +22,7 @@ public class RankingStatistics {
         return total / listInteger.size();
     }
 
-    private double calcularMedia(List<Integer> listInteger) {
+    public double calcularMedia(List<Integer> listInteger) {
         double total = 0;
         for (int avaliacao : listInteger) {
             total = total + avaliacao;
