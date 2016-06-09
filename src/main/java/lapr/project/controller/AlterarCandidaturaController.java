@@ -8,6 +8,7 @@ package lapr.project.controller;
 import lapr.project.model.Candidatura;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.Representante;
 
 /**
  *
@@ -17,14 +18,18 @@ public class AlterarCandidaturaController {
 
     private ListaCandidaturas lstCandidaturas;
 
-    private Candidatura c;
+    private Candidatura candidatura;
 
-    public AlterarCandidaturaController(Exposicao e, Candidatura c) {
-        this.lstCandidaturas = e.getListaCandidatura();
-        this.c = getCandidatura();
+    public AlterarCandidaturaController(Exposicao e, Representante r) {
+        this.lstCandidaturas = r.getListaCandidaturasSubmetidas();
+
     }
 
-    private Candidatura getCandidatura() {
+    public void selecionarCandidatura(Candidatura c) {
+        this.candidatura = c;
+    }
+
+    public Candidatura getCandidatura() {
         return lstCandidaturas.obterCandidatura(0);
     }
 }

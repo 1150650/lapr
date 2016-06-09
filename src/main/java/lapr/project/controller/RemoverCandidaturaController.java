@@ -16,32 +16,28 @@ import lapr.project.model.RegistoExposicoes;
  * @author JOAO
  */
 public class RemoverCandidaturaController {
-    private CentroExposicoes centroexpo ;
+
+    private CentroExposicoes centroexpo;
     private Exposicao expo;
-    private int indice ;
-    
-    
-    public RemoverCandidaturaController(CentroExposicoes centroexpo){
-        
-        this.centroexpo=centroexpo;
+    private int indice;
+
+    public RemoverCandidaturaController(CentroExposicoes centroexpo) {
+
+        this.centroexpo = centroexpo;
 
     }
-    
-    public Exposicao[] getListaExposicoes (){
+
+    public Exposicao[] getListaExposicoes() {
         return this.centroexpo.mostrarLista();
     }
-    
-    public Candidatura[] getListaCandidaturas (Exposicao expo){
-        this.indice=this.centroexpo.getListaExposicoes().indiceDe(expo);
+
+    public Candidatura[] getListaCandidaturas(Exposicao expo) {
+        this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
         return this.centroexpo.getListaExposicoes().obterExposicao(indice).mostrarLista();
     }
-    
-    public void removerCandidatura (Candidatura c){
-         this.centroexpo.getListaExposicoes().obterExposicao(indice).adicinarCanidatura(c);
+
+    public void removerCandidatura(Candidatura c) {
+        this.centroexpo.getListaExposicoes().obterExposicao(indice).adicinarCanidatura(c);
     }
-    
-    
-    
-    
-    
+
 }
