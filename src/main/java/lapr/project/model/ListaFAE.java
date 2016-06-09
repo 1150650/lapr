@@ -108,4 +108,24 @@ public class ListaFAE {
         return listaFAE;
     }
 
+    public FAE addFAE(Utilizador utilizador, String id) {
+        FAE fae = new FAE(utilizador, id);
+        return fae;
+    }
+
+    public void registaFAE(FAE fae) {
+        if(validaMembroFAE(fae)){
+            addMembroFAE(fae);
+        }
+        
+    }
+
+    private void addMembroFAE(FAE fae) {
+        listaFAE.add(fae);
+    }
+
+    private boolean validaMembroFAE(FAE fae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
