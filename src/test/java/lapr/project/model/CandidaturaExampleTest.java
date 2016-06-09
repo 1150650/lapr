@@ -23,7 +23,7 @@ public class CandidaturaExampleTest {
 	public void ensureAddKeywordIsWorking() throws Exception {
 		List<KeywordExample> expectedKeywordExampleList = new ArrayList<>();
 		expectedKeywordExampleList.add(new KeywordExample("Doors"));
-
+             
 		CandidaturaExample candidatura = new CandidaturaExample("MyCandidatura", new ArrayList<>());
 		candidatura.addKeyword(new KeywordExample("Doors"));
 
