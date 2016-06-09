@@ -10,13 +10,15 @@ import java.util.List;
 
 public class RegistoUtilizadores {
 
-    private List<Utilizador> registoUtilizadoresConf;
-    private List<Utilizador> registoUtilizadoresNConf;
+    /**
+     * Lista de Utilizadores
+     */
+    private List<Utilizador> registoUtilizadores;
+
     private Utilizador u;
 
     public RegistoUtilizadores() {
-        registoUtilizadoresConf = new ArrayList<>();
-        registoUtilizadoresNConf = new ArrayList<>();
+        registoUtilizadores = new ArrayList<>();
     }
 
     public Utilizador criarUtilizador(String nome, String email, String username, String password) {
@@ -25,11 +27,11 @@ public class RegistoUtilizadores {
     }
 
     public Utilizador obterUtilizador(int indice) {
-        return registoUtilizadoresConf.get(indice);
+        return registoUtilizadores.get(indice);
     }
 
     public int tamanho() {
-        return this.registoUtilizadoresConf.size();
+        return this.registoUtilizadores.size();
     }
 
     public void registaUtilizador(Utilizador u) {
@@ -50,7 +52,7 @@ public class RegistoUtilizadores {
 
     private boolean validaEmail(Utilizador u) {
         boolean valida = true;
-        for (int i = 0; i < registoUtilizadoresConf.size(); i++) {
+        for (int i = 0; i < registoUtilizadores.size(); i++) {
             if (!u.getEmail().equalsIgnoreCase(obterUtilizador(i).getEmail())) {
                 valida = true;
             } else {
@@ -63,7 +65,7 @@ public class RegistoUtilizadores {
 
     private boolean validaUsername(Utilizador u) {
         boolean valida = true;
-        for (int i = 0; i < registoUtilizadoresConf.size(); i++) {
+        for (int i = 0; i < registoUtilizadores.size(); i++) {
             if (!u.getUsername().equalsIgnoreCase(obterUtilizador(i).getUsername())) {
                 valida = true;
             } else {
@@ -75,10 +77,10 @@ public class RegistoUtilizadores {
     }
 
     private void addUtilizador(Utilizador u) {
-        registoUtilizadoresConf.add(u);
+        registoUtilizadores.add(u);
     }
 
     public void removerUtilizador(Utilizador u) {
-        registoUtilizadoresConf.remove(u);
+        registoUtilizadores.remove(u);
     }
 }
