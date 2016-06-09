@@ -37,7 +37,7 @@ public class RemoverCandidaturaController {
     }
     
     public void removerCandidatura (Candidatura c){
-         this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidatura().removerCandidatura(c);
+         this.centroexpo.getListaExposicoes().obterExposicao(indice).adicinarCanidatura(c);
     }
     
     

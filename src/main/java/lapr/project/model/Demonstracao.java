@@ -63,6 +63,9 @@ public class Demonstracao {
     public ListaRecursos getListalRecursos() {
         return listalRecursos;
     }
+     public String getDados(){
+         return descricao ;
+    }
     
     /**
      * Metodo que altera a descricao da demonstracao

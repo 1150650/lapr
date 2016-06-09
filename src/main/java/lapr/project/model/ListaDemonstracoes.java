@@ -66,5 +66,13 @@ public class ListaDemonstracoes {
     public void addDemonstracao(Demonstracao d){
         getListalDemonstracao().add(d);
     }
+
+    public int tamanho() {
+         return this.listalDemonstracao.size();
+    }
+
+    public Demonstracao obterDemonstracao(int indice) {
+        return listalDemonstracao.get(indice);
+    }
     
 }

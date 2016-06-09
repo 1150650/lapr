@@ -15,7 +15,12 @@ public class TipoDeConflito {
    
     
     
-    public TipoDeConflito(){
+    public TipoDeConflito(String descricao){
+        setDescricao(descricao);
+        
+    }
+     public TipoDeConflito(){
+        
         
     }
     

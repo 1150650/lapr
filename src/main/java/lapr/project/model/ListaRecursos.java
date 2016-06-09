@@ -33,4 +33,8 @@ class ListaRecursos {
     public void addRecurso(Recurso r){
         listaRecurso.add(r);
     }
+    
+    public Recurso obterRecurso(int indice) {
+        return listaRecurso.get(indice);
+    }
 }

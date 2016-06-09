@@ -15,8 +15,14 @@ public class Stand {
 
     private Candidatura candidatura;
 
+    public Stand(String descricao) {
+        
+        setDescricao(descricao);
+    }
+    
     public Stand() {
-
+        
+       
     }
 
     public String getDescricao() {
