@@ -15,70 +15,72 @@ public class CentroExposicoes {
      * Criação de uma instância de uma JList
      */
     private JList JListExposicoes;
-    
+
     private ListaStands listaStands;
-    
+
     private RegistoTipoDeConflito listaTipoDeConflito;
-    
+
     private RegistoUtilizadores registoUtilizadorNConf;
-    
+
     private RegistoUtilizadores registoUtilizadoresConf;
-    
+
     private ListaRecursos listarecursos;
-    
+
     private ListaTiposConflito listaTiposConflito;
-    
-/**
- * Contrutor do centro de exposicoes
- */
+
+    /**
+     * Contrutor do centro de exposicoes
+     */
     public CentroExposicoes() {
         this.listaExposicoes = new RegistoExposicoes();
-     this.listaStands= new ListaStands ();
-     this.listaTipoDeConflito= new RegistoTipoDeConflito();
-     this.listarecursos= new ListaRecursos ();
+        this.listaStands = new ListaStands();
+        this.listaTipoDeConflito = new RegistoTipoDeConflito();
+        this.listarecursos = new ListaRecursos();
     }
-    
-/**
- * Retorna a lista de exposições do centro de exposições
- * @return lista de exposições
- */
+
+    /**
+     * Retorna a lista de exposições do centro de exposições
+     *
+     * @return lista de exposições
+     */
     public RegistoExposicoes getListaExposicoes() {
         return listaExposicoes;
     }
 
     /**
      * Retorna um array de exposições com as exposições de centro de exposições
+     *
      * @return arrray das exposições
      */
     public Exposicao[] getArrayExposicao() {
         return listaExposicoes.getArray();
     }
-    
-     public ListaStands getListastands() {
+
+    public ListaStands getListastands() {
         return listaStands;
     }
-     
-     
-      public RegistoTipoDeConflito getListaTipoDeConflito() {
-          
+
+    public RegistoTipoDeConflito getListaTipoDeConflito() {
+
         return listaTipoDeConflito;
     }
 
-
     /**
      * Retorna a JList da lista de exposições
+     *
      * @return a JList da lista de exposições
      */
     public JList getJListExposicoes() {
         return JListExposicoes;
     }
-    
-    public RegistoUtilizadores getRegistoUtilizadoresConf(){
+
+    public RegistoUtilizadores getRegistoUtilizadoresConf() {
         return registoUtilizadoresConf;
     }
 
     /**
      * Acede aos indices de cada exposição e preenche cada exposição num array
+     *
      * @return o array com as exposições
      */
     public Exposicao[] mostrarLista() {
@@ -93,17 +95,16 @@ public class CentroExposicoes {
     }
 
     /**
-     * Retorna o registo de Utilizadores que ainda não foram confirmados 
-     * @return 
+     * Retorna o registo de Utilizadores que ainda não foram confirmados
+     *
+     * @return
      */
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
         return registoUtilizadorNConf;
     }
-    
-    public ListaTiposConflito getListaTiposConflito(){
+
+    public ListaTiposConflito getListaTiposConflito() {
         return listaTiposConflito;
     }
-
-
 
 }

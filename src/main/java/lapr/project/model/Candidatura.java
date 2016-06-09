@@ -5,11 +5,6 @@ import java.util.List;
 public class Candidatura {
 
     /**
-     * Referência para o Utilizador que submete a nova candidatura
-     */
-    private Utilizador representante;
-
-    /**
      * Lista de Avalialões de uma candidatura
      */
     private ListaAvaliacoes listaAvaliacao;
@@ -132,20 +127,6 @@ public class Candidatura {
 
     public ListaAvaliacoes getListaAvaliacoes() {
         return listaAvaliacao;
-    }
-
-    /**
-     * @return O utilizador (Representante que submete a candidatura)
-     */
-    public Utilizador getRepresentante() {
-        return representante;
-    }
-
-    /**
-     * @param representante altera o parametro do representante
-     */
-    public void setRepresentante(Utilizador representante) {
-        this.representante = representante;
     }
 
     /**

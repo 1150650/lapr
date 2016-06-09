@@ -50,7 +50,6 @@ public class Utilizador {
     }
 
     //PERGUNTAR SE PODEMOS USAR REGEX
-
     private void setEmail(String email) {
         String FUNCAO_OBJ = "(.*)[@](.*)((.com)|(.pt))$";
         Pattern FUNCAO_OBJETIVO = Pattern.compile(FUNCAO_OBJ);
@@ -72,28 +71,34 @@ public class Utilizador {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
         }
-        char ch; boolean temMinuscula = false, temMaiuscula = false, temNumero = false, temEspecial = false;
-        for (int i = 0; i < password.length(); i++ ) {
+        char ch;
+        boolean temMinuscula = false, temMaiuscula = false, temNumero = false, temEspecial = false;
+        for (int i = 0; i < password.length(); i++) {
             ch = password.charAt(i);
-            if (Character.isLowerCase(ch)) temMinuscula = true;
-            if (Character.isUpperCase(ch)) temMaiuscula = true;
-            if (Character.isDigit(ch)) temNumero = true;
+            if (Character.isLowerCase(ch)) {
+                temMinuscula = true;
+            }
+            if (Character.isUpperCase(ch)) {
+                temMaiuscula = true;
+            }
+            if (Character.isDigit(ch)) {
+                temNumero = true;
+            }
         }
-        if (password.matches(".*[,.;:-].*")) temEspecial = true;
-        
-        if(temMinuscula == false || temMaiuscula == false || temNumero==false || temEspecial == false){
+        if (password.matches(".*[,.;:-].*")) {
+            temEspecial = true;
+        }
+
+        if (temMinuscula == false || temMaiuscula == false || temNumero == false || temEspecial == false) {
             throw new IllegalArgumentException("Password inválida! Deve conter "
                     + "pelo menos uma letra minuscula, uma letra maiuscula, "
                     + "um número e um carater especial(,.;:-)");
         }
-        
+
         encriptacao = new CaeserCypher(password);
         this.password = encriptacao.encriptar();
     }
-    //PERGUNTAR PARA QUE SERVE
-    // private boolean valida(){
 
-  //  }
     @Override
     public String toString() {
         return String.format("Nome: %s%nEmail: %s%nUsername: %s", nome, email, username);

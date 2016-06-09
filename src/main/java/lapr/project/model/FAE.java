@@ -10,7 +10,7 @@ public class FAE implements Comparable<FAE> {
     /**
      * String com o nome de utilizador
      */
-    private String utilizador;
+    private Utilizador utilizador;
 
     /**
      * Variavel que define o numero de Exposiçoes em que o utilizador(FAE)
@@ -24,15 +24,16 @@ public class FAE implements Comparable<FAE> {
      * @param u
      * @param identificador
      */
-    private ListaCandidaturas listacandidatura ;
-    
-    private ListaAtribuicoes listaAtribuicoes;
-    
-    
-    public FAE() {
-        listacandidatura=new ListaCandidaturas();
-        listaAtribuicoes= new ListaAtribuicoes();
-        this.utilizador=getUtilizador();
+    private ListaCandidaturas listaCandidaturasParaAvaliar;
+
+    /**
+     * Construtor de um objeto do tipo FAE
+     *
+     * @param u recebendo um utilizador
+     * @param id recebe a id para o fae ser identificado
+     */
+    public FAE(Utilizador u, String iD) {
+        setUtilizador(utilizador);
     }
 
     /**
@@ -45,7 +46,7 @@ public class FAE implements Comparable<FAE> {
     /**
      * @return the utilizador
      */
-    public String getUtilizador() {
+    public Utilizador getUtilizador() {
         return utilizador;
     }
 
@@ -54,10 +55,7 @@ public class FAE implements Comparable<FAE> {
      *
      * @param utilizador Stirng utilizador
      */
-    public void setUtilizador(String utilizador) {
-        if (utilizador == null || utilizador.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nome Utilizador inválido");
-        }
+    public void setUtilizador(Utilizador utilizador) {
         this.utilizador = utilizador;
     }
 
@@ -98,6 +96,21 @@ public class FAE implements Comparable<FAE> {
         return "FAE: " + getUtilizador();
     }
 
+    /**
+     * @return the listacandidatura
+     */
+    public ListaCandidaturas getListacandidatura() {
+        return listaCandidaturasParaAvaliar;
+    }
+    
+    /**
+     * Adiciona uma Candidatura atribuida ao FAE para avaliar
+     * @param c candidatura
+     */
+    public void adicionarCandidatura(Candidatura c) {
+        listaCandidaturasParaAvaliar.adicionarCandidatura(c);
+    }
+
     @Override
     public int compareTo(FAE o) {
         if (o.getExperienciaFAE() < o.getExperienciaFAE()) {
@@ -108,32 +121,4 @@ public class FAE implements Comparable<FAE> {
         }
         return 0;
     }
-    
-    public Candidatura[] mostrarLista(ListaAtribuicoes lista){
-        Candidatura[] string = new Candidatura[lista.tamanho()];
-
-        int tamanho = lista.tamanho()-1;
-        for (int i=0 ; i< tamanho; i++){
-         
-//           String aux = m_lExposicoes.obterExposicao(index).toString();
-           string[i]=lista.obterAtribuiçao(i).getCandidatura();
-        } 
-        return string;
-    }
-
-    /**
-     * @return the listacandidatura
-     */
-    public ListaCandidaturas getListacandidatura() {
-        return listacandidatura;
-    }
-    
-    public void adicionarAtribuicao(Atribuicao a){
-        listaAtribuicoes.adicionarAtribuição(a);
-    }
-    
-    public ListaAtribuicoes getListaAtribuicoes(){
-        return listaAtribuicoes;
-    }
-
 }

@@ -81,9 +81,4 @@ public class RegistoUtilizadores {
     public void removerUtilizador(Utilizador u) {
         registoUtilizadoresConf.remove(u);
     }
-
-    public Utilizador getUtilizadorInfo(String username) {
-        
-    }
-
 }

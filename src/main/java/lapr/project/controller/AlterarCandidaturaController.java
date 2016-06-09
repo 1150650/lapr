@@ -19,8 +19,8 @@ public class AlterarCandidaturaController {
 
     private Candidatura c;
 
-    public AlterarCandidaturaController(ListaCandidaturas lstCandidaturas, Candidatura c) {
-        this.lstCandidaturas = lstCandidaturas;
+    public AlterarCandidaturaController(Exposicao e, Candidatura c) {
+        this.lstCandidaturas = e.getListaCandidatura();
         this.c = getCandidatura();
     }
 
