@@ -3,6 +3,8 @@ package lapr.project.model;
 import java.util.List;
 
 public class Candidatura {
+    
+    private CandidaturaState state;
 
     /**
      * Lista de Avalialões de uma candidatura
@@ -198,5 +200,13 @@ public class Candidatura {
      */
     public String apresentarDados() {
         return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Area Pretendida:" + areaPretendida + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
+    }
+
+    public boolean setCandidaturaStandAtribuido() {
+        return state.setStandsAtribuidos();
+    }
+    
+    public CandidaturaState getState(){
+        return state;
     }
 }

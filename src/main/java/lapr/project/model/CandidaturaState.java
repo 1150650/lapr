@@ -21,5 +21,7 @@ public interface CandidaturaState {
 
     boolean setConflitoEncontrado();
     
+    boolean setStandsAtribuidos();
+    
     boolean valida();
 }

@@ -25,12 +25,8 @@ public class AtribuirStandCandidaturasAceitesController {
     private Stand stand;
  
     
-    public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){
+    public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes){
         this.centroExposicoes = centroExposicoes;
-        this.exposicao = exposicao;
-        this.listaCandidaturas = exposicao.getListaCandidaturas();
-        this.listaStands = centroExposicoes.getListastands();
-        this.registoExposicoes = centroExposicoes.getListaExposicoes();
     }
 
     public List getExposicoesOrganizador(Utilizador  utilizador) {
@@ -58,6 +54,10 @@ public class AtribuirStandCandidaturasAceitesController {
     
     public void registaStandCandidatura(){
         listaStands.registaStandCandidatura(stand, candidatura);
+    }
+    
+    public boolean setCandidaturaStandAtribuido(){
+        return candidatura.setCandidaturaStandAtribuido();
     }
 
 }
