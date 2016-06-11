@@ -58,9 +58,4 @@ public class AtribuirStandCandidaturasAceitesController {
     public boolean setCandidaturaStandAtribuido(){
         return candidatura.setCandidaturaStandAtribuido();
     }
-
-    public boolean setCandidaturaStandAtribuido() {
-        return candidatura.setCandidaturaStandAtribuido();
-    }
-
 }

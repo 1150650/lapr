@@ -3,7 +3,7 @@ package lapr.project.model;
 import java.util.List;
 
 public class Candidatura {
-    
+
     private CandidaturaState state;
 
     /**
@@ -27,11 +27,6 @@ public class Candidatura {
     private int telemovel;
 
     /**
-     * float com a area pretendida para apresentar o produto
-     */
-    private float areaPretendida;
-
-    /**
      * Produtos que a empresa vai expor
      */
     private String produtos;
@@ -51,7 +46,6 @@ public class Candidatura {
      * @param nomeEmpresa empresa
      * @param morada morada
      * @param telemovel telemovel
-     * @param areaPretendida area
      * @param produtos produtos
      * @param quantidadeConvites convites /** Construtor com parametros de um
      * objeto do tipo Candidatura
@@ -59,15 +53,14 @@ public class Candidatura {
      * @param nomeEmpresa empresa
      * @param morada morada
      * @param telemovel telemovel
-     * @param areaPretendida area
      * @param produtos produtos
      * @param quantidadeConvites convites
      */
-    public Candidatura(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
+    public Candidatura(String nomeEmpresa, String morada, int telemovel, String produtos, int quantidadeConvites) {
         setNomeEmpresa(nomeEmpresa);
         setMorada(morada);
         setTelemovel(telemovel);
-        setAreaPretendida(areaPretendida);
+
         setProdutos(produtos);
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
@@ -101,16 +94,7 @@ public class Candidatura {
     }
 
     /**
-     * Retorna a area pretendida
-     *
-     * @return are pretendida
-     */
-    public float areaPretendida() {
-        return areaPretendida;
-    }
-
-    /**
-     * Retorna os produtos a ser exibidos
+     * Retorna os produtos a ser exibidos ou demonstrados
      *
      * @return produtos
      */
@@ -167,13 +151,6 @@ public class Candidatura {
         this.telemovel = telemovel;
     }
 
-    public final void setAreaPretendida(float areaPretendida) {
-        if (areaPretendida < 0) {
-            throw new IllegalArgumentException("Área pretendida é inválida!");
-        }
-        this.areaPretendida = areaPretendida;
-    }
-
     public final void setProdutos(String produtos) {
         if (produtos == null || produtos.trim().isEmpty()) {
             throw new IllegalArgumentException("Produtos inválidos!");
@@ -199,14 +176,14 @@ public class Candidatura {
      * @return string
      */
     public String apresentarDados() {
-        return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Area Pretendida:" + areaPretendida + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
+        return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
     }
 
     public boolean setCandidaturaStandAtribuido() {
         return state.setStandsAtribuidos();
     }
-    
-    public CandidaturaState getState(){
+
+    public CandidaturaState getState() {
         return state;
     }
 }
