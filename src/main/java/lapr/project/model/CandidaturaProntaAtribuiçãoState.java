@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaProntaAtribuiçãoState implements CandidaturaState {
+public class CandidaturaProntaAtribuiçãoState implements CandidaturaState{
 
     @Override
     public boolean setCriadaDefinido() {
@@ -41,4 +41,9 @@ public class CandidaturaProntaAtribuiçãoState implements CandidaturaState {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public boolean setStandsAtribuidos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
