@@ -35,4 +35,8 @@ public class TipoDeConflito {
         return "TipoDeConflito{" + "descricao=" + descricao + '}';
     }
 
+    boolean isConflitoAtivo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

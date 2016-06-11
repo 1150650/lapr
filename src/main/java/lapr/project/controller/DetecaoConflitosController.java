@@ -7,8 +7,9 @@ package lapr.project.controller;
 
 import java.util.List;
 import lapr.project.model.CentroExposicoes;
-import lapr.project.model.ListaTiposConflito;
-import lapr.project.model.TipoConflito;
+import lapr.project.model.MecanismoDetecaoConflito;
+import lapr.project.model.RegistoTipoDeConflito;
+import lapr.project.model.TipoDeConflito;
 
 /**
  *
@@ -16,14 +17,22 @@ import lapr.project.model.TipoConflito;
  */
 public class DetecaoConflitosController {
 
-    private ListaTiposConflito listaTiposConflito;
+    private RegistoTipoDeConflito listaTiposConflito;
 
-    private List<TipoConflito> listaTiposConflitoAtivos;
+    private List<TipoDeConflito> listaTiposConflitoAtivos;
 
     private CentroExposicoes centroExposicoes;
+    
+    private MecanismoDetecaoConflito mecanismoDetecao;
 
     public DetecaoConflitosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
+    }
+    
+    public void detecaoConflitos(){
+        listaTiposConflito = centroExposicoes.getListaTipoDeConflito();
+        listaTiposConflitoAtivos = listaTiposConflito.getTiposConflitoAtivos();
+        mecanismoDetecao.detectConflitos();
     }
 
 }

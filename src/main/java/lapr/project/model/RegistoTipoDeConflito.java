@@ -43,4 +43,14 @@ public class RegistoTipoDeConflito {
     public TipoDeConflito novoTipoDeConflito() {
         return new TipoDeConflito();
     }
+
+    public List<TipoDeConflito> getTiposConflitoAtivos() {
+        List<TipoDeConflito> tiposConflitoAtivos = new ArrayList<TipoDeConflito>();
+        for (TipoDeConflito t : listaTipoDeConflito) {
+            if (t.isConflitoAtivo()) {
+                tiposConflitoAtivos.add(t);
+            }
+        }
+        return tiposConflitoAtivos;
+    }
 }
