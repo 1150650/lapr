@@ -86,7 +86,7 @@ public class ListaCandidaturas {
     public List getCandidaturasAceites() {
         List<Candidatura> listaCandidaturasAceites = new ArrayList<Candidatura>();
         for (Candidatura c : listaCandidaturas) {
-            if (c.estadoAceite()) {
+            if (c.getState() instanceof CandidaturaAceiteState) {
                 listaCandidaturasAceites.add(c);
             }
         }

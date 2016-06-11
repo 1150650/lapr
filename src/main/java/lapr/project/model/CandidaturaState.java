@@ -23,5 +23,7 @@ public interface CandidaturaState {
     
     boolean setStandsAtribuidos();
     
+    boolean setAceite();
+    
     boolean valida();
 }
