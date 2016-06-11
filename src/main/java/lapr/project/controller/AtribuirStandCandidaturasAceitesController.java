@@ -54,6 +54,10 @@ public class AtribuirStandCandidaturasAceitesController {
     public void registaStandCandidatura() {
         listaStands.registaStandCandidatura(stand, candidatura);
     }
+    
+    public boolean setCandidaturaStandAtribuido(){
+        return candidatura.setCandidaturaStandAtribuido();
+    }
 
     public boolean setCandidaturaStandAtribuido() {
         return candidatura.setCandidaturaStandAtribuido();
