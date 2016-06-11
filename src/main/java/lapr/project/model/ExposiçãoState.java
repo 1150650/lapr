@@ -33,4 +33,6 @@ public interface ExposiçãoState {
 
     boolean valida();
 
+    public boolean setCandidaturasAtribuidas();
+
 }

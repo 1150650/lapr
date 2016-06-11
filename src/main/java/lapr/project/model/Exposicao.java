@@ -124,4 +124,16 @@ public class Exposicao {
     ListaConflitos getListaConflitos() {
         return listaConflitos;
     }
+
+    public boolean setAtribuicoes(ListaAtribuicoes listaAtribuicao) {
+        return validaAtribuicao();
+    }
+
+    private boolean validaAtribuicao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean setCandidaturasAtribuidas() {
+        return m_state.setCandidaturasAtribuidas();
+    }
 }

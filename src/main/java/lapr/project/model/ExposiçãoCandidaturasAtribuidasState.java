@@ -14,6 +14,10 @@ public class ExposiçãoCandidaturasAtribuidasState implements ExposiçãoState 
     public ExposiçãoCandidaturasAtribuidasState(Exposicao m_e) {
     }
 
+    ExposiçãoCandidaturasAtribuidasState() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public boolean setCriadoDefinido() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -66,6 +70,11 @@ public class ExposiçãoCandidaturasAtribuidasState implements ExposiçãoState 
 
     @Override
     public boolean valida() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean setCandidaturasAtribuidas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
