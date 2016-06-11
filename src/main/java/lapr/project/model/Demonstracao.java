@@ -109,4 +109,8 @@ public class Demonstracao {
         return super.toString();
     }
 
+    public boolean setDemonstracaoAberta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

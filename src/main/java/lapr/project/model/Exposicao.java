@@ -133,7 +133,7 @@ public class Exposicao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public boolean setCandidaturasAtribuidas() {
-        return m_state.setCandidaturasAtribuidas();
+    public ExposiçãoState getExposicaoEstado() {
+        return m_state;
     }
 }
