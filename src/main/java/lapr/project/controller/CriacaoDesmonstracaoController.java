@@ -15,41 +15,38 @@ import lapr.project.model.Recurso;
  * @author JOAO
  */
 public class CriacaoDesmonstracaoController {
-     private CentroExposicoes centroExposicoes;
+
+    private CentroExposicoes centroExposicoes;
     private Exposicao expo;
-    private Demonstracao demonstracao ;
-    
-    public CriacaoDesmonstracaoController (CentroExposicoes centroExpo){
-        this.centroExposicoes=centroExpo ;
+    private Demonstracao demonstracao;
+
+    public CriacaoDesmonstracaoController(CentroExposicoes centroExpo) {
+        this.centroExposicoes = centroExpo;
     }
-    
-    
-    
-    
-    public Exposicao[] getListaExposicoes (){
+
+    public Exposicao[] getListaExposicoes() {
         return this.centroExposicoes.mostrarLista();
     }
-    
-    public void expoSelecionada(Exposicao expo){
-        this.expo=expo ;
+
+    public void expoSelecionada(Exposicao expo) {
+        this.expo = expo;
     }
-    
-    
-    public void criarDemonstração (){
-        this.demonstracao= expo.getListaDemonstracoes().criacaoDemonstracao();
+
+    public void criarDemonstração() {
+        this.demonstracao = expo.getListaDemonstracoes().criacaoDemonstracao();
     }
-    
-    public void setDemonstracao (String descricao){
+
+    public void setDemonstracao(String descricao) {
         this.demonstracao.setDados(descricao);
     }
-    
-    public void addRecurso (Recurso r){
+
+    public void addRecurso(Recurso r) {
         demonstracao.setRecurso(r);
     }
-    
-    public void addDemonstracao (){
-         int indice=this.centroExposicoes.getListaExposicoes().indiceDe(expo);
+
+    public void addDemonstracao() {
+        int indice = this.centroExposicoes.getListaExposicoes().indiceDe(expo);
         this.centroExposicoes.getListaExposicoes().obterExposicao(indice).getListaDemonstracoes().addDemonstracao(demonstracao);
-        
+
     }
 }

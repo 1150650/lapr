@@ -34,10 +34,12 @@ public class MecanismoCargaEquitativaPorFAE implements Mecanismo {
         this.lstCand = lstc;
         this.lstFAE = lstFAE;
     }
-    
+
     /**
-     * Implementação da interface mecanismo que devolve a lista de Atribuições geradas
-     * @return 
+     * Implementação da interface mecanismo que devolve a lista de Atribuições
+     * geradas
+     *
+     * @return
      */
     @Override
     public ListaAtribuicoes atribuirCandidaturasAFAE() {

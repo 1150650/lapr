@@ -43,7 +43,7 @@ public class ExposiçãoCriadaState implements ExposiçãoState {
     }
 
     private boolean valida2() {
-        
+
     }
 
     @Override

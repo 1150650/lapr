@@ -20,6 +20,6 @@ public interface CandidaturaState {
     boolean setAvaliada();
 
     boolean setConflitoEncontrado();
-    
+
     boolean valida();
 }

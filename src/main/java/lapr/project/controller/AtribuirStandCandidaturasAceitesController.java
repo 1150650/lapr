@@ -15,7 +15,7 @@ import lapr.project.model.*;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class AtribuirStandCandidaturasAceitesController {
-    
+
     private CentroExposicoes centroExposicoes;
     private Exposicao exposicao;
     private ListaStands listaStands;
@@ -23,9 +23,8 @@ public class AtribuirStandCandidaturasAceitesController {
     private RegistoExposicoes registoExposicoes;
     private Candidatura candidatura;
     private Stand stand;
- 
-    
-    public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao){
+
+    public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes, Exposicao exposicao) {
         this.centroExposicoes = centroExposicoes;
         this.exposicao = exposicao;
         this.listaCandidaturas = exposicao.getListaCandidaturas();
@@ -33,7 +32,7 @@ public class AtribuirStandCandidaturasAceitesController {
         this.registoExposicoes = centroExposicoes.getListaExposicoes();
     }
 
-    public List getExposicoesOrganizador(Utilizador  utilizador) {
+    public List getExposicoesOrganizador(Utilizador utilizador) {
         return registoExposicoes.getExposicoesOrganizador(utilizador);
     }
 
@@ -51,12 +50,12 @@ public class AtribuirStandCandidaturasAceitesController {
         this.listaStands = centroExposicoes.getListastands();
         return listaStands.getListaStandsDisponiveis();
     }
-    
-    public void setStand(Stand stand){
+
+    public void setStand(Stand stand) {
         this.stand = stand;
     }
-    
-    public void registaStandCandidatura(){
+
+    public void registaStandCandidatura() {
         listaStands.registaStandCandidatura(stand, candidatura);
     }
 

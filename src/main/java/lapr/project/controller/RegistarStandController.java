@@ -13,24 +13,25 @@ import lapr.project.model.Stand;
  * @author JOAO
  */
 public class RegistarStandController {
-    private CentroExposicoes centroexpo ;
+
+    private CentroExposicoes centroexpo;
     private Stand stand;
-    
-    public RegistarStandController (CentroExposicoes centroexpo){
-        this.centroexpo=centroexpo;
+
+    public RegistarStandController(CentroExposicoes centroexpo) {
+        this.centroexpo = centroexpo;
     }
-    
-    public void criarStand(){
-        this.stand=new Stand();
-        
+
+    public void criarStand() {
+        this.stand = new Stand();
+
     }
-    
-    public void setDadosStand (String descricao ){
+
+    public void setDadosStand(String descricao) {
         this.stand.setDescricao(descricao);
     }
-    
-    public void registarStand (){
+
+    public void registarStand() {
         this.centroexpo.getListastands().adicionarStand(stand);
     }
-    
+
 }

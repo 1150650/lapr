@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class ExposiçãoCompletaState implements ExposiçãoState{
+public class ExposiçãoCompletaState implements ExposiçãoState {
 
     public ExposiçãoCompletaState(Exposicao m_eExposicao) {
 

@@ -23,19 +23,19 @@ import lapr.project.model.Exposicao;
  * @author JOAO
  */
 public class RemoverCandidaturaUI extends JDialog {
-   private RemoverCandidaturaController contr;
-   private CentroExposicoes centroexpo;
-   private Janela framePai;
-   private Icon icon;
-   private Exposicao expo ;
-   private Candidatura candi ;
 
+    private RemoverCandidaturaController contr;
+    private CentroExposicoes centroexpo;
+    private Janela framePai;
+    private Icon icon;
+    private Exposicao expo;
+    private Candidatura candi;
 
-    public RemoverCandidaturaUI(Janela framePai,CentroExposicoes ce,Exposicao expo) {
-        
+    public RemoverCandidaturaUI(Janela framePai, CentroExposicoes ce, Exposicao expo) {
+
         super(framePai, "Nova Candidatura", true);
-        this.centroexpo=ce;
-        this.contr=new RemoverCandidaturaController(ce);
+        this.centroexpo = ce;
+        this.contr = new RemoverCandidaturaController(ce);
         this.framePai = framePai;
         criarComponentes();
 
@@ -49,76 +49,71 @@ public class RemoverCandidaturaUI extends JDialog {
     private void criarComponentes() {
         JPanel p1 = criarPainelCentro();
         JPanel p2 = criarPainelSul();
-        
+
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
-       
-        
+
     }
-      private JPanel criarPainelCentro() {
+
+    private JPanel criarPainelCentro() {
         JButton btnSelecionarExposicao = criarBotaoSelecionarExposicao();
-         JButton btnSelecionarCandidatura = criarBotaoSelecionarCandidatura();
+        JButton btnSelecionarCandidatura = criarBotaoSelecionarCandidatura();
         JPanel pCentro = new JPanel(new BorderLayout());
         pCentro.add(btnSelecionarExposicao);
         pCentro.add(btnSelecionarCandidatura);
-        
-        
-  
 
         return pCentro;
     }
 
     private JPanel criarPainelSul() {
-         JButton btnOK = criarBotaoRemover();
-         JButton btnCancelar = criarBotaoCancelar();
+        JButton btnOK = criarBotaoRemover();
+        JButton btnCancelar = criarBotaoCancelar();
 
         JPanel pSul = new JPanel(new BorderLayout());
-          pSul.add(btnOK);
-          pSul.add(btnCancelar);
+        pSul.add(btnOK);
+        pSul.add(btnCancelar);
 
         return pSul;
     }
 
     private JButton criarBotaoRemover() {
-         JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Registar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
-                  if (expo== null || candi== null){
-                      JOptionPane.showMessageDialog(rootPane, e, "Tem de selecionar a exposicao e de seguida a"
-                              + "Candidatura que deseja remover", JOptionPane.ERROR_MESSAGE);
-                      
-                  }else{
-                      contr.removerCandidatura(candi);
-                      dispose();   
-                  }
-                                      
-                  
+            public void actionPerformed(ActionEvent e) {
+                if (expo == null || candi == null) {
+                    JOptionPane.showMessageDialog(rootPane, e, "Tem de selecionar a exposicao e de seguida a"
+                            + "Candidatura que deseja remover", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+                    contr.removerCandidatura(candi);
+                    dispose();
+                }
+
             }
         });
 
         return btn;
     }
-    
-     private JButton criarBotaoSelecionarExposicao() {
-         JButton btn = new JButton("Registar Candidatura");
+
+    private JButton criarBotaoSelecionarExposicao() {
+        JButton btn = new JButton("Registar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
-              Exposicao[] aux = contr.getListaExposicoes();
-                  
-               expo = (Exposicao)JOptionPane.showInputDialog(
-                    framePai,
-                    "Indique a exposição da qual deseja retirar a candidatura"
-                    + ":",
-                    "Seleção De Exposição",
-                    JOptionPane.DEFAULT_OPTION,
-                    icon,
-                    aux,
-                    "");
-                
-                                      
-                  dispose();   
+            public void actionPerformed(ActionEvent e) {
+                Exposicao[] aux = contr.getListaExposicoes();
+
+                expo = (Exposicao) JOptionPane.showInputDialog(
+                        framePai,
+                        "Indique a exposição da qual deseja retirar a candidatura"
+                        + ":",
+                        "Seleção De Exposição",
+                        JOptionPane.DEFAULT_OPTION,
+                        icon,
+                        aux,
+                        "");
+
+                dispose();
             }
         });
 
@@ -126,7 +121,7 @@ public class RemoverCandidaturaUI extends JDialog {
     }
 
     private JButton criarBotaoCancelar() {
-         JButton btn = new JButton("Cancelar");
+        JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -137,24 +132,23 @@ public class RemoverCandidaturaUI extends JDialog {
     }
 
     private JButton criarBotaoSelecionarCandidatura() {
-         JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Registar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
-              Candidatura [] aux = contr.getListaCandidaturas(expo);
-                  
-               candi = (Candidatura)JOptionPane.showInputDialog(
-                    framePai,
-                    "Indique candidatura que deseja remover"
-                    + ":",
-                    "Seleção De Candidatura a Remover",
-                    JOptionPane.DEFAULT_OPTION,
-                    icon,
-                    aux,
-                    "");
-                
-                                      
-                  dispose();   
+            public void actionPerformed(ActionEvent e) {
+                Candidatura[] aux = contr.getListaCandidaturas(expo);
+
+                candi = (Candidatura) JOptionPane.showInputDialog(
+                        framePai,
+                        "Indique candidatura que deseja remover"
+                        + ":",
+                        "Seleção De Candidatura a Remover",
+                        JOptionPane.DEFAULT_OPTION,
+                        icon,
+                        aux,
+                        "");
+
+                dispose();
             }
         });
 

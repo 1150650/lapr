@@ -98,7 +98,7 @@ public class ListaAtribuicoes {
         this.listaAtribuiçao.clear();
         this.listaAtribuiçao = listaAtribuiçao;
     }
-    
+
     /**
      * Adiciona ao FAE as suas candidaturas para decidir
      */

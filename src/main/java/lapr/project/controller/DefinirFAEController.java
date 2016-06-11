@@ -18,37 +18,37 @@ public class DefinirFAEController {
     private CentroExposicoes centroExposicoes;
     private RegistoUtilizadores registoUtilizadores;
     private List<Exposicao> listaExposicoes;
-    private List <Utilizador> listaUtilizadores;
+    private List<Utilizador> listaUtilizadores;
     private Exposicao exposicao;
     private ListaFAE listaFAE;
     private ListaOrganizadores listaOrganizadores;
     private FAE fae;
 
-    public DefinirFAEController(CentroExposicoes centroExposicoes){
+    public DefinirFAEController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
-    
-    public List getExposicoesOrganizador(Utilizador utilizador){
+
+    public List getExposicoesOrganizador(Utilizador utilizador) {
         listaExposicoes = registoExposicoes.getExposicoesOrganizador(utilizador);
         return listaExposicoes;
     }
-    
-    public List getListaUtilizadores(){
+
+    public List getListaUtilizadores() {
         listaUtilizadores = registoUtilizadores.getRegistoUtilizadores();
         return listaUtilizadores;
     }
-    
-    public void addFAE(Utilizador utilizador, Exposicao exposicao, String id){
+
+    public void addFAE(Utilizador utilizador, Exposicao exposicao, String id) {
         this.exposicao = exposicao;
         listaFAE = this.exposicao.getListaFAE();
         listaOrganizadores = this.exposicao.getListaOrganizadores();
-        if(!this.exposicao.getListaOrganizadores().isUserOrganizador(utilizador)){
+        if (!this.exposicao.getListaOrganizadores().isUserOrganizador(utilizador)) {
             fae = listaFAE.addFAE(utilizador, id);
         }
     }
-    
-    public void registaFAE(){
+
+    public void registaFAE() {
         listaFAE.registaFAE(fae);
     }
-    
+
 }

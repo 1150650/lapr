@@ -22,24 +22,19 @@ import lapr.project.model.CentroExposicoes;
  * @author JOAO
  */
 public class RegistarStandUI extends JDialog {
-    
-    
+
     private JTextField txtDescricao;
-   private RegistarStandController contr;
-   private CentroExposicoes centroexpo;
-   private Janela framePai;
+    private RegistarStandController contr;
+    private CentroExposicoes centroexpo;
+    private Janela framePai;
 
+    public RegistarStandUI(Janela framePai, CentroExposicoes ce) {
 
-    public RegistarStandUI(Janela framePai,CentroExposicoes ce) {
-        
         super(framePai, "Nova Candidatura", true);
-        this.centroexpo=ce;
-        this.contr=new RegistarStandController(ce);
+        this.centroexpo = ce;
+        this.contr = new RegistarStandController(ce);
         this.framePai = framePai;
 
-         
-                            
-        
         criarComponentes();
 
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -52,46 +47,45 @@ public class RegistarStandUI extends JDialog {
     private void criarComponentes() {
         JPanel p1 = criarPainelCentro();
         JPanel p2 = criarPainelSul();
-        
+
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
-       
-        
+
     }
-      private JPanel criarPainelCentro() {
-          JLabel lbl = new JLabel("Descricao Stand :", JLabel.RIGHT);
-         txtDescricao= new JTextField (40);
-         
+
+    private JPanel criarPainelCentro() {
+        JLabel lbl = new JLabel("Descricao Stand :", JLabel.RIGHT);
+        txtDescricao = new JTextField(40);
+
         JPanel pNorte = new JPanel(new BorderLayout());
         pNorte.add(lbl);
         pNorte.add(txtDescricao);
-  
 
         return pNorte;
     }
 
     private JPanel criarPainelSul() {
-         JButton btnOK = criarBotaoOK();
-         JButton btnCancelar = criarBotaoCancelar();
+        JButton btnOK = criarBotaoOK();
+        JButton btnCancelar = criarBotaoCancelar();
 
         JPanel pCentro = new JPanel(new BorderLayout());
-          pCentro.add(btnOK);
-          pCentro.add(btnCancelar);
+        pCentro.add(btnOK);
+        pCentro.add(btnCancelar);
 
         return pCentro;
     }
 
     private JButton criarBotaoOK() {
-         JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Registar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
-            
-                  String descricao = txtDescricao.getText();
-                  contr.criarStand();
-                  contr.setDadosStand(descricao);
-                  contr.registarStand();                       
-                  dispose();   
+            public void actionPerformed(ActionEvent e) {
+
+                String descricao = txtDescricao.getText();
+                contr.criarStand();
+                contr.setDadosStand(descricao);
+                contr.registarStand();
+                dispose();
             }
         });
 
@@ -99,7 +93,7 @@ public class RegistarStandUI extends JDialog {
     }
 
     private JButton criarBotaoCancelar() {
-         JButton btn = new JButton("Cancelar");
+        JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

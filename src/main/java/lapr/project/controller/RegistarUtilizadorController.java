@@ -14,26 +14,26 @@ import lapr.project.model.Utilizador;
  * @author Diogo
  */
 public class RegistarUtilizadorController {
-    
+
     private CentroExposicoes centroExposicoes;
     private RegistoUtilizadores ru;
     private Utilizador u;
-    
+
     public RegistarUtilizadorController(CentroExposicoes ce) {
         this.centroExposicoes = ce;
     }
-    
-    public void getRegistoUtilizadores(){
+
+    public void getRegistoUtilizadores() {
         ru = centroExposicoes.getRegistoUtilizadoresNConf();
     }
-    
+
     public void criarUtilizador(String nome, String email, String username, String password) {
         getRegistoUtilizadores();
         u = ru.criarUtilizador(nome, email, username, password);
     }
-    
-    public void registaUtilizador(){
+
+    public void registaUtilizador() {
         ru.registaUtilizador(u);
     }
-    
+
 }

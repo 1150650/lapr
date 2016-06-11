@@ -10,14 +10,14 @@ package lapr.project.model;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class Conflito {
-    
-    private FAE fae; 
-    
+
+    private FAE fae;
+
     private Candidatura candidatura;
 
     Conflito(FAE fae, Candidatura candidatura) {
         this.fae = fae;
         this.candidatura = candidatura;
     }
-    
+
 }

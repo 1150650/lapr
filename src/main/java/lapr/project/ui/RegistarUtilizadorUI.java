@@ -10,5 +10,5 @@ package lapr.project.ui;
  * @author Diogo
  */
 public class RegistarUtilizadorUI {
-    
+
 }

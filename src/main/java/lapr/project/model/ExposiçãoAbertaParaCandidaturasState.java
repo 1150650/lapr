@@ -68,5 +68,5 @@ public class ExposiçãoAbertaParaCandidaturasState implements ExposiçãoState 
     public boolean valida() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

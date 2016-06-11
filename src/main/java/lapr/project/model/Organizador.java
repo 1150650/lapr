@@ -16,15 +16,14 @@ public class Organizador {
      */
     private String utilizador;
 
-    private ListaCandidaturas listacandidatura ;
-    
+    private ListaCandidaturas listacandidatura;
+
     private ListaAtribuicoes listaAtribuicoes;
-    
-    
+
     public Organizador() {
-        listacandidatura=new ListaCandidaturas();
-        listaAtribuicoes= new ListaAtribuicoes();
-        this.utilizador=getUtilizador();
+        listacandidatura = new ListaCandidaturas();
+        listaAtribuicoes = new ListaAtribuicoes();
+        this.utilizador = getUtilizador();
     }
 
     /**

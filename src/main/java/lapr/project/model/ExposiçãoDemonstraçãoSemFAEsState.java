@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-class ExposiçãoDemonstraçãoSemFAEsState implements ExposiçãoState{
+class ExposiçãoDemonstraçãoSemFAEsState implements ExposiçãoState {
 
     public ExposiçãoDemonstraçãoSemFAEsState(Exposicao m_e) {
     }

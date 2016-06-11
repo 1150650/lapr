@@ -13,24 +13,17 @@ import org.junit.Test;
  * @author JOAO
  */
 public class DemonstracaoTest {
-    
+
     @Test
-    public void test (){
-         Demonstracao u = new Demonstracao();
-       String descricao ="hall";
-       u.setDados("hall");
-       int codigo=100;
-       u.setCodigo(100);
+    public void test() {
+        Demonstracao u = new Demonstracao();
+        String descricao = "hall";
+        u.setDados("hall");
+        int codigo = 100;
+        u.setCodigo(100);
         Recurso r = null;
-       u.setRecurso(r);
-       
-      assertEquals(descricao,u.getDados());
+        u.setRecurso(r);
+
+        assertEquals(descricao, u.getDados());
     }
-   } 
-        
-        
-
-    
-    
-    
-
+}

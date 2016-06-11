@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class ExposiçãoConflitosAlteradosState implements ExposiçãoState{
+public class ExposiçãoConflitosAlteradosState implements ExposiçãoState {
 
     public ExposiçãoConflitosAlteradosState(Exposicao m_estado) {
     }
@@ -68,5 +68,5 @@ public class ExposiçãoConflitosAlteradosState implements ExposiçãoState{
     public boolean valida() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

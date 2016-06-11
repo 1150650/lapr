@@ -18,20 +18,21 @@ import lapr.project.model.CentroExposicoes;
  * @author Diogo
  */
 public class ImportarExportar {
-    public static void exportar(CentroExposicoes ce, String filename) throws Exception{
-        XMLEncoder encoder =
-           new XMLEncoder(
-              new BufferedOutputStream(
-                new FileOutputStream(filename)));
+
+    public static void exportar(CentroExposicoes ce, String filename) throws Exception {
+        XMLEncoder encoder
+                = new XMLEncoder(
+                        new BufferedOutputStream(
+                                new FileOutputStream(filename)));
         encoder.writeObject(ce);
         encoder.close();
     }
-    
+
     public static CentroExposicoes importar(String filename) throws Exception {
-        XMLDecoder decoder =
-            new XMLDecoder(new BufferedInputStream(
-                new FileInputStream(filename)));
-        CentroExposicoes ce = (CentroExposicoes)decoder.readObject();
+        XMLDecoder decoder
+                = new XMLDecoder(new BufferedInputStream(
+                        new FileInputStream(filename)));
+        CentroExposicoes ce = (CentroExposicoes) decoder.readObject();
         decoder.close();
         return ce;
     }

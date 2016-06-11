@@ -3,7 +3,6 @@ package lapr.project.controller;
 import javax.swing.JOptionPane;
 import lapr.project.model.*;
 
-//REVER
 public class AtribuirCandidaturaController {
 
     private Exposicao exposicaoSelecionada;
@@ -13,6 +12,8 @@ public class AtribuirCandidaturaController {
     private ListaCandidaturas lstCandidaturas;
 
     private ListaAtribuicoes lstAtribuicoes;
+
+    private Mecanismo m;
 
     public AtribuirCandidaturaController(Exposicao expo) {
         setExposicao(expo);
@@ -45,20 +46,8 @@ public class AtribuirCandidaturaController {
         return lstCandidaturas;
     }
 
-    /*
-    public void mecanismoSelecionado(int indice) {
-        lstAtribuicoes = new ListaAtribuicoes();
-        if (indice == 0) {
-            lstAtribuicoes.CargaEquitativaPorFAE(lstCandidaturas, listaFae);
-        }
-        if (indice == 1) {
-            lstAtribuicoes.ExperienciaPorFAE(lstCandidaturas, listaFae);
-        }
-        if (indice == 2) {
-            int nPorfae = Integer.parseInt(JOptionPane.showInputDialog("Numero de Candidaturas por Fae"));
-            lstAtribuicoes.NumeroFAEporCandidatura(lstCandidaturas, listaFae, nPorfae);
-        }
+    public void selecionarMecanismo(int indice) {
+
     }
-     */
-    
+
 }

@@ -78,10 +78,9 @@ public class ListaAvaliacoes {
     public int indiceDe(Avaliacao avaliacao) {
         return listaAvaliacao.indexOf(avaliacao);
     }
-    
-    public void adicionarAvaliacao(Avaliacao avaliacao){
+
+    public void adicionarAvaliacao(Avaliacao avaliacao) {
         listaAvaliacao.add(avaliacao);
     }
-    
 
 }

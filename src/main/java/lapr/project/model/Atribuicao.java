@@ -79,7 +79,7 @@ public class Atribuicao {
     public String toString() {
         return candidatura.toString() + "  ----->  " + FAE.toString();
     }
-    
+
     public void addCandidaturaFae() {
         this.FAE.getListacandidatura().adicionarCandidatura(candidatura);
     }

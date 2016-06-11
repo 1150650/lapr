@@ -10,17 +10,18 @@ package lapr.project.model;
  * @author JOAO
  */
 public class Recurso {
-     private String recurso;
-    
-    public Recurso(String recurso){
+
+    private String recurso;
+
+    public Recurso(String recurso) {
         recurso = recurso;
     }
-    
-    public Recurso(){
+
+    public Recurso() {
         recurso = "";
     }
-    
-    public void setRecurso(String r){
+
+    public void setRecurso(String r) {
         recurso = r;
     }
 }

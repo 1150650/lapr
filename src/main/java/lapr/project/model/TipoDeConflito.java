@@ -10,21 +10,19 @@ package lapr.project.model;
  * @author JOAO
  */
 public class TipoDeConflito {
+
     private String descricao;
 
-   
-    
-    
-    public TipoDeConflito(String descricao){
+    public TipoDeConflito(String descricao) {
         setDescricao(descricao);
-        
+
     }
-     public TipoDeConflito(){
-        
-        
+
+    public TipoDeConflito() {
+
     }
-    
-     public String getDescricao() {
+
+    public String getDescricao() {
         return descricao;
     }
 
@@ -36,7 +34,5 @@ public class TipoDeConflito {
     public String toString() {
         return "TipoDeConflito{" + "descricao=" + descricao + '}';
     }
-    
-    
-    
+
 }

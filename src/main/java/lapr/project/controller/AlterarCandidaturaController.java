@@ -16,20 +16,79 @@ import lapr.project.model.Representante;
  */
 public class AlterarCandidaturaController {
 
+    /**
+     * Lista Candidaturas do Representante
+     */
     private ListaCandidaturas lstCandidaturas;
 
+    /**
+     * Candidatura que irá ser alterada
+     */
     private Candidatura candidatura;
 
-    public AlterarCandidaturaController(Exposicao e, Representante r) {
+    /**
+     * Construtor do controller a receber o representante
+     *
+     * @param r
+     */
+    public AlterarCandidaturaController(Representante r) {
         this.lstCandidaturas = r.getListaCandidaturasSubmetidas();
 
     }
 
+    /**
+     * Seleciona a candidatura escolhida
+     *
+     * @param c
+     */
     public void selecionarCandidatura(Candidatura c) {
         this.candidatura = c;
     }
 
-    public Candidatura getCandidatura() {
-        return lstCandidaturas.obterCandidatura(0);
+    /**
+     * Obtem a informação da candidatura
+     *
+     * @return
+     */
+    public String getCandidaturaInfo() {
+        return candidatura.apresentarDados();
+    }
+
+    /**
+     * Valida os novos dados da candidatura para ver se pode alterar
+     *
+     * @return
+     */
+    public boolean validarNovosDados() {
+        boolean b = lstCandidaturas.validaCandidatura(candidatura);
+        return b;
+    }
+
+    /**
+     * Alterar os dados da candidatura
+     *
+     * @param nomeEmpresa
+     * @param morada
+     * @param telemovel
+     * @param areaPretendida
+     * @param produtos
+     * @param quantidadeConvites
+     */
+    public void alterarDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
+        candidatura.setAreaPretendida(areaPretendida);
+        candidatura.setMorada(morada);
+        candidatura.setNomeEmpresa(nomeEmpresa);
+        candidatura.setProdutos(produtos);
+        candidatura.setQuantidadeConvites(quantidadeConvites);
+        candidatura.setTelemovel(telemovel);
+    }
+
+    /**
+     * Alteração do estado da candidatura para criada
+     *
+     * @return
+     */
+    public boolean setCandidaturaCriada() {
+        return candidatura.getCandidaturaEstado().setCriadaDefinido();
     }
 }

@@ -6,7 +6,7 @@ import javax.swing.UIManager;
 import javax.swing.filechooser.FileFilter;
 
 public class MyJFileChooser extends JFileChooser {
-    
+
     public MyJFileChooser() {
         super();
         definirFiltroExtensaoBin();
@@ -53,21 +53,21 @@ public class MyJFileChooser extends JFileChooser {
         // Bot�o "Importar"
         UIManager.put("FileChooser.openButtonText", "Importar");
         UIManager.put("FileChooser.openButtonToolTipText", "Importar Listas");
-        
+
         // Bot�o "Exportar"
         UIManager.put("FileChooser.saveButtonText", "Exportar");
         UIManager.put("FileChooser.saveButtonToolTipText", "Exportar Listas");
-        
+
         // Bot�o "Cancelar"
         UIManager.put("FileChooser.cancelButtonText", "Cancelar");
         UIManager.put("FileChooser.cancelButtonToolTipText", "Cancelar");
-        
+
         // Legenda "Procurar em:"
         UIManager.put("FileChooser.lookInLabelText", "Procurar em:");
-        
+
         // Legenda "Guardar em:"
         UIManager.put("FileChooser.saveInLabelText", "Guardar em:");
-                
+
         // Legenda "Tipo de ficheiros:"
         UIManager.put("FileChooser.filesOfTypeLabelText", "Ficheiros do tipo:");
 

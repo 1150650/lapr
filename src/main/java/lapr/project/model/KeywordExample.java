@@ -18,118 +18,118 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class KeywordExample implements Exportable, Importable<KeywordExample> {
 
-	private static final String ROOT_ELEMENT_NAME = "keyword";
-	private static final String VALUE_ELEMENT_NAME = "value";
+    private static final String ROOT_ELEMENT_NAME = "keyword";
+    private static final String VALUE_ELEMENT_NAME = "value";
 
-	/**
-	 * Keyword representation.
-	 */
-	private String value = "";
+    /**
+     * Keyword representation.
+     */
+    private String value = "";
 
-	/**
-	 * Default empty constructor.
-	 */
-	public KeywordExample() {
+    /**
+     * Default empty constructor.
+     */
+    public KeywordExample() {
 
-	}
+    }
 
-	/**
-	 * Constructor for KeywordExample Class.
-	 *
-	 * @param keyword Keyword being used.
-	 */
-	public KeywordExample(String keyword) {
-		this.value = keyword;
-	}
+    /**
+     * Constructor for KeywordExample Class.
+     *
+     * @param keyword Keyword being used.
+     */
+    public KeywordExample(String keyword) {
+        this.value = keyword;
+    }
 
-	/**
-	 * Obtain keyword value.
-	 *
-	 * @return Keyword Value
-	 */
-	private String getValue() {
-		return this.value;
-	}
+    /**
+     * Obtain keyword value.
+     *
+     * @return Keyword Value
+     */
+    private String getValue() {
+        return this.value;
+    }
 
-	@Override
-	public Node exportContentToXMLNode() {
-		Node node = null;
+    @Override
+    public Node exportContentToXMLNode() {
+        Node node = null;
 
-		try {
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			//Create document builder
-			DocumentBuilder builder = factory.newDocumentBuilder();
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            //Create document builder
+            DocumentBuilder builder = factory.newDocumentBuilder();
 
-			//Obtain a new document
-			Document document = builder.newDocument();
+            //Obtain a new document
+            Document document = builder.newDocument();
 
-			//Create root element
-			Element elementKeyword = document.createElement(ROOT_ELEMENT_NAME);
+            //Create root element
+            Element elementKeyword = document.createElement(ROOT_ELEMENT_NAME);
 
-			//Create a sub-element
-			Element elementValue = document.createElement(VALUE_ELEMENT_NAME);
+            //Create a sub-element
+            Element elementValue = document.createElement(VALUE_ELEMENT_NAME);
 
-			//Set the sub-element value
-			elementValue.setTextContent(getValue());
+            //Set the sub-element value
+            elementValue.setTextContent(getValue());
 
-			//Add sub-element to root element
-			elementKeyword.appendChild(elementValue);
+            //Add sub-element to root element
+            elementKeyword.appendChild(elementValue);
 
-			//Add root element to document
-			document.appendChild(elementKeyword);
+            //Add root element to document
+            document.appendChild(elementKeyword);
 
-			node = elementKeyword;
+            node = elementKeyword;
 
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-		return node;
-	}
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return node;
+    }
 
-	@Override
-	public KeywordExample importContentFromXMLNode(Node node) {
-		try {
-			DocumentBuilderFactory factory =
-					DocumentBuilderFactory.newInstance();
-			//Create document builder
-			DocumentBuilder builder = factory.newDocumentBuilder();
+    @Override
+    public KeywordExample importContentFromXMLNode(Node node) {
+        try {
+            DocumentBuilderFactory factory
+                    = DocumentBuilderFactory.newInstance();
+            //Create document builder
+            DocumentBuilder builder = factory.newDocumentBuilder();
 
-			//Obtain a new document
-			Document document = builder.newDocument();
+            //Obtain a new document
+            Document document = builder.newDocument();
 
-			document.appendChild(document.importNode(node, true));
+            document.appendChild(document.importNode(node, true));
 
-			NodeList elementsKeyword = document.getElementsByTagName(VALUE_ELEMENT_NAME);
+            NodeList elementsKeyword = document.getElementsByTagName(VALUE_ELEMENT_NAME);
 
-			Node elementKeyword = elementsKeyword.item(0);
+            Node elementKeyword = elementsKeyword.item(0);
 
-			//Get value
-			this.value = elementKeyword.getFirstChild().getNodeValue();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-		return this;
-	}
+            //Get value
+            this.value = elementKeyword.getFirstChild().getNodeValue();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return this;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!(o instanceof KeywordExample)) {
-			return false;
-		}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof KeywordExample)) {
+            return false;
+        }
 
-		KeywordExample that = (KeywordExample) o;
+        KeywordExample that = (KeywordExample) o;
 
-		return getValue().equals(that.getValue());
+        return getValue().equals(that.getValue());
 
-	}
+    }
 
-	@Override
-	public int hashCode() {
-		return getValue().hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return getValue().hashCode();
+    }
 }

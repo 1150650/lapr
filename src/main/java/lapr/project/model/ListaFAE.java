@@ -89,7 +89,6 @@ public class ListaFAE {
 
     public FAE obterFAEId(String identificador) {
         int i;
-        
 
         FAE FAESelecionado = obterFAE(0);
         for (i = 0; i < tamanho(); i++) {
@@ -103,8 +102,8 @@ public class ListaFAE {
 
         return FAESelecionado;
     }
-    
-    public List getListaFAEs(){
+
+    public List getListaFAEs() {
         return listaFAE;
     }
 
@@ -114,10 +113,10 @@ public class ListaFAE {
     }
 
     public void registaFAE(FAE fae) {
-        if(validaMembroFAE(fae)){
+        if (validaMembroFAE(fae)) {
             addMembroFAE(fae);
         }
-        
+
     }
 
     private void addMembroFAE(FAE fae) {

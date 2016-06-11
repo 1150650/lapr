@@ -10,11 +10,10 @@ package lapr.project.utils;
  * @author JOAO
  */
 public class CaeserCypherTest {
-     
-    
-    public void CaeserCypher (){
+
+    public void CaeserCypher() {
         CaeserCypher u = new CaeserCypher("joao");
         String encriptada = " ";
-        
+
     }
 }

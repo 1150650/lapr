@@ -12,36 +12,26 @@ import org.junit.Test;
  * @author JOAO
  */
 public class RegistoTipoDeCandidaturaTest {
-    
+
     @Test
-    public boolean test (){
-        
-      RegistoTipoDeConflito lst = new  RegistoTipoDeConflito();
-        TipoDeConflito e = new TipoDeConflito ("dinheiro");
-        TipoDeConflito a = new TipoDeConflito ("familia");
-      
-      lst.adicionarTipoDeConflito(a);
-      lst.adicionarTipoDeConflito(e);
-      
-      
-      
-      if(lst.tamanho()==2 ){
-          if(lst.obterTipoDeConflito(0).equals(a))
-          return true;
-          
-          
-      }
-      
-        return false ;
-        
-        
-        
+    public boolean test() {
+
+        RegistoTipoDeConflito lst = new RegistoTipoDeConflito();
+        TipoDeConflito e = new TipoDeConflito("dinheiro");
+        TipoDeConflito a = new TipoDeConflito("familia");
+
+        lst.adicionarTipoDeConflito(a);
+        lst.adicionarTipoDeConflito(e);
+
+        if (lst.tamanho() == 2) {
+            if (lst.obterTipoDeConflito(0).equals(a)) {
+                return true;
+            }
+
+        }
+
+        return false;
 
     }
-    
-    
-    
-    
-    
-    
+
 }

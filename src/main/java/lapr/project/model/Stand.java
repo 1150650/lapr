@@ -16,13 +16,12 @@ public class Stand {
     private Candidatura candidatura;
 
     public Stand(String descricao) {
-        
+
         setDescricao(descricao);
     }
-    
+
     public Stand() {
-        
-       
+
     }
 
     public String getDescricao() {
@@ -51,6 +50,6 @@ public class Stand {
     }
 
     void addCandidatura(Candidatura candidatura) {
-        this.candidatura=candidatura;
+        this.candidatura = candidatura;
     }
 }

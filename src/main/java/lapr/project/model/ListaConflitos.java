@@ -13,10 +13,10 @@ import java.util.List;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class ListaConflitos {
-    
+
     private List<Conflito> listaConflito;
-    
-    public ListaConflitos(){
+
+    public ListaConflitos() {
         listaConflito = new ArrayList<Conflito>();
     }
 
@@ -24,5 +24,5 @@ public class ListaConflitos {
         Conflito conflito = new Conflito(fae, candidatura);
         listaConflito.add(conflito);
     }
-    
+
 }

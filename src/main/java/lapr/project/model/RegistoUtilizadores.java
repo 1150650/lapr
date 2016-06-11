@@ -83,8 +83,8 @@ public class RegistoUtilizadores {
     public void removerUtilizador(Utilizador u) {
         registoUtilizadores.remove(u);
     }
-    
-      public List<Utilizador> getRegistoUtilizadores() {
+
+    public List<Utilizador> getRegistoUtilizadores() {
         return registoUtilizadores;
     }
 }

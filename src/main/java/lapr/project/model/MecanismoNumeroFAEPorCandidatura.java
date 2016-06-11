@@ -28,7 +28,8 @@ public class MecanismoNumeroFAEPorCandidatura implements Mecanismo {
     private int nFAEPCand;
 
     /**
-     * Construtor do objeto mecanismo que distribui as candidaturas pelos FAE consoante um numero pedido pelo utilizador
+     * Construtor do objeto mecanismo que distribui as candidaturas pelos FAE
+     * consoante um numero pedido pelo utilizador
      *
      * @param lstc
      * @param lstf
@@ -38,10 +39,11 @@ public class MecanismoNumeroFAEPorCandidatura implements Mecanismo {
         this.lstFAE = lstFAE;
         this.nFAEPCand = nFAEPorCandidatura;
     }
-    
+
     /**
-     * Implementação da interface Mecanismo que devolve uma lista de aribuições 
-     * @return 
+     * Implementação da interface Mecanismo que devolve uma lista de aribuições
+     *
+     * @return
      */
     @Override
     public ListaAtribuicoes atribuirCandidaturasAFAE() {
@@ -55,9 +57,11 @@ public class MecanismoNumeroFAEPorCandidatura implements Mecanismo {
     }
 
     /**
-     * Gera um numero aleatorio comprimido entre a lista de FAEs precisa de atenÇÃO
+     * Gera um numero aleatorio comprimido entre a lista de FAEs precisa de
+     * atenÇÃO
+     *
      * @param lstFAE
-     * @return 
+     * @return
      */
     private int gerarFAE(ListaFAE lstFAE) {
         int posicao = (int) (Math.random() * 100);

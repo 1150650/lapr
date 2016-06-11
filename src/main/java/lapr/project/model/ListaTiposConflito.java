@@ -13,15 +13,15 @@ import java.util.List;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class ListaTiposConflito {
-    
+
     private List<TipoConflito> listaTipoConflito;
-    
-    public ListaTiposConflito(){
+
+    public ListaTiposConflito() {
         listaTipoConflito = new ArrayList<TipoConflito>();
     }
-    
-    public List getTiposConflitosAtivos(){
+
+    public List getTiposConflitosAtivos() {
         return listaTipoConflito;
     }
-    
+
 }

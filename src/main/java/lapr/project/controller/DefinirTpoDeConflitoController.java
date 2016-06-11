@@ -14,31 +14,29 @@ import lapr.project.model.TipoDeConflito;
  * @author JOAO
  */
 public class DefinirTpoDeConflitoController {
-     private CentroExposicoes centroexpo ;
-     private TipoDeConflito tipodeconflito ;
-     private RegistoTipoDeConflito listaTipoDeConflitos ;
-     
-     
-     
-     public DefinirTpoDeConflitoController(CentroExposicoes centroexpo){
-         this.centroexpo=centroexpo;
-     }
-     
-     
-     public void getListaTipoDeConflitos (){
-         this.listaTipoDeConflitos=this.centroexpo.getListaTipoDeConflito();
-     }
-     
-     public void criarTipoDeConflito (){
-         this.tipodeconflito= new TipoDeConflito ();
-         
-     }
-     
-     public void definirTipoDeConflito (String descricao){
-         this.tipodeconflito.setDescricao(descricao);
-     }
-     
-     public void registarTipoDeConflito(){
-         this.centroexpo.getListaTipoDeConflito().adicionarTipoDeConflito(tipodeconflito);
-     }
+
+    private CentroExposicoes centroexpo;
+    private TipoDeConflito tipodeconflito;
+    private RegistoTipoDeConflito listaTipoDeConflitos;
+
+    public DefinirTpoDeConflitoController(CentroExposicoes centroexpo) {
+        this.centroexpo = centroexpo;
+    }
+
+    public void getListaTipoDeConflitos() {
+        this.listaTipoDeConflitos = this.centroexpo.getListaTipoDeConflito();
+    }
+
+    public void criarTipoDeConflito() {
+        this.tipodeconflito = new TipoDeConflito();
+
+    }
+
+    public void definirTipoDeConflito(String descricao) {
+        this.tipodeconflito.setDescricao(descricao);
+    }
+
+    public void registarTipoDeConflito() {
+        this.centroexpo.getListaTipoDeConflito().adicionarTipoDeConflito(tipodeconflito);
+    }
 }

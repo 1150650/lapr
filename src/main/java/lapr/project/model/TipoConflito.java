@@ -10,15 +10,15 @@ package lapr.project.model;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class TipoConflito {
-    
+
     private MecanismoDetecaoConflito mecanismoDetecao;
-    
-    public TipoConflito(){
-        
+
+    public TipoConflito() {
+
     }
-    
-    public MecanismoDetecaoConflito getMecanismoDetecaoConflito(){
+
+    public MecanismoDetecaoConflito getMecanismoDetecaoConflito() {
         return mecanismoDetecao;
     }
-    
+
 }

@@ -12,28 +12,27 @@ import java.util.ArrayList;
  * @author JOAO
  */
 class ListaRecursos {
+
     /**
      * A lista de recursos da exposicao
      */
     private ArrayList<Recurso> listaRecurso;
-    
+
     /**
      * Cria uma instancia de ListaRecursos
      */
-    public ListaRecursos(){
+    public ListaRecursos() {
         listaRecurso = new ArrayList<>();
     }
-    
-    
-    public void criarRecurso(){
+
+    public void criarRecurso() {
         Recurso r = new Recurso();
     }
-    
-    
-    public void addRecurso(Recurso r){
+
+    public void addRecurso(Recurso r) {
         listaRecurso.add(r);
     }
-    
+
     public Recurso obterRecurso(int indice) {
         return listaRecurso.get(indice);
     }

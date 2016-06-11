@@ -57,7 +57,8 @@ public class ConfirmarUtilizadorController {
     }
 
     /**
-     *Retorna a lista de Utilizadores já registados
+     * Retorna a lista de Utilizadores já registados
+     *
      * @return
      */
     public RegistoUtilizadores getRegistoUtilizadores() {

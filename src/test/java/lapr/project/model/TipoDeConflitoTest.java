@@ -12,25 +12,19 @@ import org.junit.Test;
  * @author JOAO
  */
 public class TipoDeConflitoTest {
-    
-    @Test
-   public boolean test (){
-       TipoDeConflito u = new TipoDeConflito ();
-       String descricao ="Familia";
-       u.setDescricao("Familia");
-       
-       if (u.getDescricao().equalsIgnoreCase(descricao)){
-           return true ;
-           
-           
-       }
 
-       
-       return false;
-   } 
-    
-    
-    
-    
-    
+    @Test
+    public boolean test() {
+        TipoDeConflito u = new TipoDeConflito();
+        String descricao = "Familia";
+        u.setDescricao("Familia");
+
+        if (u.getDescricao().equalsIgnoreCase(descricao)) {
+            return true;
+
+        }
+
+        return false;
+    }
+
 }

@@ -15,17 +15,15 @@ import lapr.project.model.TipoConflito;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class DetecaoConflitosController {
-    
+
     private ListaTiposConflito listaTiposConflito;
-    
+
     private List<TipoConflito> listaTiposConflitoAtivos;
-    
+
     private CentroExposicoes centroExposicoes;
-    
-    public DetecaoConflitosController(CentroExposicoes centroExposicoes){
+
+    public DetecaoConflitosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
-    
-    
-    
+
 }

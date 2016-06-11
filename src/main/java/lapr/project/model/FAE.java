@@ -102,9 +102,10 @@ public class FAE implements Comparable<FAE> {
     public ListaCandidaturas getListacandidatura() {
         return listaCandidaturasParaAvaliar;
     }
-    
+
     /**
      * Adiciona uma Candidatura atribuida ao FAE para avaliar
+     *
      * @param c candidatura
      */
     public void adicionarCandidatura(Candidatura c) {

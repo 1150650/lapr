@@ -14,8 +14,8 @@ import static org.junit.Assert.assertEquals;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class RankingStatisticsTest {
-    
-    public void ensureMediaWorks(){
+
+    public void ensureMediaWorks() {
         double expected = 255.75;
         List<Integer> testList = new ArrayList<>();
         testList.add(10);
@@ -26,9 +26,9 @@ public class RankingStatisticsTest {
         double result = media.calcularMedia(testList);
         assertEquals(expected, result);
     }
-    
-    public void ensureDesvioPadraoWorks(){
-        double expected = 2/3;
+
+    public void ensureDesvioPadraoWorks() {
+        double expected = 2 / 3;
         List<Integer> testList = new ArrayList<>();
         testList.add(10);
         testList.add(12);
@@ -42,5 +42,5 @@ public class RankingStatisticsTest {
         double result = desvioPadrao.calcularDesvioPadrao(testList, testDesvio);
         assertEquals(expected, result);
     }
-    
+
 }

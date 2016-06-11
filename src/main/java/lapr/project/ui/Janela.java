@@ -12,5 +12,5 @@ import javax.swing.JFrame;
  * @author JOAO
  */
 class Janela extends JFrame {
-    
+
 }

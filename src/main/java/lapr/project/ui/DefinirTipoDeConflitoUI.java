@@ -20,26 +20,20 @@ import lapr.project.model.CentroExposicoes;
  *
  * @author JOAO
  */
-public class DefinirTipoDeConflitoUI extends JDialog  {
-   
-    
-    
-   private JTextField txtDescricao;
-   private DefinirTpoDeConflitoController contr;
-   private CentroExposicoes centroexpo;
-   private Janela framePai;
+public class DefinirTipoDeConflitoUI extends JDialog {
 
+    private JTextField txtDescricao;
+    private DefinirTpoDeConflitoController contr;
+    private CentroExposicoes centroexpo;
+    private Janela framePai;
 
-    public DefinirTipoDeConflitoUI(Janela framePai,CentroExposicoes ce) {
-        
+    public DefinirTipoDeConflitoUI(Janela framePai, CentroExposicoes ce) {
+
         super(framePai, "Nova Candidatura", true);
-        this.centroexpo=ce;
-        this.contr=new DefinirTpoDeConflitoController(ce);
+        this.centroexpo = ce;
+        this.contr = new DefinirTpoDeConflitoController(ce);
         this.framePai = framePai;
 
-         
-                            
-        
         criarComponentes();
 
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -52,46 +46,45 @@ public class DefinirTipoDeConflitoUI extends JDialog  {
     private void criarComponentes() {
         JPanel p1 = criarPainelCentro();
         JPanel p2 = criarPainelSul();
-        
+
         add(p1, BorderLayout.CENTER);
         add(p2, BorderLayout.SOUTH);
-       
-        
+
     }
-      private JPanel criarPainelCentro() {
-         JLabel lbl = new JLabel("Descricao Do Tipo De Conflito:", JLabel.RIGHT);
-         txtDescricao= new JTextField (40);
-         
+
+    private JPanel criarPainelCentro() {
+        JLabel lbl = new JLabel("Descricao Do Tipo De Conflito:", JLabel.RIGHT);
+        txtDescricao = new JTextField(40);
+
         JPanel pNorte = new JPanel(new BorderLayout());
         pNorte.add(lbl);
         pNorte.add(txtDescricao);
-  
 
         return pNorte;
     }
 
     private JPanel criarPainelSul() {
-         JButton btnOK = criarBotaoOK();
-         JButton btnCancelar = criarBotaoCancelar();
+        JButton btnOK = criarBotaoOK();
+        JButton btnCancelar = criarBotaoCancelar();
 
         JPanel pCentro = new JPanel(new BorderLayout());
-          pCentro.add(btnOK);
-          pCentro.add(btnCancelar);
+        pCentro.add(btnOK);
+        pCentro.add(btnCancelar);
 
         return pCentro;
     }
 
     private JButton criarBotaoOK() {
-         JButton btn = new JButton("Registar Tipo De Conflito");
+        JButton btn = new JButton("Registar Tipo De Conflito");
         btn.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) { 
-            
-                  String descricao = txtDescricao.getText();
-                  contr.criarTipoDeConflito();
-                  contr.definirTipoDeConflito(descricao);
-                  contr.registarTipoDeConflito();
-                  dispose();   
+            public void actionPerformed(ActionEvent e) {
+
+                String descricao = txtDescricao.getText();
+                contr.criarTipoDeConflito();
+                contr.definirTipoDeConflito(descricao);
+                contr.registarTipoDeConflito();
+                dispose();
             }
         });
 
@@ -99,7 +92,7 @@ public class DefinirTipoDeConflitoUI extends JDialog  {
     }
 
     private JButton criarBotaoCancelar() {
-         JButton btn = new JButton("Cancelar");
+        JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
