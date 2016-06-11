@@ -1,14 +1,10 @@
 package lapr.project.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Candidatura {
-
-    /**
-     * Palavras chaves para descrever Candidatura
-     */
-    private ArrayList palavrasChaves;
+    
+    private CandidaturaState state;
 
     /**
      * Lista de Avalialões de uma candidatura
@@ -38,17 +34,16 @@ public class Candidatura {
     /**
      * Produtos que a empresa vai expor
      */
-    private ListaProdutos lstProdutos;
+    private String produtos;
 
     /*+
     Numero de convites necessários
      */
     private int quantidadeConvites;
 
-    /**
-     * Estado Candidatura
-     */
-    private CandidaturaState c_estado;
+    public Candidatura() {
+        this.listaAvaliacao = new ListaAvaliacoes();
+    }
 
     /**
      * Construtor com parametros de um objeto do tipo Candidatura
@@ -68,23 +63,14 @@ public class Candidatura {
      * @param produtos produtos
      * @param quantidadeConvites convites
      */
-    public Candidatura(String nomeEmpresa, String morada, int telemovel, float areaPretendida, Produto produtos, int quantidadeConvites) {
+    public Candidatura(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
         setNomeEmpresa(nomeEmpresa);
         setMorada(morada);
         setTelemovel(telemovel);
         setAreaPretendida(areaPretendida);
+        setProdutos(produtos);
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
-        this.lstProdutos = new ListaProdutos();
-    }
-
-    /**
-     * Retorna o estado da candidatura
-     *
-     * @return
-     */
-    public CandidaturaState getCandidaturaEstado() {
-        return c_estado;
     }
 
     /**
@@ -94,24 +80,6 @@ public class Candidatura {
      */
     public String getNomeEmpresa() {
         return nomeEmpresa;
-    }
-
-    /**
-     * Adiciona até 3 palavras chaves
-     *
-     * @param pc
-     */
-    public void adicionarPalavrasChaves(String pc) {
-        palavrasChaves.add(pc);
-    }
-
-    /**
-     * Adicionar Produtos
-     *
-     * @param produto
-     */
-    public void adicionarProdutos(String produto) {
-        lstProdutos.addProduto(new Produto(produto));
     }
 
     /**
@@ -137,7 +105,7 @@ public class Candidatura {
      *
      * @return are pretendida
      */
-    public float getAreaPretendida() {
+    public float areaPretendida() {
         return areaPretendida;
     }
 
@@ -146,8 +114,8 @@ public class Candidatura {
      *
      * @return produtos
      */
-    public ListaProdutos getListaProdutos() {
-        return lstProdutos;
+    public String getProdutos() {
+        return produtos;
     }
 
     /**
@@ -192,18 +160,25 @@ public class Candidatura {
      *
      * @param telemovel telemovel
      */
-    public void setTelemovel(int telemovel) {
+    public final void setTelemovel(int telemovel) {
         if (telemovel < 100000000 || telemovel > 999999999) {
             throw new IllegalArgumentException("Telemóvel é inválido!");
         }
         this.telemovel = telemovel;
     }
 
-    public void setAreaPretendida(float areaPretendida) {
+    public final void setAreaPretendida(float areaPretendida) {
         if (areaPretendida < 0) {
             throw new IllegalArgumentException("Área pretendida é inválida!");
         }
         this.areaPretendida = areaPretendida;
+    }
+
+    public final void setProdutos(String produtos) {
+        if (produtos == null || produtos.trim().isEmpty()) {
+            throw new IllegalArgumentException("Produtos inválidos!");
+        }
+        this.produtos = produtos;
     }
 
     public final void setQuantidadeConvites(int quantidadeConvites) {
@@ -225,5 +200,13 @@ public class Candidatura {
      */
     public String apresentarDados() {
         return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Area Pretendida:" + areaPretendida + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
+    }
+
+    public boolean setCandidaturaStandAtribuido() {
+        return state.setStandsAtribuidos();
+    }
+    
+    public CandidaturaState getState(){
+        return state;
     }
 }
