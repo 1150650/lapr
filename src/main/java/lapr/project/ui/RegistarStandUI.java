@@ -26,9 +26,9 @@ public class RegistarStandUI extends JDialog {
     private JTextField txtDescricao;
     private RegistarStandController contr;
     private CentroExposicoes centroexpo;
-    private Janela framePai;
+    private JanelaPrincipal framePai;
 
-    public RegistarStandUI(Janela framePai, CentroExposicoes ce) {
+    public RegistarStandUI(JanelaPrincipal framePai, CentroExposicoes ce) {
 
         super(framePai, "Nova Candidatura", true);
         this.centroexpo = ce;

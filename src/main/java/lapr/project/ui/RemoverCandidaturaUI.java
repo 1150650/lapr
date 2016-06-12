@@ -26,12 +26,12 @@ public class RemoverCandidaturaUI extends JDialog {
 
     private RemoverCandidaturaController contr;
     private CentroExposicoes centroexpo;
-    private Janela framePai;
+    private JanelaPrincipal framePai;
     private Icon icon;
     private Exposicao expo;
     private Candidatura candi;
 
-    public RemoverCandidaturaUI(Janela framePai, CentroExposicoes ce, Exposicao expo) {
+    public RemoverCandidaturaUI(JanelaPrincipal framePai, CentroExposicoes ce, Exposicao expo) {
 
         super(framePai, "Nova Candidatura", true);
         this.centroexpo = ce;

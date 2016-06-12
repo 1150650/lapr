@@ -25,9 +25,9 @@ public class DefinirTipoDeConflitoUI extends JDialog {
     private JTextField txtDescricao;
     private DefinirTpoDeConflitoController contr;
     private CentroExposicoes centroexpo;
-    private Janela framePai;
+    private JanelaPrincipal framePai;
 
-    public DefinirTipoDeConflitoUI(Janela framePai, CentroExposicoes ce) {
+    public DefinirTipoDeConflitoUI(JanelaPrincipal framePai, CentroExposicoes ce) {
 
         super(framePai, "Nova Candidatura", true);
         this.centroexpo = ce;

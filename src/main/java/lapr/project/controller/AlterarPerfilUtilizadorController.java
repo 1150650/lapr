@@ -11,23 +11,20 @@ import lapr.project.model.Utilizador;
 
 /**
  *
- * @author Diogo ATENNNNNNNNNNNNNNNNNNNNNNNNNÇAOOOOOOOOOOOOOOOOOOOOO ( corrigir
- * Receber utilziador e metodo get Utilizador)
+ * @author Diogo
  */
 public class AlterarPerfilUtilizadorController {
 
     private CentroExposicoes centroExposicoes;
     private RegistoUtilizadores ru;
-    private Utilizador utilizadorSelecionado;
+    private Utilizador utilizadorAtivo;
 
     public AlterarPerfilUtilizadorController(CentroExposicoes ce) {
         this.centroExposicoes = ce;
     }
 
     public String getUtilizadorInfo(String username) {
-        ru = centroExposicoes.getRegistoUtilizadoresConf();
-        utilizadorSelecionado = ru.getUtilizadorInfo(username);
-        return utilizadorSelecionado.toString();
+        this.utilizadorAtivo=utilizadorAtivo.
     }
 
 }
