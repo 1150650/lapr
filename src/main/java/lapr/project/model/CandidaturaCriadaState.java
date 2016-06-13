@@ -9,7 +9,13 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaCriadaState implements CandidaturaState{
+public class CandidaturaCriadaState implements CandidaturaState {
+
+    private Candidatura candidatura;
+
+    public CandidaturaCriadaState(Candidatura candidatura) {
+        this.candidatura = candidatura;
+    }
 
     @Override
     public boolean setCriadaDefinido() {
@@ -38,7 +44,11 @@ public class CandidaturaCriadaState implements CandidaturaState{
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (candidatura.getState() == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -50,5 +60,15 @@ public class CandidaturaCriadaState implements CandidaturaState{
     public boolean setAceite() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public boolean setCandidaturaCriada() {
+        boolean verify = false;
+        if (valida()) {
+            candidatura.setEstado(this);
+            verify = true;
+        }
+        return verify;
+    }
+
 }

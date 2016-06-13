@@ -22,7 +22,7 @@ public class CandidaturaDemonstracao extends Candidatura{
         return demonstracao;
     }
 
-    private void setDemonstracao(Demonstracao demonstracao) {
+    public void setDemonstracao(Demonstracao demonstracao) {
         if (demonstracao == null) {
             throw new IllegalArgumentException("Área pretendida é inválida!");
         }

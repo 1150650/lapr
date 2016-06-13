@@ -27,6 +27,8 @@ public class CentroExposicoes {
     private ListaRecursos listarecursos;
     
     private RegistoMecanismos registoMecanismos;
+    
+    private ListaDemonstracoes registoDemonstracoes;
 
     /**
      * Contrutor do centro de exposicoes
@@ -105,6 +107,10 @@ public class CentroExposicoes {
 
     public RegistoMecanismos getRegistoMecanismos() {
         return registoMecanismos;
+    }
+
+    public ListaDemonstracoes getListaDemonstracoes() {
+        return registoDemonstracoes;
     }
 
 

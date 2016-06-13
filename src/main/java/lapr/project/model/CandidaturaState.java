@@ -26,4 +26,6 @@ public interface CandidaturaState {
     boolean setAceite();
     
     boolean valida();
+
+    public boolean setCandidaturaCriada();
 }

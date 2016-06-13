@@ -186,4 +186,14 @@ public class Candidatura {
     public CandidaturaState getState() {
         return state;
     }
+
+    public boolean setCandidaturaCriada() {
+        boolean verifyState = false;
+        verifyState = state.setCandidaturaCriada();
+        return verifyState;
+    }
+
+    void setEstado(CandidaturaState state) {
+        this.state = state;
+    }
 }

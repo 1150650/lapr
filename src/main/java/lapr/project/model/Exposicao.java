@@ -136,4 +136,8 @@ public class Exposicao {
     public ExposiçãoState getExposicaoEstado() {
         return m_state;
     }
+
+    public void setCandidaturasAtribuidas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
