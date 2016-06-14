@@ -87,4 +87,5 @@ public class RegistoUtilizadores {
     public List<Utilizador> getRegistoUtilizadores() {
         return registoUtilizadores;
     }
+    
 }
