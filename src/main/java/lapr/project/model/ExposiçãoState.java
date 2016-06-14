@@ -9,30 +9,54 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public interface ExposiçãoState {
+public class ExposiçãoState {
 
-    boolean setCriadoDefinido();
+    public boolean setCriadoDefinido(){
+        return false;
+    }
 
-    boolean setFAEDefinido();
+    public boolean setFAEDefinido(){
+        return false;
+    }
 
-    boolean setDemonstraçãoDefinido();
+    public boolean setDemonstraçãoDefinido(){
+        return false;
+    }
 
-    boolean setCompleta();
+    public boolean setCompleta(){
+        return false;
+    }
 
-    boolean setCandidaturasAbertas();
+    public boolean setCandidaturasAbertas(){
+        return false;
+    }
 
-    boolean setCandidaturasFechadas();
+    public boolean setCandidaturasFechadas(){
+        return false;
+    }
 
-    boolean setCandidaturasAvaliadas();
+    public boolean setCandidaturasAvaliadas(){
+        return false;
+    }
 
-    boolean setConflitosDetetados();
+    public boolean setConflitosDetetados(){
+        return false;
+    }
 
-    boolean setConflitosAlterados();
+    public boolean setConflitosAlterados(){
+        return false;
+    }
 
-    boolean setConflitosAtribuidas();
+    public boolean setConflitosAtribuidas(){
+        return false;
+    }
 
-    boolean valida();
+    public boolean valida(){
+        return false;
+    }
 
-    public boolean setCandidaturasAtribuidas();
+    public boolean setCandidaturasAtribuidas(){
+        return false;
+    }
 
 }

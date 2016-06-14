@@ -9,7 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class ExposiçãoComConflitosDetetadosState implements ExposiçãoState {
+public class ExposiçãoComConflitosDetetadosState extends ExposiçãoState {
 
     public ExposiçãoComConflitosDetetadosState(Exposicao m_e) {
     }
