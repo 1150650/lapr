@@ -14,7 +14,7 @@ public class CandidaturaExposicao extends Candidatura {
     /**
      * float com a area pretendida para apresentar o produto
      */
-    float areaPretendida;
+    private float areaPretendida;
 
     public CandidaturaExposicao(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
         super(nomeEmpresa, morada, telemovel, produtos, quantidadeConvites);
@@ -27,7 +27,7 @@ public class CandidaturaExposicao extends Candidatura {
      * @return are pretendida
      */
     public float areaPretendida() {
-        return areaPretendida;
+        return getAreaPretendida();
     }
 
     public final void setAreaPretendida(float areaPretendida) {
@@ -38,7 +38,14 @@ public class CandidaturaExposicao extends Candidatura {
     }
 
     public String toString() {
-        return super.toString() + String.format("%n Area Pretendida: %d", areaPretendida);
+        return super.toString() + String.format("%n Area Pretendida: %d", getAreaPretendida());
+    }
+
+    /**
+     * @return the areaPretendida
+     */
+    public float getAreaPretendida() {
+        return areaPretendida;
     }
 
 }

@@ -106,4 +106,8 @@ public class ListaCandidaturas {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public CandidaturaExposicao[] listaCandExposicaoToArray() {
+        return (CandidaturaExposicao[]) listaCandidaturas.toArray();
+    }
+
 }
