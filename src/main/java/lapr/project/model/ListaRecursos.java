@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author JOAO
  */
-class ListaRecursos {
+public class ListaRecursos {
 
     /**
      * A lista de recursos da exposicao
@@ -25,8 +25,9 @@ class ListaRecursos {
         listaRecurso = new ArrayList<>();
     }
 
-    public void criarRecurso() {
+    public Recurso criarRecurso() {
         Recurso r = new Recurso();
+        return r;
     }
 
     public void addRecurso(Recurso r) {
