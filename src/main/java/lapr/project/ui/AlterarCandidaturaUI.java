@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import lapr.project.controller.AlterarCandidaturaController;
 import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
@@ -41,8 +42,13 @@ public class AlterarCandidaturaUI extends JFrame {
     private Representante r;
 
     private MenuPrincipal framePai;
-    
-    private 
+
+    private JTextField nomeEmpresaTF;
+    private JTextField moradaTF;
+    private JTextField telemovelTF;
+    private JTextField areaExposicaoTF;
+    private JTextField produtosTF;
+    private JTextField nConvitesTF;
 
     public AlterarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Representante r) {
         super("Alterar Candidatura");
@@ -103,10 +109,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelNomeEmpresa() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Nome Empresa ");
-        JTextField jf = new JTextField(crtl.getCandidaturaSelecionada().getNomeEmpresa());
-        jf.setEditable(false);
+        nomeEmpresaTF = new JTextField(crtl.getCandidaturaSelecionada().getNomeEmpresa());
+        nomeEmpresaTF.setEditable(false);
 
-        jp.add(jf);
+        jp.add(nomeEmpresaTF);
         jp.add(l);
         return jp;
     }
@@ -114,10 +120,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelMorada() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Morada ");
-        JTextField jf = new JTextField(crtl.getCandidaturaSelecionada().getMorada());
-        jf.setEditable(true);
+        moradaTF = new JTextField(crtl.getCandidaturaSelecionada().getMorada());
+        moradaTF.setEditable(true);
 
-        jp.add(jf);
+        jp.add(moradaTF);
         jp.add(l);
         return jp;
     }
@@ -125,10 +131,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelTelemovel() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Telemovel ");
-        JTextField jf = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getTelemovel()));
-        jf.setEditable(true);
+        telemovelTF = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getTelemovel()));
+        telemovelTF.setEditable(true);
 
-        jp.add(jf);
+        jp.add(telemovelTF);
         jp.add(l);
         return jp;
     }
@@ -136,10 +142,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelAreaExposicao() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Área da Exposição ");
-        JTextField jf = new JTextField(Float.toString(crtl.getCandidaturaSelecionada().getAreaPretendida()));
-        jf.setEditable(true);
+        areaExposicaoTF = new JTextField(Float.toString(crtl.getCandidaturaSelecionada().getAreaPretendida()));
+        areaExposicaoTF.setEditable(true);
 
-        jp.add(jf);
+        jp.add(areaExposicaoTF);
         jp.add(l);
         return jp;
     }
@@ -147,10 +153,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelProdutosExposicao() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Produtos Exposicao ");
-        JTextField jf = new JTextField(crtl.getCandidaturaSelecionada().getProdutos());
-        jf.setEditable(true);
+        produtosTF = new JTextField(crtl.getCandidaturaSelecionada().getProdutos());
+        produtosTF.setEditable(true);
 
-        jp.add(jf);
+        jp.add(produtosTF);
         jp.add(l);
         return jp;
     }
@@ -158,10 +164,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JPanel criarPainelNrConvites() {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Número Convites ");
-        JTextField jf = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getQuantidadeConvites()));
-        jf.setEditable(true);
+        nConvitesTF = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getQuantidadeConvites()));
+        nConvitesTF.setEditable(true);
 
-        jp.add(jf);
+        jp.add(nConvitesTF);
         jp.add(l);
         return jp;
     }
@@ -191,10 +197,27 @@ public class AlterarCandidaturaUI extends JFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-            }
-        });
+                try {
+                    String NomeEmpresa = nomeEmpresaTF.getText();
+                    String Morada = moradaTF.getText();
+                    int Telemovel = Integer.parseInt(telemovelTF.getText());
+                    String Produtos = produtosTF.getText();
+                    float AreaExposicao = Float.parseFloat(areaExposicaoTF.getText());
+                    int QuantidadeConvites = Integer.parseInt(nConvitesTF.getText());
+                    crtl.novaCandidatura(NomeEmpresa, Morada, Telemovel, AreaExposicao, Produtos, QuantidadeConvites);
+                    if (crtl.validarNovosDadosGlobal()) {
+                        crtl.alterarDadosCandidatura();
+                    }
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(
+                            this.Janela,
+                            ex.getMessage(),
+                            "ERRO!",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+                );
 
-        return btn;
-    }
-}
+                return btn;
+            }
+
+        }

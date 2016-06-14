@@ -34,6 +34,11 @@ public class AlterarCandidaturaController {
     private CandidaturaExposicao candidatura;
 
     /**
+     * Nova Candidatura
+     */
+    private CandidaturaExposicao novaCandidatura;
+
+    /**
      * Construtor do controller a receber o representante
      *
      * @param r
@@ -66,9 +71,8 @@ public class AlterarCandidaturaController {
      *
      * @return
      */
-    public boolean validarNovosDados() {
-        boolean b = lstCandidaturas.validaCandidatura(candidatura);
-        return b;
+    public boolean validarNovosDadosGlobal() {
+        return lstCandidaturas.validaCandidatura(novaCandidatura);
     }
 
     /**
@@ -81,13 +85,8 @@ public class AlterarCandidaturaController {
      * @param produtos
      * @param quantidadeConvites
      */
-    public void alterarDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
-        candidatura.setAreaPretendida(areaPretendida);
-        candidatura.setMorada(morada);
-        candidatura.setNomeEmpresa(nomeEmpresa);
-        candidatura.setProdutos(produtos);
-        candidatura.setQuantidadeConvites(quantidadeConvites);
-        candidatura.setTelemovel(telemovel);
+    public void novaCandidatura(String nomeEmpresa, String morada, int telemovel, float areaExposicao, String produtos, int nConvites) {
+        CandidaturaExposicao c = new CandidaturaExposicao(nomeEmpresa, morada, telemovel, areaExposicao, produtos, nConvites);
     }
 
     /**
@@ -101,5 +100,9 @@ public class AlterarCandidaturaController {
 
     public CandidaturaExposicao getCandidaturaSelecionada() {
         return candidatura;
+    }
+
+    public void alterarDadosCandidatura() {
+        this.candidatura = novaCandidatura;
     }
 }
