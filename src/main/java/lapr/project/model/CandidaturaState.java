@@ -9,23 +9,41 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public interface CandidaturaState {
+public class CandidaturaState {
 
-    boolean setCriadaDefinido();
+    public boolean setCriadaDefinido(){
+        return false;
+    }
 
-    boolean setAlterada();
+    public boolean setAlterada(){
+        return false;
+    }
 
-    boolean setAtribuida();
+    public boolean setAtribuida(){
+        return false;
+    }
 
-    boolean setAvaliada();
+    public boolean setAvaliada(){
+        return false;
+    }
 
-    boolean setConflitoEncontrado();
+    public boolean setConflitoEncontrado(){
+        return false;
+    }
     
-    boolean setStandsAtribuidos();
+    public boolean setStandsAtribuidos(){
+        return false;
+    }
     
-    boolean setAceite();
+    public boolean setAceite(){
+        return false;
+    }
     
-    boolean valida();
+    public boolean valida(){
+        return false;
+    }
 
-    public boolean setCandidaturaCriada();
+    public boolean setCandidaturaCriada(){
+        return false;
+    }
 }

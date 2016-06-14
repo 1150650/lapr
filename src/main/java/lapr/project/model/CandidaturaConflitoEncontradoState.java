@@ -9,27 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaConflitoEncontradoState implements CandidaturaState{
-
-    @Override
-    public boolean setCriadaDefinido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setAlterada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setAtribuida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setAvaliada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public class CandidaturaConflitoEncontradoState extends CandidaturaState {
 
     @Override
     public boolean setConflitoEncontrado() {
@@ -41,19 +21,4 @@ public class CandidaturaConflitoEncontradoState implements CandidaturaState{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public boolean setStandsAtribuidos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setAceite() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setCandidaturaCriada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
