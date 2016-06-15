@@ -47,4 +47,8 @@ public class RegistoExposicoes {
         return listaExposicoes.indexOf(e);
     }
 
+    public Exposicao novaExposicao() {
+       return new Exposicao ();
+    }
+
 }

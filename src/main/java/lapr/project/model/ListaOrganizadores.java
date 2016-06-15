@@ -20,18 +20,18 @@ public class ListaOrganizadores {
         listaOrganizadores = new ArrayList<Organizador>();
     }
 
-    public Organizador obterFAE(int indice) {
+    public Organizador obterOrganizador(int indice) {
         return listaOrganizadores.get(indice);
     }
 
-    public boolean adicionarFAE(Organizador organizador) {
+    public boolean adicionarOrganizador(Organizador organizador) {
         if (!listaOrganizadores.contains(organizador)) {
             return listaOrganizadores.add(organizador);
         }
         return false;
     }
 
-    public boolean removerFAE(Organizador organizador) {
+    public boolean removerOrganizador(Organizador organizador) {
         return listaOrganizadores.remove(organizador);
     }
 

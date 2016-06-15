@@ -14,7 +14,7 @@ public class Organizador {
     /**
      * String com o nome de utilizador
      */
-    private String utilizador;
+    private Utilizador utilizador;
 
     private ListaCandidaturas listacandidatura;
 
@@ -23,13 +23,13 @@ public class Organizador {
     public Organizador() {
         listacandidatura = new ListaCandidaturas();
         listaAtribuicoes = new ListaAtribuicoes();
-        this.utilizador = getUtilizador();
+       
     }
 
     /**
      * @return the utilizador
      */
-    public String getUtilizador() {
+    public Utilizador getUtilizador() {
         return utilizador;
     }
 
@@ -38,8 +38,8 @@ public class Organizador {
      *
      * @param utilizador Stirng utilizador
      */
-    public void setUtilizador(String utilizador) {
-        if (utilizador == null || utilizador.trim().isEmpty()) {
+    public void setUtilizador(Utilizador utilizador) {
+        if (utilizador == null || utilizador.getNome().trim().isEmpty()) {
             throw new IllegalArgumentException("Nome Utilizador inválido");
         }
         this.utilizador = utilizador;
