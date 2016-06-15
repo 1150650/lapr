@@ -127,8 +127,8 @@ class JanelaPrincipal extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
-
+                new RegistarUtilizadorUI(JanelaPrincipal.this, centroExpo);
+                
                 
             }
         });

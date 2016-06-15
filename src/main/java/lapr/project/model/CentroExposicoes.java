@@ -20,7 +20,7 @@ public class CentroExposicoes {
 
     private RegistoTipoDeConflito listaTipoDeConflito;
 
-    private RegistoUtilizadores registoUtilizadorNConf;
+    private RegistoUtilizadores registoUtilizadoresNConf;
 
     private RegistoUtilizadores registoUtilizadoresConf;
 
@@ -41,6 +41,7 @@ public class CentroExposicoes {
         this.listaTipoDeConflito = new RegistoTipoDeConflito();
         this.listarecursos = new ListaRecursos();
         this.registoUtilizadoresConf=new RegistoUtilizadores();
+        this.registoUtilizadoresNConf=new RegistoUtilizadores();
     }
 
     /**
@@ -105,7 +106,7 @@ public class CentroExposicoes {
      * @return
      */
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
-        return registoUtilizadorNConf;
+        return registoUtilizadoresNConf;
     }
 
     public RegistoMecanismos getRegistoMecanismos() {
