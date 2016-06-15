@@ -13,13 +13,14 @@ public class Login {
     
     private Utilizador utilizadorAtivo;
     private CentroExposicoes ce;
+    private RegistoUtilizadores ru;
     
-    public Login(){
-        
+    public Login(CentroExposicoes centroExpo){
+        this.ce = centroExpo;
+        this.ru = ce.getRegistoUtilizadoresConf();
     }
     
     public void authenticate(String username, String password) {
-        RegistoUtilizadores ru = ce.getRegistoUtilizadoresConf();
         int tamanho = ru.tamanho();
         for (int i = 0; i < tamanho; i++) {
             if (ru.obterUtilizador(i).getUsername().equalsIgnoreCase(username)){

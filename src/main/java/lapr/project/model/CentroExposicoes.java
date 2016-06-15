@@ -40,6 +40,7 @@ public class CentroExposicoes {
         this.listaStands = new ListaStands();
         this.listaTipoDeConflito = new RegistoTipoDeConflito();
         this.listarecursos = new ListaRecursos();
+        this.registoUtilizadoresConf=new RegistoUtilizadores();
     }
 
     /**

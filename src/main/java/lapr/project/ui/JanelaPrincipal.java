@@ -35,14 +35,14 @@ class JanelaPrincipal extends JFrame {
 
     private JButton btnLogin, btnRegistar;
     private JanelaPrincipal framePai;
-    private CentroExposicoes centroexpo;
+    private CentroExposicoes centroExpo;
     private static final ImageIcon ICONE
             = new ImageIcon("centroExpo.jpg");
 
     public JanelaPrincipal(CentroExposicoes centroexposicao) throws IOException {
 
         super("Centro De Exposições");
-        this.centroexpo = centroexposicao;
+        this.centroExpo = centroexposicao;
 
         criarComponentes();
 
@@ -113,7 +113,7 @@ class JanelaPrincipal extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new DialogoLogin(JanelaPrincipal.this);
+                new DialogoLogin(JanelaPrincipal.this, centroExpo);
 
                 
             }

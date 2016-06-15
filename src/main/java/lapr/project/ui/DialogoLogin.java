@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Login;
 
 /**
@@ -25,10 +26,10 @@ public class DialogoLogin extends JDialog {
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
 
-    public DialogoLogin(JanelaPrincipal framePai) {
+    public DialogoLogin(JanelaPrincipal framePai, CentroExposicoes centroExpo) {
         super(framePai, "Login", true);
         this.framePai = framePai;
-        autenticarLogin = new Login();
+        autenticarLogin = new Login(centroExpo);
         criarComponentes();
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         pack();
