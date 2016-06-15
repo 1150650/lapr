@@ -42,13 +42,13 @@ public class CaeserCypher {
 
     public String desencriptar() {
         passwordDesencriptada = "";
-        int len = passwordEncriptada.length();
+        int len = password.length();
         for (int x = 0; x < len; x++) {
             char c = (char) (password.charAt(x) - nivel);
             if (c > 'z') {
-                passwordDesencriptada += (char) (passwordEncriptada.charAt(x) - (26 + nivel));
+                passwordDesencriptada += (char) (password.charAt(x) - (26 + nivel));
             } else {
-                passwordDesencriptada += (char) (passwordEncriptada.charAt(x) - nivel);
+                passwordDesencriptada += (char) (password.charAt(x) - nivel);
             }
         }
         return passwordDesencriptada;

@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import lapr.project.controller.RegistarUtilizadorController;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.utils.CaeserCypher;
 
 /**
  *
@@ -205,7 +206,23 @@ public class RegistarUtilizadorUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    if(!txtPassword.getText().equals(txtPassword1.getText())){
+                    if (txtPassword.getText().equals(txtPassword1.getText())) {
+                        try {
+                            String nome = txtNome.getText();
+                            String email = txtEmail.getText();
+                            String username = txtUsername.getText();
+                            String password = txtPassword.getText();                       
+                            cntr.criarUtilizador(nome, email, username, password);
+                            cntr.registaUtilizador();
+
+                        } catch (IllegalArgumentException ex) {
+                            JOptionPane.showMessageDialog(
+                                    framePai,
+                                    ex.getMessage(),
+                                    "ERRO!",
+                                    JOptionPane.WARNING_MESSAGE);
+                        }
+                    } else {
                         throw new IllegalArgumentException();
                     }
                 } catch (IllegalArgumentException ex) {
@@ -215,22 +232,6 @@ public class RegistarUtilizadorUI extends JFrame {
                             "ERRO!",
                             JOptionPane.WARNING_MESSAGE);
                 }
-                try {
-                    String nome = txtNome.getText();
-                    String email = txtEmail.getText();
-                    String username = txtUsername.getText();
-                    String Password = txtPassword.getText();
-                    cntr.criarUtilizador(nome, email, username, Password);
-                    cntr.registaUtilizador();
-                    
-                }catch (IllegalArgumentException ex) {
-                    JOptionPane.showMessageDialog(
-                            framePai,
-                            ex.getMessage(),
-                            "ERRO!",
-                            JOptionPane.WARNING_MESSAGE);
-                }
-                
 
             }
         });
