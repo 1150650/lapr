@@ -30,11 +30,25 @@ public class ListaRecursos {
         return r;
     }
 
-    public void addRecurso(Recurso r) {
+    public boolean addRecurso(Recurso r) {
         listaRecurso.add(r);
+        return true;
     }
 
     public Recurso obterRecurso(int indice) {
         return listaRecurso.get(indice);
+    }
+
+    public int tamanho() {
+         return this.listaRecurso.size();
+    }
+
+    public int indiceDe(Recurso r) {
+        return listaRecurso.indexOf(r);
+    }
+
+    public boolean removerRecurso(Recurso r) {
+        listaRecurso.remove(r);
+        return true;
     }
 }

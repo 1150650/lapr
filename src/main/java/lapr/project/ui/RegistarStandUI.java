@@ -30,7 +30,7 @@ public class RegistarStandUI extends JDialog {
 
     public RegistarStandUI(JanelaPrincipal framePai, CentroExposicoes ce) {
 
-        super(framePai, "Nova Candidatura", true);
+        super(framePai, "Registar Stand", true);
         this.centroexpo = ce;
         this.contr = new RegistarStandController(ce);
         this.framePai = framePai;
@@ -76,7 +76,7 @@ public class RegistarStandUI extends JDialog {
     }
 
     private JButton criarBotaoOK() {
-        JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Registar Stand");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

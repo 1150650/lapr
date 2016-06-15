@@ -40,7 +40,7 @@ public class RegistarExposicaoUI extends JDialog {
     
    public RegistarExposicaoUI (JanelaPrincipal framePai, CentroExposicoes ce){
        
-        super(framePai, "Nova Candidatura", true);
+        super(framePai, "Registar Exposição", true);
         this.centroexpo = ce;
         this.contr = new RegistarExposicaoController(ce);
         this.framePai = framePai;
@@ -141,12 +141,12 @@ public class RegistarExposicaoUI extends JDialog {
                                               NUMERO_COLUNAS, 
                                               INTERVALO_HORIZONTAL,
                                               INTERVALO_VERTICAL));
-       lstUtilizadores  = new ModeloListaUtilizadores (centroexpo.getRegistoUtilizadoresConf());
+       lstUtilizadores  = new ModeloListaUtilizadores (contr.getListaUtilizadores());
          JList lstCompleta = new JList( lstUtilizadores);
         
         btnAdicionarOrganizador = criarBotaoAdiconarOrganizador(lstCompleta);
         
-        p.add(criarPainelLista( "Lista de Jogadores Completa:",
+        p.add(criarPainelLista( "Lista de Utilizadores:",
                                 lstCompleta,
                                  lstUtilizadores,
                                 btnAdicionarOrganizador));

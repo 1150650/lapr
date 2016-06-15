@@ -31,18 +31,18 @@ class ModeloListaUtilizadores extends AbstractListModel {
     }
     
     public boolean addElement(Utilizador utilizador){
-        boolean jogadorAdicionado = listautilizadores.registaUtilizador(utilizador);
-        if(jogadorAdicionado)
+        boolean utilizadorAdicionado = listautilizadores.registaUtilizador(utilizador);
+        if(utilizadorAdicionado)
             fireIntervalAdded(this, getSize()-1, getSize()-1);
-        return jogadorAdicionado;
+        return utilizadorAdicionado;
     } 
 
     public boolean removeElement(Utilizador utilizador){
         int indice = listautilizadores.indiceDe(utilizador);
-        boolean jogadorRemovido = listautilizadores.removerUtilizador(utilizador);
-        if(jogadorRemovido)
+        boolean utilizadorRemovido = listautilizadores.removerUtilizador(utilizador);
+        if(utilizadorRemovido)
             fireIntervalRemoved(this, indice, indice);
-        return jogadorRemovido;
+        return utilizadorRemovido;
     }
 
     

@@ -33,7 +33,7 @@ public class RemoverCandidaturaUI extends JDialog {
 
     public RemoverCandidaturaUI(JanelaPrincipal framePai, CentroExposicoes ce, Exposicao expo) {
 
-        super(framePai, "Nova Candidatura", true);
+        super(framePai, "Remover Candidatura Candidatura", true);
         this.centroexpo = ce;
         this.contr = new RemoverCandidaturaController(ce);
         this.framePai = framePai;
@@ -77,7 +77,7 @@ public class RemoverCandidaturaUI extends JDialog {
     }
 
     private JButton criarBotaoRemover() {
-        JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Remover Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,7 +97,7 @@ public class RemoverCandidaturaUI extends JDialog {
     }
 
     private JButton criarBotaoSelecionarExposicao() {
-        JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Selecionar Exposicao");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -132,7 +132,7 @@ public class RemoverCandidaturaUI extends JDialog {
     }
 
     private JButton criarBotaoSelecionarCandidatura() {
-        JButton btn = new JButton("Registar Candidatura");
+        JButton btn = new JButton("Selecionar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
