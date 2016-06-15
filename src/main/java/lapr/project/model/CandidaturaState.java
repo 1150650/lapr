@@ -11,39 +11,39 @@ package lapr.project.model;
  */
 public class CandidaturaState {
 
-    public boolean setCriadaDefinido(){
+    public boolean setCriadaDefinido() {
         return false;
     }
 
-    public boolean setAlterada(){
+    public boolean setAlterada() {
         return false;
     }
 
-    public boolean setAtribuida(){
+    public boolean setAtribuida() {
         return false;
     }
 
-    public boolean setAvaliada(){
+    public boolean setAvaliada() {
         return false;
     }
 
-    public boolean setConflitoEncontrado(){
-        return false;
-    }
-    
-    public boolean setStandsAtribuidos(){
-        return false;
-    }
-    
-    public boolean setAceite(){
-        return false;
-    }
-    
-    public boolean valida(){
+    public boolean setConflitoEncontrado() {
         return false;
     }
 
-    public boolean setCandidaturaCriada(){
+    public boolean setStandsAtribuidos() {
+        return false;
+    }
+
+    public boolean setAceite() {
+        return false;
+    }
+
+    public boolean valida() {
+        return false;
+    }
+
+    public boolean setCandidaturaCriada() {
         return false;
     }
 }

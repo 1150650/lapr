@@ -21,6 +21,10 @@ public class CandidaturaExposicao extends Candidatura {
         setAreaPretendida(areaPretendida);
     }
 
+    public CandidaturaExposicao() {
+
+    }
+
     /**
      * Retorna a area pretendida
      *

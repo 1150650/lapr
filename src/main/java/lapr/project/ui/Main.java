@@ -1,8 +1,9 @@
 package lapr.project.ui;
 
 import java.io.IOException;
-import lapr.project.model.CalculatorExample;
+import javax.swing.JFrame;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.ui.AlterarCandidaturaUI;
 
 /**
  * @author Nuno Bettencourt <nmb@isep.ipp.pt> on 24/05/16.
@@ -22,8 +23,8 @@ class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        CalculatorExample calculatorExample = new CalculatorExample();
-        System.out.println(calculatorExample.sum(3, 5));
+        //CalculatorExample calculatorExample = new CalculatorExample();
+        //System.out.println(calculatorExample.sum(3, 5));
         CentroExposicoes ce = new CentroExposicoes();
         new JanelaPrincipal(ce);
     }

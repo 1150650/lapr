@@ -89,15 +89,6 @@ public class AlterarCandidaturaController {
         CandidaturaExposicao c = new CandidaturaExposicao(nomeEmpresa, morada, telemovel, areaExposicao, produtos, nConvites);
     }
 
-    /**
-     * Alteração do estado da candidatura para criada
-     *
-     * @return
-     */
-    public boolean setCandidaturaCriada() {
-        return candidatura.getCandidaturaEstado().setCriadaDefinido();
-    }
-
     public CandidaturaExposicao getCandidaturaSelecionada() {
         return candidatura;
     }

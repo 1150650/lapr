@@ -3,6 +3,7 @@ package lapr.project.controller;
 import java.util.List;
 import javax.swing.JList;
 import lapr.project.model.Candidatura;
+import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
@@ -18,7 +19,7 @@ public class CriarCandidaturaController {
 
     private Exposicao exposicaoSelecionada;
 
-    private Candidatura c;
+    private CandidaturaExposicao c;
 
     private Representante r;
 
@@ -44,13 +45,13 @@ public class CriarCandidaturaController {
         c = listaCandidaturas.novaCandidatura();
     }
 
-    public void setDados(Candidatura candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites, Utilizador representante) {
+    public void setDados(CandidaturaExposicao candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
         this.c = candidatura;
         this.c.setNomeEmpresa(nomeEmpresa);
         this.c.setMorada(morada);
         this.c.setTelemovel(telemovel);
         this.c.setAreaPretendida(areaPretendida);
-        this.c.(produtos);
+        this.c.setProdutos(produtos);
         this.c.setQuantidadeConvites(nConvites);
 
     }

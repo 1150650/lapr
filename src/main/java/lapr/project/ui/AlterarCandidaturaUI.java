@@ -212,9 +212,10 @@ public class AlterarCandidaturaUI extends JFrame {
                     JOptionPane.showMessageDialog(
                             this.Janela,
                             ex.getMessage(),
-                            "ERRO!",
+                            "ERRO",
                             JOptionPane.WARNING_MESSAGE);
                 }
+                crtl.getCandidaturaSelecionada().getState().setAlterada();
                 );
 
                 return btn;

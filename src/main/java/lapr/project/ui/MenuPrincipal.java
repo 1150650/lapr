@@ -13,4 +13,7 @@ import javax.swing.JFrame;
  */
 class MenuPrincipal extends JFrame {
 
+    public MenuPrincipal() {
+        
+    }
 }

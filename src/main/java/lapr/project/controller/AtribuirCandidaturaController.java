@@ -5,9 +5,13 @@ import lapr.project.model.*;
 
 public class AtribuirCandidaturaController {
 
-    private Exposicao exposicaoSelecionada;
+    private Exposicao expo;
 
     private ListaFAE listaFae;
+
+    private RegistoExposicoes lstExpo;
+
+    private CentroExposicoes ce;
 
     private ListaCandidaturas lstCandidaturas;
 
@@ -15,27 +19,25 @@ public class AtribuirCandidaturaController {
 
     private Mecanismo m;
 
-    public AtribuirCandidaturaController(Exposicao expo) {
-        setExposicao(expo);
-        setListaFAE(exposicaoSelecionada.getListaFAE());
-        setListaCandidaturas(exposicaoSelecionada.getListaCandidaturas());
-
+    public AtribuirCandidaturaController(CentroExposicoes ce) {
+        this.ce = ce;
+        this.lstExpo = ce.getListaExposicoes();
     }
 
-    private void setExposicao(Exposicao expo) {
-        this.exposicaoSelecionada = expo;
+    public void selecionarExposicao(Exposicao expo) {
+        this.expo = expo;
     }
 
-    private void setListaFAE(ListaFAE listaFAE) {
-        this.listaFae = listaFAE;
+    public void getListaFAE() {
+        this.listaFae = expo.getListaFAE();
     }
 
-    private void setListaCandidaturas(ListaCandidaturas listaCandidatura) {
-        this.lstCandidaturas = listaCandidatura;
+    public void getListaCandidatura() {
+        this.expo.getListaCandidaturas();
     }
 
     public Exposicao getExposicaoSelecionada() {
-        return exposicaoSelecionada;
+        return expo;
     }
 
     public ListaFAE getListaFAESelecionada() {
@@ -47,7 +49,22 @@ public class AtribuirCandidaturaController {
     }
 
     public void selecionarMecanismo(int indice) {
-
+        if(indice==0){
+            m=new MecanismoCargaEquitativaPorFAE(lstCandidaturas, listaFae);
+        }
+        else if(indice==1){
+            m=new MecanismoExperienciaPorFAE(lstCandidaturas, listaFae);
+        }
+        else if(indice==2){
+            m=new MecanismoNumeroFAEPorCandidatura(lstCandidaturas, listaFae);
+        }
     }
+
+    public boolean registaAtribuições() {
+        expo.setAtribuicoes(lstAtribuicoes);
+        return expo.getExposicaoEstado().setCandidaturasAtribuidas();
+    }
+    
+    
 
 }
