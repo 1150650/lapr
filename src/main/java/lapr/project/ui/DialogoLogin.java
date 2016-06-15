@@ -1,16 +1,12 @@
 package lapr.project.ui;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import lapr.project.model.Login;
 
 /**
@@ -32,16 +28,13 @@ public class DialogoLogin extends JDialog {
     public DialogoLogin(JanelaPrincipal framePai) {
         super(framePai, "Login", true);
         this.framePai = framePai;
+        autenticarLogin = new Login();
         criarComponentes();
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         pack();
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
-
-    public String getUsername() {
-        return txtUsername.getText().trim();
     }
 
     private void criarComponentes() {

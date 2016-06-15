@@ -113,7 +113,7 @@ class JanelaPrincipal extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new DialogoLogin(framePai);
+                new DialogoLogin(JanelaPrincipal.this);
 
                 
             }

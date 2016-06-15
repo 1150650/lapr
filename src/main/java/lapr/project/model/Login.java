@@ -14,7 +14,11 @@ public class Login {
     private Utilizador utilizadorAtivo;
     private CentroExposicoes ce;
     
-    public boolean authenticate(String username, String password) {
+    public Login(){
+        
+    }
+    
+    public void authenticate(String username, String password) {
         RegistoUtilizadores ru = ce.getRegistoUtilizadoresConf();
         int tamanho = ru.tamanho();
         for (int i = 0; i < tamanho; i++) {
@@ -25,9 +29,7 @@ public class Login {
                 throw new IllegalArgumentException("Utilizador não registado/confirmado!");
             }
         }
-        if(utilizadorAtivo.getPassword().equalsIgnoreCase(password)){
-            return true;
-        } else{
+        if(!utilizadorAtivo.getPassword().equalsIgnoreCase(password)){
             throw new IllegalArgumentException("Password incorreta!");
         }
         
