@@ -188,9 +188,7 @@ public class Candidatura {
     }
 
     public boolean setCandidaturaCriada() {
-        boolean verifyState = false;
-        verifyState = state.setCandidaturaCriada();
-        return verifyState;
+        return state.setCandidaturaCriada();
     }
 
     void setEstado(CandidaturaState state) {

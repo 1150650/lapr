@@ -109,5 +109,25 @@ public class ListaCandidaturas {
     public CandidaturaExposicao[] listaCandExposicaoToArray() {
         return (CandidaturaExposicao[]) listaCandidaturas.toArray();
     }
+    
+    public List getListaCandidaturasExpo(){
+        List<Candidatura> listaCandExpo = new ArrayList<>();
+        for(Candidatura c : listaCandidaturas){
+            if(c instanceof CandidaturaExposicao){
+                listaCandExpo.add(c);
+            }
+        }
+        return listaCandExpo;
+    }
+    
+        public List getListaCandidaturasDemo(){
+        List<Candidatura> listaCandDemo = new ArrayList<>();
+        for(Candidatura c : listaCandidaturas){
+            if(c instanceof CandidaturaDemonstracao){
+                listaCandDemo.add(c);
+            }
+        }
+        return listaCandDemo;
+    }
 
 }
