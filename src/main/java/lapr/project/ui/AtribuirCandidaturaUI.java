@@ -66,16 +66,17 @@ public class AtribuirCandidaturaUI extends JFrame {
         JPanel descrição = criarPainelDescrição();
         JPanel listaAtribuiçoes = criarPainelListaAtribuicoes();
 
-        add(mecanismos);
-        add(descrição);
-        add(listaAtribuiçoes);
+        add(criarPainelMecanismo());
+        add(criarPainelDescrição());
+        add(criarPainelListaAtribuicoes());
+        add(criarPainelBotoes());
     }
 
     public void selecionarExposicao() {
         Exposicao[] aux = ce.getArrayExposicao();
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
-                framePai,
+                this.framePai,
                 "Selecionar Exposição"
                 + ":",
                 "Seleção De Exposição",
@@ -95,7 +96,7 @@ public class AtribuirCandidaturaUI extends JFrame {
         cbMec = new JComboBox(mecanismo);
         cbMec.setEditable(false);
         cbMec.setMaximumRowCount(4);
-
+        crtAtribuir.selecionarMecanismo(cbMec.getSelectedIndex());
         p.add(label, new FlowLayout(FlowLayout.LEFT));
         p.add(cbMec, new FlowLayout(FlowLayout.CENTER));
         return p;
@@ -121,39 +122,40 @@ public class AtribuirCandidaturaUI extends JFrame {
     private JPanel criarPainelBotoes() {
         JPanel j = new JPanel();
         JButton j1 = criarBotaoCancelar();
-        JButton j2 = criarBotaoConfirmar();
-        j.add(j1);
-        j.add(j2);
+        JButton j2 = criarBotaoOk();
+        j.add(j1, new FlowLayout(FlowLayout.CENTER));
+        j.add(j2, new FlowLayout(FlowLayout.CENTER));
         return j;
     }
 
     private JButton criarBotaoCancelar() {
-        JButton btn = new JButton("Cancelar");
-        btn.addActionListener(new ActionListener() {
+        btnCancelar = new JButton("Cancelar");
+        btnCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btn;
+        return btnCancelar;
     }
 
-    private JButton criarBotaoConfirmar() {
-        JButton btn = new JButton("Alterar");
-        btn.addActionListener(new ActionListener() {
+    private JButton criarBotaoOk() {
+        btnOk = new JButton("Confirmar Atribuições");
+        btnOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
-                } catch (IllegalArgumentException ex) {
+                    crtAtribuir.registaAtribuições();
+                    dispose();
+                } catch (Exception ex) {
                     JOptionPane.showMessageDialog(
-                            this.Janela,
+                            framePai,
                             ex.getMessage(),
-                            "ERRO",
+                            "ERRO!",
                             JOptionPane.WARNING_MESSAGE);
                 }
-                );
-
-                return btn;
             }
-        }
+        });
+        return btnOk;
+    }
+}

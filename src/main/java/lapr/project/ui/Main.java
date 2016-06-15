@@ -23,8 +23,8 @@ class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        //CalculatorExample calculatorExample = new CalculatorExample();
-        //System.out.println(calculatorExample.sum(3, 5));
+        CalculatorExample calculatorExample = new CalculatorExample();
+        System.out.println(calculatorExample.sum(3, 5));
         CentroExposicoes ce = new CentroExposicoes();
         new JanelaPrincipal(ce);
     }

@@ -1,6 +1,8 @@
 package lapr.project.controller;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import jdk.nashorn.internal.scripts.JD;
 import lapr.project.model.*;
 
 public class AtribuirCandidaturaController {
@@ -49,20 +51,23 @@ public class AtribuirCandidaturaController {
     }
 
     public void selecionarMecanismo(int indice) {
-        if(indice==0){
-            m=new MecanismoCargaEquitativaPorFAE(lstCandidaturas, listaFae);
-        }
-        else if(indice==1){
-            m=new MecanismoExperienciaPorFAE(lstCandidaturas, listaFae);
-        }
-        else if(indice==2){
-            m=new MecanismoNumeroFAEPorCandidatura(lstCandidaturas, listaFae);
+        if (indice == 1) {
+            m = new MecanismoCargaEquitativaPorFAE(lstCandidaturas, listaFae);
+        } else if (indice == 2) {
+            m = new MecanismoExperienciaPorFAE(lstCandidaturas, listaFae);
+        } else if (indice == 3) {
+            int nPorfae = Integer.parseInt(JOptionPane.showInputDialog("Numero de Candidaturas por Fae"));
+            m = new MecanismoNumeroFAEPorCandidatura(lstCandidaturas, listaFae, nPorfae);
         }
     }
 
-    public boolean registaAtribuições() {
+    public void registaAtribuições() {
         expo.setAtribuicoes(getLstAtribuicoes());
-        return expo.getExposicaoEstado().setCandidaturasAtribuidas();
+        for (int j = 0; j < lstAtribuicoes.tamanho(); j++) {
+            lstAtribuicoes.obterAtribuiçao(j).getFAE().adicionarCandidatura(lstAtribuicoes.obterAtribuiçao(j).getCandidatura());
+            lstAtribuicoes.obterAtribuiçao(j).getCandidatura().getState().setAtribuida();
+        }
+        expo.getExposicaoEstado().setCandidaturasAtribuidas();
     }
 
     /**
@@ -71,7 +76,5 @@ public class AtribuirCandidaturaController {
     public ListaAtribuicoes getLstAtribuicoes() {
         return lstAtribuicoes;
     }
-    
-    
 
 }
