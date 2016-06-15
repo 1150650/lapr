@@ -77,7 +77,7 @@ public class RegistarUtilizadorUI extends JFrame {
     }
 
     private JPanel criarPainelTitulo() {
-        JLabel lblMenuPrincipal = new JLabel("Centro de Exposições", JLabel.LEFT);
+        JLabel lblMenuPrincipal = new JLabel("Novo Utilizador", JLabel.LEFT);
         lblMenuPrincipal.setFont(new Font("Helvetica", Font.BOLD, 30));
         lblMenuPrincipal.setForeground(Color.BLACK);
 

@@ -48,6 +48,10 @@ public class DialogoLogin extends JDialog {
         add(p3, BorderLayout.SOUTH);
 
     }
+    
+    public String getUsername(){
+        return txtUsername.getText();
+    }
 
     private JPanel criarPainelUsername() {
         JLabel lbl = new JLabel("Username: ", JLabel.RIGHT);
