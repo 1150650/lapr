@@ -61,8 +61,15 @@ public class AtribuirCandidaturaController {
     }
 
     public boolean registaAtribuições() {
-        expo.setAtribuicoes(lstAtribuicoes);
+        expo.setAtribuicoes(getLstAtribuicoes());
         return expo.getExposicaoEstado().setCandidaturasAtribuidas();
+    }
+
+    /**
+     * @return the lstAtribuicoes
+     */
+    public ListaAtribuicoes getLstAtribuicoes() {
+        return lstAtribuicoes;
     }
     
     

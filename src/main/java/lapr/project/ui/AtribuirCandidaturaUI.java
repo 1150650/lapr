@@ -6,6 +6,8 @@
 package lapr.project.ui;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javafx.scene.control.ComboBox;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -13,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -20,14 +23,13 @@ import lapr.project.controller.AtribuirCandidaturaController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaAtribuicoes;
+import lapr.project.model.ModeloListaAtribuicoes;
 
 /**
  *
  * @author SimãoPedro
  */
 public class AtribuirCandidaturaUI extends JFrame {
-
-    private int opcao;
 
     private Icon icon;
 
@@ -37,11 +39,9 @@ public class AtribuirCandidaturaUI extends JFrame {
 
     private MenuPrincipal framePai;
 
+    private ModeloListaAtribuicoes modeloListaAtribuicao;
+
     private JButton btnOk, btnCancelar;
-
-    private ListaAtribuicoes lstAtribuicoes;
-
-    private Exposicao exposicaoSelecionada;
 
     private JComboBox cbMec;
 
@@ -65,7 +65,7 @@ public class AtribuirCandidaturaUI extends JFrame {
         JPanel mecanismos = criarPainelMecanismo();
         JPanel descrição = criarPainelDescrição();
         JPanel listaAtribuiçoes = criarPainelListaAtribuicoes();
-        
+
         add(mecanismos);
         add(descrição);
         add(listaAtribuiçoes);
@@ -102,15 +102,58 @@ public class AtribuirCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelDescrição() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JPanel d = new JPanel();
+        JLabel jl = new JLabel(crtAtribuir.getExposicaoSelecionada().getTitulo());
+
+        d.add(jl, new FlowLayout(FlowLayout.CENTER));
+        return d;
+
     }
 
     private JPanel criarPainelListaAtribuicoes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JPanel l = new JPanel();
+        JList list = new JList(new ModeloListaAtribuicoes(crtAtribuir.getLstAtribuicoes()));
+
+        l.add(list, new FlowLayout(FlowLayout.CENTER));
+        return l;
     }
 
-
-    public void 
-            
+    private JPanel criarPainelBotoes() {
+        JPanel j = new JPanel();
+        JButton j1 = criarBotaoCancelar();
+        JButton j2 = criarBotaoConfirmar();
+        j.add(j1);
+        j.add(j2);
+        return j;
     }
-}
+
+    private JButton criarBotaoCancelar() {
+        JButton btn = new JButton("Cancelar");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        return btn;
+    }
+
+    private JButton criarBotaoConfirmar() {
+        JButton btn = new JButton("Alterar");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(
+                            this.Janela,
+                            ex.getMessage(),
+                            "ERRO",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+                );
+
+                return btn;
+            }
+        }

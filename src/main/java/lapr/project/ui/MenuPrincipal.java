@@ -5,6 +5,7 @@
  */
 package lapr.project.ui;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
