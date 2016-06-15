@@ -29,7 +29,7 @@ public class DefinirTipoDeConflitoUI extends JDialog {
 
     public DefinirTipoDeConflitoUI(JanelaPrincipal framePai, CentroExposicoes ce) {
 
-        super(framePai, "Nova Candidatura", true);
+        super(framePai, "Definir Tipo de Conflito", true);
         this.centroexpo = ce;
         this.contr = new DefinirTpoDeConflitoController(ce);
         this.framePai = framePai;
