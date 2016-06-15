@@ -34,11 +34,13 @@ public class RegistoUtilizadores {
         return this.registoUtilizadores.size();
     }
 
-    public void registaUtilizador(Utilizador u) {
+    public boolean registaUtilizador(Utilizador u) {
         boolean valida = validaUtilizador(u);
         if (valida == true) {
             addUtilizador(u);
+            return true;
         }
+        return false;
     }
 
     private boolean validaUtilizador(Utilizador u) {
@@ -80,12 +82,16 @@ public class RegistoUtilizadores {
         registoUtilizadores.add(u);
     }
 
-    public void removerUtilizador(Utilizador u) {
+    public boolean removerUtilizador(Utilizador u) {
         registoUtilizadores.remove(u);
+        return true;
     }
 
     public List<Utilizador> getRegistoUtilizadores() {
         return registoUtilizadores;
+    }
+     public int indiceDe(Utilizador u) {
+        return registoUtilizadores.indexOf(u);
     }
     
 }
