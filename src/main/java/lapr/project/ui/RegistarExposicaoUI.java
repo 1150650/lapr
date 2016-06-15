@@ -141,7 +141,7 @@ public class RegistarExposicaoUI extends JDialog {
                                               NUMERO_COLUNAS, 
                                               INTERVALO_HORIZONTAL,
                                               INTERVALO_VERTICAL));
-       lstUtilizadores  = new ModeloListaUtilizadores (centroexpo.getRegistoUtilizadoresConf());
+       lstUtilizadores  = new ModeloListaUtilizadores (contr.getListaUtilizadores());
          JList lstCompleta = new JList( lstUtilizadores);
         
         btnAdicionarOrganizador = criarBotaoAdiconarOrganizador(lstCompleta);
