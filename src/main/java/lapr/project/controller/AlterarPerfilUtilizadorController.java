@@ -25,6 +25,7 @@ public class AlterarPerfilUtilizadorController {
 
     public String getUtilizadorInfo(String username) {
         this.utilizadorAtivo=utilizadorAtivo;
+        return "";
     }
 
 }
