@@ -94,7 +94,7 @@ public class ListaFAE {
         FAE FAESelecionado = obterFAE(0);
         for (i = 0; i < tamanho(); i++) {
             FAESelecionado = obterFAE(i);
-            if (identificador.equalsIgnoreCase(FAESelecionado.getUtilizador())) {
+            if (identificador.equalsIgnoreCase(FAESelecionado.getUtilizador().getEmail())) {
                 i = tamanho();
 
             }

@@ -5,11 +5,15 @@
  */
 package lapr.project.model;
 
+import lapr.project.utils.Exportable;
+import lapr.project.utils.Importable;
+import org.w3c.dom.Node;
+
 /**
  *
  * @author JOAO
  */
-public class Demonstracao {
+public class Demonstracao implements Exportable, Importable<Demonstracao> {
 
     /**
      * o codigo da demonstracao
@@ -110,6 +114,16 @@ public class Demonstracao {
     }
 
     public boolean setDemonstracaoAberta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Node exportContentToXMLNode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Demonstracao importContentFromXMLNode(Node node) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
