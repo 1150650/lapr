@@ -9,7 +9,10 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Icon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -86,6 +89,7 @@ public class AvaliarCandidaturaUI extends JFrame {
         add(criarPainelInformaçãoCandidatura());
         add(criarPainelDecisão());
         add(criarPainelConhecimentosFAE());
+        add(criarPainelBotoes());
 
     }
 
@@ -164,8 +168,44 @@ public class AvaliarCandidaturaUI extends JFrame {
         return cb;
     }
 
-    private JPanel criarBototes() {
+    private JPanel criarPainelBotoes() {
+        JPanel j = new JPanel();
+        JButton j1 = criarBotaoCancelar();
+        JButton j2 = criarBotaoConfirmar();
+        j.add(j1);
+        j.add(j2);
+        return j;
+    }
 
+    private JButton criarBotaoCancelar() {
+        JButton btn = new JButton("Cancelar");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        return btn;
+    }
+
+    private JButton criarBotaoConfirmar() {
+        JButton btn = new JButton("Alterar");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(
+                            framePai,
+                            ex.getMessage(),
+                            "ERRO!",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        }
+        );
+        return btn;
     }
 
 }
