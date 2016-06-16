@@ -88,6 +88,7 @@ public class AlterarCandidaturaUI extends JFrame {
 
     private void criarComponentes() {
         selecionarCandidatura();
+        JLabel l = new JLabel("Alterar Candidatura");
         JPanel nomeEmpresa = criarPainelNomeEmpresa();
         JPanel morada = criarPainelMorada();
         JPanel telemovel = criarPainelTelemovel();
@@ -96,6 +97,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JPanel NrConvites = criarPainelNrConvites();
         JPanel botoes = criarPainelBotoes();
 
+        add(l);
         add(nomeEmpresa);
         add(morada);
         add(telemovel);
