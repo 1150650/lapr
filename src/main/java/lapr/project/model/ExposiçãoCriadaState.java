@@ -11,39 +11,39 @@ package lapr.project.model;
  */
 public class ExposiçãoCriadaState extends ExposiçãoState {
 
-    Exposicao m_e;
-
-    public ExposiçãoCriadaState(Evento e) {
-        m_e = e;
-    }
-
-    public boolean SetCriadoDefinido() {
-        return false;
-    }
-
-    public boolean SetDemonstraçãoDefinido() {
-        if (valida1()) {
-            m_e.setEstado(new ExposiçãoDemonstraçãoSemFAEsState(m_e));
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean SetFAEDefinido() {
-        if (valida2()) {
-            m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private boolean valida1() {
-    }
-
-    private boolean valida2() {
-
-    }
+//    Exposicao m_e;
+//
+//    public ExposiçãoCriadaState(Evento e) {
+//        m_e = e;
+//    }
+//
+//    public boolean SetCriadoDefinido() {
+//        return false;
+//    }
+//
+//    public boolean SetDemonstraçãoDefinido() {
+//        if (valida1()) {
+//            m_e.setEstado(new ExposiçãoDemonstraçãoSemFAEsState(m_e));
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//
+//    public boolean SetFAEDefinido() {
+//        if (valida2()) {
+//            m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//
+//    private boolean valida1() {
+//    }
+//
+//    private boolean valida2() {
+//
+//    }
 
 }

@@ -210,15 +210,16 @@ public class AlterarCandidaturaUI extends JFrame {
                     }
                 } catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(
-                            this.Janela,
+                            AlterarCandidaturaUI.this.framePai,
                             ex.getMessage(),
                             "ERRO",
                             JOptionPane.WARNING_MESSAGE);
                 }
                 crtl.getCandidaturaSelecionada().getState().setAlterada();
-                );
-
-                return btn;
             }
-
         }
+        );
+
+        return btn;
+    }
+}

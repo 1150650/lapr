@@ -38,8 +38,8 @@ class MenuPrincipal extends JFrame {
         this.ce = centroexposicao;
         this.utilizadorAtivo = u;
         GridLayout gl = new GridLayout(6, 1);
-        gl.setHgap(20);
-        gl.setVgap(20);
+        gl.setHgap(2);
+        gl.setVgap(2);
 
         setLayout(gl);
 
@@ -50,23 +50,26 @@ class MenuPrincipal extends JFrame {
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
         setVisible(true);
-        setResizable(false);
+      //  setResizable(false);
     }
 
     private void criarComponentes() {
-        add(criarPainelTitulo(), BorderLayout.NORTH);
-        add(criarPainelUtilizador(), BorderLayout.CENTER);
-        add(criarPainelBotoes(), BorderLayout.SOUTH);
+        add(criarPainelTitulo());
+        add(criarPainelUtilizador());
+     //   add(criarPainelBotoes1());
+     //   add(criarPainelBotoes2());
+     //   add(criarPainelBotoes3());
+     //   add(criarPainelBotoes4());       
 
     }
 
     private JPanel criarPainelTitulo() {
         JLabel lblMenuPrincipal = new JLabel("Menu Principal", JLabel.CENTER);
-        lblMenuPrincipal.setFont(new Font("Helvetica", Font.BOLD, 30));
+        lblMenuPrincipal.setFont(new Font("Helvetica", Font.BOLD, 40));
         lblMenuPrincipal.setForeground(Color.BLACK);
 
         JPanel p = new JPanel();
-        final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 20;
+        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA, MARGEM_INFERIOR, MARGEM_DIREITA));
 
@@ -79,17 +82,22 @@ class MenuPrincipal extends JFrame {
         cbTipo = new JComboBox(TipoUtilizador.values());
         cbTipo.setEditable(false);
         cbTipo.setMaximumRowCount(3);
-        String utilizador = new String("User: " + utilizadorAtivo.getNome() + " no papel de " + cbTipo);
+        String utilizador = "User: " + utilizadorAtivo.getNome() + " no papel de ";
         JLabel lblUtilizador = new JLabel(utilizador, JLabel.CENTER);
 
         JPanel p = new JPanel();
-        final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 20;
+        final int MARGEM_SUPERIOR = 0, MARGEM_INFERIOR = 20;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA, MARGEM_INFERIOR, MARGEM_DIREITA));
 
         p.add(lblUtilizador, JLabel.CENTER);
-        
+        p.add(cbTipo);
         return p;
     }
+    
+  //  private JPanel criarPainelBotoes1(){
+        
+        
+   // }
 
 }

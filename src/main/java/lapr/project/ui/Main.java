@@ -2,7 +2,9 @@ package lapr.project.ui;
 
 import java.io.IOException;
 import javax.swing.JFrame;
+import lapr.project.model.CalculatorExample;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Utilizador;
 import lapr.project.ui.AlterarCandidaturaUI;
 
 /**
@@ -10,12 +12,6 @@ import lapr.project.ui.AlterarCandidaturaUI;
  */
 class Main {
 
-    /**
-     * Private constructor to hide implicit public one.
-     */
-    private Main() {
-
-    }
 
     /**
      * @param args the command line arguments
@@ -25,8 +21,10 @@ class Main {
 
         CalculatorExample calculatorExample = new CalculatorExample();
         System.out.println(calculatorExample.sum(3, 5));
+        Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         CentroExposicoes ce = new CentroExposicoes();
-        new JanelaPrincipal(ce);
+        new MenuPrincipal(ce, u);
+      //  new JanelaPrincipal(ce);
     }
 
 }

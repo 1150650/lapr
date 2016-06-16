@@ -42,7 +42,7 @@ public class CriarCandidaturaController {
     }
 
     public void novaCandidatura() {
-        c = listaCandidaturas.novaCandidatura();
+//        c = listaCandidaturas.novaCandidatura();
     }
 
     public void setDados(CandidaturaExposicao candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {

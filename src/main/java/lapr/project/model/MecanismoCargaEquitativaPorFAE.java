@@ -5,8 +5,6 @@
  */
 package lapr.project.model;
 
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
-
 /**
  *
  * @author SimãoPedro
