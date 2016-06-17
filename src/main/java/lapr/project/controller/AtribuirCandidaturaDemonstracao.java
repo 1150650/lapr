@@ -80,8 +80,8 @@ public class AtribuirCandidaturaDemonstracao {
         
     }
     
-    public boolean registaAtribuicao(){
-       return exposicao.setAtribuicoes(listaAtribuicao);
+    public void registaAtribuicao(){
+        exposicao.setAtribuicoes(listaAtribuicao);
     }
     
     public void setCandidaturasAtribuidas(){

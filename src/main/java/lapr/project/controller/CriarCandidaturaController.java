@@ -23,9 +23,8 @@ public class CriarCandidaturaController {
 
     private Representante r;
 
-    public CriarCandidaturaController(CentroExposicoes ce, Representante r) {
+    public CriarCandidaturaController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
-        this.r = r;
 
     }
 
@@ -35,6 +34,7 @@ public class CriarCandidaturaController {
 
     public void selecionaExposicao(Exposicao e) {
         exposicaoSelecionada = e;
+        this.r = verificarRepresentante();
     }
 
     public void getListaCandidaturas() {
@@ -42,7 +42,7 @@ public class CriarCandidaturaController {
     }
 
     public void novaCandidatura() {
-//        c = listaCandidaturas.novaCandidatura();
+        listaCandidaturas.novaCandidatura();
     }
 
     public void setDados(CandidaturaExposicao candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
@@ -63,6 +63,17 @@ public class CriarCandidaturaController {
 
     public void criarListaCandidaturas() {
         listaCandidaturas = new ListaCandidaturas();
+    }
+
+    private Representante verificarRepresentante() {
+        return exposicaoSelecionada.getLstRep().obterRepresentantePorU(u);
+    }
+
+    /**
+     * @return the r
+     */
+    public Representante getRepresentante() {
+        return r;
     }
 
 }

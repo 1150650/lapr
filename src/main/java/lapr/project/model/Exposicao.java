@@ -15,6 +15,7 @@ public class Exposicao {
     private ExposiçãoState m_state;
     private ListaOrganizadores listaOrganizadores;
     private ListaConflitos listaConflitos;
+    private RegistoRepresentantes lstRep;
 
     public Exposicao() {
         listaCandidaturas = new ListaCandidaturas();
@@ -151,6 +152,17 @@ public class Exposicao {
 
     public void setEstado(ExposiçãoState m_state2) {
         this.m_state = m_state2;
+    }
+
+    /**
+     * @return the lstRep
+     */
+    public RegistoRepresentantes getLstRep() {
+        return lstRep;
+    }
+
+    public void adicionarRepresentante(Representante r) {
+        lstRep.addRepresentante(r);
     }
 
 }

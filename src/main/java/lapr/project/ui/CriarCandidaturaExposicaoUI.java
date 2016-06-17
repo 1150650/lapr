@@ -19,6 +19,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Representante;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -27,6 +28,9 @@ import lapr.project.model.Representante;
 public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private CriarCandidaturaController crtlCriarCandidatura;
+
+    final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 0;
+    final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
 
     private Icon icon;
 
@@ -48,10 +52,10 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private JTextField nConvitesTF;
 
-    public CriarCandidaturaExposicaoUI(MenuPrincipal framePai, CentroExposicoes ce, Representante r) {
+    public CriarCandidaturaExposicaoUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
         this.ce = ce;
         this.framePai = framePai;
-        this.crtlCriarCandidatura = new CriarCandidaturaController(ce, r);
+        this.crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
         selecionarCandidatura();
 
         criarComponentes();
@@ -105,8 +109,6 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         nomeEmpresaTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
@@ -119,17 +121,15 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         JLabel lbl = new JLabel("Morada:", JLabel.RIGHT);
 
         moradaTF = new JTextArea();
-        txtMorada.setColumns(25);
-        txtMorada.setLineWrap(true);
-        txtMorada.setRows(3);
-        txtMorada.setWrapStyleWord(true);
-        txtMorada.setEditable(true);
+        moradaTF.setColumns(25);
+        moradaTF.setLineWrap(true);
+        moradaTF.setRows(3);
+        moradaTF.setWrapStyleWord(true);
+        moradaTF.setEditable(true);
 
-        JScrollPane jsp1 = new JScrollPane(txtMorada);
+        JScrollPane jsp1 = new JScrollPane(moradaTF);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
@@ -140,72 +140,60 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private JPanel criarPainelTelemovel() {
         JLabel lbl = new JLabel("Telemóvel:", JLabel.RIGHT);
-        lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtTelemovel = new JTextField(CAMPO_LARGURA);
+        telemovelTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
-        p.add(txtTelemovel);
+        p.add(telemovelTF);
 
         return p;
     }
 
     private JPanel criarPainelAreaExposicao() {
         JLabel lbl = new JLabel("Área da exposição:", JLabel.RIGHT);
-        lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtAreaExposicao = new JTextField(CAMPO_LARGURA);
+        areaExposicaoTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
-        p.add(txtAreaExposicao);
+        p.add(areaExposicaoTF);
 
         return p;
     }
 
     private JPanel criarPainelProdutosExposicao() {
         JLabel lbl = new JLabel("Produtos: ", JLabel.RIGHT);
-        lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtProdutosExposicao = new JTextField(CAMPO_LARGURA);
+        produtosTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 0;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
-        p.add(txtProdutosExposicao);
+        p.add(produtosTF);
 
         return p;
     }
 
     private JPanel criarPainelNrConvites() {
         JLabel lbl = new JLabel("Número de convites:", JLabel.RIGHT);
-        lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtQuantidadeConvites = new JTextField(CAMPO_LARGURA);
+        nConvitesTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        final int MARGEM_SUPERIOR = 0, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
-        p.add(txtQuantidadeConvites);
+        p.add(nConvitesTF);
 
         return p;
     }
@@ -217,8 +205,6 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         JButton btnCancelar = criarBotaoCancelar();
 
         JPanel p = new JPanel();
-        final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 5;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(btnOK);
@@ -233,22 +219,12 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String NomeEmpresa = txtNomeEmpresa.getText();
-                    String Morada = txtMorada.getText();
-                    int Telemovel = Integer.parseInt(txtTelemovel.getText());
-                    String Produtos = txtProdutosExposicao.getText();
-                    float AreaExposicao = Float.parseFloat(txtAreaExposicao.getText());
-                    int QuantidadeConvites = Integer.parseInt(txtQuantidadeConvites.getText());
-                    cntr.selecionaExposicao(expoSelecionada);
-                    Candidatura auxiliar = new Candidatura();
-                    cntr.setDados(auxiliar, NomeEmpresa, Morada, Telemovel, AreaExposicao, Produtos, QuantidadeConvites);
 
-                    cntr.adicionarCandidatura();
                     dispose();
 
                 } catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(
-                            frame,
+                            framePai,
                             ex.getMessage(),
                             "ERRO!",
                             JOptionPane.WARNING_MESSAGE);
