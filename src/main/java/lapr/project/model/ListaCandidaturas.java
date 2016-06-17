@@ -130,4 +130,14 @@ public class ListaCandidaturas {
         return listaCandDemo;
     }
 
+    public List getListaCandidaturasRetiradas() {
+        List <Candidatura> candidaturasRetiradas = new ArrayList<>();
+        for(Candidatura c : listaCandidaturas){
+            if(c.getState() instanceof CandidaturaRetiradaState){
+                candidaturasRetiradas.add(c);
+            }
+        }
+        return candidaturasRetiradas;
+    }
+
 }
