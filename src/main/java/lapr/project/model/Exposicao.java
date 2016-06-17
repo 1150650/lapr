@@ -144,4 +144,13 @@ public class Exposicao {
     public void setExposicaoCriada() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public boolean setFAEDefinido() {
+        return m_state.setFAEDefinido();
+    }
+
+    public void setEstado(ExposiçãoState m_state2) {
+        this.m_state = m_state2;
+    }
+
 }

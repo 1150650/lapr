@@ -50,5 +50,9 @@ public class DefinirFAEController {
     public void registaFAE() {
         listaFAE.registaFAE(fae);
     }
-
+    
+    public boolean setFAEDefinido(){
+        return exposicao.setFAEDefinido();
+    }
+    
 }

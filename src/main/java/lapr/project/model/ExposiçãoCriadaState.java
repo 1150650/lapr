@@ -11,18 +11,18 @@ package lapr.project.model;
  */
 public class ExposiçãoCriadaState extends ExposiçãoState {
 
-//    Exposicao m_e;
-//
-//    public ExposiçãoCriadaState(Evento e) {
-//        m_e = e;
-//    }
+    Exposicao m_e;
+
+    public ExposiçãoCriadaState(Exposicao e) {
+        m_e = e;
+    }
 //
 //    public boolean SetCriadoDefinido() {
 //        return false;
 //    }
 //
 //    public boolean SetDemonstraçãoDefinido() {
-//        if (valida1()) {
+//        if (valida()) {
 //            m_e.setEstado(new ExposiçãoDemonstraçãoSemFAEsState(m_e));
 //            return true;
 //        } else {
@@ -30,20 +30,24 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
 //        }
 //    }
 //
-//    public boolean SetFAEDefinido() {
-//        if (valida2()) {
-//            m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//
-//    private boolean valida1() {
-//    }
-//
-//    private boolean valida2() {
-//
-//    }
+
+    @Override
+    public boolean setFAEDefinido() {
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean valida() {
+        if (m_e.getExposicaoEstado() instanceof ExposiçãoCriadaState) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 }

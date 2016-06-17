@@ -10,68 +10,30 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
+    
+      Exposicao m_e;
 
-    public ExposiçãoDemonstraçãoSemFAEsState(Exposicao m_e) {
-    }
-
-    @Override
-    public boolean setCriadoDefinido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ExposiçãoDemonstraçãoSemFAEsState(Exposicao e) {
+        m_e = e;
     }
 
     @Override
     public boolean setFAEDefinido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoCompletaState(m_e));
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Override
-    public boolean setDemonstraçãoDefinido() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setCompleta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setCandidaturasAbertas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setCandidaturasFechadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setCandidaturasAvaliadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setConflitosDetetados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setConflitosAlterados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean setConflitosAtribuidas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        if (m_e.getExposicaoEstado() instanceof ExposiçãoDemonstraçãoSemFAEsState) {
+            return true;
+        } else {
+            return false;
+        }
 
-    @Override
-    public boolean setCandidaturasAtribuidas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
