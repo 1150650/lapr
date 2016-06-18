@@ -9,8 +9,7 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaAvaliadaState extends CandidaturaState{
-
+public class CandidaturaAvaliadaState extends CandidaturaState {
 
     @Override
     public boolean setAvaliada() {
@@ -21,5 +20,9 @@ public class CandidaturaAvaliadaState extends CandidaturaState{
     public boolean valida() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public boolean isEstadoAvaliada() {
+        return true;
+    }
 }

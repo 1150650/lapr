@@ -46,4 +46,40 @@ public class CandidaturaState {
     public boolean setCandidaturaCriada() {
         return false;
     }
+
+    public boolean isEstadoAceite() {
+        return false;
+    }
+
+    public boolean isEstadoAlterada() {
+        return false;
+    }
+
+    public boolean isEstadoAtribuida() {
+        return false;
+    }
+
+    public boolean isEstadoAvaliada() {
+        return false;
+    }
+
+    public boolean isEstadoConflitoEncontrado() {
+        return false;
+    }
+
+    public boolean isEstadoCriada() {
+        return false;
+    }
+
+    public boolean isEstadoProntaAtribuicao() {
+        return false;
+    }
+
+    public boolean isEstadoRetirada() {
+        return false;
+    }
+
+    public boolean isEstadoStandAtribuido() {
+        return false;
+    }
 }

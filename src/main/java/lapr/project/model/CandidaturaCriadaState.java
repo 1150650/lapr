@@ -36,4 +36,9 @@ public class CandidaturaCriadaState extends CandidaturaState {
         return verify;
     }
 
+    @Override
+    public boolean isEstadoCriada() {
+        return true;
+    }
+
 }
