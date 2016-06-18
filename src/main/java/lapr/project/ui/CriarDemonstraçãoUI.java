@@ -6,12 +6,14 @@
 package lapr.project.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -26,28 +28,27 @@ import lapr.project.model.Recurso;
  *
  * @author JOAO
  */
-public class CriarDemonstraçãoUI extends JDialog {
+public class CriarDemonstraçãoUI extends JFrame {
 
     private JTextField txtDescricao;
     private JButton btnAdicionarRecurso;
     private ModeloListaRecursos lstRecursos;
     private CriarDemonstraçãoController contr;
     private CentroExposicoes centroexpo;
-    private JanelaPrincipal framePai;
+    private MenuPrincipal framePai;
 
-    public CriarDemonstraçãoUI(JanelaPrincipal framePai, CentroExposicoes ce) {
+    public CriarDemonstraçãoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
-        super(framePai, "Registar Exposicao", true);
+        super("Registar Exposicao");
         this.centroexpo = ce;
         this.contr = new CriarDemonstraçãoController(ce);
         this.framePai = framePai;
 
         criarComponentes();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        pack();
-        setResizable(false);
-        setLocationRelativeTo(framePai);
+        setMinimumSize(new Dimension(500, 700));
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 

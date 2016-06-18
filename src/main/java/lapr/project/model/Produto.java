@@ -22,12 +22,16 @@ public class Produto {
         setDesignacao(designacao);
     }
 
+    Produto() {
+        
+    }
+
     /**
      * Altera a designacao do produto
      *
      * @param designacao
      */
-    private void setDesignacao(String designacao) {
+    public void setDesignacao(String designacao) {
         if (designacao == null || designacao.trim().isEmpty()) {
             throw new IllegalArgumentException("Designação vazia!");
         }

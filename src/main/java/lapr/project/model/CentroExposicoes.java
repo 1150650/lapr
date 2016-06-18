@@ -30,7 +30,6 @@ public class CentroExposicoes {
     
     private ListaDemonstracoes registoDemonstracoes;
     
-    private ListaRecursos registoRecursos;
 
     /**
      * Contrutor do centro de exposicoes

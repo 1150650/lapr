@@ -6,12 +6,12 @@
 package lapr.project.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import lapr.project.controller.RegistarStandController;
@@ -21,26 +21,26 @@ import lapr.project.model.CentroExposicoes;
  *
  * @author JOAO
  */
-public class RegistarStandUI extends JDialog {
+public class RegistarStandUI extends JFrame {
 
     private JTextField txtDescricao;
     private RegistarStandController contr;
     private CentroExposicoes centroexpo;
-    private JanelaPrincipal framePai;
+    private MenuPrincipal framePai;
 
-    public RegistarStandUI(JanelaPrincipal framePai, CentroExposicoes ce) {
+    public RegistarStandUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
-        super(framePai, "Registar Stand", true);
+        super( "Registar Stand");
         this.centroexpo = ce;
         this.contr = new RegistarStandController(ce);
         this.framePai = framePai;
 
         criarComponentes();
 
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        pack();
-        setResizable(false);
-        setLocationRelativeTo(framePai);
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setMinimumSize(new Dimension(500, 500));
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -57,7 +57,7 @@ public class RegistarStandUI extends JDialog {
         JLabel lbl = new JLabel("Descricao Stand :", JLabel.RIGHT);
         txtDescricao = new JTextField(40);
 
-        JPanel pNorte = new JPanel(new BorderLayout());
+        JPanel pNorte = new JPanel();
         pNorte.add(lbl);
         pNorte.add(txtDescricao);
 
@@ -68,7 +68,7 @@ public class RegistarStandUI extends JDialog {
         JButton btnOK = criarBotaoOK();
         JButton btnCancelar = criarBotaoCancelar();
 
-        JPanel pCentro = new JPanel(new BorderLayout());
+        JPanel pCentro = new JPanel();
         pCentro.add(btnOK);
         pCentro.add(btnCancelar);
 

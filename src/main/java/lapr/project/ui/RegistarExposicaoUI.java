@@ -6,6 +6,7 @@
 package lapr.project.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,7 @@ import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -28,7 +30,7 @@ import lapr.project.model.Utilizador;
  *
  * @author JOAO
  */
-public class RegistarExposicaoUI extends JDialog {
+public class RegistarExposicaoUI extends JFrame {
     
      private JTextField txtTitulo, txtDescricao, txtLocal,txtDateInicio,txtDateFinal;
      private Date dtInico,dtFim;
@@ -36,12 +38,12 @@ public class RegistarExposicaoUI extends JDialog {
     private ModeloListaUtilizadores lstUtilizadores;
     private RegistarExposicaoController contr;
     private CentroExposicoes centroexpo;
-    private JanelaPrincipal framePai;
+    private MenuPrincipal framePai;
     
     
-   public RegistarExposicaoUI (JanelaPrincipal framePai, CentroExposicoes ce){
+   public RegistarExposicaoUI (MenuPrincipal framePai, CentroExposicoes ce){
        
-        super(framePai, "Registar Exposição", true);
+        super("Registar Exposição");
         this.centroexpo = ce;
         this.contr = new RegistarExposicaoController(ce);
         this.framePai = framePai;
@@ -49,11 +51,10 @@ public class RegistarExposicaoUI extends JDialog {
         contr.novaExposicao();
 
         criarComponentes();
+ setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        pack();
-        setResizable(false);
-        setLocationRelativeTo(framePai);
+        setMinimumSize(new Dimension(500, 700));
+        setLocationRelativeTo(null);
         setVisible(true);
    }
 
@@ -73,7 +74,7 @@ public class RegistarExposicaoUI extends JDialog {
         JPanel p2 = criarPainelDescricao();
         JPanel p3 = criarPainelData();
 
-        JPanel pNorte = new JPanel(new BorderLayout());
+        JPanel pNorte = new JPanel();
         pNorte.add(p1, BorderLayout.NORTH);
         pNorte.add(p2, BorderLayout.CENTER);
         pNorte.add(p3, BorderLayout.SOUTH);
@@ -86,7 +87,7 @@ public class RegistarExposicaoUI extends JDialog {
         JPanel p2 = criarPainelLocal();
     
 
-        JPanel pCentro = new JPanel(new BorderLayout());
+        JPanel pCentro = new JPanel();
      pCentro.add(p2, BorderLayout.NORTH);
         pCentro.add(p1, BorderLayout.CENTER);
     
@@ -236,7 +237,7 @@ public class RegistarExposicaoUI extends JDialog {
      
         p.add(lbl);
         p.add(txtDateInicio);
-         p.add(lbl1);
+        p.add(lbl1);
         p.add(txtDateFinal);
         
         

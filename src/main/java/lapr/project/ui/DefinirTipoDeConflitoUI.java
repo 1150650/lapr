@@ -6,10 +6,12 @@
 package lapr.project.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -20,26 +22,25 @@ import lapr.project.model.CentroExposicoes;
  *
  * @author JOAO
  */
-public class DefinirTipoDeConflitoUI extends JDialog {
+public class DefinirTipoDeConflitoUI extends JFrame{
 
     private JTextField txtDescricao;
     private DefinirTpoDeConflitoController contr;
     private CentroExposicoes centroexpo;
-    private JanelaPrincipal framePai;
+    private MenuPrincipal framePai;
 
-    public DefinirTipoDeConflitoUI(JanelaPrincipal framePai, CentroExposicoes ce) {
+    public DefinirTipoDeConflitoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
-        super(framePai, "Definir Tipo de Conflito", true);
+        super( "Definir Tipo de Conflito");
         this.centroexpo = ce;
         this.contr = new DefinirTpoDeConflitoController(ce);
         this.framePai = framePai;
 
         criarComponentes();
+ setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        pack();
-        setResizable(false);
-        setLocationRelativeTo(framePai);
+        setMinimumSize(new Dimension(500, 700));
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -56,7 +57,7 @@ public class DefinirTipoDeConflitoUI extends JDialog {
         JLabel lbl = new JLabel("Descricao Do Tipo De Conflito:", JLabel.RIGHT);
         txtDescricao = new JTextField(40);
 
-        JPanel pNorte = new JPanel(new BorderLayout());
+        JPanel pNorte = new JPanel();
         pNorte.add(lbl);
         pNorte.add(txtDescricao);
 
@@ -67,7 +68,7 @@ public class DefinirTipoDeConflitoUI extends JDialog {
         JButton btnOK = criarBotaoOK();
         JButton btnCancelar = criarBotaoCancelar();
 
-        JPanel pCentro = new JPanel(new BorderLayout());
+        JPanel pCentro = new JPanel();
         pCentro.add(btnOK);
         pCentro.add(btnCancelar);
 
