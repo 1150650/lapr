@@ -9,6 +9,7 @@ import lapr.project.model.Candidatura;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.ListaDemonstracoes;
 import lapr.project.model.RegistoExposicoes;
 
 /**
@@ -31,9 +32,17 @@ public class RemoverCandidaturaController {
         return this.centroexpo.mostrarLista();
     }
 
-    public Candidatura[] getListaCandidaturas(Exposicao expo) {
+    public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
         this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
-        return this.centroexpo.getListaExposicoes().obterExposicao(indice).mostrarLista();
+        return this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
+        
+        
+    }
+    public ListaCandidaturas getListaCandidaturasDemonstracoes(Exposicao expo) {
+        this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
+        return this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
+        
+        
     }
 
     public void removerCandidatura(Candidatura c) {
