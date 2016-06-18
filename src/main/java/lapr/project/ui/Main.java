@@ -24,7 +24,7 @@ class Main {
         Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         CentroExposicoes ce = new CentroExposicoes();
         new MenuPrincipal(ce, u);
-       new JanelaPrincipal(ce);
+    //   new JanelaPrincipal(ce);
     }
 
 }
