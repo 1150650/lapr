@@ -43,7 +43,7 @@ public class RegistarCandidaturaDemonstracaoController {
 
     public void selecionaExposicao(Exposicao exposicao) {
         this.exposicao = exposicao;
-        listaCandidaturas = exposicao.getListaCandidaturas();
+        listaCandidaturas = exposicao.getListaCandidaturasDemonstracoes();
         candidatura = (CandidaturaDemonstracao) listaCandidaturas.novaCandidatura();
     }
 

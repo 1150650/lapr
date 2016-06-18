@@ -28,7 +28,7 @@ public class MecanismoDetecaoConflito {
     public void detectConflitos() {
         listaFAE = exposicao.getListaFAE();
         listFAE = listaFAE.getListaFAEs();
-        listaCandidaturas = exposicao.getListaCandidaturas();
+        listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
         listCandidaturas = listaCandidaturas.getListaCandidaturas();
         listaConflitos = exposicao.getListaConflitos();
         for (FAE fae : listFAE) {

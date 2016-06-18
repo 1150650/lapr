@@ -35,7 +35,7 @@ public class AtribuirCandidaturaController {
     }
 
     public void getListaCandidatura() {
-        this.expo.getListaCandidaturas();
+        this.expo.getListaCandidaturasExposicoes();
     }
 
     public Exposicao getExposicaoSelecionada() {

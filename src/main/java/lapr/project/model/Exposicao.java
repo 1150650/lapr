@@ -9,7 +9,7 @@ public class Exposicao {
     private Date dataInicio;
     private Date dataFim;
     private String local;
-    private ListaCandidaturas listaCandidaturas;
+    private ListaCandidaturas listaCandidaturasExposicoes,listaCandidaturasDemonstracoes ;
     private ListaDemonstracoes listaDemonstracao;
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
@@ -18,7 +18,7 @@ public class Exposicao {
     private RegistoRepresentantes lstRep;
 
     public Exposicao() {
-        listaCandidaturas = new ListaCandidaturas();
+        listaCandidaturasExposicoes = new ListaCandidaturas();
         listaFAE = new ListaFAE();
     }
 
@@ -27,9 +27,10 @@ public class Exposicao {
         setTextoDescritivo(textoDescritivo);
         setPeriodo(dataInicio, dataFim);
         setLocal(local);
-        listaCandidaturas = new ListaCandidaturas();
+        listaCandidaturasExposicoes = new ListaCandidaturas();
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
+        listaCandidaturasDemonstracoes=new ListaCandidaturas();
     }
 
     public String getTitulo() {
@@ -52,8 +53,8 @@ public class Exposicao {
         return local;
     }
 
-    public ListaCandidaturas getListaCandidaturas() {
-        return listaCandidaturas;
+    public ListaCandidaturas getListaCandidaturasExposicoes() {
+        return listaCandidaturasExposicoes;
     }
 
     public ListaDemonstracoes getListaDemonstracoes() {
@@ -93,8 +94,8 @@ public class Exposicao {
         this.local = local;
     }
 
-    public final void setListaCandidaturas(ListaCandidaturas listaCandidaturas) {
-        this.listaCandidaturas = listaCandidaturas;
+    public final void setListaCandidaturasExposicoes(ListaCandidaturas listaCandidaturasExposicoes) {
+        this.listaCandidaturasExposicoes = listaCandidaturasExposicoes;
     }
 
     @Override
@@ -103,17 +104,17 @@ public class Exposicao {
     }
 
     public void adicinarCanidatura(Candidatura d) {
-        this.listaCandidaturas.adicionarCandidatura(d);
+        this.listaCandidaturasExposicoes.adicionarCandidatura(d);
 
     }
 
     public Candidatura[] mostrarLista() {
-        Candidatura[] string = new Candidatura[listaCandidaturas.tamanho()];
+        Candidatura[] string = new Candidatura[listaCandidaturasExposicoes.tamanho()];
 
-        int tamanho = listaCandidaturas.tamanho();
+        int tamanho = listaCandidaturasExposicoes.tamanho();
         for (int i = 0; i < tamanho; i++) {
 
-            string[i] = listaCandidaturas.obterCandidatura(i);
+            string[i] = listaCandidaturasExposicoes.obterCandidatura(i);
         }
         return string;
     }
@@ -163,6 +164,22 @@ public class Exposicao {
 
     public void adicionarRepresentante(Representante r) {
         lstRep.addRepresentante(r);
+    }
+    
+      public ListaCandidaturas getListaCandidaturasDemonstracoes() {
+        return listaCandidaturasDemonstracoes;
+    }
+
+    public void setListaCandidaturasDemonstracoes(ListaCandidaturas listaCandidaturasDemonstracoes) {
+        this.listaCandidaturasDemonstracoes = listaCandidaturasDemonstracoes;
+    }
+
+    public ListaDemonstracoes getListaDemonstracao() {
+        return listaDemonstracao;
+    }
+
+    public void setListaDemonstracao(ListaDemonstracoes listaDemonstracao) {
+        this.listaDemonstracao = listaDemonstracao;
     }
 
 }

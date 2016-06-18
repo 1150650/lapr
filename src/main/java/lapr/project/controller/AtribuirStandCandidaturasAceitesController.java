@@ -34,7 +34,7 @@ public class AtribuirStandCandidaturasAceitesController {
 
     public List getCandidaturasAceites(Exposicao exposicao) {
         this.exposicao = exposicao;
-        listaCandidaturas = this.exposicao.getListaCandidaturas();
+        listaCandidaturas = this.exposicao.getListaCandidaturasExposicoes();
         return listaCandidaturas.getCandidaturasAceites();
     }
 

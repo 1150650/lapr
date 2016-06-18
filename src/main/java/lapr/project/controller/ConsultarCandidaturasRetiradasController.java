@@ -28,7 +28,7 @@ public class ConsultarCandidaturasRetiradasController {
     
     public List getListaCandidaturas(Exposicao exposicao){
         this.exposicao=exposicao;
-        registoCandidaturas = this.exposicao.getListaCandidaturas();
+        registoCandidaturas = this.exposicao.getListaCandidaturasExposicoes();
         return listaCandidaturas = registoCandidaturas.getListaCandidaturasRetiradas();
     }
     

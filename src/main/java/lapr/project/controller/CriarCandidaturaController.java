@@ -22,9 +22,12 @@ public class CriarCandidaturaController {
     private CandidaturaExposicao c;
 
     private Representante r;
+    
+    private Utilizador u;
 
     public CriarCandidaturaController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
+        this.u=u;
 
     }
 
@@ -38,7 +41,7 @@ public class CriarCandidaturaController {
     }
 
     public void getListaCandidaturas() {
-        listaCandidaturas = exposicaoSelecionada.getListaCandidaturas();
+        listaCandidaturas = exposicaoSelecionada.getListaCandidaturasExposicoes();
     }
 
     public void novaCandidatura() {

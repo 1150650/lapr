@@ -65,7 +65,7 @@ public class AtribuirCandidaturaDemonstracao {
     }
     
     public List getListaCandidatura(){
-        listaCandidaturas = exposicao.getListaCandidaturas();
+        listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
         return listCandidatura = listaCandidaturas.getCandidaturasSemAtribuicao();
     }
     
