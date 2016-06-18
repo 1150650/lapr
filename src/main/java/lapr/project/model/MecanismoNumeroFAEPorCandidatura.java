@@ -50,7 +50,7 @@ public class MecanismoNumeroFAEPorCandidatura implements Mecanismo {
         ListaAtribuicoes listaAtribuiçao = new ListaAtribuicoes();
         for (int i = 0; i < lstCand.tamanho(); i++) {
             for (int j = 0; j < nFAEPCand; j++) {
-                listaAtribuiçao.adicionarAtribuição(new Atribuicao(lstFAE.obterFAE(gerarFAE(lstFAE)), lstCand.obterCandidatura(i)));
+                listaAtribuiçao.adicionarAtribuição(new AtribuicaoFAE(lstFAE.obterFAE(gerarFAE(lstFAE)), lstCand.obterCandidatura(i)));
             }
         }
         return listaAtribuiçao;

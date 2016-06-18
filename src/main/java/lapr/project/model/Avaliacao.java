@@ -97,4 +97,10 @@ public final class Avaliacao {
     public void setConhecimentosFAE(int[] conhecimentosFAE) {
         this.conhecimentoFAE = conhecimentosFAE;
     }
+
+    public int[] getConhecimentosFAE() {
+        return conhecimentoFAE;
+    }
+
+   
 }

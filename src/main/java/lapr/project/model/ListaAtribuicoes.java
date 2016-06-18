@@ -7,7 +7,7 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import lapr.project.model.Atribuicao;
+import lapr.project.model.AtribuicaoFAE;
 
 /**
  *
@@ -16,9 +16,9 @@ import lapr.project.model.Atribuicao;
 public class ListaAtribuicoes {
 
     /**
-     * Lista de objetos Atribuicao
+     * Lista de objetos AtribuicaoFAE
      */
-    private List<Atribuicao> listaAtribuiçao;
+    private List<AtribuicaoFAE> listaAtribuiçao;
 
     /**
      * Construtor de um Objeto do tipo lista Atribuições
@@ -33,17 +33,17 @@ public class ListaAtribuicoes {
      * @param indice atribuicao
      * @return atribuicao
      */
-    public Atribuicao obterAtribuiçao(int indice) {
+    public AtribuicaoFAE obterAtribuiçao(int indice) {
         return listaAtribuiçao.get(indice);
     }
 
     /**
-     * Adicionar uma Atribuicao a Lista
+     * Adicionar uma AtribuicaoFAE a Lista
      *
      * @param atribuicao atribuicao
      * @return atribuicao
      */
-    public boolean adicionarAtribuição(Atribuicao atribuicao) {
+    public boolean adicionarAtribuição(AtribuicaoFAE atribuicao) {
         if (!listaAtribuiçao.contains(atribuicao)) {
             return listaAtribuiçao.add(atribuicao);
         }
@@ -56,7 +56,7 @@ public class ListaAtribuicoes {
      * @param atribuicao recebe a atribuicao a ser removida
      * @return atribuicao
      */
-    public boolean removerAtribuicao(Atribuicao atribuicao) {
+    public boolean removerAtribuicao(AtribuicaoFAE atribuicao) {
         return listaAtribuiçao.remove(atribuicao);
     }
 
@@ -75,7 +75,7 @@ public class ListaAtribuicoes {
      * @param atribuicao atribuicao
      * @return atribuicao
      */
-    public int indiceDe(Atribuicao atribuicao) {
+    public int indiceDe(AtribuicaoFAE atribuicao) {
         return listaAtribuiçao.indexOf(atribuicao);
     }
 
@@ -85,7 +85,7 @@ public class ListaAtribuicoes {
      * @param atribuicao atribuicao
      * @return atribuicao
      */
-    public boolean contem(Atribuicao atribuicao) {
+    public boolean contem(AtribuicaoFAE atribuicao) {
         return listaAtribuiçao.contains(atribuicao);
     }
 
@@ -94,7 +94,7 @@ public class ListaAtribuicoes {
      *
      * @param listaAtribuiçao lista
      */
-    public void adicionarNovaLista(List<Atribuicao> listaAtribuiçao) {
+    public void adicionarNovaLista(List<AtribuicaoFAE> listaAtribuiçao) {
         this.listaAtribuiçao.clear();
         this.listaAtribuiçao = listaAtribuiçao;
     }

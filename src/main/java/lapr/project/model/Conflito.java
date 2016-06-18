@@ -13,10 +13,26 @@ public class Conflito {
 
     private FAE fae;
 
+  
     private Candidatura candidatura;
 
     Conflito(FAE fae, Candidatura candidatura) {
         this.fae = fae;
+        this.candidatura = candidatura;
+    }
+  public FAE getFae() {
+        return fae;
+    }
+
+    public void setFae(FAE fae) {
+        this.fae = fae;
+    }
+
+    public Candidatura getCandidatura() {
+        return candidatura;
+    }
+
+    public void setCandidatura(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
 

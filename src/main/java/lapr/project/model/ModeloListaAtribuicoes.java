@@ -31,14 +31,14 @@ public class ModeloListaAtribuicoes extends AbstractListModel implements Seriali
     }
 
     public boolean addElement(Candidatura candidatura, FAE fae) {
-        boolean atribuicaoAdicionado = listaAtribuicoes.adicionarAtribuição(new Atribuicao(fae, candidatura));
+        boolean atribuicaoAdicionado = listaAtribuicoes.adicionarAtribuição(new AtribuicaoFAE(fae, candidatura));
         if (atribuicaoAdicionado) {
             fireIntervalAdded(this, getSize() - 1, getSize() - 1);
         }
         return atribuicaoAdicionado;
     }
 
-    public boolean contains(Atribuicao atribuicao) {
+    public boolean contains(AtribuicaoFAE atribuicao) {
         return listaAtribuicoes.contem(atribuicao);
     }
 }

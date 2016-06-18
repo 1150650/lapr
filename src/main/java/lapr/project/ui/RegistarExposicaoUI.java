@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static java.lang.String.format;
 import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -44,6 +45,8 @@ public class RegistarExposicaoUI extends JDialog {
         this.centroexpo = ce;
         this.contr = new RegistarExposicaoController(ce);
         this.framePai = framePai;
+        
+        contr.novaExposicao();
 
         criarComponentes();
 
@@ -247,17 +250,16 @@ public class RegistarExposicaoUI extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
              
-                   //  String NomeEmpresa = txtTitulo.getText();
-                   //  String Morada = txtDescricao.getText();
-                   // String Telemovel = txtLocal.getText();
+                   String Titulo = txtTitulo.getText();
+                   String Descricao = txtDescricao.getText();
+                   String Local = txtLocal.getText();
+                   Date dateInico = new Date (Integer.parseInt (txtDateInicio.getText()));
+                   Date dateFinal = new Date (Integer.parseInt (txtDateFinal.getText()));
+                     contr.setDados(Titulo, Descricao, dateInico, dateFinal, Local);
+                     contr.setEstadoExposicaoCriada();
+                     contr.validaRegistaExposicao();
                     
-                    
-                   //  float AreaExposicao = Float.parseFloat(txtAreaExposicao.getText());
-                  //  int QuantidadeConvites = Integer.parseInt(txtQuantidadeConvites.getText());
-                   //  Candidatura objCandidatura =new Candidatura();
-                   //  contr.novaExposicao();
-                   //  contr.setDados( );
-                   //  contr.guardarCandidatura();
+                  
 
                     dispose();
                 

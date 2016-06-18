@@ -49,14 +49,14 @@ public class MecanismoExperienciaPorFAE implements Mecanismo {
         int k = nFaeExperientes + 1;
         int nCandidaturasFaeExperientes = (int) 2 * nCandidaturas / 3;
         for (int i = 0; i < nCandidaturasFaeExperientes; i++) {
-            listaAtribuiçao.adicionarAtribuição(new Atribuicao(lstFAE.obterFAE(j), lstCand.obterCandidatura(i)));
+            listaAtribuiçao.adicionarAtribuição(new AtribuicaoFAE(lstFAE.obterFAE(j), lstCand.obterCandidatura(i)));
             j++;
             if (j == nFaeExperientes) {
                 j = 0;
             }
         }
         for (int i = nCandidaturasFaeExperientes + 1; i < nCandidaturas; i++) {
-            listaAtribuiçao.adicionarAtribuição(new Atribuicao(lstFAE.obterFAE(k), lstCand.obterCandidatura(i)));
+            listaAtribuiçao.adicionarAtribuição(new AtribuicaoFAE(lstFAE.obterFAE(k), lstCand.obterCandidatura(i)));
             k++;
             if (k == nFaes) {
                 k = nFaeExperientes + 1;

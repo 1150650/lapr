@@ -44,7 +44,7 @@ public class MecanismoCargaEquitativaPorFAE implements Mecanismo {
         ListaAtribuicoes lstAtrib = new ListaAtribuicoes();
         int j = 0;
         for (int i = 0; i < lstCand.tamanho(); i++) {
-            lstAtrib.adicionarAtribuição(new Atribuicao(lstFAE.obterFAE(j), lstCand.obterCandidatura(i)));
+            lstAtrib.adicionarAtribuição(new AtribuicaoFAE(lstFAE.obterFAE(j), lstCand.obterCandidatura(i)));
             j++;
             if (j == lstFAE.tamanho()) {
                 j = 0;
