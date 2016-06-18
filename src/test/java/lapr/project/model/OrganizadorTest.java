@@ -5,10 +5,24 @@
  */
 package lapr.project.model;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
 /**
  *
  * @author JOAO
  */
 public class OrganizadorTest {
     
+    
+    
+    @Test
+    public void organizadorTest(){
+        Organizador o = new Organizador ();
+        Utilizador u = new Utilizador("admin", "admin@gmail.com", "admin", ".Admin10");
+        o.setUtilizador(u);
+        
+         assertEquals(u, o.getUtilizador());
+       
+    }
 }

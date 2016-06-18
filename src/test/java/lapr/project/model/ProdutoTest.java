@@ -5,10 +5,24 @@
  */
 package lapr.project.model;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
 /**
  *
  * @author JOAO
  */
 public class ProdutoTest {
     
+    
+    @Test
+    public void ProdutoTest(){
+        Produto p =new Produto();
+        String produto ="Jogos";
+        
+        p.setDesignacao(produto);
+        
+         assertEquals(produto, p.getDesignacao());
+        
+    }
 }
