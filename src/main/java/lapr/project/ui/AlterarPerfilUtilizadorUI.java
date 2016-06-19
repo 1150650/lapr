@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -30,7 +31,7 @@ import lapr.project.utils.HintPasswordField;
  * @author Diogo
  */
 public class AlterarPerfilUtilizadorUI extends JFrame {
-    
+
     private JTextField txtNome, txtUsername, txtEmail;
     private JPasswordField txtPasswordAtual, txtPasswordNova, txtPasswordNova1;
     private CentroExposicoes centroExpo;
@@ -38,18 +39,18 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
     private AlterarPerfilUtilizadorController cntr;
     private static final Dimension LABEL_TAMANHO = new JLabel("Repita a password: ").
             getPreferredSize();
-    
+
     public AlterarPerfilUtilizadorUI(CentroExposicoes ce, Utilizador utilizadorAtivo) {
         super("Alterar Dados de Utilizador");
         this.centroExpo = ce;
         this.utilizadorAtivo = utilizadorAtivo;
-        
+
         GridLayout gl = new GridLayout(8, 1);
         gl.setHgap(20);
         gl.setVgap(20);
         this.cntr = new AlterarPerfilUtilizadorController(ce, utilizadorAtivo);
         setLayout(gl);
-        
+
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,7 +80,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
         add(passwordNova1);
         add(botoes);
     }
-    
+
     private JPanel criarPainelTitulo() {
         JLabel lblTitulo = new JLabel("Alterar Dados do utilizador", JLabel.LEFT);
         lblTitulo.setFont(new Font("Helvetica", Font.BOLD, 30));
@@ -94,7 +95,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelNome() {
         JLabel lbl = new JLabel("Nome:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -113,7 +114,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelEmail() {
         JLabel lbl = new JLabel("Email:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -132,7 +133,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelUsername() {
         JLabel lbl = new JLabel("Username:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -140,7 +141,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
         final int CAMPO_LARGURA = 25;
         txtUsername = new JTextField(CAMPO_LARGURA);
         txtUsername.setText(utilizadorAtivo.getUsername());
-        
+
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
@@ -151,7 +152,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelPasswordAtual() {
         JLabel lbl = new JLabel("Password Atual:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -170,7 +171,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelPasswordNova() {
         JLabel lbl = new JLabel("Nova Password:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -189,7 +190,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelPasswordNova1() {
         JLabel lbl = new JLabel("Repita Nova Password:", JLabel.RIGHT);
         lbl.setPreferredSize(LABEL_TAMANHO);
@@ -208,7 +209,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JPanel criarPainelBotoes() {
         JButton btnConcluido = criarBotaoConcluido();
         getRootPane().setDefaultButton(btnConcluido);
@@ -225,20 +226,64 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
 
         return p;
     }
-    
+
     private JButton criarBotaoConcluido() {
         JButton btn = new JButton("Concluir");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                try {
+                    if (txtPasswordAtual.getText().equals(utilizadorAtivo.getPasswordDesencriptada())) {
+                        try {
+                            if (txtPasswordNova.getText().equals(txtPasswordNova1.getText())) {
+                                try {
+                                    String nome = txtNome.getText();
+                                    String email = txtEmail.getText();
+                                    String username = txtUsername.getText();
+                                    String password = txtPasswordNova.getText();
+                                    cntr.validaAlteracaoDados(email, username);
+                                    cntr.alterarDados(nome, email, username, password);
+                                    JOptionPane.showMessageDialog(
+                                            AlterarPerfilUtilizadorUI.this,
+                                            "Alterações realizada com sucesso!",
+                                            "Sucesso",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                    dispose();
+
+                                } catch (IllegalArgumentException ex) {
+                                    JOptionPane.showMessageDialog(
+                                            AlterarPerfilUtilizadorUI.this,
+                                            ex.getMessage(),
+                                            "ERRO!",
+                                            JOptionPane.WARNING_MESSAGE);
+                                }
+                            } else {
+                                throw new IllegalArgumentException();
+                            }
+                        } catch (IllegalArgumentException ex) {
+                            JOptionPane.showMessageDialog(
+                                    AlterarPerfilUtilizadorUI.this,
+                                    "Passwords novas não correspondem!",
+                                    "ERRO!",
+                                    JOptionPane.WARNING_MESSAGE);
+                        }
+                    } else {
+                        throw new IllegalArgumentException();
+                    }
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(
+                            AlterarPerfilUtilizadorUI.this,
+                            "Password atual incorreta!",
+                            "ERRO!",
+                            JOptionPane.WARNING_MESSAGE);
+                    txtPasswordAtual.setText(null);
+                    txtPasswordAtual.setFocusable(true);
+                }
             }
         });
         return btn;
     }
-    
-    
-    
+
     private JButton criarBotaoCancelar() {
         JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
@@ -249,5 +294,5 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
         });
         return btn;
     }
-    
+
 }

@@ -52,13 +52,10 @@ public class RegistoUtilizadores {
         return false;
     }
     
-    public boolean validaAlteracaoDados(String email, String username) {
-        boolean validaEmail = validaEmail(u.getEmail());
-        boolean validaUsername = validaUsername(u.getUsername());
-        if (validaEmail == true && validaUsername == true) {
-            return true;
-        }
-        return false;
+    public void validaAlteracaoDados(String email, String username) {
+        validaEmail(u.getEmail());
+        validaUsername(u.getUsername());
+
     }
 
     private boolean validaEmail(String email) {

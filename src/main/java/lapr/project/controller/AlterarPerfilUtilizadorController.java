@@ -22,11 +22,11 @@ public class AlterarPerfilUtilizadorController {
     public AlterarPerfilUtilizadorController(CentroExposicoes ce, Utilizador utilizadorAtivo) {
         this.centroExposicoes = ce;
         this.utilizadorAtivo = utilizadorAtivo;
+        this.ru= ce.getRegistoUtilizadoresNConf();
     }
 
-    public boolean validaAlteracaoDados(String email, String username) {
-        boolean valida = ru.validaAlteracaoDados(email, username);
-        return valida;
+    public void validaAlteracaoDados(String email, String username) {
+        ru.validaAlteracaoDados(email, username);
     }
     
     public void alterarDados(String nome, String email, String username, String password){
