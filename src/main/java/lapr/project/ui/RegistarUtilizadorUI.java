@@ -79,16 +79,16 @@ public class RegistarUtilizadorUI extends JFrame {
     }
 
     private JPanel criarPainelTitulo() {
-        JLabel lblMenuPrincipal = new JLabel("Novo Utilizador", JLabel.LEFT);
-        lblMenuPrincipal.setFont(new Font("Helvetica", Font.BOLD, 30));
-        lblMenuPrincipal.setForeground(Color.BLACK);
+        JLabel lblTitulo = new JLabel("Novo Utilizador", JLabel.LEFT);
+        lblTitulo.setFont(new Font("Helvetica", Font.BOLD, 30));
+        lblTitulo.setForeground(Color.BLACK);
 
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 20;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA, MARGEM_INFERIOR, MARGEM_DIREITA));
 
-        p.add(lblMenuPrincipal);
+        p.add(lblTitulo);
 
         return p;
     }

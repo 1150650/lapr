@@ -292,7 +292,7 @@ public class MenuPrincipal extends JFrame {
         btnAlterar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new AlterarPerfilUtilizadorUI(ce, utilizadorAtivo);
             }
         });
         return btnAlterar;

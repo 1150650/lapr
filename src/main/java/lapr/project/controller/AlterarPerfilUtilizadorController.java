@@ -19,8 +19,9 @@ public class AlterarPerfilUtilizadorController {
     private RegistoUtilizadores ru;
     private Utilizador utilizadorAtivo;
 
-    public AlterarPerfilUtilizadorController(CentroExposicoes ce) {
+    public AlterarPerfilUtilizadorController(CentroExposicoes ce, Utilizador utilizadorAtivo) {
         this.centroExposicoes = ce;
+        this.utilizadorAtivo = utilizadorAtivo;
     }
 
     public boolean validaAlteracaoDados(String email, String username) {
