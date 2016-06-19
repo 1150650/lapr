@@ -52,6 +52,16 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private JTextField nConvitesTF;
 
+    private JTextField KeyWord1;
+
+    private JTextField KeyWord2;
+
+    private JTextField KeyWord3;
+
+    private JTextField KeyWord4;
+
+    private JTextField KeyWord5;
+
     public CriarCandidaturaExposicaoUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
         this.ce = ce;
         this.framePai = framePai;
@@ -91,6 +101,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         JPanel areaExposicao = criarPainelAreaExposicao();
         JPanel produtosExposicao = criarPainelProdutosExposicao();
         JPanel NrConvites = criarPainelNrConvites();
+        JPanel KEYWORDS = criarPainelKeyWords();
         JPanel botoes = criarPainelBotoes();
 
         add(nomeEmpresa);
@@ -99,14 +110,14 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         add(areaExposicao);
         add(produtosExposicao);
         add(NrConvites);
+        add(KEYWORDS);
         add(botoes);
     }
 
     private JPanel criarPainelNomeEmpresa() {
         JLabel lbl = new JLabel("Nome da Empresa:", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 25;
-        nomeEmpresaTF = new JTextField(CAMPO_LARGURA);
+        nomeEmpresaTF = new JTextField("Nome da Empresa");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -120,7 +131,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelMorada() {
         JLabel lbl = new JLabel("Morada:", JLabel.RIGHT);
 
-        moradaTF = new JTextArea();
+        moradaTF = new JTextArea("Insira Morada");
         moradaTF.setColumns(25);
         moradaTF.setLineWrap(true);
         moradaTF.setRows(3);
@@ -141,8 +152,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelTelemovel() {
         JLabel lbl = new JLabel("Telemóvel:", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 25;
-        telemovelTF = new JTextField(CAMPO_LARGURA);
+        telemovelTF = new JTextField("Insira número de telémovel");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -156,7 +166,6 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelAreaExposicao() {
         JLabel lbl = new JLabel("Área da exposição:", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 25;
         areaExposicaoTF = new JTextField(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -171,8 +180,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelProdutosExposicao() {
         JLabel lbl = new JLabel("Produtos: ", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 25;
-        produtosTF = new JTextField(CAMPO_LARGURA);
+        produtosTF = new JTextField("Insira os produtos que iram ser utilizados");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -186,8 +194,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelNrConvites() {
         JLabel lbl = new JLabel("Número de convites:", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 25;
-        nConvitesTF = new JTextField(CAMPO_LARGURA);
+        nConvitesTF = new JTextField("Número de convites necessários");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -244,5 +251,25 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
             }
         });
         return btn;
+    }
+
+    private JPanel criarPainelKeyWords() {
+        JLabel l = new JLabel("Keywords:");
+        JPanel j = new JPanel();
+        j.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
+                MARGEM_INFERIOR, MARGEM_DIREITA));
+        KeyWord1 = new JTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord2 = new JTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord3 = new JTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord4 = new JTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord5 = new JTextField("Palavras-chaves que definam a Candidatura");
+        add(l);
+        add(KeyWord1);
+        add(KeyWord2);
+        add(KeyWord3);
+        add(KeyWord4);
+        add(KeyWord5);
+
+        return j;
     }
 }

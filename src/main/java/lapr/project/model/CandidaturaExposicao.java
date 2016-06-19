@@ -16,6 +16,8 @@ public class CandidaturaExposicao extends Candidatura {
      */
     private float areaPretendida;
 
+    private String[] KEYWORDS;
+
     public CandidaturaExposicao(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
         super(nomeEmpresa, morada, telemovel, produtos, quantidadeConvites);
         setAreaPretendida(areaPretendida);
@@ -50,6 +52,20 @@ public class CandidaturaExposicao extends Candidatura {
      */
     public float getAreaPretendida() {
         return areaPretendida;
+    }
+
+    /**
+     * @return the KEYWORDS
+     */
+    public String[] getKEYWORDS() {
+        return KEYWORDS;
+    }
+
+    /**
+     * @param KEYWORDS the KEYWORDS to set
+     */
+    public void setKEYWORDS(String[] KEYWORDS) {
+        this.KEYWORDS = KEYWORDS;
     }
 
 }
