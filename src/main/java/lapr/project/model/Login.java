@@ -17,23 +17,24 @@ public class Login {
     
     public Login(CentroExposicoes centroExpo){
         this.ce = centroExpo;
-        this.ru = ce.getRegistoUtilizadoresConf();
+        this.ru = ce.getRegistoUtilizadoresNConf();
     }
     
-    public void authenticate(String username, String password) {
+    public Utilizador authenticate(String username, String password) {
         int tamanho = ru.tamanho();
         for (int i = 0; i < tamanho; i++) {
             if (ru.obterUtilizador(i).getUsername().equalsIgnoreCase(username)){
                 utilizadorAtivo = ru.obterUtilizador(i);
                 tamanho = ru.tamanho();
+                
             } else{
                 throw new IllegalArgumentException("Utilizador não registado/confirmado!");
             }
         }
-        if(!utilizadorAtivo.getPassword().equalsIgnoreCase(password)){
+        if(!utilizadorAtivo.getPasswordDesencriptada().equalsIgnoreCase(password)){
             throw new IllegalArgumentException("Password incorreta!");
         }
         
-
+        return utilizadorAtivo;
     }
 }

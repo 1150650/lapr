@@ -40,6 +40,12 @@ public class Utilizador {
     public String getPassword() {
         return password;
     }
+    
+    public String getPasswordDesencriptada() {
+        encriptacao = new CaeserCypher(password);
+        String passwordDes = encriptacao.desencriptar();
+        return passwordDes;
+    }
 
     private void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {

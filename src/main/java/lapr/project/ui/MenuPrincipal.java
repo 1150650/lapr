@@ -72,6 +72,7 @@ class MenuPrincipal extends JFrame {
             remove(criarPainelBotoesGestor());
             remove(criarPainelBotoesRepresentante());
             remove(criarPainelBotoesFAE());
+           
             add(criarPainelBotoesOrganizador(), BorderLayout.CENTER);
 
         } else if (tipoUtilizador.equals("FAE")) {

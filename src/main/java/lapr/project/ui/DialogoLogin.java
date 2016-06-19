@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Login;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -22,6 +23,8 @@ public class DialogoLogin extends JDialog {
     private JButton btnLogin;
     private JButton btnCancelar;
     private JanelaPrincipal framePai;
+    private CentroExposicoes ce;
+    private Utilizador utilizadorAtivo;
 
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
@@ -30,6 +33,7 @@ public class DialogoLogin extends JDialog {
         super(framePai, "Login", true);
         this.framePai = framePai;
         autenticarLogin = new Login(centroExpo);
+        ce = centroExpo;
         criarComponentes();
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         pack();
@@ -48,8 +52,8 @@ public class DialogoLogin extends JDialog {
         add(p3, BorderLayout.SOUTH);
 
     }
-    
-    public String getUsername(){
+
+    public String getUsername() {
         return txtUsername.getText();
     }
 
@@ -119,7 +123,10 @@ public class DialogoLogin extends JDialog {
                 try {
                     String username = txtUsername.getText();
                     String password = txtPassword.getText();
-                    autenticarLogin.authenticate(username, password);
+                    utilizadorAtivo = autenticarLogin.authenticate(username, password);
+                    dispose();
+                    framePai.dispose();
+                    new MenuPrincipal(ce, utilizadorAtivo);
                 } catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(
                             framePai,
