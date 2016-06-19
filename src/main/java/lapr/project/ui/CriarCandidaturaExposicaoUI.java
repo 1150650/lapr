@@ -166,7 +166,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelAreaExposicao() {
         JLabel lbl = new JLabel("Área da exposição:", JLabel.RIGHT);
 
-        areaExposicaoTF = new JTextField(CAMPO_LARGURA);
+        areaExposicaoTF = new JTextField("Área pretendida para Exposição");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
