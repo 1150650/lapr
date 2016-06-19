@@ -214,6 +214,10 @@ public class RegistarUtilizadorUI extends JFrame {
                             String password = txtPassword.getText();                       
                             cntr.criarUtilizador(nome, email, username, password);
                             cntr.registaUtilizador();
+                            JOptionPane.showMessageDialog(RegistarUtilizadorUI.this,
+                            "Novo utilizador registado com sucesso!",
+                            "Sucesso",
+                            JOptionPane.INFORMATION_MESSAGE);
                             dispose();
 
                         } catch (IllegalArgumentException ex) {

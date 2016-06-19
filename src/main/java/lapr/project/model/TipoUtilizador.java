@@ -6,6 +6,11 @@
 package lapr.project.model;
 
 public enum TipoUtilizador {
+    UTILIZADOR {
+        public String toString() {
+            return "Utilizador";
+        }
+    },
     ORGANIZADOR {
         public String toString() {
             return "Organizador";

@@ -124,6 +124,10 @@ public class DialogoLogin extends JDialog {
                     String username = txtUsername.getText();
                     String password = txtPassword.getText();
                     utilizadorAtivo = autenticarLogin.authenticate(username, password);
+                    JOptionPane.showMessageDialog(DialogoLogin.this,
+                            "Bem Vindo " + getUsername(),
+                            "Login bem sucedido",
+                            JOptionPane.INFORMATION_MESSAGE);
                     dispose();
                     framePai.dispose();
                     new MenuPrincipal(ce, utilizadorAtivo);

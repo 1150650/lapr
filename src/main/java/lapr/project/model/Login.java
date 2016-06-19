@@ -17,11 +17,14 @@ public class Login {
     
     public Login(CentroExposicoes centroExpo){
         this.ce = centroExpo;
-        this.ru = ce.getRegistoUtilizadoresNConf();
+        this.ru = ce.getRegistoUtilizadoresConf();
     }
     
     public Utilizador authenticate(String username, String password) {
         int tamanho = ru.tamanho();
+        if(tamanho == 0) {
+            throw new IllegalArgumentException("Utilizador não registado/confirmado!");
+        } else {
         for (int i = 0; i < tamanho; i++) {
             if (ru.obterUtilizador(i).getUsername().equalsIgnoreCase(username)){
                 utilizadorAtivo = ru.obterUtilizador(i);
@@ -30,6 +33,7 @@ public class Login {
             } else{
                 throw new IllegalArgumentException("Utilizador não registado/confirmado!");
             }
+        }
         }
         if(!utilizadorAtivo.getPasswordDesencriptada().equalsIgnoreCase(password)){
             throw new IllegalArgumentException("Password incorreta!");
