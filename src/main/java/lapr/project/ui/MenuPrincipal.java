@@ -7,17 +7,16 @@ package lapr.project.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
@@ -29,7 +28,7 @@ import lapr.project.model.Utilizador;
  *
  * @author SimãoPedro
  */
-class MenuPrincipal extends JFrame {
+public class MenuPrincipal extends JFrame {
 
     private CentroExposicoes ce;
     private String tipoUtilizador = "Utilizador";
@@ -68,6 +67,8 @@ class MenuPrincipal extends JFrame {
         if (termoParagem == 0) {
             add(criarPainelTitulo(), BorderLayout.NORTH);
             add(criarPainelUtilizador(), BorderLayout.SOUTH);
+       //     JMenuBar menuBar = criarBarraMenus();
+       //     setJMenuBar(menuBar);
             termoParagem = 1;
         }
         if (tipoUtilizador.equals("Utilizador")) {
@@ -75,7 +76,7 @@ class MenuPrincipal extends JFrame {
             remove(criarPainelBotoesRepresentante());
             remove(criarPainelBotoesFAE());
             remove(criarPainelBotoesOrganizador());
-            
+
             add(criarPainelDadosUtilizador());
 
         } else if (tipoUtilizador.equals("Organizador")) {
@@ -160,27 +161,27 @@ class MenuPrincipal extends JFrame {
     }
 
     private JPanel criarPainelDadosUtilizador() {
-        String nome = "Nome: "+ utilizadorAtivo.getNome();
+        String nome = "Nome: " + utilizadorAtivo.getNome();
         JLabel lblNome = new JLabel(nome, JLabel.LEFT);
         lblNome.setFont(new Font("Arial", Font.PLAIN, 15));
         lblNome.setPreferredSize(LABEL_TAMANHO);
-        
+
         String email = "Email: " + utilizadorAtivo.getEmail();
         JLabel lblEmail = new JLabel(email, JLabel.LEFT);
         lblEmail.setFont(new Font("Arial", Font.PLAIN, 15));
         lblEmail.setPreferredSize(LABEL_TAMANHO);
-        
+
         String username = "Username: " + utilizadorAtivo.getUsername();
         JLabel lblUsername = new JLabel(username, JLabel.LEFT);
         lblUsername.setFont(new Font("Arial", Font.PLAIN, 15));
         lblUsername.setPreferredSize(LABEL_TAMANHO);
-        
-        JLabel lblPassword = new JLabel("Password: (password escondida por motivos de segurança)", JLabel.LEFT);
+
+        JLabel lblPassword = new JLabel("Password: (password não apresentada por motivos de segurança)", JLabel.LEFT);
         lblPassword.setFont(new Font("Arial", Font.PLAIN, 15));
         lblPassword.setPreferredSize(LABEL_TAMANHO);
-        
+
         JButton btnAlterarDadosUtilizador = criarBotaoAlterarDadosUtilizador();
-        
+
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
@@ -194,7 +195,6 @@ class MenuPrincipal extends JFrame {
         p.add(btnAlterarDadosUtilizador, BorderLayout.EAST);
         return p;
     }
-    
 
     private JPanel criarPainelBotoesOrganizador() {
         btnDecidirFAE = criarBotaoDecidirFAE();
@@ -286,7 +286,7 @@ class MenuPrincipal extends JFrame {
 
         return p;
     }
-    
+
     private JButton criarBotaoAlterarDadosUtilizador() {
         JButton btnAlterar = new JButton("Alterar Dados");
         btnAlterar.addActionListener(new ActionListener() {
@@ -297,6 +297,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnAlterar;
     }
+
     private JButton criarBotaoDecidirFAE() {
         btnDecidirFAE = new JButton("Decidir FAE");
 

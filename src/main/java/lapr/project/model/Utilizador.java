@@ -47,7 +47,7 @@ public class Utilizador {
         return passwordDes;
     }
 
-    private void setNome(String nome) {
+    public void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException("Nome inválido!");
         }
@@ -56,7 +56,7 @@ public class Utilizador {
     }
 
     //PERGUNTAR SE PODEMOS USAR REGEX
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         String FUNCAO_OBJ = "(.*)[@](.*)((.com)|(.pt))$";
         Pattern FUNCAO_OBJETIVO = Pattern.compile(FUNCAO_OBJ);
         Matcher verificar = FUNCAO_OBJETIVO.matcher(email);
@@ -66,14 +66,14 @@ public class Utilizador {
         this.email = email;
     }
 
-    private void setUsername(String username) {
+    public void setUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("Username inválido!");
         }
         this.username = username;
     }
 
-    private void setPassword(String password) {
+    public void setPassword(String password) {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
         }

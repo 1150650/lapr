@@ -44,18 +44,27 @@ public class RegistoUtilizadores {
     }
 
     private boolean validaUtilizador(Utilizador u) {
-        boolean validaEmail = validaEmail(u);
-        boolean validaUsername = validaUsername(u);
+        boolean validaEmail = validaEmail(u.getEmail());
+        boolean validaUsername = validaUsername(u.getUsername());
+        if (validaEmail == true && validaUsername == true) {
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean validaAlteracaoDados(String email, String username) {
+        boolean validaEmail = validaEmail(u.getEmail());
+        boolean validaUsername = validaUsername(u.getUsername());
         if (validaEmail == true && validaUsername == true) {
             return true;
         }
         return false;
     }
 
-    private boolean validaEmail(Utilizador u) {
+    private boolean validaEmail(String email) {
         boolean valida = true;
         for (int i = 0; i < registoUtilizadores.size(); i++) {
-            if (!u.getEmail().equalsIgnoreCase(obterUtilizador(i).getEmail())) {
+            if (!email.equalsIgnoreCase(obterUtilizador(i).getEmail())) {
                 valida = true;
             } else {
                 valida = false;
@@ -65,10 +74,10 @@ public class RegistoUtilizadores {
         return valida;
     }
 
-    private boolean validaUsername(Utilizador u) {
+    private boolean validaUsername(String username) {
         boolean valida = true;
         for (int i = 0; i < registoUtilizadores.size(); i++) {
-            if (!u.getUsername().equalsIgnoreCase(obterUtilizador(i).getUsername())) {
+            if (!username.equalsIgnoreCase(obterUtilizador(i).getUsername())) {
                 valida = true;
             } else {
                 valida = false;
@@ -85,6 +94,13 @@ public class RegistoUtilizadores {
     public boolean removerUtilizador(Utilizador u) {
         registoUtilizadores.remove(u);
         return true;
+    }
+    
+    public void alterarDados(Utilizador utilizadorAtivo, String nome, String email, String username, String password){
+        utilizadorAtivo.setNome(nome);
+        utilizadorAtivo.setEmail(email);
+        utilizadorAtivo.setUsername(username);
+        utilizadorAtivo.setPassword(password);
     }
 
     public List<Utilizador> getRegistoUtilizadores() {

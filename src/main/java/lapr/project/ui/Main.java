@@ -23,8 +23,8 @@ class Main {
         System.out.println(calculatorExample.sum(3, 5));
         Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         CentroExposicoes ce = new CentroExposicoes();
-        new MenuPrincipal(ce, u);
-       // new JanelaPrincipal(ce);
+      //  new MenuPrincipal(ce, u);
+        new JanelaPrincipal(ce);
     }
 
 }

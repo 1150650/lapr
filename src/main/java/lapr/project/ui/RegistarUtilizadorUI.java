@@ -23,6 +23,8 @@ import javax.swing.border.EmptyBorder;
 import lapr.project.controller.RegistarUtilizadorController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.utils.CaeserCypher;
+import lapr.project.utils.HintPasswordField;
+import lapr.project.utils.HintTextField;
 
 /**
  *
@@ -96,7 +98,8 @@ public class RegistarUtilizadorUI extends JFrame {
         lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtNome = new JTextField(CAMPO_LARGURA);
+        txtNome = new HintTextField("Digite o seu nome");
+        txtNome.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
@@ -114,7 +117,8 @@ public class RegistarUtilizadorUI extends JFrame {
         lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtEmail = new JTextField(CAMPO_LARGURA);
+        txtEmail = new HintTextField("Digite o seu email");
+        txtEmail.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
@@ -132,7 +136,8 @@ public class RegistarUtilizadorUI extends JFrame {
         lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtUsername = new JTextField(CAMPO_LARGURA);
+        txtUsername = new HintTextField("Digite um username");
+        txtUsername.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
@@ -150,8 +155,8 @@ public class RegistarUtilizadorUI extends JFrame {
         lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtPassword = new JPasswordField(CAMPO_LARGURA);
-        txtPassword.setEchoChar('*');
+        txtPassword = new HintPasswordField("Digite uma password válida");
+        txtPassword.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;
@@ -169,8 +174,8 @@ public class RegistarUtilizadorUI extends JFrame {
         lbl.setPreferredSize(LABEL_TAMANHO);
 
         final int CAMPO_LARGURA = 25;
-        txtPassword1 = new JPasswordField(CAMPO_LARGURA);
-        txtPassword1.setEchoChar('*');
+        txtPassword1 = new HintPasswordField("Digite novamente a password");
+        txtPassword1.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         final int MARGEM_SUPERIOR = 25, MARGEM_INFERIOR = 5;

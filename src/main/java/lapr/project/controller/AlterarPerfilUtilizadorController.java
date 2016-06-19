@@ -23,9 +23,13 @@ public class AlterarPerfilUtilizadorController {
         this.centroExposicoes = ce;
     }
 
-    public String getUtilizadorInfo(String username) {
-        this.utilizadorAtivo=utilizadorAtivo;
-        return "";
+    public boolean validaAlteracaoDados(String email, String username) {
+        boolean valida = ru.validaAlteracaoDados(email, username);
+        return valida;
+    }
+    
+    public void alterarDados(String nome, String email, String username, String password){
+        ru.alterarDados(utilizadorAtivo, nome, email, username, password);
     }
 
 }
