@@ -32,6 +32,8 @@ import lapr.project.model.Utilizador;
 class MenuPrincipal extends JFrame {
 
     private CentroExposicoes ce;
+    private String tipoUtilizador = "Organizador";
+    private int termoParagem = 0;
     private DialogoLogin login;
     private JComboBox<TipoUtilizador> cbTipo;
     private Utilizador utilizadorAtivo;
@@ -39,8 +41,8 @@ class MenuPrincipal extends JFrame {
     private JButton btnDecidirFAE, btnAtribuirCandidatura, btnCriarStand,
             btnAvaliacaoFinalCand, btnCriarDemonstracao, btnAtribuirStands,
             btnAtribuirCandDemonstracao, btnDecidirCandidatura,
-            btnAtualizarConflitosInteresse, btnAvaliarCandDemonstracao, 
-            btnRegistarExposicao, btnConfirmarRegistoUtilizador, 
+            btnAtualizarConflitosInteresse, btnAvaliarCandDemonstracao,
+            btnRegistarExposicao, btnConfirmarRegistoUtilizador,
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
             btnRegistarCandDemonstracao, btnConfirmarStand;
@@ -61,15 +63,43 @@ class MenuPrincipal extends JFrame {
     }
 
     private void criarComponentes() {
-        add(criarPainelTitulo(), BorderLayout.NORTH);
-        add(criarPainelUtilizador(), BorderLayout.SOUTH);
+        if (termoParagem == 0) {
+            add(criarPainelTitulo(), BorderLayout.NORTH);
+            add(criarPainelUtilizador(), BorderLayout.SOUTH);
+            termoParagem = 1;
+        }
+        if (tipoUtilizador.equals("Organizador")) {
+            remove(criarPainelBotoesGestor());
+            remove(criarPainelBotoesRepresentante());
+            remove(criarPainelBotoesFAE());
+            add(criarPainelBotoesOrganizador(), BorderLayout.CENTER);
 
+        } else if (tipoUtilizador.equals("FAE")) {
+            remove(criarPainelBotoesOrganizador());
+            remove(criarPainelBotoesGestor());
+            remove(criarPainelBotoesRepresentante());
+            add(criarPainelBotoesFAE(), BorderLayout.CENTER);
+            
+        } else if (tipoUtilizador.equals("Gestor de Exposições")) {
+            remove(criarPainelBotoesOrganizador());
+            remove(criarPainelBotoesRepresentante());
+            remove(criarPainelBotoesFAE());
+            add(criarPainelBotoesGestor(), BorderLayout.CENTER);
+            
+        } else if (tipoUtilizador.equals("Representante de expositor")) {
+            remove(criarPainelBotoesFAE());
+            remove(criarPainelBotoesGestor());
+            remove(criarPainelBotoesOrganizador());
+            add(criarPainelBotoesRepresentante(), BorderLayout.CENTER);
+        }
         //   tabPane = criarSeparadores();
         //   add(tabPane, BorderLayout.SOUTH);
         //   add(criarPainelBotoes1());
         //   add(criarPainelBotoes2());
         //   add(criarPainelBotoes3());
-        //   add(criarPainelBotoes4());       
+        //   add(criarPainelBotoes4());
+        revalidate();
+       // repaint();
     }
 
     private JPanel criarPainelTitulo() {
@@ -88,7 +118,7 @@ class MenuPrincipal extends JFrame {
     }
 
     private JPanel criarPainelUtilizador() {
-        
+
         String utilizador = "User: " + utilizadorAtivo.getNome() + " no papel de ";
         JLabel lblUtilizador = new JLabel(utilizador, JLabel.CENTER);
 
@@ -106,19 +136,22 @@ class MenuPrincipal extends JFrame {
         cbTipo = new JComboBox(TipoUtilizador.values());
         cbTipo.setEditable(false);
         cbTipo.setMaximumRowCount(4);
-        cbTipo.setSelectedIndex(0);
+
         cbTipo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Object s = cbTipo.getSelectedItem();
-                if (s.equals("Organizador")) {
+                //int s = cbTipo.getSelectedIndex();
+                Object s1 = cbTipo.getSelectedItem();
+                tipoUtilizador = s1.toString();
+                criarComponentes();
+                /*     if (s.equals("Organizador")) {
                     criarComponentes();
-                    add(criarPainelBotoesOrganizador());
-                } else if ((s.equals("FAE"))) {
+                    add(criarPainelBotoesOrganizador(), BorderLayout.CENTER);
+                } else if (s.equals("FAE")) {
                     criarComponentes();
-                    add(criarPainelBotoesFAE());
-                }
-                
+                    add(criarPainelBotoesFAE(), BorderLayout.CENTER);
+                }*/
+
             }
         });
         return cbTipo;
@@ -139,7 +172,6 @@ class MenuPrincipal extends JFrame {
      */
     //  private JPanel criarPainelBotoes1(){
     // }
-
     private JPanel criarPainelBotoesOrganizador() {
         btnDecidirFAE = criarBotaoDecidirFAE();
         btnAtribuirCandidatura = criarBotaoAtribuirCandidatura();
@@ -177,7 +209,10 @@ class MenuPrincipal extends JFrame {
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-
+        p.setLayout(new GridLayout(3, 1, 20, 20));
+        p.add(btnDecidirCandidatura);
+        p.add(btnAtualizarConflitosInteresse);
+        p.add(btnAvaliarCandDemonstracao);
         return p;
     }
 
@@ -186,13 +221,19 @@ class MenuPrincipal extends JFrame {
         btnConfirmarRegistoUtilizador = criarBotaoConfirmarRegistoUtilizador();
         btnDefinirRecursos = criarBotaoDefinirRecursos();
         btnDefinirTipoConflito = criarBotaoDefinirTipoConflito();
-        
+
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-
+        p.setLayout(new GridLayout(2, 2, 20, 20));
+        
+        p.add(btnRegistarExposicao);
+        p.add(btnConfirmarRegistoUtilizador);
+        p.add(btnDefinirRecursos);
+        p.add(btnDefinirTipoConflito);
+        
         return p;
     }
 
@@ -203,13 +244,22 @@ class MenuPrincipal extends JFrame {
         btnRetirarCandidatura = criarBotaoRetirarCandidatura();
         btnRegistarCandDemonstracao = criarBotaoRegistarCandDemonstracao();
         btnConfirmarStand = criarBotaoConfirmarStand();
-        
+
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-
+        p.setLayout(new GridLayout(3, 2, 20, 20));
+        
+        p.add(btnCandidatarExposicao);
+        p.add(btnAlterarCandidatura);
+        p.add(btnDecidirDemonstracao);
+        p.add(btnRetirarCandidatura);
+        p.add(btnRetirarCandidatura);
+        p.add(btnRegistarCandDemonstracao);
+        p.add(btnConfirmarStand);
+        
         return p;
     }
 
@@ -332,7 +382,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnAvaliarCandDemonstracao;
     }
-    
+
     private JButton criarBotaoRegistarExposicao() {
         btnRegistarExposicao = new JButton("Registar Exposicao");
 
@@ -344,7 +394,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnRegistarExposicao;
     }
-    
+
     private JButton criarBotaoConfirmarRegistoUtilizador() {
         btnConfirmarRegistoUtilizador = new JButton("Confirmar Registo de Utilizador");
 
@@ -356,7 +406,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnConfirmarRegistoUtilizador;
     }
-    
+
     private JButton criarBotaoDefinirRecursos() {
         btnDefinirRecursos = new JButton("Definir Recursos");
 
@@ -368,7 +418,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnDefinirRecursos;
     }
-    
+
     private JButton criarBotaoDefinirTipoConflito() {
         btnDefinirTipoConflito = new JButton("Definir Tipo de Conflito");
 
@@ -392,7 +442,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnCandidatarExposicao;
     }
-    
+
     private JButton criarBotaoAlterarCandidatura() {
         btnAlterarCandidatura = new JButton("Alterar Candidatura");
 
@@ -404,7 +454,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnAlterarCandidatura;
     }
-    
+
     private JButton criarBotaoDecidirDemonstracao() {
         btnDecidirDemonstracao = new JButton("Decidir Demonstracao");
 
@@ -416,7 +466,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnDecidirDemonstracao;
     }
-    
+
     private JButton criarBotaoRetirarCandidatura() {
         btnRetirarCandidatura = new JButton("Retirar Candidatura");
 
@@ -428,7 +478,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnRetirarCandidatura;
     }
-    
+
     private JButton criarBotaoRegistarCandDemonstracao() {
         btnRegistarCandDemonstracao = new JButton("Registar Candidatura a Demonstracao");
 
@@ -440,7 +490,7 @@ class MenuPrincipal extends JFrame {
         });
         return btnRegistarCandDemonstracao;
     }
-    
+
     private JButton criarBotaoConfirmarStand() {
         btnConfirmarStand = new JButton("Confirmar Stand");
 
@@ -452,5 +502,5 @@ class MenuPrincipal extends JFrame {
         });
         return btnConfirmarStand;
     }
-    
+
 }
