@@ -75,6 +75,7 @@ class MenuPrincipal extends JFrame {
             remove(criarPainelBotoesRepresentante());
             remove(criarPainelBotoesFAE());
             remove(criarPainelBotoesOrganizador());
+            
             add(criarPainelDadosUtilizador());
 
         } else if (tipoUtilizador.equals("Organizador")) {
@@ -143,7 +144,7 @@ class MenuPrincipal extends JFrame {
     private JComboBox criarComboBox() {
         cbTipo = new JComboBox(TipoUtilizador.values());
         cbTipo.setEditable(false);
-        cbTipo.setMaximumRowCount(4);
+        cbTipo.setMaximumRowCount(5);
 
         cbTipo.addActionListener(new ActionListener() {
             @Override
