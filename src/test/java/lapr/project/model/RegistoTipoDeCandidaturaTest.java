@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -14,7 +15,7 @@ import org.junit.Test;
 public class RegistoTipoDeCandidaturaTest {
 
     @Test
-    public boolean test() {
+    public void test() {
 
         RegistoTipoDeConflito lst = new RegistoTipoDeConflito();
         TipoDeConflito e = new TipoDeConflito("dinheiro");
@@ -22,16 +23,16 @@ public class RegistoTipoDeCandidaturaTest {
 
         lst.adicionarTipoDeConflito(a);
         lst.adicionarTipoDeConflito(e);
-
-        if (lst.tamanho() == 2) {
-            if (lst.obterTipoDeConflito(0).equals(a)) {
-                return true;
-            }
+          assertEquals(2, lst.tamanho());
+        
+            
+                assertEquals(a, lst.obterTipoDeConflito(0));
+            
 
         }
 
-        return false;
+        
 
     }
 
-}
+

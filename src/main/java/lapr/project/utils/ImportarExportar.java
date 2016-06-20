@@ -19,7 +19,7 @@ import lapr.project.model.CentroExposicoes;
  */
 public class ImportarExportar {
 
-    public static void exportar(CentroExposicoes ce, String filename) throws Exception {
+    public void exportar(CentroExposicoes ce, String filename) throws Exception {
         XMLEncoder encoder
                 = new XMLEncoder(
                         new BufferedOutputStream(
@@ -28,7 +28,7 @@ public class ImportarExportar {
         encoder.close();
     }
 
-    public static CentroExposicoes importar(String filename) throws Exception {
+    public CentroExposicoes importar(String filename) throws Exception {
         XMLDecoder decoder
                 = new XMLDecoder(new BufferedInputStream(
                         new FileInputStream(filename)));

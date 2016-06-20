@@ -35,13 +35,10 @@ public class CriarDemonstraçãoController {
         this.exposicao=exposicao;
     }
     
-    public void novaExposicao (){
+    public void novaDemonstracao (){
         demonstracao=exposicao.getListaDemonstracoes().criacaoDemonstracao();
     }
     
-    public void validaDados (){
-        
-    }
     
     public void setDados (String Descricao){
         demonstracao.setDados(Descricao);
@@ -60,6 +57,6 @@ public class CriarDemonstraçãoController {
     }
     
     public void setEstadoDemonstracaoCriada (){
-        exposicao.setExposicaoCriada();
+        
     }
 }

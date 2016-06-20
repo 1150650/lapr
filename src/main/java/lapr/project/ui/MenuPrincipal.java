@@ -12,17 +12,29 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.TipoUtilizador;
 import lapr.project.model.Utilizador;
+import lapr.project.utils.ImportarExportar;
+import lapr.project.utils.MyJFileChooser;
 
 /**
  *
@@ -31,6 +43,7 @@ import lapr.project.model.Utilizador;
 public class MenuPrincipal extends JFrame {
 
     private CentroExposicoes ce;
+    private JanelaPrincipal framePrincipal;
     private String tipoUtilizador = "Utilizador";
     private int termoParagem = 0;
     private DialogoLogin login;
@@ -67,8 +80,8 @@ public class MenuPrincipal extends JFrame {
         if (termoParagem == 0) {
             add(criarPainelTitulo(), BorderLayout.NORTH);
             add(criarPainelUtilizador(), BorderLayout.SOUTH);
-       //     JMenuBar menuBar = criarBarraMenus();
-       //     setJMenuBar(menuBar);
+            JMenuBar menuBar = criarBarraMenus();
+            setJMenuBar(menuBar);
             termoParagem = 1;
         }
         if (tipoUtilizador.equals("Utilizador")) {
@@ -111,6 +124,128 @@ public class MenuPrincipal extends JFrame {
         revalidate();
         // repaint();
     }
+    
+    private JMenuBar criarBarraMenus() {
+        JMenuBar menuBar = new JMenuBar();
+
+        menuBar.add(criarMenuFicheiro());
+     //   menuBar.add(criarMenuOpcoes());
+
+        return menuBar;
+    }
+    
+    private JMenu criarMenuFicheiro() {
+        JMenu menu = new JMenu("Ficheiro");
+        menu.setMnemonic(KeyEvent.VK_C);
+
+        menu.add(criarTerminarSessao());
+        menu.addSeparator();
+        menu.add(criarSubMenuLista());
+        menu.addSeparator();
+        menu.addSeparator();
+    //    menu.add(criarItemSair());
+
+        return menu;
+    }
+      
+    
+    private JMenuItem criarTerminarSessao() {
+        JMenuItem item = new JMenuItem("Terminar Sessão", KeyEvent.VK_T);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MenuPrincipal.this.dispose();
+                new JanelaPrincipal(ce);
+            }
+        });
+        return item;
+    }
+    
+    private JMenu criarSubMenuLista() {
+        JMenu menu = new JMenu("Listas");
+        menu.setMnemonic(KeyEvent.VK_L);
+
+        menu.add(criarItemImportarLista());
+        menu.add(criarItemExportarLista());
+        
+        return menu;
+    }
+    
+    private JMenuItem criarItemImportarLista() {
+        JMenuItem item = new JMenuItem("Importar", 'I');
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_MASK));
+        
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ImportarExportar imp = new ImportarExportar();
+                MyJFileChooser fileChooser = new MyJFileChooser();
+                int resposta = fileChooser.showOpenDialog(MenuPrincipal.this);
+                
+                if (resposta == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    CentroExposicoes ce;
+                    try {
+                        ce = imp.importar(file.getPath());
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(
+                                MenuPrincipal.this,
+                                "Impossível ler o ficheiro: " + file.getPath()+ " !",
+                                "Importar",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+
+
+                        JOptionPane.showMessageDialog(
+                                MenuPrincipal.this,
+                                "Centro de Exposições adicionado",
+                                "Importar Centro de Exposição",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    
+                }
+                
+            }
+        });
+
+        return item;
+    }
+    
+    private JMenuItem criarItemExportarLista() {
+        JMenuItem item = new JMenuItem("Exportar", 'X');
+        item.setAccelerator(KeyStroke.getKeyStroke("ctrl X"));
+        
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ImportarExportar exp = new ImportarExportar();
+                MyJFileChooser fileChooser = new MyJFileChooser();
+                int resposta = fileChooser.showSaveDialog(MenuPrincipal.this);
+                
+                if (resposta == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    if (!file.getName().endsWith(".bin")) {
+                        file = new File(file.getPath().trim() + ".xml");
+                    }
+                    try {
+                        exp.exportar(ce, file.getPath());
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(
+                                MenuPrincipal.this,
+                                "Impossível exportar o ficheiro: " + file.getPath()+ " !",
+                                "Exportar",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+            
+                }
+            }
+        });        
+
+        return item;
+    }
+    
 
     private JPanel criarPainelTitulo() {
         JLabel lblMenuPrincipal = new JLabel("Menu Principal", JLabel.CENTER);

@@ -35,6 +35,7 @@ public class FAE implements Comparable<FAE> {
     public FAE(Utilizador u, String iD) {
         setUtilizador(u);
         setIdentificador(iD);
+        listaCandidaturasParaAvaliar=new ListaCandidaturas();
     }
 
     /**

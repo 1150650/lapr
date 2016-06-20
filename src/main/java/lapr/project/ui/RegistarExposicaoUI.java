@@ -10,7 +10,6 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.lang.String.format;
 import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -30,7 +29,7 @@ import lapr.project.model.Utilizador;
  *
  * @author JOAO
  */
-public class RegistarExposicaoUI extends JFrame {
+public class RegistarExposicaoUI extends JDialog {
     
      private JTextField txtTitulo, txtDescricao, txtLocal,txtDateInicio,txtDateFinal;
      private Date dtInico,dtFim;
@@ -43,7 +42,7 @@ public class RegistarExposicaoUI extends JFrame {
     
    public RegistarExposicaoUI (MenuPrincipal framePai, CentroExposicoes ce){
        
-        super("Registar Exposição");
+        super(framePai,"Registar Exposição",true);
         this.centroexpo = ce;
         this.contr = new RegistarExposicaoController(ce);
         this.framePai = framePai;
@@ -51,10 +50,10 @@ public class RegistarExposicaoUI extends JFrame {
         contr.novaExposicao();
 
         criarComponentes();
- setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        setMinimumSize(new Dimension(500, 700));
-        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        pack();
+        setResizable(false);
+        setLocationRelativeTo(framePai);
         setVisible(true);
    }
 
@@ -72,12 +71,12 @@ public class RegistarExposicaoUI extends JFrame {
     private JPanel criarPainelNorte() {
         JPanel p1 = criarPainelTitulo();
         JPanel p2 = criarPainelDescricao();
-        JPanel p3 = criarPainelData();
+        
 
         JPanel pNorte = new JPanel();
         pNorte.add(p1, BorderLayout.NORTH);
+        
         pNorte.add(p2, BorderLayout.CENTER);
-        pNorte.add(p3, BorderLayout.SOUTH);
 
         return pNorte;
     }
@@ -88,8 +87,8 @@ public class RegistarExposicaoUI extends JFrame {
     
 
         JPanel pCentro = new JPanel();
-     pCentro.add(p2, BorderLayout.NORTH);
-        pCentro.add(p1, BorderLayout.CENTER);
+        pCentro.add(p1, BorderLayout.NORTH);
+        pCentro.add(p2, BorderLayout.CENTER);
     
 
         return pCentro;
@@ -97,11 +96,13 @@ public class RegistarExposicaoUI extends JFrame {
 
     private JPanel criarPainelSul() {
         JButton btnOK = criarBotaoOK();
+        JPanel p3 = criarPainelData();
         getRootPane().setDefaultButton(btnOK);
 
         JButton btnCancelar = criarBotaoCancelar();
 
         JPanel p = new JPanel();
+        p.add(p3, BorderLayout.CENTER);
        
         p.add(btnOK);
         p.add(btnCancelar);
@@ -112,7 +113,7 @@ public class RegistarExposicaoUI extends JFrame {
   
 
     private JPanel criarPainelTitulo() {
-        JLabel lbl = new JLabel("Titulo:", JLabel.RIGHT);
+        JLabel lbl = new JLabel("Titulo:");
 
         final int CAMPO_LARGURA = 10;
         txtTitulo = new JTextField(CAMPO_LARGURA);
@@ -125,7 +126,7 @@ public class RegistarExposicaoUI extends JFrame {
     }
 
     private JPanel criarPainelDescricao() {
-        JLabel lbl = new JLabel("Descricao:", JLabel.RIGHT);
+        JLabel lbl = new JLabel("Descricao:");
 
         final int CAMPO_LARGURA = 10;
         txtDescricao = new JTextField(CAMPO_LARGURA);
@@ -204,7 +205,7 @@ public class RegistarExposicaoUI extends JFrame {
     }
 
    private JPanel criarPainelLocal() {
-       JLabel lbl = new JLabel("Local :", JLabel.RIGHT);
+       JLabel lbl = new JLabel("Local :");
 
         final int CAMPO_LARGURA = 10;
         txtLocal = new JTextField(CAMPO_LARGURA);
@@ -224,11 +225,11 @@ public class RegistarExposicaoUI extends JFrame {
 
 
     private JPanel criarPainelData() {
-       JLabel lbl = new JLabel("Data de inicio :", JLabel.RIGHT);
+       JLabel lbl = new JLabel("Data de inicio :");
 
         final int CAMPO_LARGURA = 10;
         txtDateInicio = new JTextField(CAMPO_LARGURA);
-        JLabel lbl1 = new JLabel("Data de Final :", JLabel.RIGHT);
+        JLabel lbl1 = new JLabel("Data de Final :");
 
        
         txtDateFinal = new JTextField(CAMPO_LARGURA);

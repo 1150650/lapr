@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author JOAO
  */
 public class AtribuicaoFAETest {
-    private AtribuicaoFAE a;
+    private AtribuicaoFAE a=new AtribuicaoFAE();
     private FAE f;
     private Candidatura c;
     
@@ -37,6 +37,12 @@ public class AtribuicaoFAETest {
     
     @Test
     public void AdicionarTest (){
+         Utilizador u = new Utilizador("admin", "admin@gmail.com", "admin", ".Admin10");
+        this.f = new FAE(u,"123");
+        this.c = new Candidatura();
+        c.setNomeEmpresa("isep");
+        a.setCandidatura(c);
+        a.setFAE(f);
         
         a.addCandidaturaFae();
         assertEquals(c, a.getFAE().getListacandidatura().obterCandidatura(0));

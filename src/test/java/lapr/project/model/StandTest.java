@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -14,18 +15,19 @@ import org.junit.Test;
 public class StandTest {
 
     @Test
-    public boolean test() {
+    public void test() {
         Stand u = new Stand();
         String descricao = "hall";
         u.setDescricao("hall");
         Candidatura candidatura = new Candidatura();
         u.addCandidatura(candidatura);
-        if (u.getDescricao().equalsIgnoreCase(descricao) && u.hasCandidatura() == true) {
-            return true;
+         
+             assertEquals(descricao, u.getDescricao());
+              assertEquals(true, u.hasCandidatura());
 
-        }
+        
 
-        return false;
+        
     }
 
 }
