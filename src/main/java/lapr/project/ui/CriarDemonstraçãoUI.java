@@ -39,14 +39,13 @@ public class CriarDemonstraçãoUI extends JFrame {
 
     public CriarDemonstraçãoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
-        super("Registar Exposicao");
+        super("Registar Demonstracao");
         this.centroexpo = ce;
         this.contr = new CriarDemonstraçãoController(ce);
         this.framePai = framePai;
-
+        contr.novaDemonstracao();
         criarComponentes();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
         setVisible(true);
@@ -179,7 +178,10 @@ public class CriarDemonstraçãoUI extends JFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String Descricao = txtDescricao.getText();
+              contr.setDados(Descricao);
+              contr.setEstadoDemonstracaoCriada();
+              contr.validaRegistaDemonstracao();
                 dispose();
 
             }

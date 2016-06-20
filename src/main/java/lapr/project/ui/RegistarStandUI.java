@@ -36,10 +36,8 @@ public class RegistarStandUI extends JFrame {
         this.framePai = framePai;
 
         criarComponentes();
-
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        setMinimumSize(new Dimension(500, 500));
+        setMinimumSize(new Dimension(500, 300));
         setLocationRelativeTo(null);
         setVisible(true);
     }

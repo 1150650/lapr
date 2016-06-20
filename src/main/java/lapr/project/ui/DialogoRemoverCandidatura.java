@@ -49,9 +49,6 @@ class DialogoRemoverCandidatura extends JDialog {
         setLocationRelativeTo(framePai);
         setVisible(true);
         
-        
-        
-        
     }
 
     private void criarComponentes() {
@@ -73,7 +70,7 @@ class DialogoRemoverCandidatura extends JDialog {
          lstCandidaturasExposicao = new ModeloListaCandidaturas (contr.getListaCandidaturasExposicoes(expo));
          JList lstCompleta = new JList(lstCandidaturasExposicao );
         
-        btnRemoverCandidaturaExposicao = criarBotaoRemoverCandidaturaDemonstracao(lstCompleta);
+        btnRemoverCandidaturaExposicao = criarBotaoRemoverCandidaturaExposicao(lstCompleta);
         
         p.add(criarPainelLista( "Lista de Candidaturas (Exposicao):",
                                 lstCompleta,
@@ -119,7 +116,7 @@ class DialogoRemoverCandidatura extends JDialog {
         return p;
     }
     private JPanel criarPainelBotao(JButton btnSuperior) {
-        final int NUMERO_LINHAS = 2, NUMERO_COLUNAS = 1;
+        final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 1;
         final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;        
         JPanel p = new JPanel(new GridLayout( NUMERO_LINHAS, 
                                               NUMERO_COLUNAS, 
@@ -147,7 +144,29 @@ class DialogoRemoverCandidatura extends JDialog {
                 try {
                     ModeloListaCandidaturas m  = ( ModeloListaCandidaturas) lstCompleta.getModel();
                     Candidatura m1 =(Candidatura ) lstCompleta.getSelectedValue();
-                    contr.removerCandidatura(m1);
+                    contr.removerCandidaturaDemonstracao(m1);
+                     
+                  
+
+                } catch (NumberFormatException ex) {
+
+                }
+            }
+        });
+        
+        
+        return btn;
+    }
+    
+     private JButton criarBotaoRemoverCandidaturaExposicao(JList lstCompleta) {
+        JButton btn = new JButton("Remover Candidatura a Exposicao");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ModeloListaCandidaturas m  = ( ModeloListaCandidaturas) lstCompleta.getModel();
+                    Candidatura m1 =(Candidatura ) lstCompleta.getSelectedValue();
+                    contr.removerCandidaturaExposicao(m1);
                      
                   
 
