@@ -40,6 +40,8 @@ public class Candidatura {
 
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
+        state = new CandidaturaAbertaState(this);
+
     }
 
     /**
@@ -66,6 +68,7 @@ public class Candidatura {
         setProdutos(produtos);
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
+        state = new CandidaturaAbertaState(this);
     }
 
     /**
@@ -196,12 +199,12 @@ public class Candidatura {
     public CandidaturaState getState() {
         return state;
     }
-
-    public boolean setCandidaturaCriada() {
-        return state.setCandidaturaCriada();
-    }
-
-    void setEstado(CandidaturaState state) {
+    
+    public void setEstado(CandidaturaState state) {
         this.state = state;
+    }
+    
+    public boolean setCandidaturaEmSubmissao(){
+        return state.setCandidaturaEmSubmissao();
     }
 }

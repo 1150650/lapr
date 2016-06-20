@@ -7,29 +7,19 @@ package lapr.project.model;
 
 /**
  *
- * @author SimãoPedro
+ * @author Filipe <FilipeCorreia.1150524>
  */
-public class CandidaturaAvaliadaState extends CandidaturaState {
-    
+public class CandidaturaFechadaState extends CandidaturaState {
+
     private Candidatura candidatura;
-    
-    public CandidaturaAvaliadaState(Candidatura candidatura){
+
+    CandidaturaFechadaState(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
 
     @Override
-    public boolean setAvaliada() {
-        boolean verify = false;
+    public boolean setConflitosDetetados() {
         if (valida()) {
-            candidatura.setEstado(this);
-            verify = true;
-        }
-        return verify;
-    }
-
-    @Override
-    public boolean valida() {
-         if (candidatura.getState().isEstadoAvaliada()) {
             return true;
         } else {
             return false;
@@ -37,7 +27,17 @@ public class CandidaturaAvaliadaState extends CandidaturaState {
     }
 
     @Override
-    public boolean isEstadoAvaliada() {
+    public boolean valida() {
+        if (candidatura.getState().isEstadoFechada()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    @Override
+    public boolean isEstadoFechada(){
         return true;
     }
+
 }

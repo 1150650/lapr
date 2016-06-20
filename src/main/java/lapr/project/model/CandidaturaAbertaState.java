@@ -9,17 +9,17 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaCriadaState extends CandidaturaState {
+public class CandidaturaAbertaState extends CandidaturaState {
 
     private Candidatura candidatura;
 
-    public CandidaturaCriadaState(Candidatura candidatura) {
+    public CandidaturaAbertaState(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
 
     @Override
     public boolean valida() {
-        if (candidatura.getState() == null) {
+        if (candidatura.getState().isEstadoAberta()) {
             return true;
         } else {
             return false;
@@ -27,17 +27,17 @@ public class CandidaturaCriadaState extends CandidaturaState {
     }
 
     @Override
-    public boolean setCandidaturaCriada() {
+    public boolean setCandidaturaEmSubmissao() {
         boolean verify = false;
         if (valida()) {
-            candidatura.setEstado(this);
+            candidatura.setEstado(new CandidaturaEmSubmissaoState(candidatura));
             verify = true;
         }
         return verify;
     }
 
     @Override
-    public boolean isEstadoCriada() {
+    public boolean isEstadoAberta() {
         return true;
     }
 
