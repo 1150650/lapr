@@ -5,12 +5,9 @@
  */
 package lapr.project.ui;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Icon;
@@ -18,14 +15,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import lapr.project.controller.AlterarCandidaturaController;
-import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
-import lapr.project.model.ListaCandidaturas;
 import lapr.project.model.Representante;
-import lapr.project.model.Utilizador;
 
 /**
  *

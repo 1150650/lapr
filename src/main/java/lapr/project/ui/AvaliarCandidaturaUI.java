@@ -8,7 +8,6 @@ package lapr.project.ui;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
@@ -21,16 +20,10 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.border.EmptyBorder;
-import javax.swing.colorchooser.AbstractColorChooserPanel;
-import lapr.project.controller.AtribuirCandidaturaController;
 import lapr.project.controller.AvaliarCandidaturaFAEController;
-import lapr.project.model.Avaliacao;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.FAE;
-import lapr.project.model.ListaAvaliacoes;
-import lapr.project.model.ListaFAE;
 
 /**
  *
@@ -54,15 +47,7 @@ public class AvaliarCandidaturaUI extends JFrame {
 
     private CentroExposicoes ce;
 
-    private ListaFAE lstFae;
-
     private FAE fae;
-
-    private CandidaturaExposicao cand;
-
-    private ListaAvaliacoes lstAvaliacoes;
-
-    private Avaliacao avaliacao;
 
     public AvaliarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, FAE fae) {
         super();
@@ -146,10 +131,9 @@ public class AvaliarCandidaturaUI extends JFrame {
     private JPanel criarPainelConhecimentosFAE() {
         String[] parametros = {"Conhecimento a cerca da exposição",
             "Adequação da candidatura à exposição",
-            "Adequação da candidatura às demonstrações",
             "Adequação do número de convites por candidatura",
             "Recomendação global"};
-        GridLayout j = new GridLayout(5, 2);
+        GridLayout j = new GridLayout(4, 2);
         setLayout(j);
         JPanel p1 = new JPanel(j);
         for (int i = 0; i < parametros.length; i++) {

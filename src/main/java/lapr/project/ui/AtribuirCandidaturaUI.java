@@ -8,21 +8,17 @@ package lapr.project.ui;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.scene.control.ComboBox;
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import lapr.project.controller.AtribuirCandidaturaController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
-import lapr.project.model.ListaAtribuicoes;
 import lapr.project.model.ModeloListaAtribuicoes;
 
 /**
@@ -38,8 +34,6 @@ public class AtribuirCandidaturaUI extends JFrame {
     private CentroExposicoes ce;
 
     private MenuPrincipal framePai;
-
-    private ModeloListaAtribuicoes modeloListaAtribuicao;
 
     private JButton btnOk, btnCancelar;
 
@@ -62,10 +56,6 @@ public class AtribuirCandidaturaUI extends JFrame {
 
     private void criarComponentes() {
         selecionarExposicao();
-        JPanel mecanismos = criarPainelMecanismo();
-        JPanel descrição = criarPainelDescrição();
-        JPanel listaAtribuiçoes = criarPainelListaAtribuicoes();
-
         add(criarPainelMecanismo());
         add(criarPainelDescrição());
         add(criarPainelListaAtribuicoes());
@@ -114,7 +104,6 @@ public class AtribuirCandidaturaUI extends JFrame {
     private JPanel criarPainelListaAtribuicoes() {
         JPanel l = new JPanel();
         JList list = new JList(new ModeloListaAtribuicoes(crtAtribuir.getLstAtribuicoes()));
-
         l.add(list, new FlowLayout(FlowLayout.CENTER));
         return l;
     }

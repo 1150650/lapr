@@ -5,10 +5,20 @@
  */
 package lapr.project.ui;
 
+import java.awt.HeadlessException;
+import javax.swing.JFrame;
+import lapr.project.model.CentroExposicoes;
+
 /**
  *
  * @author Simão Pedro
  */
-public class DecidirDemonstraçõesUI {
+public class DecidirDemonstraçõesUI extends JFrame {
+    
+    private CentroExposicoes ce;
+
+    public DecidirDemonstraçõesUI(CentroExposicoes ce) {
+        this.ce=ce;
+    }
     
 }

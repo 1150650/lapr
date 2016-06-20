@@ -16,7 +16,6 @@ import lapr.project.model.RegistoExposicoes;
  * @author SimãoPedro
  */
 public class DecidirDemonstraçõesController {
-
     /**
      * Registo de exposicoes (Lista)
      */
@@ -43,7 +42,7 @@ public class DecidirDemonstraçõesController {
      * @param ce
      */
     public DecidirDemonstraçõesController(CentroExposicoes ce) {
-        this.lstExpo = ce.getListaExposicoes();
+        this.lstExpo = ce.getListaExposicoes(); 
     }
 
     /**
