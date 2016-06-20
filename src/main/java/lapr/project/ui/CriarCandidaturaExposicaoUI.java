@@ -20,6 +20,7 @@ import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Representante;
 import lapr.project.model.Utilizador;
+import lapr.project.utils.HintTextField;
 
 /**
  *
@@ -33,8 +34,6 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
 
     private Icon icon;
-
-    private Exposicao expo;
 
     private CentroExposicoes ce;
 
@@ -66,7 +65,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         this.ce = ce;
         this.framePai = framePai;
         this.crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
-        selecionarCandidatura();
+        selecionarExposicao();
 
         criarComponentes();
 
@@ -77,7 +76,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         setVisible(true);
     }
 
-    public void selecionarCandidatura() {
+    public void selecionarExposicao() {
         Exposicao[] aux = ce.getArrayExposicao();
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
@@ -117,7 +116,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelNomeEmpresa() {
         JLabel lbl = new JLabel("Nome da Empresa:", JLabel.RIGHT);
 
-        nomeEmpresaTF = new JTextField("Nome da Empresa");
+        nomeEmpresaTF = new HintTextField("Nome da Empresa");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -152,7 +151,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelTelemovel() {
         JLabel lbl = new JLabel("Telemóvel:", JLabel.RIGHT);
 
-        telemovelTF = new JTextField("Insira número de telémovel");
+        telemovelTF = new HintTextField("Insira número de telémovel");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -166,7 +165,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelAreaExposicao() {
         JLabel lbl = new JLabel("Área da exposição:", JLabel.RIGHT);
 
-        areaExposicaoTF = new JTextField("Área pretendida para Exposição");
+        areaExposicaoTF = new HintTextField("Área pretendida para Exposição");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -180,7 +179,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelProdutosExposicao() {
         JLabel lbl = new JLabel("Produtos: ", JLabel.RIGHT);
 
-        produtosTF = new JTextField("Insira os produtos que iram ser utilizados");
+        produtosTF = new HintTextField("Insira os produtos que iram ser utilizados");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -194,7 +193,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     private JPanel criarPainelNrConvites() {
         JLabel lbl = new JLabel("Número de convites:", JLabel.RIGHT);
 
-        nConvitesTF = new JTextField("Número de convites necessários");
+        nConvitesTF = new HintTextField("Número de convites necessários");
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
@@ -258,11 +257,11 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         JPanel j = new JPanel();
         j.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        KeyWord1 = new JTextField("Palavras-chaves que definam a Candidatura");
-        KeyWord2 = new JTextField("Palavras-chaves que definam a Candidatura");
-        KeyWord3 = new JTextField("Palavras-chaves que definam a Candidatura");
-        KeyWord4 = new JTextField("Palavras-chaves que definam a Candidatura");
-        KeyWord5 = new JTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord1 = new HintTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord2 = new HintTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord3 = new HintTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord4 = new HintTextField("Palavras-chaves que definam a Candidatura");
+        KeyWord5 = new HintTextField("Palavras-chaves que definam a Candidatura");
         add(l);
         add(KeyWord1);
         add(KeyWord2);
