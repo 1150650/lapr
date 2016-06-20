@@ -39,7 +39,7 @@ class JanelaPrincipal extends JFrame {
     private static final ImageIcon ICONE
             = new ImageIcon("centroExpo.jpg");
 
-    public JanelaPrincipal(CentroExposicoes centroexposicao) throws IOException {
+    public JanelaPrincipal(CentroExposicoes centroexposicao) {
 
         super("Centro De Exposições");
         this.centroExpo = centroexposicao;
@@ -54,7 +54,7 @@ class JanelaPrincipal extends JFrame {
         setResizable(false);
     }
 
-    private void criarComponentes() throws IOException {
+    private void criarComponentes() {
         add(criarPainelTitulo(), BorderLayout.NORTH);
         add(criarLblImagem(), BorderLayout.CENTER);
         add(criarPainelBotoes(), BorderLayout.SOUTH);
@@ -76,7 +76,7 @@ class JanelaPrincipal extends JFrame {
         return p;
     }
 
-    private JPanel criarLblImagem() throws IOException {
+    private JPanel criarLblImagem() {
         JLabel lbl = new JLabel(ICONE);
        
         JPanel p = new JPanel();

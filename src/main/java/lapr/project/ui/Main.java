@@ -17,11 +17,11 @@ class Main {
      * @param args the command line arguments
      *
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         CalculatorExample calculatorExample = new CalculatorExample();
         System.out.println(calculatorExample.sum(3, 5));
-        Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
+       // Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         CentroExposicoes ce = new CentroExposicoes();
       //  new MenuPrincipal(ce, u);
         new JanelaPrincipal(ce);

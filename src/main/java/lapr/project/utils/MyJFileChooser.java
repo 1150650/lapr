@@ -9,11 +9,11 @@ public class MyJFileChooser extends JFileChooser {
 
     public MyJFileChooser() {
         super();
-        definirFiltroExtensaoBin();
+        definirFiltroExtensaoXML();
         personalizarEmPortugues();
     }
 
-    private void definirFiltroExtensaoBin() {
+    private void definirFiltroExtensaoXML() {
         setFileFilter(new FileFilter() {
             @Override
             public boolean accept(File f) {
