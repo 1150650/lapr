@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -14,17 +15,18 @@ import org.junit.Test;
 public class TipoDeConflitoTest {
 
     @Test
-    public boolean test() {
+    public void  test() {
         TipoDeConflito u = new TipoDeConflito();
         String descricao = "Familia";
         u.setDescricao("Familia");
 
-        if (u.getDescricao().equalsIgnoreCase(descricao)) {
-            return true;
+        
+            assertEquals(descricao, u.getDescricao());
+            
 
-        }
+        
 
-        return false;
+        
     }
 
 }

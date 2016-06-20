@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author JOAO
  */
 public class AvalicaoTest {
-    private Avaliacao a;
+    private Avaliacao a= new Avaliacao();
     
     @Test
     public void AvaliacaoTest(){

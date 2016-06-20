@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author JOAO
  */
 public class ConflitoTest {
-    private Conflito conf;
+    private Conflito conf=new Conflito();
     private FAE f ;
     private Candidatura c; 
     
