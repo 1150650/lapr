@@ -41,13 +41,19 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
         }
     }
 
+    @Override
     public boolean valida() {
-        if (m_e.getExposicaoEstado() instanceof ExposiçãoCriadaState) {
+        if (m_e.getExposicaoEstado().isEstadoCriada()) {
             return true;
         } else {
             return false;
         }
 
+    }
+    
+    @Override
+    public boolean isEstadoCriada(){
+        return true;
     }
 
 }

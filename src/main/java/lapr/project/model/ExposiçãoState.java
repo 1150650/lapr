@@ -59,4 +59,12 @@ public class ExposiçãoState {
         return false;
     }
 
+    boolean isEstadoCriada() {
+        return false;
+    }
+
+    boolean isEstadoDemonstraçãoSemFAEs() {
+        return false;
+    }
+
 }

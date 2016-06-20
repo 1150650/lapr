@@ -28,12 +28,17 @@ class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
     }
 
     public boolean valida() {
-        if (m_e.getExposicaoEstado() instanceof ExposiçãoDemonstraçãoSemFAEsState) {
+        if (m_e.getExposicaoEstado().isEstadoDemonstraçãoSemFAEs()) {
             return true;
         } else {
             return false;
         }
 
+    }
+    
+    @Override
+    public boolean isEstadoDemonstraçãoSemFAEs(){
+        return true;
     }
 
 }
