@@ -20,6 +20,7 @@ public class CandidaturaFechadaState extends CandidaturaState {
     @Override
     public boolean setConflitosDetetados() {
         if (valida()) {
+            candidatura.setEstado(new CandidaturaAlteradaState(candidatura));
             return true;
         } else {
             return false;

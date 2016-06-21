@@ -66,8 +66,5 @@ public class RegistarCandidaturaDemonstracaoController {
         listaCandidaturas.adicionarCandidatura(candidatura);
     }
     
-    public void mudaEstados(){
-        candidatura.setCandidaturaCriada();
-    }
 
 }

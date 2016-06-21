@@ -18,13 +18,22 @@ public class CandidaturaAvaliadaState extends CandidaturaState {
     }
 
     @Override
-    public boolean setAvaliada() {
+    public boolean setAceite() {
         boolean verify = false;
         if (valida()) {
-            candidatura.setEstado(this);
+            candidatura.setEstado(new CandidaturaAceiteState(candidatura));
             verify = true;
         }
         return verify;
+    }
+    
+    @Override
+    public boolean setRejeitada(){
+        if(valida()){
+            candidatura.setEstado(new CandidaturaRejeitadaState(candidatura));
+            return true;
+        }else
+            return false;
     }
 
     @Override

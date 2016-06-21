@@ -10,15 +10,21 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class CandidaturaConflitosDetetadosState extends CandidaturaState {
-
+    
+   private Candidatura candidatura; 
+    
     @Override
-    public boolean setConflitosDetetados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean setAlterada() {
+        if(valida()){
+            candidatura.setEstado(new CandidaturaAlteradaState(candidatura));
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return candidatura.getState().isEstadoConflitosDetetados();
     }
 
     @Override

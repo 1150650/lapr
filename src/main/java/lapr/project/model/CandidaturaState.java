@@ -46,6 +46,18 @@ public class CandidaturaState {
     public boolean setCandidaturaRetirada(){
         return false;
     }
+    
+    public boolean setCandidaturaEmAvaliacao(){
+        return false;
+    }
+    
+    public boolean setNaoAvaliada(){
+        return false;
+    }
+    
+     public boolean setRejeitada(){
+         return false;
+     }
 
     public boolean valida() {
         return false;
@@ -98,4 +110,16 @@ public class CandidaturaState {
     public boolean isEstadoFechada(){
         return false;
     }
+    
+    public boolean isEstadoEmAvaliacao(){
+        return false;
+    }
+    
+     public boolean isEstadoRejeitada(){
+        return false;
+    }
+     
+     public boolean isEstadoNaoAvaliada(){
+         return false;
+     }
 }

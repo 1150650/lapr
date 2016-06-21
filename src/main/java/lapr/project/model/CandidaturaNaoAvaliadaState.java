@@ -9,17 +9,17 @@ package lapr.project.model;
  *
  * @author Filipe <FilipeCorreia.1150524>
  */
-public class CandidaturaAceiteState extends CandidaturaState {
+public class CandidaturaNaoAvaliadaState extends CandidaturaState{
     
     private Candidatura candidatura;
-    
-    public CandidaturaAceiteState(Candidatura candidatura){
-        this.candidatura=candidatura;
-    }
 
+    CandidaturaNaoAvaliadaState(Candidatura candidatura) {
+        this.candidatura = candidatura;
+    }
+    
     @Override
-    public boolean isEstadoAceite() {
+    public boolean isEstadoNaoAvaliada(){
         return true;
     }
-
+    
 }

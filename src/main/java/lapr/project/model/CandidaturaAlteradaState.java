@@ -10,15 +10,25 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class CandidaturaAlteradaState extends CandidaturaState {
+    
+    private Candidatura candidatura;
+
+    CandidaturaAlteradaState(Candidatura candidatura) {
+        this.candidatura = candidatura;
+    }
 
     @Override
-    public boolean setAlterada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean setAtribuida() {
+        if(valida()){
+            candidatura.setEstado(new CandidaturaAtribuidaState(candidatura));
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return candidatura.getState().isEstadoAlterada();
     }
 
     @Override
