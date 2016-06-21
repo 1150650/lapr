@@ -66,5 +66,9 @@ public class RegistarCandidaturaDemonstracaoController {
         listaCandidaturas.adicionarCandidatura(candidatura);
     }
     
+    
+    public void setCandidaturaEmSubmissao(){
+        candidatura.setCandidaturaEmSubmissao();
+    }
 
 }
