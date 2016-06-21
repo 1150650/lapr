@@ -109,4 +109,8 @@ public class ListaAtribuicoes {
         }
     }
 
+   public AtribuicaoFAE  obterAtribuicao(int i) {
+       return listaAtribuiçao.get(i);
+    }
+
 }
