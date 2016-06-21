@@ -11,17 +11,34 @@ package lapr.project.model;
  */
 public class ExposiçãoCandidaturasFechadasState extends ExposiçãoState {
 
-    public ExposiçãoCandidaturasFechadasState(Exposicao m_e) {
-    }
+    private Exposicao m_e;
 
-    @Override
-    public boolean setCandidaturasFechadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ExposiçãoCandidaturasFechadasState(Exposicao m_e) {
+        this.m_e = m_e;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (m_e.getExposicaoEstado().isEstadoCandidaturasFechadas()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean setConflitosDetetados() {
+        boolean verify = false;
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoComConflitosDetetadosState(m_e));
+            verify = true;
+        }
+        return verify;
+    }
+
+    @Override
+    public boolean isEstadoCandidaturasFechadas() {
+        return true;
     }
 
 }

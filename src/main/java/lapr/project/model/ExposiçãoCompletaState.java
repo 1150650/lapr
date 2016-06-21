@@ -11,18 +11,34 @@ package lapr.project.model;
  */
 public class ExposiçãoCompletaState extends ExposiçãoState {
 
-    public ExposiçãoCompletaState(Exposicao m_eExposicao) {
+    private Exposicao m_e;
 
-    }
-
-    @Override
-    public boolean setCompleta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ExposiçãoCompletaState(Exposicao m_e) {
+        this.m_e = m_e;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (m_e.getExposicaoEstado().isEstadoCompleta()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean setExposicaoAbertaParaCandidaturas() {
+        boolean verify = false;
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoAbertaParaCandidaturasState(m_e));
+            verify = true;
+        }
+        return verify;
+    }
+
+    @Override
+    public boolean isEstadoCompleta() {
+        return true;
     }
 
 }

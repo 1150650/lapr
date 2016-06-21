@@ -7,6 +7,7 @@ import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.ListaDemonstracoes;
 import lapr.project.model.RegistoExposicoes;
 import lapr.project.model.Representante;
 import lapr.project.model.Utilizador;
@@ -16,6 +17,8 @@ public class CriarCandidaturaController {
     private CentroExposicoes centroExposicoes;
 
     private ListaCandidaturas listaCandidaturas;
+
+    private ListaDemonstracoes lstDemo;
 
     private Exposicao exposicaoSelecionada;
 
@@ -38,10 +41,8 @@ public class CriarCandidaturaController {
     public void selecionaExposicao(Exposicao e) {
         exposicaoSelecionada = e;
         this.r = verificarRepresentante();
-    }
-
-    public void getListaCandidaturas() {
-        listaCandidaturas = exposicaoSelecionada.getListaCandidaturasExposicoes();
+        this.lstDemo = exposicaoSelecionada.getListaDemonstracoes();
+        this.listaCandidaturas = exposicaoSelecionada.getListaCandidaturasExposicoes();
     }
 
     public void novaCandidatura() {
@@ -64,10 +65,6 @@ public class CriarCandidaturaController {
         this.r.adicionarCandidatura(c);
     }
 
-    public void criarListaCandidaturas() {
-        listaCandidaturas = new ListaCandidaturas();
-    }
-
     private Representante verificarRepresentante() {
         return exposicaoSelecionada.getLstRep().obterRepresentantePorU(u);
     }
@@ -79,4 +76,11 @@ public class CriarCandidaturaController {
         return r;
     }
 
+    public ListaCandidaturas getListaCandidaturas() {
+        return listaCandidaturas;
+    }
+
+    public ListaDemonstracoes getListaDemonstracoes() {
+        return lstDemo;
+    }
 }

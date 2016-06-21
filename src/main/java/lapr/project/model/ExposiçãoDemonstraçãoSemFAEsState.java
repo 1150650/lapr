@@ -10,15 +10,15 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
-    
-      Exposicao m_e;
+
+    Exposicao m_e;
 
     public ExposiçãoDemonstraçãoSemFAEsState(Exposicao e) {
         m_e = e;
     }
 
     @Override
-    public boolean setFAEDefinido() {
+    public boolean setCompleta() {
         if (valida()) {
             m_e.setEstado(new ExposiçãoCompletaState(m_e));
             return true;
@@ -35,9 +35,9 @@ class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
         }
 
     }
-    
+
     @Override
-    public boolean isEstadoDemonstraçãoSemFAEs(){
+    public boolean isEstadoDemonstraçãoSemFAEs() {
         return true;
     }
 

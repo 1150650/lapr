@@ -11,20 +11,28 @@ package lapr.project.model;
  */
 public class ExposiçãoConflitosAlteradosState extends ExposiçãoState {
 
-    private ExposiçãoCandidaturasAtribuidasState m_state2;
+    private Exposicao m_e;
 
-    public ExposiçãoConflitosAlteradosState(Exposicao m_estado) {
+    public ExposiçãoConflitosAlteradosState(Exposicao m_e) {
+        this.m_e = m_e;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (m_e.getExposicaoEstado().isEstadoConflitosAlterados()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public boolean setCandidaturasAtribuidas() {
-        boolean verify = valida();
-        m_state2 = new ExposiçãoCandidaturasAtribuidasState();
+        boolean verify = false;
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoCandidaturasAtribuidasState(m_e));
+            verify = true;
+        }
         return verify;
     }
 

@@ -18,11 +18,13 @@ import lapr.project.model.RegistoExposicoes;
  * @author JOAO
  */
 public class AceitarCandidaturaController {
-      /**
+
+    /**
      * Registo de exposicoes (Lista)
      */
     private RegistoExposicoes lstExpo;
 
+    
     private CentroExposicoes ce;
 
     /**
@@ -38,22 +40,16 @@ public class AceitarCandidaturaController {
     /**
      * Lista demonstracoes da exposicao selecionada
      */
-        private ListaCandidaturas lstcandidatura;
-        
-        private int indice;
-        
-        
+    private ListaCandidaturas lstcandidatura;
 
-    
-    
-    public AceitarCandidaturaController(CentroExposicoes ce){
-        this.ce=ce;
-        
-        
-        
+    private int indice;
+
+    public AceitarCandidaturaController(CentroExposicoes ce) {
+        this.ce = ce;
+
     }
-    
-     public Exposicao[] getListaExposicoes() {
+
+    public Exposicao[] getListaExposicoes() {
         return this.ce.mostrarLista();
     }
 
@@ -61,52 +57,48 @@ public class AceitarCandidaturaController {
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
         this.indice = this.ce.getListaExposicoes().indiceDe(expo);
-        lst=this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
+        lst = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
         int i;
-        
-        for (i=0; i<lst.tamanho();i++){
-            
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+
+        for (i = 0; i < lst.tamanho(); i++) {
+
+            if (lst.obterCandidatura(i).getState().isEstadoEmSubmissao() == true) {
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }
-        
-        
-        
+
         return lst1;
-        
+
     }
-    
-    
+
     public ListaCandidaturas getListaCandidaturasDemonstracoes(Exposicao expo) {
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
         this.indice = this.ce.getListaExposicoes().indiceDe(expo);
-        lst=this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
+        lst = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
         int i;
-        
-        for (i=0; i<lst.tamanho();i++){
-            
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+
+        for (i = 0; i < lst.tamanho(); i++) {
+
+            if (lst.obterCandidatura(i).getState().isEstadoEmSubmissao() == true) {
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }
-        
-        
-        
+
         return lst1;
-        
+
     }
- 
-    public void aceitarCandidaturaDemonstracao(Candidatura c){
-        this. candidatura=c;
-        int i =this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().indiceDe(candidatura);
+
+    public void aceitarCandidaturaDemonstracao(Candidatura c) {
+        this.candidatura = c;
+        int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().obterCandidatura(i).getState().isEstadoAceite();
     }
-    public void aceitarCandidaturaExposciao(Candidatura c){
-        this. candidatura=c;
-        int i =this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
+
+    public void aceitarCandidaturaExposciao(Candidatura c) {
+        this.candidatura = c;
+        int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).getState().isEstadoAceite();
     }
-    
+
 }

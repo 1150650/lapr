@@ -53,6 +53,10 @@ public class RegistoRepresentantes {
             if (lstRepresentante.get(i).getUtilizador().equals(u));
             return lstRepresentante.get(i);
         }
-        return null;
+        return new Representante(u);
+    }
+
+    public boolean containsRepresentante(Representante r) {
+        return lstRepresentante.contains(r);
     }
 }

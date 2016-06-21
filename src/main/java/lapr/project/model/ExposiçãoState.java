@@ -27,7 +27,7 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean setCandidaturasAbertas() {
+    public boolean setExposicaoAbertaParaCandidaturas() {
         return false;
     }
 
@@ -47,15 +47,19 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean setConflitosAtribuidas() {
+    public boolean setCandidaturasAtribuidas() {
+        return false;
+    }
+
+    public boolean setCandidaturasAtribuidasStand() {
+        return false;
+    }
+
+    public boolean setStandsConfirmados() {
         return false;
     }
 
     public boolean valida() {
-        return false;
-    }
-
-    public boolean setCandidaturasAtribuidas() {
         return false;
     }
 
@@ -75,7 +79,7 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean isEstadoAtribuidas() {
+    public boolean isEstadoCandidaturasAtribuidas() {
         return false;
     }
 
@@ -96,6 +100,14 @@ public class ExposiçãoState {
     }
 
     public boolean isEstadoFAESemDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturaAtribuidaStand() {
+        return false;
+    }
+
+    public boolean isEstadoStandConfirmado() {
         return false;
     }
 

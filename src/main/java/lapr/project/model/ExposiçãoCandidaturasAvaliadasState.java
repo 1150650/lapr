@@ -11,17 +11,34 @@ package lapr.project.model;
  */
 public class ExposiçãoCandidaturasAvaliadasState extends ExposiçãoState {
 
-    public ExposiçãoCandidaturasAvaliadasState(Exposicao m_e) {
-    }
+    private Exposicao m_e;
 
-    @Override
-    public boolean setCandidaturasAvaliadas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ExposiçãoCandidaturasAvaliadasState(Exposicao m_e) {
+        this.m_e = m_e;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (m_e.getExposicaoEstado().isEstadoCandidaturasAvaliadas()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean setCandidaturasAtribuidasStand() {
+        boolean verify = false;
+        if (valida()) {
+            m_e.setEstado(new ExposicaoCandidaturaAtribuidaStandState(m_e));
+            verify = true;
+        }
+        return verify;
+    }
+
+    @Override
+    public boolean isEstadoCandidaturasAvaliadas() {
+        return true;
     }
 
 }

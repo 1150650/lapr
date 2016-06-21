@@ -26,8 +26,7 @@ public class SubmeterCandidaturaXML extends JFrame {
         this.framePai = framepai;
         this.ce = ce;
         this.crtlCandidaturaController = crt;
-        
-            
+        new MyfileChooserXMLCandidatura();
     }
 
 }
