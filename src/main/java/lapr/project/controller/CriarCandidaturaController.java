@@ -22,12 +22,12 @@ public class CriarCandidaturaController {
     private CandidaturaExposicao c;
 
     private Representante r;
-    
+
     private Utilizador u;
 
     public CriarCandidaturaController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
-        this.u=u;
+        this.u = u;
 
     }
 
@@ -60,7 +60,7 @@ public class CriarCandidaturaController {
     }
 
     public void adicionarCandidatura() {
-        this.exposicaoSelecionada.adicinarCanidatura(c);
+        this.exposicaoSelecionada.adicionarCandidatura(c);
         this.r.adicionarCandidatura(c);
     }
 

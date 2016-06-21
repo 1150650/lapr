@@ -25,11 +25,10 @@ public class CentroExposicoes {
     private RegistoUtilizadores registoUtilizadoresConf;
 
     private ListaRecursos listarecursos;
-    
+
     private RegistoMecanismos registoMecanismos;
-    
+
     private ListaDemonstracoes registoDemonstracoes;
-    
 
     /**
      * Contrutor do centro de exposicoes
@@ -39,8 +38,8 @@ public class CentroExposicoes {
         this.listaStands = new ListaStands();
         this.listaTipoDeConflito = new RegistoTipoDeConflito();
         this.listarecursos = new ListaRecursos();
-        this.registoUtilizadoresConf=new RegistoUtilizadores();
-        this.registoUtilizadoresNConf=new RegistoUtilizadores();
+        this.registoUtilizadoresConf = new RegistoUtilizadores();
+        this.registoUtilizadoresNConf = new RegistoUtilizadores();
     }
 
     /**
@@ -59,6 +58,16 @@ public class CentroExposicoes {
      */
     public Exposicao[] getArrayExposicao() {
         return listaExposicoes.getArray();
+    }
+
+    public RegistoExposicoes getArrayExposicaoConflitosAlterados() {
+        RegistoExposicoes lstExposicaoComConflitosAlterados = new RegistoExposicoes();
+        for (int i = 0; i < listaExposicoes.tamanho(); i++) {
+            if (listaExposicoes.obterExposicao(i).getExposicaoEstado().isEstadoConflitosAlterados()) {
+                lstExposicaoComConflitosAlterados.adicionarExposicao(listaExposicoes.obterExposicao(i));
+            }
+        }
+        return lstExposicaoComConflitosAlterados;
     }
 
     public ListaStands getListastands() {
@@ -115,10 +124,9 @@ public class CentroExposicoes {
     public ListaDemonstracoes getListaDemonstracoes() {
         return registoDemonstracoes;
     }
-    
-    public ListaRecursos getRegistoRecursos(){
+
+    public ListaRecursos getRegistoRecursos() {
         return listarecursos;
     }
-
 
 }

@@ -16,10 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import lapr.project.controller.CriarCandidaturaController;
 import lapr.project.model.CentroExposicoes;
-import lapr.project.model.Exposicao;
-import lapr.project.model.FAE;
-import lapr.project.model.Representante;
-import lapr.project.model.Utilizador;
 import lapr.project.utils.HintTextField;
 
 /**
@@ -37,7 +33,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private CentroExposicoes ce;
 
-    private MenuPrincipal framePai;
+    private CriarCandidaturaOpcaoUI framePai;
 
     private JTextField nomeEmpresaTF;
 
@@ -61,11 +57,10 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private JTextField KeyWord5;
 
-    public CriarCandidaturaExposicaoUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
+    public CriarCandidaturaExposicaoUI(CriarCandidaturaOpcaoUI framePai, CriarCandidaturaController crtlCriarCandidatura) {
+        this.crtlCriarCandidatura = crtlCriarCandidatura;
         this.ce = ce;
         this.framePai = framePai;
-        this.crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
-        selecionarExposicao();
 
         criarComponentes();
 
@@ -74,23 +69,6 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         setResizable(true);
         setLocationRelativeTo(framePai);
         setVisible(true);
-    }
-
-    public void selecionarExposicao() {
-        Exposicao[] aux = ce.getArrayExposicao();
-        Exposicao expo;
-        expo = (Exposicao) JOptionPane.showInputDialog(
-                framePai,
-                "Indique candidatura que deseja remover"
-                + ":",
-                "Seleção De Candidatura a Remover",
-                JOptionPane.DEFAULT_OPTION,
-                icon,
-                aux,
-                "");
-
-        dispose();
-        crtlCriarCandidatura.selecionaExposicao(expo);
     }
 
     private void criarComponentes() {
@@ -225,7 +203,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
+                    crtlCriarCandidatura.adicionarCandidatura();
                     dispose();
 
                 } catch (IllegalArgumentException ex) {

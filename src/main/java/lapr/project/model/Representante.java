@@ -49,6 +49,16 @@ public class Representante {
         return listaCandidaturasSubmetidas;
     }
 
+    public ListaCandidaturas getListaCandidaturasPodemSerAlteradas() {
+        ListaCandidaturas lstCandPodemSerAlteradas = new ListaCandidaturas();
+        for (int i = 0; i < listaCandidaturasSubmetidas.tamanho(); i++) {
+            if (listaCandidaturasSubmetidas.obterCandidatura(i).getState().isEstadoEmSubmissao()) {
+                lstCandPodemSerAlteradas.adicionarCandidatura(listaCandidaturasSubmetidas.obterCandidatura(i));
+            }
+        }
+        return lstCandPodemSerAlteradas;
+    }
+
     /**
      * @param listaCandidaturasSubmetidas the listaCandidaturasSubmetidas to set
      */

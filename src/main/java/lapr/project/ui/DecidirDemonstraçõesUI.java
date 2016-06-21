@@ -41,11 +41,13 @@ public class DecidirDemonstraçõesUI extends JFrame {
 
     private Exposicao expo;
 
+    private JPanel painelInformaçãoDemonstracao = new JPanel();
+
     public DecidirDemonstraçõesUI(CentroExposicoes ce, MenuPrincipal framePai) {
         this.framePai = framePai;
         this.ce = ce;
         cntrlDecidirDemo = new DecidirDemonstraçõesController(ce);
-        GridLayout gl = new GridLayout(8, 1);
+        GridLayout gl = new GridLayout(4, 1);
         gl.setHgap(20);
         gl.setVgap(20);
         setLayout(gl);
@@ -87,19 +89,19 @@ public class DecidirDemonstraçõesUI extends JFrame {
                 //int s = cbTipo.getSelectedIndex();
                 Demonstracao d = (Demonstracao) cbTipo.getSelectedItem();
                 cntrlDecidirDemo.selecionarDemonstracao(d);
+                painelInformaçãoDemonstracao.revalidate();
             }
         });
         return cbTipo;
     }
 
     private JPanel criarPainelInformaçãoDemonstracao() {
-        JPanel p = new JPanel();
         JLabel l = new JLabel("Informação da Demonstração");
         JTextArea txt = new JTextArea(cntrlDecidirDemo.apresentarDados(), 20, 6);
-        p.add(l);
-        p.add(txt);
+        painelInformaçãoDemonstracao.add(l);
+        painelInformaçãoDemonstracao.add(txt);
 
-        return p;
+        return painelInformaçãoDemonstracao;
     }
 
     private JPanel criarPainelBotoes() {
@@ -155,7 +157,7 @@ public class DecidirDemonstraçõesUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cntrlDecidirDemo.getDemonstraccao().setDemonstracaoAberta();
-                
+
             }
         });
         return aceita;

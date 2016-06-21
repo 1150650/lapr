@@ -16,20 +16,6 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
     public ExposiçãoCriadaState(Exposicao e) {
         m_e = e;
     }
-//
-//    public boolean SetCriadoDefinido() {
-//        return false;
-//    }
-//
-//    public boolean SetDemonstraçãoDefinido() {
-//        if (valida()) {
-//            m_e.setEstado(new ExposiçãoDemonstraçãoSemFAEsState(m_e));
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//
 
     @Override
     public boolean setFAEDefinido() {
@@ -50,9 +36,9 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
         }
 
     }
-    
+
     @Override
-    public boolean isEstadoCriada(){
+    public boolean isEstadoCriada() {
         return true;
     }
 

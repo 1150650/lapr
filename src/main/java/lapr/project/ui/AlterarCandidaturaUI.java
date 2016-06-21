@@ -63,7 +63,7 @@ public class AlterarCandidaturaUI extends JFrame {
     }
 
     public void selecionarCandidatura() {
-        CandidaturaExposicao[] aux = r.getListaCandidaturasSubmetidas().listaCandExposicaoToArray();
+        CandidaturaExposicao[] aux = r.getListaCandidaturasPodemSerAlteradas().listaCandExposicaoToArray();
         CandidaturaExposicao candi;
         candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
                 framePai,

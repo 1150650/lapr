@@ -103,7 +103,7 @@ public class Exposicao {
         return String.format("Título: %s; Local: %s", titulo, local);
     }
 
-    public void adicinarCanidatura(Candidatura d) {
+    public void adicionarCandidatura(Candidatura d) {
         this.listaCandidaturasExposicoes.adicionarCandidatura(d);
 
     }

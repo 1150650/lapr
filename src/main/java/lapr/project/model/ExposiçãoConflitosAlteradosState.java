@@ -10,7 +10,7 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class ExposiçãoConflitosAlteradosState extends ExposiçãoState {
-    
+
     private ExposiçãoCandidaturasAtribuidasState m_state2;
 
     public ExposiçãoConflitosAlteradosState(Exposicao m_estado) {
@@ -26,6 +26,11 @@ public class ExposiçãoConflitosAlteradosState extends ExposiçãoState {
         boolean verify = valida();
         m_state2 = new ExposiçãoCandidaturasAtribuidasState();
         return verify;
+    }
+
+    @Override
+    public boolean isEstadoConflitosAlterados() {
+        return true;
     }
 
 }

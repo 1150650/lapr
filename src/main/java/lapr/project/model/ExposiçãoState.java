@@ -11,59 +11,91 @@ package lapr.project.model;
  */
 public class ExposiçãoState {
 
-    public boolean setCriadoDefinido(){
+    public boolean setCriadoDefinido() {
         return false;
     }
 
-    public boolean setFAEDefinido(){
+    public boolean setFAEDefinido() {
         return false;
     }
 
-    public boolean setDemonstraçãoDefinido(){
+    public boolean setDemonstraçãoDefinido() {
         return false;
     }
 
-    public boolean setCompleta(){
+    public boolean setCompleta() {
         return false;
     }
 
-    public boolean setCandidaturasAbertas(){
+    public boolean setCandidaturasAbertas() {
         return false;
     }
 
-    public boolean setCandidaturasFechadas(){
+    public boolean setCandidaturasFechadas() {
         return false;
     }
 
-    public boolean setCandidaturasAvaliadas(){
+    public boolean setCandidaturasAvaliadas() {
         return false;
     }
 
-    public boolean setConflitosDetetados(){
+    public boolean setConflitosDetetados() {
         return false;
     }
 
-    public boolean setConflitosAlterados(){
+    public boolean setConflitosAlterados() {
         return false;
     }
 
-    public boolean setConflitosAtribuidas(){
+    public boolean setConflitosAtribuidas() {
         return false;
     }
 
-    public boolean valida(){
+    public boolean valida() {
         return false;
     }
 
-    public boolean setCandidaturasAtribuidas(){
+    public boolean setCandidaturasAtribuidas() {
         return false;
     }
 
-    boolean isEstadoCriada() {
+    public boolean isEstadoCriada() {
         return false;
     }
 
-    boolean isEstadoDemonstraçãoSemFAEs() {
+    public boolean isEstadoDemonstraçãoSemFAEs() {
+        return false;
+    }
+
+    public boolean isEstadoConflitosAlterados() {
+        return false;
+    }
+
+    public boolean isEstadoAbertaParaCandidaturas() {
+        return false;
+    }
+
+    public boolean isEstadoAtribuidas() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturasAvaliadas() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturasFechadas() {
+        return false;
+    }
+
+    public boolean isEstadoConflitosDetetados() {
+        return false;
+    }
+
+    public boolean isEstadoCompleta() {
+        return false;
+    }
+
+    public boolean isEstadoFAESemDemonstracao() {
         return false;
     }
 
