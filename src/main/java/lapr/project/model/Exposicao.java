@@ -9,7 +9,7 @@ public class Exposicao {
     private Date dataInicio;
     private Date dataFim;
     private String local;
-    private ListaCandidaturas listaCandidaturasExposicoes,listaCandidaturasDemonstracoes ;
+    private ListaCandidaturas listaCandidaturasExposicoes, listaCandidaturasDemonstracoes;
     private ListaDemonstracoes listaDemonstracao;
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
@@ -30,7 +30,7 @@ public class Exposicao {
         listaCandidaturasExposicoes = new ListaCandidaturas();
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
-        listaCandidaturasDemonstracoes=new ListaCandidaturas();
+        listaCandidaturasDemonstracoes = new ListaCandidaturas();
     }
 
     public String getTitulo() {
@@ -147,6 +147,10 @@ public class Exposicao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public void setExposicaoDemonstracoesDefinidas() {
+        m_state.setDemonstraçãoDefinido();
+    }
+
     public boolean setFAEDefinido() {
         return m_state.setFAEDefinido();
     }
@@ -165,8 +169,8 @@ public class Exposicao {
     public void adicionarRepresentante(Representante r) {
         lstRep.addRepresentante(r);
     }
-    
-      public ListaCandidaturas getListaCandidaturasDemonstracoes() {
+
+    public ListaCandidaturas getListaCandidaturasDemonstracoes() {
         return listaCandidaturasDemonstracoes;
     }
 

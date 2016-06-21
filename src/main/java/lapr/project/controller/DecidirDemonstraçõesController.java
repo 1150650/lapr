@@ -16,10 +16,13 @@ import lapr.project.model.RegistoExposicoes;
  * @author SimãoPedro
  */
 public class DecidirDemonstraçõesController {
+
     /**
      * Registo de exposicoes (Lista)
      */
     private RegistoExposicoes lstExpo;
+
+    private CentroExposicoes ce;
 
     /**
      * Exposicao que vai ser selecionada
@@ -42,7 +45,7 @@ public class DecidirDemonstraçõesController {
      * @param ce
      */
     public DecidirDemonstraçõesController(CentroExposicoes ce) {
-        this.lstExpo = ce.getListaExposicoes(); 
+        this.lstExpo = ce.getListaExposicoes();
     }
 
     /**
@@ -58,7 +61,7 @@ public class DecidirDemonstraçõesController {
      * vai buscar a lista de demonstraçoes da expo selecionada
      */
     public void getListaDemonstracoes() {
-        this.lstDemo = expo.getListaDemonstracoes();
+        this.setLstDemo(getExpo().getListaDemonstracoes());
     }
 
     /**
@@ -76,7 +79,7 @@ public class DecidirDemonstraçõesController {
      * @return
      */
     public String apresentarDados() {
-        return demonstraccao.toString();
+        return getDemonstraccao().toString();
     }
 
     /**
@@ -85,7 +88,7 @@ public class DecidirDemonstraçõesController {
      * @return
      */
     public boolean setDemonstracaoAberta() {
-        return demonstraccao.setDemonstracaoAberta();
+        return getDemonstraccao().setDemonstracaoAberta();
     }
 
     /**
@@ -94,8 +97,34 @@ public class DecidirDemonstraçõesController {
      * @return
      */
     public boolean setExposicaoDemonstracaoDefinidas() {
-//        return expo.getExposicaoEstado().setExposicaoDemonstracaoDefinidas();
-        return false;
+        return getExpo().getExposicaoEstado().setDemonstraçãoDefinido();
     }
 
+    /**
+     * @return the lstDemo
+     */
+    public ListaDemonstracoes getLstDemo() {
+        return lstDemo;
+    }
+
+    /**
+     * @param lstDemo the lstDemo to set
+     */
+    public void setLstDemo(ListaDemonstracoes lstDemo) {
+        this.lstDemo = lstDemo;
+    }
+
+    /**
+     * @return the demonstraccao
+     */
+    public Demonstracao getDemonstraccao() {
+        return demonstraccao;
+    }
+
+    /**
+     * @return the expo
+     */
+    public Exposicao getExpo() {
+        return expo;
+    }
 }
