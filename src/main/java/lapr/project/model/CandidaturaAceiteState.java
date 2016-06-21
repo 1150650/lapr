@@ -16,6 +16,21 @@ public class CandidaturaAceiteState extends CandidaturaState {
     public CandidaturaAceiteState(Candidatura candidatura){
         this.candidatura=candidatura;
     }
+    
+    @Override
+    public boolean setStandsAtribuidos(){
+        if(valida()){
+            candidatura.setEstado(new CandidaturaStandAtribuidoState(candidatura));
+            return true;
+        }else
+            return false;
+        
+    }
+    
+    @Override 
+    public boolean valida(){
+        return candidatura.getState().isEstadoAceite();
+    }
 
     @Override
     public boolean isEstadoAceite() {
