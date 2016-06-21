@@ -11,14 +11,10 @@ package lapr.project.model;
  */
 public class CandidaturaStandAtribuidoState extends CandidaturaState {
 
-    @Override
-    public boolean setStandsAtribuidos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private Candidatura candidatura;
+    
+    public CandidaturaStandAtribuidoState(Candidatura candidatura){
+        this.candidatura = candidatura;
     }
 
     @Override
