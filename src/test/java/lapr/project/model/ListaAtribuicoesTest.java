@@ -12,21 +12,21 @@ import org.junit.Test;
  *
  * @author JOAO
  */
-public class ListaDemonstracoesTest {
+public class ListaAtribuicoesTest {
 
     @Test
     public void test() {
 
-        ListaDemonstracoes lst = new ListaDemonstracoes();
-        Demonstracao e = new Demonstracao();
+        ListaAtribuicoes lst = new ListaAtribuicoes();
+        AtribuicaoFAE e = new AtribuicaoFAE();
+        AtribuicaoFAE a = new AtribuicaoFAE();
 
-        Demonstracao a = new Demonstracao();
-        a.setCodigo(867608);
+        lst.adicionarAtribuição(a);
+        lst.adicionarAtribuição(e);
 
-        lst.addDemonstracao(a);
-        lst.addDemonstracao(e);
-        assertEquals(a, lst.obterDemonstracao(0));
+        assertEquals(a, lst.obterAtribuicao(0));
         assertEquals(2, lst.tamanho());
+        assertEquals(1, lst.indiceDe(e));
     }
 
 }

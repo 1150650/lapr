@@ -35,12 +35,14 @@ public class FAETest {
     }
     @Test
     public void FAEadicionarCandidaturaTest (){
+        FAETest();
         f.getListacandidatura().adicionarCandidatura(c);
         
         assertEquals(c,  f.getListacandidatura().obterCandidatura(0));
     }
     
     public void FAEExperienciaComparada (){
+        FAETest();
         Utilizador u = new Utilizador("admin", "admin@gmail.com", "admin", ".Admin10");
         FAE f1 = new FAE(u,"1234");
         int experienciaFae1 =10;
