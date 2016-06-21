@@ -33,15 +33,43 @@ public class RemoverCandidaturaController {
     }
 
     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
+        ListaCandidaturas lst = new ListaCandidaturas();
+        ListaCandidaturas lst1 = new ListaCandidaturas();
         this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
-        return this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
+        lst=this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
+        int i;
         
+        for (i=0; i<lst.tamanho();i++){
+            
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+                lst1.adicionarCandidatura(lst.obterCandidatura(i));
+            }
+        }
+        
+        
+        
+        return lst1;
         
     }
+    
+    
     public ListaCandidaturas getListaCandidaturasDemonstracoes(Exposicao expo) {
+        ListaCandidaturas lst = new ListaCandidaturas();
+        ListaCandidaturas lst1 = new ListaCandidaturas();
         this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
-        return this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
+        lst=this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
+        int i;
         
+        for (i=0; i<lst.tamanho();i++){
+            
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+                lst1.adicionarCandidatura(lst.obterCandidatura(i));
+            }
+        }
+        
+        
+        
+        return lst1;
         
     }
 
