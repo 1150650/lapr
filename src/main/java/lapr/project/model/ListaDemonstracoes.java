@@ -78,4 +78,8 @@ public class ListaDemonstracoes {
         return listalDemonstracao.get(indice);
     }
 
+    public Demonstracao[] listaDemonstracaoToArray() {
+        return ((Demonstracao[]) listalDemonstracao.toArray());
+    }
+
 }
