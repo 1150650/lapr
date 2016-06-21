@@ -27,7 +27,7 @@ public class CandidaturaState {
         return false;
     }
 
-    public boolean setConflitoEncontrado() {
+    public boolean setConflitosDetetados() {
         return false;
     }
 
@@ -38,12 +38,20 @@ public class CandidaturaState {
     public boolean setAceite() {
         return false;
     }
+    
+    public boolean setCandidaturaFechada(){
+        return false;
+    }
+    
+    public boolean setCandidaturaRetirada(){
+        return false;
+    }
 
     public boolean valida() {
         return false;
     }
 
-    public boolean setCandidaturaCriada() {
+    public boolean setCandidaturaEmSubmissao() {
         return false;
     }
 
@@ -63,11 +71,11 @@ public class CandidaturaState {
         return false;
     }
 
-    public boolean isEstadoConflitoEncontrado() {
+    public boolean isEstadoConflitosDetetados() {
         return false;
     }
 
-    public boolean isEstadoCriada() {
+    public boolean isEstadoAberta() {
         return false;
     }
 
@@ -80,6 +88,14 @@ public class CandidaturaState {
     }
 
     public boolean isEstadoStandAtribuido() {
+        return false;
+    }
+
+    public boolean isEstadoEmSubmissao() {
+        return false;
+    }
+    
+    public boolean isEstadoFechada(){
         return false;
     }
 }

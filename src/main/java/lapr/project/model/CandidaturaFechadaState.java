@@ -7,37 +7,36 @@ package lapr.project.model;
 
 /**
  *
- * @author SimãoPedro
+ * @author Filipe <FilipeCorreia.1150524>
  */
-class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
-    
-      Exposicao m_e;
+public class CandidaturaFechadaState extends CandidaturaState {
 
-    public ExposiçãoDemonstraçãoSemFAEsState(Exposicao e) {
-        m_e = e;
+    private Candidatura candidatura;
+
+    CandidaturaFechadaState(Candidatura candidatura) {
+        this.candidatura = candidatura;
     }
 
     @Override
-    public boolean setFAEDefinido() {
+    public boolean setConflitosDetetados() {
         if (valida()) {
-            m_e.setEstado(new ExposiçãoCompletaState(m_e));
             return true;
         } else {
             return false;
         }
     }
 
+    @Override
     public boolean valida() {
-        if (m_e.getExposicaoEstado().isEstadoDemonstraçãoSemFAEs()) {
+        if (candidatura.getState().isEstadoFechada()) {
             return true;
         } else {
             return false;
         }
-
     }
     
     @Override
-    public boolean isEstadoDemonstraçãoSemFAEs(){
+    public boolean isEstadoFechada(){
         return true;
     }
 

@@ -9,10 +9,10 @@ package lapr.project.model;
  *
  * @author SimãoPedro
  */
-public class CandidaturaConflitoEncontradoState extends CandidaturaState {
+public class CandidaturaConflitosDetetadosState extends CandidaturaState {
 
     @Override
-    public boolean setConflitoEncontrado() {
+    public boolean setConflitosDetetados() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -22,7 +22,7 @@ public class CandidaturaConflitoEncontradoState extends CandidaturaState {
     }
 
     @Override
-    public boolean isEstadoConflitoEncontrado() {
+    public boolean isEstadoConflitosDetetados() {
         return true;
     }
 

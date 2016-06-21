@@ -10,6 +10,12 @@ package lapr.project.model;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class CandidaturaRetiradaState extends CandidaturaState {
+    
+    private Candidatura candidatura;
+    
+    public CandidaturaRetiradaState(Candidatura candidatura){
+        this.candidatura = candidatura;
+    }
 
     @Override
     public boolean isEstadoRetirada() {

@@ -10,15 +10,30 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class CandidaturaAvaliadaState extends CandidaturaState {
+    
+    private Candidatura candidatura;
+    
+    public CandidaturaAvaliadaState(Candidatura candidatura){
+        this.candidatura = candidatura;
+    }
 
     @Override
     public boolean setAvaliada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean verify = false;
+        if (valida()) {
+            candidatura.setEstado(this);
+            verify = true;
+        }
+        return verify;
     }
 
     @Override
     public boolean valida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         if (candidatura.getState().isEstadoAvaliada()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
