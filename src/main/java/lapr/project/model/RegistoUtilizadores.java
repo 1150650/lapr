@@ -51,10 +51,14 @@ public class RegistoUtilizadores {
         }
         return false;
     }
-    
-    public void validaAlteracaoDados(String email, String username) {
-        validaEmail(u.getEmail());
-        validaUsername(u.getUsername());
+
+    public void validaAlteracaoDados(Utilizador u, String email, String username) {
+        if (!email.equals(u.getEmail())) {
+            validaEmail(email);
+        }
+        if (!username.equals(u.getUsername())) {
+            validaUsername(username);
+        }
 
     }
 
@@ -92,8 +96,8 @@ public class RegistoUtilizadores {
         registoUtilizadores.remove(u);
         return true;
     }
-    
-    public void alterarDados(Utilizador utilizadorAtivo, String nome, String email, String username, String password){
+
+    public void alterarDados(Utilizador utilizadorAtivo, String nome, String email, String username, String password) {
         utilizadorAtivo.setNome(nome);
         utilizadorAtivo.setEmail(email);
         utilizadorAtivo.setUsername(username);
@@ -103,8 +107,9 @@ public class RegistoUtilizadores {
     public List<Utilizador> getRegistoUtilizadores() {
         return registoUtilizadores;
     }
-     public int indiceDe(Utilizador u) {
+
+    public int indiceDe(Utilizador u) {
         return registoUtilizadores.indexOf(u);
     }
-    
+
 }
