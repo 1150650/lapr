@@ -37,6 +37,8 @@ public class Candidatura {
     private int quantidadeConvites;
 
     private int[] avalicaoFAE;
+    
+    private Stand stand;
 
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
@@ -206,5 +208,12 @@ public class Candidatura {
     
     public boolean setCandidaturaEmSubmissao(){
         return state.setCandidaturaEmSubmissao();
+    }
+
+    public void setStand(Stand stand) {
+        this.stand= stand;
+    }
+    public Stand getStand() {
+         return this.stand;
     }
 }
