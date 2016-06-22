@@ -57,13 +57,12 @@ public class MenuPrincipal extends JFrame {
             btnRegistarExposicao, btnConfirmarRegistoUtilizador,
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
-            btnRegistarCandDemonstracao, btnConfirmarStand, 
-            btnAlterarDadosUtilizador;
+            btnRegistarCandDemonstracao, btnConfirmarStand;
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
-    private JPanel painelDadosUtilizador = new JPanel(), 
+    private JPanel painelDadosUtilizador = new JPanel(),
             painelBotoesOrganizador = new JPanel(),
-            painelBotoesFAE = new JPanel(), painelBotoesGestor = new JPanel(), 
+            painelBotoesFAE = new JPanel(), painelBotoesGestor = new JPanel(),
             painelBotoesRepresentante = new JPanel();
 
     public MenuPrincipal(CentroExposicoes centroexposicao, Utilizador u) {
@@ -112,24 +111,24 @@ public class MenuPrincipal extends JFrame {
 
         revalidate();
     }
-    
-    private void eliminarPaineis(){
+
+    private void eliminarPaineis() {
         remove(painelBotoesFAE);
         remove(painelBotoesGestor);
         remove(painelBotoesOrganizador);
         remove(painelBotoesRepresentante);
         remove(painelDadosUtilizador);
     }
-    
+
     private JMenuBar criarBarraMenus() {
         JMenuBar menuBar = new JMenuBar();
 
         menuBar.add(criarMenuFicheiro());
-     //   menuBar.add(criarMenuOpcoes());
+        //   menuBar.add(criarMenuOpcoes());
 
         return menuBar;
     }
-    
+
     private JMenu criarMenuFicheiro() {
         JMenu menu = new JMenu("Ficheiro");
         menu.setMnemonic(KeyEvent.VK_C);
@@ -139,12 +138,11 @@ public class MenuPrincipal extends JFrame {
         menu.add(criarSubMenuLista());
         menu.addSeparator();
         menu.addSeparator();
-    //    menu.add(criarItemSair());
+        //    menu.add(criarItemSair());
 
         return menu;
     }
-      
-    
+
     private JMenuItem criarTerminarSessao() {
         JMenuItem item = new JMenuItem("Terminar Sessão", KeyEvent.VK_T);
         item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
@@ -157,21 +155,21 @@ public class MenuPrincipal extends JFrame {
         });
         return item;
     }
-    
+
     private JMenu criarSubMenuLista() {
         JMenu menu = new JMenu("Listas");
         menu.setMnemonic(KeyEvent.VK_L);
 
         menu.add(criarItemImportarLista());
         menu.add(criarItemExportarLista());
-        
+
         return menu;
     }
-    
+
     private JMenuItem criarItemImportarLista() {
         JMenuItem item = new JMenuItem("Importar", 'I');
         item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_MASK));
-        
+
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -179,7 +177,7 @@ public class MenuPrincipal extends JFrame {
                 ImportarExportar imp = new ImportarExportar();
                 MyJFileChooser fileChooser = new MyJFileChooser();
                 int resposta = fileChooser.showOpenDialog(MenuPrincipal.this);
-                
+
                 if (resposta == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
                     CentroExposicoes ce;
@@ -188,30 +186,29 @@ public class MenuPrincipal extends JFrame {
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(
                                 MenuPrincipal.this,
-                                "Impossível ler o ficheiro: " + file.getPath()+ " !",
+                                "Impossível ler o ficheiro: " + file.getPath() + " !",
                                 "Importar",
                                 JOptionPane.ERROR_MESSAGE);
                     }
 
+                    JOptionPane.showMessageDialog(
+                            MenuPrincipal.this,
+                            "Centro de Exposições adicionado",
+                            "Importar Centro de Exposição",
+                            JOptionPane.INFORMATION_MESSAGE);
 
-                        JOptionPane.showMessageDialog(
-                                MenuPrincipal.this,
-                                "Centro de Exposições adicionado",
-                                "Importar Centro de Exposição",
-                                JOptionPane.INFORMATION_MESSAGE);
-                    
                 }
-                
+
             }
         });
 
         return item;
     }
-    
+
     private JMenuItem criarItemExportarLista() {
         JMenuItem item = new JMenuItem("Exportar", 'X');
         item.setAccelerator(KeyStroke.getKeyStroke("ctrl X"));
-        
+
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -219,7 +216,7 @@ public class MenuPrincipal extends JFrame {
                 ImportarExportar exp = new ImportarExportar();
                 MyJFileChooser fileChooser = new MyJFileChooser();
                 int resposta = fileChooser.showSaveDialog(MenuPrincipal.this);
-                
+
                 if (resposta == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
                     if (!file.getName().endsWith(".bin")) {
@@ -230,18 +227,16 @@ public class MenuPrincipal extends JFrame {
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(
                                 MenuPrincipal.this,
-                                "Impossível exportar o ficheiro: " + file.getPath()+ " !",
+                                "Impossível exportar o ficheiro: " + file.getPath() + " !",
                                 "Exportar",
                                 JOptionPane.ERROR_MESSAGE);
                     }
-            
+
                 }
             }
-        });        
-
+        });
         return item;
     }
-    
 
     private JPanel criarPainelTitulo() {
         JLabel lblMenuPrincipal = new JLabel("Menu Principal", JLabel.CENTER);
@@ -311,15 +306,13 @@ public class MenuPrincipal extends JFrame {
         lblPassword.setFont(new Font("Arial", Font.PLAIN, 15));
         lblPassword.setPreferredSize(LABEL_TAMANHO);
 
-         
-
         painelDadosUtilizador = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         painelDadosUtilizador.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         painelDadosUtilizador.setLayout(new GridLayout(5, 1, 20, 20));
-        btnAlterarDadosUtilizador = criarBotaoAlterarDadosUtilizador(); 
+        JButton btnAlterarDadosUtilizador = criarBotaoAlterarDadosUtilizador();
         painelDadosUtilizador.add(lblNome);
         painelDadosUtilizador.add(lblEmail);
         painelDadosUtilizador.add(lblUsername);
@@ -420,15 +413,15 @@ public class MenuPrincipal extends JFrame {
     }
 
     private JButton criarBotaoAlterarDadosUtilizador() {
-        btnAlterarDadosUtilizador = new JButton("Alterar Dados");
-        btnAlterarDadosUtilizador.addActionListener(new ActionListener() {
+        JButton btnAlterar = new JButton("Alterar Dados");
+        btnAlterar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 new AlterarPerfilUtilizadorUI(ce, utilizadorAtivo);
             }
         });
-        
-        return btnAlterarDadosUtilizador;
+
+        return btnAlterar;
     }
 
     private JButton criarBotaoDecidirFAE() {

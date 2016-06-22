@@ -22,14 +22,14 @@ public class AlterarPerfilUtilizadorController {
     public AlterarPerfilUtilizadorController(CentroExposicoes ce, Utilizador utilizadorAtivo) {
         this.centroExposicoes = ce;
         this.utilizadorAtivo = utilizadorAtivo;
-        this.ru= ce.getRegistoUtilizadoresNConf();
+        this.ru = ce.getRegistoUtilizadoresNConf();
     }
 
     public void validaAlteracaoDados(String email, String username) {
-        ru.validaAlteracaoDados(utilizadorAtivo, email, username);
+        ru.validaAlteracaoDados(email, username);
     }
-    
-    public void alterarDados(String nome, String email, String username, String password){
+
+    public void alterarDados(String nome, String email, String username, String password) {
         ru.alterarDados(utilizadorAtivo, nome, email, username, password);
     }
 
