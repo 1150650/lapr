@@ -11,17 +11,20 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import lapr.project.controller.CriarDemonstracaoController;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
 import lapr.project.model.Recurso;
 
 /**
@@ -36,6 +39,8 @@ public class CriarDemonstracaoUI extends JFrame {
     private CriarDemonstracaoController contr;
     private CentroExposicoes centroexpo;
     private MenuPrincipal framePai;
+    private Exposicao expo;
+    private Icon icon;
 
     public CriarDemonstracaoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
@@ -45,7 +50,7 @@ public class CriarDemonstracaoUI extends JFrame {
         this.framePai = framePai;
         contr.novaDemonstracao();
         criarComponentes();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
         setVisible(true);
@@ -178,6 +183,19 @@ public class CriarDemonstracaoUI extends JFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                
+                 Exposicao[] aux = contr.getListaExposicoes();
+
+                expo = (Exposicao) JOptionPane.showInputDialog(
+                            CriarDemonstracaoUI.this ,
+                        "Indique a exposição da qual deseja retirar a candidatura"
+                        + ":",
+                        "Seleção De Exposição",
+                        JOptionPane.DEFAULT_OPTION,
+                        icon,
+                        aux,
+                        "");
+                contr.selecionarExposicao(expo);
                 String Descricao = txtDescricao.getText();
               contr.setDados(Descricao);
               contr.setEstadoDemonstracaoCriada();

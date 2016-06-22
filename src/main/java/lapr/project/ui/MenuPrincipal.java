@@ -587,6 +587,7 @@ public class MenuPrincipal extends JFrame {
         btnDefinirTipoConflito.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
+                new DefinirTipoDeConflitoUI(MenuPrincipal.this,ce);
 
             }
         });

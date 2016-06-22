@@ -57,7 +57,7 @@ public class AceitarCandidaturaUI extends JFrame {
         centroexpo.getListaExposicoes().adicionarExposicao(expo);
         criarComponentes();
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
@@ -234,7 +234,9 @@ public class AceitarCandidaturaUI extends JFrame {
                 }else{
                  ModeloListaCandidaturas m  = ( ModeloListaCandidaturas) lstCompleta.getModel();
                     Candidatura m1 =(Candidatura ) lstCompleta.getSelectedValue();
+                    
                     contr.aceitarCandidaturaDemonstracao(m1);
+                    m.removeElement(m1);
                    dispose();
                 }
                
@@ -278,6 +280,7 @@ public class AceitarCandidaturaUI extends JFrame {
                     }
                    
                    contr.aceitarCandidaturaExposciao(m1);
+                   m.removeElement(m1);
                    dispose();
                 }
                

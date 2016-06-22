@@ -58,7 +58,8 @@ public class ListaDemonstracoes {
      * Metodo que cria uma demonstracao
      */
     public Demonstracao criacaoDemonstracao() {
-        return new Demonstracao();
+        Demonstracao d=  new Demonstracao();
+        return d;
     }
 
     /**

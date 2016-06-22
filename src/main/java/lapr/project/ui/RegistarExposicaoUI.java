@@ -251,13 +251,21 @@ public class RegistarExposicaoUI extends JDialog {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             
+                  
+                
+                
+                
                    String Titulo = txtTitulo.getText();
                    String Descricao = txtDescricao.getText();
                    String Local = txtLocal.getText();
-                   Date dateInico = new Date (Integer.parseInt (txtDateInicio.getText()));
-                   Date dateFinal = new Date (Integer.parseInt (txtDateFinal.getText()));
-                     contr.setDados(Titulo, Descricao, dateInico, dateFinal, Local);
+                   
+                   String[] data1 =txtDateInicio.getText().split("-");
+                   String[] data2 =txtDateFinal.getText().split("-");
+                   
+                   
+                      dtInico=new Date(Integer.parseInt(data1[0]),Integer.parseInt(data1[1]),Integer.parseInt(data1[2]));
+                  dtFim = new Date (Integer.parseInt(data2[0]),Integer.parseInt(data2[1]),Integer.parseInt(data2[2]));
+                     contr.setDados(Titulo, Descricao, dtInico,dtFim, Local);
                      contr.setEstadoExposicaoCriada();
                      contr.validaRegistaExposicao();
                     
