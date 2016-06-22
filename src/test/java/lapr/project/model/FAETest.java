@@ -46,7 +46,7 @@ public class FAETest {
         Utilizador u = new Utilizador("admin", "admin@gmail.com", "admin", ".Admin10");
         FAE f1 = new FAE(u,"1234");
         int experienciaFae1 =10;
-        f1.setExperienciaFAE(experienciaFae1);
+   //     f1.setExperienciaFAE(experienciaFae1);
         
        
         
