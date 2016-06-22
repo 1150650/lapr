@@ -216,4 +216,8 @@ public class Candidatura {
     public Stand getStand() {
          return this.stand;
     }
+    
+    public boolean setCandidaturaConflitosDetetados() {
+        return state.setConflitosDetetados();
+    }
 }  
