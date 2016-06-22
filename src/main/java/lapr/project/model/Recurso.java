@@ -5,16 +5,20 @@
  */
 package lapr.project.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author JOAO
  */
 public class Recurso {
 
+    
     private String recurso;
 
     public Recurso(String recurso) {
-        recurso = recurso;
+        this.recurso = recurso;
     }
 
     public Recurso() {
@@ -23,5 +27,9 @@ public class Recurso {
 
     public void setRecurso(String r) {
         recurso = r;
+    }
+    
+    public String getRecurso(){
+        return recurso;
     }
 }
