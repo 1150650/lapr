@@ -35,7 +35,7 @@ public class FAE implements Comparable<FAE> {
     public FAE(Utilizador u, String iD) {
         setUtilizador(u);
         setIdentificador(iD);
-        listaCandidaturasParaAvaliar=new ListaCandidaturas();
+        listaCandidaturasParaAvaliar = new ListaCandidaturas();
     }
 
     /**
@@ -84,8 +84,8 @@ public class FAE implements Comparable<FAE> {
     /**
      * @param experienciaFAE the experienciaFAE to set
      */
-    public void setExperienciaFAE(int experienciaFAE) {
-        this.experienciaFAE = experienciaFAE;
+    public void aumentarExperienciaFAE() {
+        this.experienciaFAE++;
     }
 
     /**
@@ -116,10 +116,10 @@ public class FAE implements Comparable<FAE> {
 
     @Override
     public int compareTo(FAE o) {
-        if (o.getExperienciaFAE() <  experienciaFAE) {
+        if (o.getExperienciaFAE() < experienciaFAE) {
             return -1;
         }
-        if (o.getExperienciaFAE() >  experienciaFAE) {
+        if (o.getExperienciaFAE() > experienciaFAE) {
             return 1;
         }
         return 0;

@@ -65,6 +65,7 @@ public class AtribuirCandidaturaController {
         expo.setAtribuicoes(getLstAtribuicoes());
         for (int j = 0; j < lstAtribuicoes.tamanho(); j++) {
             lstAtribuicoes.obterAtribuiçao(j).getFAE().adicionarCandidatura(lstAtribuicoes.obterAtribuiçao(j).getCandidatura());
+            lstAtribuicoes.obterAtribuicao(j).getFAE().aumentarExperienciaFAE();
             lstAtribuicoes.obterAtribuiçao(j).getCandidatura().getState().setAtribuida();
         }
         expo.getExposicaoEstado().setCandidaturasAtribuidas();
