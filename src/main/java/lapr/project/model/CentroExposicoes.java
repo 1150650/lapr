@@ -13,7 +13,6 @@ public class CentroExposicoes {
      * Criação de instância da lista de exposições
      */
     @XmlElement
-    
     private RegistoExposicoes listaExposicoes;
 
     /**
