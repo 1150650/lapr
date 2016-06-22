@@ -57,7 +57,7 @@ public class MenuPrincipal extends JFrame {
             btnRegistarExposicao, btnConfirmarRegistoUtilizador,
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
-            btnRegistarCandDemonstracao, btnConfirmarStand, 
+            btnRegistarCandDemonstracao, btnConfirmarStand,
             btnAlterarDadosUtilizador;
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
@@ -327,6 +327,7 @@ public class MenuPrincipal extends JFrame {
         btnAtribuirCandidatura = criarBotaoAtribuirCandidatura();
         btnCriarStand = criarBotaoCriarStand();
         btnAvaliacaoFinalCand = criarBotaoAvaliacaoFinalCand();
+        btnDecidirDemonstracao = criarBotaoDecidirDemonstracao();
         btnCriarDemonstracao = criarBotaoCriarDemonstracao();
         btnAtribuirStands = criarBotaoAtribuirStands();
         btnAtribuirCandDemonstracao = criarBotaoAtribuirCandDemonstracao();
@@ -340,6 +341,7 @@ public class MenuPrincipal extends JFrame {
 
         painelBotoesOrganizador.add(btnDecidirFAE);
         painelBotoesOrganizador.add(btnAtribuirCandidatura);
+        painelBotoesRepresentante.add(btnDecidirDemonstracao);
         painelBotoesOrganizador.add(btnCriarStand);
         painelBotoesOrganizador.add(btnAvaliacaoFinalCand);
         painelBotoesOrganizador.add(btnCriarDemonstracao);
@@ -390,7 +392,6 @@ public class MenuPrincipal extends JFrame {
     private JPanel criarPainelBotoesRepresentante() {
         btnCandidatarExposicao = criarBotaoCandidatarExposicao();
         btnAlterarCandidatura = criarBotaoAlterarCandidatura();
-        btnDecidirDemonstracao = criarBotaoDecidirDemonstracao();
         btnRetirarCandidatura = criarBotaoRetirarCandidatura();
         btnRegistarCandDemonstracao = criarBotaoRegistarCandDemonstracao();
         btnConfirmarStand = criarBotaoConfirmarStand();
@@ -404,7 +405,6 @@ public class MenuPrincipal extends JFrame {
 
         painelBotoesRepresentante.add(btnCandidatarExposicao);
         painelBotoesRepresentante.add(btnAlterarCandidatura);
-        painelBotoesRepresentante.add(btnDecidirDemonstracao);
         painelBotoesRepresentante.add(btnRetirarCandidatura);
         painelBotoesRepresentante.add(btnRetirarCandidatura);
         painelBotoesRepresentante.add(btnRegistarCandDemonstracao);
@@ -455,7 +455,7 @@ public class MenuPrincipal extends JFrame {
         btnCriarStand.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-            new RegistarStandUI(MenuPrincipal.this,ce);
+                new RegistarStandUI(MenuPrincipal.this, ce);
             }
         });
         return btnCriarStand;
@@ -479,7 +479,7 @@ public class MenuPrincipal extends JFrame {
         btnCriarDemonstracao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-             new CriarDemonstracaoUI(MenuPrincipal.this,ce);
+                new CriarDemonstracaoUI(MenuPrincipal.this, ce);
             }
         });
         return btnCriarDemonstracao;
@@ -551,7 +551,7 @@ public class MenuPrincipal extends JFrame {
         btnRegistarExposicao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-             new RegistarExposicaoUI(MenuPrincipal.this,ce);
+                new RegistarExposicaoUI(MenuPrincipal.this, ce);
             }
         });
         return btnRegistarExposicao;
@@ -587,7 +587,7 @@ public class MenuPrincipal extends JFrame {
         btnDefinirTipoConflito.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new DefinirTipoDeConflitoUI(MenuPrincipal.this,ce);
+                new DefinirTipoDeConflitoUI(MenuPrincipal.this, ce);
 
             }
         });
@@ -636,7 +636,7 @@ public class MenuPrincipal extends JFrame {
         btnRetirarCandidatura.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new RemoverCandidaturaUI (MenuPrincipal.this,ce);
+                new RemoverCandidaturaUI(MenuPrincipal.this, ce);
 
             }
         });
