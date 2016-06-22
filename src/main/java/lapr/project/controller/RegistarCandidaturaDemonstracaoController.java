@@ -24,11 +24,11 @@ public class RegistarCandidaturaDemonstracaoController {
 
     private ListaCandidaturas listaCandidaturas;
 
-    private CandidaturaDemonstracao candidatura;
-
-    private ListaDemonstracoes registoDemonstracoes;
+    private Candidatura candidatura;
     
-    private List<Demonstracao> listaDemonstracoes;
+    private List<Demonstracao> listaDemonstracoesComInteresse;
+    
+    private CandidaturaDemonstracao candidaturaDemo;
     
     public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
@@ -43,29 +43,25 @@ public class RegistarCandidaturaDemonstracaoController {
 
     public void selecionaExposicao(Exposicao exposicao) {
         this.exposicao = exposicao;
-        listaCandidaturas = exposicao.getListaCandidaturasDemonstracoes();
-        candidatura = (CandidaturaDemonstracao) listaCandidaturas.novaCandidatura();
-    }
-
-    public List getListaDemonstracoes() {
-        registoDemonstracoes = centroExposicoes.getListaDemonstracoes();
-        return listaDemonstracoes = registoDemonstracoes.getListalDemonstracao();
+        listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
     }
     
-    public void guardaDadosCandidatura(String morada, Demonstracao demonstracao, String nomeEmpresa, int telemovel, int quantidadeConvites, String produto){
-        candidatura.setMorada(morada);
-        candidatura.setDemonstracao(demonstracao);
-        candidatura.setNomeEmpresa(nomeEmpresa);
-        candidatura.setTelemovel(telemovel);
-        candidatura.setQuantidadeConvites(quantidadeConvites);
-        candidatura.setProdutos(produto);
-        
+    public List selecionaCandidatura(Candidatura Candidatura){
+        this.candidatura = candidatura;
+        return listaDemonstracoesComInteresse = candidatura.getListaDemonstracoesComInteresse();
+    }
+    
+    public void newCandidaturaDemo(){
+        candidaturaDemo = listaCandidaturas.newCandidaturaDemo(candidatura);
+    }
+    
+    public void guardaDadosCandidatura(Demonstracao demonstracao){
+        candidaturaDemo.setDemonstracao(demonstracao);
     }
     
     public void registaCandidatura(){
-        listaCandidaturas.adicionarCandidatura(candidatura);
+        listaCandidaturas.adicionarCandidatura(candidaturaDemo);
     }
-    
     
     public void setCandidaturaEmSubmissao(){
         candidatura.setCandidaturaEmSubmissao();

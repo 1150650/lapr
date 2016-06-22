@@ -109,21 +109,21 @@ public class ListaCandidaturas {
     public CandidaturaExposicao[] listaCandExposicaoToArray() {
         return (CandidaturaExposicao[]) listaCandidaturas.toArray();
     }
-    
-    public List getListaCandidaturasExpo(){
+
+    public List getListaCandidaturasExpo() {
         List<Candidatura> listaCandExpo = new ArrayList<>();
-        for(Candidatura c : listaCandidaturas){
-            if(c instanceof CandidaturaExposicao){
+        for (Candidatura c : listaCandidaturas) {
+            if (c instanceof CandidaturaExposicao) {
                 listaCandExpo.add(c);
             }
         }
         return listaCandExpo;
     }
-    
-        public List getListaCandidaturasDemo(){
+
+    public List getListaCandidaturasDemo() {
         List<Candidatura> listaCandDemo = new ArrayList<>();
-        for(Candidatura c : listaCandidaturas){
-            if(c instanceof CandidaturaDemonstracao){
+        for (Candidatura c : listaCandidaturas) {
+            if (c instanceof CandidaturaDemonstracao) {
                 listaCandDemo.add(c);
             }
         }
@@ -131,13 +131,23 @@ public class ListaCandidaturas {
     }
 
     public List getListaCandidaturasRetiradas() {
-        List <Candidatura> candidaturasRetiradas = new ArrayList<>();
-        for(Candidatura c : listaCandidaturas){
-            if(c.getState() instanceof CandidaturaRetiradaState){
+        List<Candidatura> candidaturasRetiradas = new ArrayList<>();
+        for (Candidatura c : listaCandidaturas) {
+            if (c.getState() instanceof CandidaturaRetiradaState) {
                 candidaturasRetiradas.add(c);
             }
         }
         return candidaturasRetiradas;
+    }
+
+    public CandidaturaDemonstracao newCandidaturaDemo(Candidatura candidatura) {
+        String nomeEmpresa = candidatura.getNomeEmpresa();
+        String morada = candidatura.getMorada();
+        int telemovel = candidatura.getTelemovel();
+        Demonstracao demonstracao = null;
+        String produtos = candidatura.getProdutos();
+        int quantidadeConvites = candidatura.getQuantidadeConvites();
+        return new CandidaturaDemonstracao(nomeEmpresa, morada, telemovel, demonstracao, produtos, quantidadeConvites);
     }
 
 }

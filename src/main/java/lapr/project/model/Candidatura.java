@@ -220,4 +220,8 @@ public class Candidatura {
     public boolean setCandidaturaConflitosDetetados() {
         return state.setConflitosDetetados();
     }
+
+    public List<Demonstracao> getListaDemonstracoesComInteresse() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }  

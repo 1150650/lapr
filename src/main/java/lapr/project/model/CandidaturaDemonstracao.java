@@ -32,9 +32,5 @@ public class CandidaturaDemonstracao extends Candidatura{
      public String toString() {
         return super.toString() + String.format("%n Demonstracao: %d", demonstracao.getDescricao());
     }
-
-    public void setEstadoEmSubmissao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
