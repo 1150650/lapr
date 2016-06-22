@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="Exposicao")
 public class Exposicao {
 
+    
     private String titulo;
     private String textoDescritivo;
     private Date dataInicio;

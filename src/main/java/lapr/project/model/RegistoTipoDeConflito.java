@@ -7,11 +7,13 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author JOAO
  */
+@XmlRootElement
 public class RegistoTipoDeConflito {
 
     private List<TipoDeConflito> listaTipoDeConflito;

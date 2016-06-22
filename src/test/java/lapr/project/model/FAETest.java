@@ -22,7 +22,7 @@ public class FAETest {
          Utilizador u = new Utilizador("admin", "admin@gmail.com", "admin", ".Admin10");
         this.f = new FAE(u,"123");
         int experienciaFae =9;
-        f.setExperienciaFAE(experienciaFae);
+//        f.setExperienciaFAE(experienciaFae);
          this.c = new Candidatura();
         c.setNomeEmpresa("isep");
          

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CentroExposicoes>
+    <listaExposicoes>
+        <Exposicao>
+            <listaFAE>
+                <listaFAE>
+                    <identificador>barros16</identificador>
+                    <utilizador>
+                        <email>diogo@gmail.com</email>
+                        <nome>Diogo Barros</nome>
+                        <password>0FkqiqDcttqu32</password>
+                        <username>barros15</username>
+                    </utilizador>
+                </listaFAE>
+            </listaFAE>
+            <dataFim>3916-10-22T00:00:00+01:00</dataFim>
+            <dataInicio>3915-10-22T00:00:00+01:00</dataInicio>
+            <listaCandidaturasDemonstracoes/>
+            <listaCandidaturasExposicoes/>
+            <listaDemonstracao/>
+            <local>Porto</local>
+            <textoDescritivo>Melhor Exposicao</textoDescritivo>
+            <titulo>Expo1</titulo>
+        </Exposicao>
+    </listaExposicoes>
+    <listaStands>
+        <listaStands/>
+    </listaStands>
+    <listaTipoDeConflito/>
+    <registoUtilizadoresNConf/>
+    <registoUtilizadoresConf/>
+    <listarecursos/>
+</CentroExposicoes>

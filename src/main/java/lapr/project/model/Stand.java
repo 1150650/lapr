@@ -5,14 +5,19 @@
  */
 package lapr.project.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author JOAO
  */
+@XmlRootElement
 public class Stand {
 
     private String descricao;
 
+    @XmlElement
     private Candidatura candidatura;
 
     public Stand(String descricao) {
@@ -29,6 +34,7 @@ public class Stand {
 
     }
 
+    @XmlElement
     public void setDescricao(String descricao) {
         if (descricao == null || descricao.trim().isEmpty()) {
             throw new IllegalArgumentException("Descricao inválida!");

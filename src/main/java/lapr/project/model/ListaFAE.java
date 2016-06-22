@@ -10,17 +10,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import lapr.project.model.FAE;
 
 /**
  *
  * @author SimãoPedro
  */
+@XmlRootElement
 public class ListaFAE {
 
     /**
      * Lista de objetos Atribuicao
      */
+    @XmlElement
     private ArrayList<FAE> listaFAE;
 
     /**
@@ -114,9 +118,9 @@ public class ListaFAE {
     }
 
     public void registaFAE(FAE fae) {
-        if (validaMembroFAE(fae)) {
+       // if (validaMembroFAE(fae)) {
             addMembroFAE(fae);
-        }
+        //}
 
     }
 
