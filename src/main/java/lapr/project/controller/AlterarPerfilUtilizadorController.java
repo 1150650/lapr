@@ -25,7 +25,7 @@ public class AlterarPerfilUtilizadorController {
     }
 
     public void validaAlteracaoDados(String email, String username) {
-        ru.validaAlteracaoDados(email, username);
+        ru.validaAlteracaoDados(utilizadorAtivo, email, username);
     }
 
     public void alterarDados(String nome, String email, String username, String password) {

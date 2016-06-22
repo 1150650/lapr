@@ -233,9 +233,83 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (txtPasswordAtual.getText().equals("")) {
+                    password = utilizadorAtivo.getPasswordDesencriptada();
+                    try {
+                        String nome = txtNome.getText();
+                        String email = txtEmail.getText();
+                        String username = txtUsername.getText();
+                        cntr.validaAlteracaoDados(email, username);
+                        cntr.alterarDados(nome, email, username, password);
+                        JOptionPane.showMessageDialog(
+                                AlterarPerfilUtilizadorUI.this,
+                                "Alterações realizada com sucesso!",
+                                "Sucesso",
+                                JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
+
+                    } catch (IllegalArgumentException ex) {
+                        JOptionPane.showMessageDialog(
+                                AlterarPerfilUtilizadorUI.this,
+                                ex.getMessage(),
+                                "ERRO!",
+                                JOptionPane.WARNING_MESSAGE);
+                    }
+                } else {
+
+                    try {
+                        if (txtPasswordAtual.getText().equals(utilizadorAtivo.getPasswordDesencriptada())) {
+                            try {
+                                if (txtPasswordNova.getText().equals(txtPasswordNova1.getText())) {
+                                    try {
+                                        String nome = txtNome.getText();
+                                        String email = txtEmail.getText();
+                                        String username = txtUsername.getText();
+                                        password = txtPasswordNova.getText();
+                                        cntr.validaAlteracaoDados(email, username);
+                                        cntr.alterarDados(nome, email, username, password);
+                                        JOptionPane.showMessageDialog(
+                                                AlterarPerfilUtilizadorUI.this,
+                                                "Alterações realizada com sucesso!",
+                                                "Sucesso",
+                                                JOptionPane.INFORMATION_MESSAGE);
+                                        dispose();
+
+                                    } catch (IllegalArgumentException ex) {
+                                        JOptionPane.showMessageDialog(
+                                                AlterarPerfilUtilizadorUI.this,
+                                                ex.getMessage(),
+                                                "ERRO!",
+                                                JOptionPane.WARNING_MESSAGE);
+                                    }
+                                } else {
+                                    throw new IllegalArgumentException();
+                                }
+                            } catch (IllegalArgumentException ex) {
+                                JOptionPane.showMessageDialog(
+                                        AlterarPerfilUtilizadorUI.this,
+                                        "Passwords novas não correspondem!",
+                                        "ERRO!",
+                                        JOptionPane.WARNING_MESSAGE);
+                            }
+                        } else {
+                            throw new IllegalArgumentException();
+                        }
+                    } catch (IllegalArgumentException ex) {
+                        JOptionPane.showMessageDialog(
+                                AlterarPerfilUtilizadorUI.this,
+                                "Password atual incorreta!",
+                                "ERRO!",
+                                JOptionPane.WARNING_MESSAGE);
+                        txtPasswordAtual.setText(null);
+                        txtPasswordAtual.setFocusable(true);
+                    }
+                }
 
             }
-        });
+        }
+        );
+
         return btn;
     }
 
