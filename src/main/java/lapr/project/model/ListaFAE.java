@@ -24,7 +24,7 @@ public class ListaFAE {
     /**
      * Lista de objetos Atribuicao
      */
-    @XmlElement
+    @XmlElement (name = "FAE")
     private ArrayList<FAE> listaFAE;
 
     /**

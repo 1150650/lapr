@@ -3,7 +3,7 @@
     <listaExposicoes>
         <Exposicao>
             <listaFAE>
-                <listaFAE>
+                <FAE>
                     <identificador>barros16</identificador>
                     <utilizador>
                         <email>diogo@gmail.com</email>
@@ -11,7 +11,16 @@
                         <password>0FkqiqDcttqu32</password>
                         <username>barros15</username>
                     </utilizador>
-                </listaFAE>
+                </FAE>
+                <FAE>
+                    <identificador>barros116</identificador>
+                    <utilizador>
+                        <email>diogo1@gmail.com</email>
+                        <nome>Diogo Barros1</nome>
+                        <password>0FkqiqDcttqu32</password>
+                        <username>barros115</username>
+                    </utilizador>
+                </FAE>
             </listaFAE>
             <dataFim>3916-10-22T00:00:00+01:00</dataFim>
             <dataInicio>3915-10-22T00:00:00+01:00</dataInicio>

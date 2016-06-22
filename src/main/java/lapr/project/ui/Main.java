@@ -28,13 +28,18 @@ class Main {
         Exposicao e = new Exposicao("Expo1", "Melhor Exposicao", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         
         Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
+        Utilizador u1 = new Utilizador("Diogo Barros1", "diogo1@gmail.com", "barros115", ".DiogoBarros10");
         FAE fae = e.getListaFAE().addFAE(u, "barros16");
+        FAE fae1 = e.getListaFAE().addFAE(u1, "barros116");
         e.getListaFAE().registaFAE(fae);
+        e.getListaFAE().registaFAE(fae1);
+        
         
         Stand s = new Stand();
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
+        ce.getRegistoUtilizadoresNConf().registaUtilizador(u1);
         ce.getListastands().adicionarStand(s);
         
 //        ce.getListaExposicoes().obterExposicao(0).setExposicaoCriada();
