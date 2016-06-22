@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import lapr.project.controller.AlterarPerfilUtilizadorController;
+import lapr.project.controller.AlterarPerfilUtilizadorController1;
 import lapr.project.controller.CriarCandidaturaController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;

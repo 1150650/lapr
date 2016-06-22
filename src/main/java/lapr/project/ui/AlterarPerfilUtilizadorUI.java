@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import lapr.project.controller.AlterarPerfilUtilizadorController;
+import lapr.project.controller.AlterarPerfilUtilizadorController1;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Utilizador;
 import lapr.project.utils.HintPasswordField;
@@ -37,7 +37,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
     private String password;
     private CentroExposicoes centroExpo;
     private Utilizador utilizadorAtivo;
-    private AlterarPerfilUtilizadorController cntr;
+    private AlterarPerfilUtilizadorController1 cntr;
     private static final Dimension LABEL_TAMANHO = new JLabel("Repita a password: ").
             getPreferredSize();
 
@@ -49,7 +49,7 @@ public class AlterarPerfilUtilizadorUI extends JFrame {
         GridLayout gl = new GridLayout(8, 1);
         gl.setHgap(20);
         gl.setVgap(20);
-        this.cntr = new AlterarPerfilUtilizadorController(ce, utilizadorAtivo);
+        this.cntr = new AlterarPerfilUtilizadorController1(ce, utilizadorAtivo);
         setLayout(gl);
 
         criarComponentes();
