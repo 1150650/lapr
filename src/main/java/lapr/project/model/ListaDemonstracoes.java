@@ -19,7 +19,7 @@ public class ListaDemonstracoes {
     /**
      * A lista de demonstracoes
      */
-    @XmlElement (name = "Demonstração")
+    
     private ArrayList<Demonstracao> listalDemonstracao;
 
     /**
@@ -43,6 +43,7 @@ public class ListaDemonstracoes {
      *
      * @param listalDemonstracao a nova lista de demonstracoes
      */
+    @XmlElement (name = "Demonstração")
     public void setListalDemonstracao(ArrayList<Demonstracao> listalDemonstracao) {
 
         this.listalDemonstracao = listalDemonstracao;

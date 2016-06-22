@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement (name = "listaStands")
 public class ListaStands {
 
-    @XmlElement
+    @XmlElement (name = "stand")
     private List<Stand> listaStands;
 
     public ListaStands() {

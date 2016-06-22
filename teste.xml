@@ -42,14 +42,21 @@
                     <telemovel>911803479</telemovel>
                 </candidatura>
             </listaCandidaturasExposicoes>
-            <listaDemonstracao/>
+            <listaDemonstracao>
+                <Demonstração>
+                    <codigo>1</codigo>
+                    <dados></dados>
+                </Demonstração>
+            </listaDemonstracao>
             <local>Porto</local>
             <textoDescritivo>Melhor Exposicao</textoDescritivo>
             <titulo>Expo1</titulo>
         </Exposicao>
     </listaExposicoes>
     <listaStands>
-        <listaStands/>
+        <stand>
+            <descricao>Isto é um Stand</descricao>
+        </stand>
     </listaStands>
     <listaTipoDeConflito/>
     <registoUtilizadoresNConf/>

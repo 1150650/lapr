@@ -39,6 +39,8 @@ class Main {
         
         Demonstracao d = new Demonstracao();
         
+        Stand s = new Stand("Isto é um Stand");
+        
         e.getListaFAE().registaFAE(fae);
         e.getListaFAE().registaFAE(fae1);
         e.getListaCandidaturasExposicoes().adicionarCandidatura(candidatura);
@@ -46,7 +48,7 @@ class Main {
         e.getListaDemonstracoes().addDemonstracao(d);
         
         
-        Stand s = new Stand();
+        
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
