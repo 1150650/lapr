@@ -18,6 +18,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,7 +34,7 @@ import lapr.project.model.CentroExposicoes;
  */
 class JanelaPrincipal extends JFrame {
 
-    private JButton btnLogin, btnRegistar;
+    private JButton btnLogin, btnRegistar, btnSair;
     private JanelaPrincipal framePai;
     private CentroExposicoes centroExpo;
     private static final ImageIcon ICONE
@@ -94,14 +95,20 @@ class JanelaPrincipal extends JFrame {
         JButton btnNovo = criarBotaoRegistarUtilizador();
         btnNovo.setFont(new Font("Monospaced", Font.BOLD, 25));
         
+        JButton btnSair = criarBotaoSair();
+        btnSair.setFont(new Font("Monospaced", Font.BOLD, 25));
+        
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         
+        
         p.add(btnNovo);
-        p.add(btnEntrar);
+        p.add(Box.createRigidArea(new Dimension(285,0)));
+        p.add(btnEntrar);        
+        p.add(btnSair);
 
 
         return p;
@@ -122,9 +129,9 @@ class JanelaPrincipal extends JFrame {
     }
     
     private JButton criarBotaoRegistarUtilizador(){
-        btnLogin = new JButton("Registar Utilizador");
+        btnRegistar = new JButton("Registar Utilizador");
 
-        btnLogin.addActionListener(new ActionListener() {
+        btnRegistar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 new RegistarUtilizadorUI(JanelaPrincipal.this, centroExpo);
@@ -132,7 +139,22 @@ class JanelaPrincipal extends JFrame {
                 
             }
         });
-        return btnLogin;
+        return btnRegistar;
+    }
+    
+    private JButton criarBotaoSair(){
+        btnSair = new JButton("Sair");
+
+        btnSair.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                
+                dispose();
+                
+                
+            }
+        });
+        return btnSair;
     }
     
     

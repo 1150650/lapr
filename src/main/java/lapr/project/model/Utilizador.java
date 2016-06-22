@@ -86,11 +86,6 @@ public class Utilizador {
     }
 
     @XmlElement
-    private void setPassword1(String password){
-        this.password=password;
-    }
-    
-    
     public void setPassword(String password) {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
