@@ -35,6 +35,8 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      */
     private static int codigo = 1;
 
+    private DemonstracaoState state;
+
     /**
      * Cria uma instancia de Demonstracao
      */
@@ -113,10 +115,6 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
         return super.toString();
     }
 
-    public boolean setDemonstracaoAberta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public Node exportContentToXMLNode() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -125,6 +123,70 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     @Override
     public Demonstracao importContentFromXMLNode(Node node) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public DemonstracaoState getEstado() {
+        return state;
+    }
+
+    public void setEstado(DemonstracaoState state) {
+        this.state = state;
+    }
+
+    public boolean setDemonstracaoCriada() {
+        return state.setDemonstracaoCriada();
+    }
+
+    public boolean setDemonstracaoAbertaCandidaturas() {
+        return state.setAbertaACandidaturas();
+    }
+
+    public boolean setDemonstracaoCandidaturaAceite() {
+        return state.setCandidaturaAceite();
+    }
+
+    public boolean setDemonstracaoCandidaturaAvaliada() {
+        return state.setCandidaturaAvaliada();
+    }
+
+    public boolean setDemonstracaoCandidaturaEmAvaliacao() {
+        return state.setCandidaturaEmAvaliacao();
+    }
+
+    public boolean setDemonstracaoCandidaturaNaoAvaliada() {
+        return state.setCandidaturaNaoAvaliada();
+    }
+
+    public boolean setCandidaturaRejeitada() {
+        return state.setCandidaturaRejeitada();
+    }
+
+    public boolean setCandidaturaRetirada() {
+        return state.setCandidaturaRetirada();
+    }
+
+    public boolean setCandidaturasAtribuidas() {
+        return state.setCandidaturasAtribuidas();
+    }
+
+    public boolean setCandidaturasEmSubmissao() {
+        return state.setCandidaturasEmSubmissao();
+    }
+
+    public boolean setConflitosCandidaturaAlterados() {
+        return state.setConflitosCandidaturaAlterados();
+    }
+
+    public boolean setConflitosCandidaturaDetetados() {
+        return state.setConflitosCandidaturaDetetados();
+    }
+
+    public boolean setDemonstracaoAprovada() {
+        return state.setDemonstracaoAprovada();
+    }
+
+    public boolean setDemonstracaoFechadaACandidaturas() {
+        return state.setFechadaACandidaturas();
     }
 
 }

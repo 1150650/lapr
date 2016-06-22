@@ -88,7 +88,7 @@ public class DecidirDemonstraçõesController {
      * @return
      */
     public boolean setDemonstracaoAberta() {
-        return getDemonstraccao().setDemonstracaoAberta();
+        return getDemonstraccao().setDemonstracaoCriada();
     }
 
     /**
