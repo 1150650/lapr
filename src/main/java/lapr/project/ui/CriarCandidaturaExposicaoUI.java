@@ -61,6 +61,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     public CriarCandidaturaExposicaoUI(CriarCandidaturaOpcaoUI framePai, CriarCandidaturaController crtlCriarCandidatura) {
         this.crtlCriarCandidatura = crtlCriarCandidatura;
+        crtlCriarCandidatura.novaCandidatura();
         this.ce = ce;
         this.framePai = framePai;
 
@@ -208,6 +209,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    crtlCriarCandidatura.setDados(nomeEmpresaTF.getText(), moradaTF.getText(), Integer.parseInt(telemovelTF.getText()), Float.parseFloat(areaExposicaoTF.getText()), produtosTF.getText(), Integer.parseInt(nConvitesTF.getText()));
                     crtlCriarCandidatura.adicionarCandidatura();
                     dispose();
 

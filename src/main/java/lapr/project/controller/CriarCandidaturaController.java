@@ -46,11 +46,10 @@ public class CriarCandidaturaController {
     }
 
     public void novaCandidatura() {
-        listaCandidaturas.novaCandidatura();
+        c = new CandidaturaExposicao();
     }
 
-    public void setDados(CandidaturaExposicao candidatura, String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
-        this.c = candidatura;
+    public void setDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
         this.c.setNomeEmpresa(nomeEmpresa);
         this.c.setMorada(morada);
         this.c.setTelemovel(telemovel);

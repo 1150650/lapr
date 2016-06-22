@@ -15,6 +15,7 @@ public class Exposicao {
     private ExposiçãoState m_state;
     private ListaOrganizadores listaOrganizadores;
     private ListaConflitos listaConflitos;
+    private ListaAtribuicoes lstAtribuicoes;
     private RegistoRepresentantes lstRep;
 
     public Exposicao() {
@@ -33,6 +34,7 @@ public class Exposicao {
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
+        lstRep = new RegistoRepresentantes();
     }
 
     public String getTitulo() {
@@ -186,5 +188,9 @@ public class Exposicao {
 
     public void setListaDemonstracao(ListaDemonstracoes listaDemonstracao) {
         this.listaDemonstracao = listaDemonstracao;
+    }
+
+    public void setListaAtribuicoes(ListaAtribuicoes lstA) {
+        this.lstAtribuicoes = lstA;
     }
 }
