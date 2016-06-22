@@ -58,8 +58,26 @@
             <descricao>Isto é um Stand</descricao>
         </stand>
     </listaStands>
-    <listaTipoDeConflito/>
-    <registoUtilizadoresNConf/>
-    <registoUtilizadoresConf/>
+    <listaTipoDeConflito>
+        <Conflito>
+            <descricao>ISto é um conflito</descricao>
+        </Conflito>
+    </listaTipoDeConflito>
+    <registoUtilizadoresNConf>
+        <utilizador>
+            <email>diogo@gmail.com</email>
+            <nome>Diogo Barros</nome>
+            <password>0FkqiqDcttqu32</password>
+            <username>barros15</username>
+        </utilizador>
+    </registoUtilizadoresNConf>
+    <registoUtilizadoresConf>
+        <utilizador>
+            <email>diogo1@gmail.com</email>
+            <nome>Diogo Barros1</nome>
+            <password>0FkqiqDcttqu32</password>
+            <username>barros115</username>
+        </utilizador>
+    </registoUtilizadoresConf>
     <listarecursos/>
 </CentroExposicoes>

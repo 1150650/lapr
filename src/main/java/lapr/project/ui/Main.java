@@ -10,6 +10,7 @@ import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Stand;
+import lapr.project.model.TipoDeConflito;
 import lapr.project.model.Utilizador;
 import lapr.project.ui.AlterarCandidaturaUI;
 import lapr.project.utils.ImportarExportar;
@@ -41,6 +42,8 @@ class Main {
         
         Stand s = new Stand("Isto é um Stand");
         
+        TipoDeConflito tc = new TipoDeConflito("ISto é um conflito");
+        
         e.getListaFAE().registaFAE(fae);
         e.getListaFAE().registaFAE(fae1);
         e.getListaCandidaturasExposicoes().adicionarCandidatura(candidatura);
@@ -52,8 +55,9 @@ class Main {
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
-        ce.getRegistoUtilizadoresNConf().registaUtilizador(u1);
+        ce.getRegistoUtilizadoresConf().registaUtilizador(u1);
         ce.getListastands().adicionarStand(s);
+        ce.getListaTipoDeConflito().adicionarTipoDeConflito(tc);
         
 //        ce.getListaExposicoes().obterExposicao(0).setExposicaoCriada();
         ImportarExportar exp = new ImportarExportar();

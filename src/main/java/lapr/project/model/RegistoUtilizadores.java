@@ -16,9 +16,10 @@ public class RegistoUtilizadores {
     /**
      * Lista de Utilizadores
      */
+    @XmlElement (name = "utilizador")
     private List<Utilizador> registoUtilizadores;
 
-    @XmlElement (name = "utilizador")
+    
     private Utilizador u;
 
     public RegistoUtilizadores() {
