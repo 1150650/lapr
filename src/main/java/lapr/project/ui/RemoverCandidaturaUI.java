@@ -100,6 +100,8 @@ private JPanel criarPainelCentro() {
          JList lstCompleta = new JList(lstCandidaturasExposicao );
         
         btnRemoverCandidaturaExposicao = criarBotaoRemoverCandidaturaExposicao(lstCompleta);
+         btnRemoverCandidaturaExposicao.setToolTipText("Remove uma candidatura a Exposicao");
+         
         
         p.add(criarPainelLista( "Lista de Candidaturas (Exposicao):",
                                 lstCompleta,
@@ -110,6 +112,7 @@ private JPanel criarPainelCentro() {
          JList lstCompleta1 = new JList(lstCandidaturasDemonstracao );
         
         btnRemoverCandidaturaDemonstracao = criarBotaoRemoverCandidaturaDemonstracao(lstCompleta);
+       btnRemoverCandidaturaDemonstracao.setToolTipText("Remove uma candidatura a Demonstracao");
         
         p.add(criarPainelLista( "Lista de Candidaturas (Demonstracao):",
                                 lstCompleta1,

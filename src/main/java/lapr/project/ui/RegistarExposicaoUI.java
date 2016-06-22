@@ -17,11 +17,13 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import lapr.project.controller.RegistarExposicaoController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Utilizador;
+import lapr.project.utils.HintTextField;
 
 /**
  *
@@ -29,13 +31,15 @@ import lapr.project.model.Utilizador;
  */
 public class RegistarExposicaoUI extends JDialog {
     
-     private JTextField txtTitulo, txtDescricao, txtLocal,txtDateInicio,txtDateFinal;
+     private JTextField txtTitulo,  txtLocal,txtDateInicio,txtDateFinal;
+     private JTextArea txtDescricao;
      private Date dtInico,dtFim;
      private JButton btnAdicionarOrganizador;
     private ModeloListaUtilizadores lstUtilizadores;
     private RegistarExposicaoController contr;
     private CentroExposicoes centroexpo;
     private MenuPrincipal framePai;
+    private final int CAMPO_LARGURA = 30;
     
     
    public RegistarExposicaoUI (MenuPrincipal framePai, CentroExposicoes ce){
@@ -71,7 +75,7 @@ public class RegistarExposicaoUI extends JDialog {
         JPanel p2 = criarPainelDescricao();
         
 
-        JPanel pNorte = new JPanel();
+        JPanel pNorte = new JPanel(new BorderLayout());
         pNorte.add(p1, BorderLayout.NORTH);
         
         pNorte.add(p2, BorderLayout.CENTER);
@@ -82,11 +86,13 @@ public class RegistarExposicaoUI extends JDialog {
     private JPanel criarPainelCentro() {
         JPanel p1 = criarPainelUtilizador();
         JPanel p2 = criarPainelLocal();
+        JPanel p3 = criarPainelData();
     
 
-        JPanel pCentro = new JPanel();
+        JPanel pCentro = new JPanel(new BorderLayout());
         pCentro.add(p1, BorderLayout.NORTH);
         pCentro.add(p2, BorderLayout.CENTER);
+        pCentro.add(p3, BorderLayout.SOUTH);
     
 
         return pCentro;
@@ -94,13 +100,14 @@ public class RegistarExposicaoUI extends JDialog {
 
     private JPanel criarPainelSul() {
         JButton btnOK = criarBotaoOK();
-        JPanel p3 = criarPainelData();
+        btnOK.setToolTipText("Regista a Exposicao");
+        
         getRootPane().setDefaultButton(btnOK);
 
         JButton btnCancelar = criarBotaoCancelar();
-
+        btnCancelar.setToolTipText("Cancela o registo a Exposicao");
         JPanel p = new JPanel();
-        p.add(p3, BorderLayout.CENTER);
+        
        
         p.add(btnOK);
         p.add(btnCancelar);
@@ -113,8 +120,10 @@ public class RegistarExposicaoUI extends JDialog {
     private JPanel criarPainelTitulo() {
         JLabel lbl = new JLabel("Titulo:");
 
-        final int CAMPO_LARGURA = 10;
-        txtTitulo = new JTextField(CAMPO_LARGURA);
+        
+        txtTitulo = new HintTextField("Indicação do Titulo da Exposição");
+        txtTitulo.setColumns(CAMPO_LARGURA);
+        
 
         JPanel p = new JPanel();
         p.add(lbl);
@@ -126,8 +135,10 @@ public class RegistarExposicaoUI extends JDialog {
     private JPanel criarPainelDescricao() {
         JLabel lbl = new JLabel("Descricao:");
 
-        final int CAMPO_LARGURA = 10;
-        txtDescricao = new JTextField(CAMPO_LARGURA);
+      
+        txtDescricao =  new JTextArea();
+        txtDescricao.setColumns(CAMPO_LARGURA);
+        
 
         JPanel p = new JPanel();
        
@@ -148,6 +159,7 @@ public class RegistarExposicaoUI extends JDialog {
          JList lstCompleta = new JList( lstUtilizadores);
         
         btnAdicionarOrganizador = criarBotaoAdiconarOrganizador(lstCompleta);
+        btnAdicionarOrganizador.setToolTipText("Adiciona um Organizador á Exposicao");
         
         p.add(criarPainelLista( "Lista de Utilizadores:",
                                 lstCompleta,
@@ -205,8 +217,9 @@ public class RegistarExposicaoUI extends JDialog {
    private JPanel criarPainelLocal() {
        JLabel lbl = new JLabel("Local :");
 
-        final int CAMPO_LARGURA = 10;
-        txtLocal = new JTextField(CAMPO_LARGURA);
+        
+        txtLocal = new HintTextField("Indicação do Local da Exposição");
+        txtLocal.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel();
      
@@ -225,12 +238,14 @@ public class RegistarExposicaoUI extends JDialog {
     private JPanel criarPainelData() {
        JLabel lbl = new JLabel("Data de inicio :");
 
-        final int CAMPO_LARGURA = 10;
-        txtDateInicio = new JTextField(CAMPO_LARGURA);
+        
+        txtDateInicio = new HintTextField("Indicação da data de Inico (AAAA-MM-DD)");
         JLabel lbl1 = new JLabel("Data de Final :");
+        txtDateInicio.setColumns(CAMPO_LARGURA);
 
        
-        txtDateFinal = new JTextField(CAMPO_LARGURA);
+        txtDateFinal = new HintTextField("Indicação da data de Fim (AAAA-MM-DD)");
+        txtDateFinal.setColumns(CAMPO_LARGURA);
 
         JPanel p = new JPanel();
      
