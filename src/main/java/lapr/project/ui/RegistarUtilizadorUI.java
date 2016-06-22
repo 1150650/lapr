@@ -22,7 +22,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import lapr.project.controller.RegistarUtilizadorController;
 import lapr.project.model.CentroExposicoes;
-import lapr.project.utils.CaeserCypher;
 import lapr.project.utils.HintPasswordField;
 import lapr.project.utils.HintTextField;
 
@@ -46,7 +45,7 @@ public class RegistarUtilizadorUI extends JFrame {
         gl.setHgap(20);
         gl.setVgap(20);
         this.cntr = new RegistarUtilizadorController(ce);
-
+         
         setLayout(gl);
 
         criarComponentes();

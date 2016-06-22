@@ -129,4 +129,15 @@ public class CentroExposicoes {
         return listarecursos;
     }
 
+    public Stand[] mostrarListaStand() {
+        Stand[] string = new Stand[listaStands.tamanho()];
+
+        int tamanho = listaStands.tamanho();
+        for (int i = 0; i < tamanho; i++) {
+
+            string[i] = listaStands.obterStand(i);
+        }
+        return string;
+    }
+
 }

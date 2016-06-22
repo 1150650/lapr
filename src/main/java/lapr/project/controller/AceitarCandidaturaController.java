@@ -12,6 +12,7 @@ import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
 import lapr.project.model.ListaDemonstracoes;
 import lapr.project.model.RegistoExposicoes;
+import lapr.project.model.Stand;
 
 /**
  *
@@ -99,6 +100,16 @@ public class AceitarCandidaturaController {
         this.candidatura = c;
         int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).getState().isEstadoAceite();
+    }
+
+    public Stand[] getListaStands() {
+      return this.ce.mostrarListaStand();
+    }
+
+    public void adicionarStandCandidaturaExposciao(Stand s) {
+
+        int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
+        this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setStand(s);
     }
 
 }

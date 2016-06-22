@@ -216,4 +216,4 @@ public class Candidatura {
     public Stand getStand() {
          return this.stand;
     }
-}
+}  
