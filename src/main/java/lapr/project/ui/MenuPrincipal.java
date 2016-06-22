@@ -454,7 +454,7 @@ public class MenuPrincipal extends JFrame {
         btnCriarStand.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+            new RegistarStandUI(MenuPrincipal.this,ce);
             }
         });
         return btnCriarStand;
@@ -478,7 +478,7 @@ public class MenuPrincipal extends JFrame {
         btnCriarDemonstracao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+             new CriarDemonstracaoUI(MenuPrincipal.this,ce);
             }
         });
         return btnCriarDemonstracao;
@@ -550,7 +550,7 @@ public class MenuPrincipal extends JFrame {
         btnRegistarExposicao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+             new RegistarExposicaoUI(MenuPrincipal.this,ce);
             }
         });
         return btnRegistarExposicao;
@@ -634,6 +634,7 @@ public class MenuPrincipal extends JFrame {
         btnRetirarCandidatura.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
+                new RemoverCandidaturaUI (MenuPrincipal.this,ce);
 
             }
         });

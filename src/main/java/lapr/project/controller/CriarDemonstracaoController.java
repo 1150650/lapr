@@ -20,14 +20,14 @@ import lapr.project.model.Utilizador;
  *
  * @author JOAO
  */
-public class CriarDemonstraçãoController {
+public class CriarDemonstracaoController {
       private RegistoExposicoes registoExposicoes;
      private CentroExposicoes centroExposicoes;
      private Demonstracao demonstracao;
 
     private Exposicao exposicao;
     
-    public CriarDemonstraçãoController(CentroExposicoes centroexpo ){
+    public CriarDemonstracaoController(CentroExposicoes centroexpo ){
         this.centroExposicoes=centroexpo ;
     }
     

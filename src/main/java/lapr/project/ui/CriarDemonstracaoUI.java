@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import lapr.project.controller.CriarDemonstraçãoController;
+import lapr.project.controller.CriarDemonstracaoController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Recurso;
 
@@ -28,20 +28,20 @@ import lapr.project.model.Recurso;
  *
  * @author JOAO
  */
-public class CriarDemonstraçãoUI extends JFrame {
+public class CriarDemonstracaoUI extends JFrame {
 
     private JTextField txtDescricao;
     private JButton btnAdicionarRecurso;
     private ModeloListaRecursos lstRecursos;
-    private CriarDemonstraçãoController contr;
+    private CriarDemonstracaoController contr;
     private CentroExposicoes centroexpo;
     private MenuPrincipal framePai;
 
-    public CriarDemonstraçãoUI(MenuPrincipal framePai, CentroExposicoes ce) {
+    public CriarDemonstracaoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
         super("Registar Demonstracao");
         this.centroexpo = ce;
-        this.contr = new CriarDemonstraçãoController(ce);
+        this.contr = new CriarDemonstracaoController(ce);
         this.framePai = framePai;
         contr.novaDemonstracao();
         criarComponentes();
