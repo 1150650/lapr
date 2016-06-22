@@ -4,6 +4,8 @@
         <Exposicao>
             <listaFAE>
                 <FAE>
+                    <experienciaFAE>0</experienciaFAE>
+                    <listaCandidaturasParaAvaliar/>
                     <identificador>barros16</identificador>
                     <utilizador>
                         <email>diogo@gmail.com</email>
@@ -13,6 +15,8 @@
                     </utilizador>
                 </FAE>
                 <FAE>
+                    <experienciaFAE>0</experienciaFAE>
+                    <listaCandidaturasParaAvaliar/>
                     <identificador>barros116</identificador>
                     <utilizador>
                         <email>diogo1@gmail.com</email>

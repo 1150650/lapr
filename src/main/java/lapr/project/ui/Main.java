@@ -79,15 +79,16 @@ try {
 	  } catch (JAXBException e) {
 		e.printStackTrace();
 	  }
-
-    }
-        
+//
+//    
+//        
 //        ce.getListaExposicoes().obterExposicao(0).setExposicaoCriada();
 //        ImportarExportar exp = new ImportarExportar();
 //        exp.exportar(ce, "teste.xml");
-
-//        new MenuPrincipal(ce, u);
+//
+////        new MenuPrincipal(ce, u);
 //        new JanelaPrincipal(ce);
+    }
     }
 
 

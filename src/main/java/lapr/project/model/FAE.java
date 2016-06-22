@@ -1,21 +1,28 @@
 package lapr.project.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class FAE implements Comparable<FAE> {
 
     /**
      * String que contem a sigla de identificação do FAE
      */
+    
     private String identificador;
 
     /**
      * String com o nome de utilizador
      */
+    
     private Utilizador utilizador;
 
     /**
      * Variavel que define o numero de Exposiçoes em que o utilizador(FAE)
      * desempenhou o seu papel de FAE
      */
+    @XmlElement
     private int experienciaFAE;
 
     /**
@@ -24,6 +31,7 @@ public class FAE implements Comparable<FAE> {
      * @param u
      * @param identificador
      */
+    @XmlElement
     private ListaCandidaturas listaCandidaturasParaAvaliar;
 
     /**
@@ -38,6 +46,9 @@ public class FAE implements Comparable<FAE> {
         listaCandidaturasParaAvaliar = new ListaCandidaturas();
     }
 
+    public FAE() {
+
+    }
     /**
      * @return the identificador
      */
@@ -57,6 +68,7 @@ public class FAE implements Comparable<FAE> {
      *
      * @param utilizador Stirng utilizador
      */
+    @XmlElement
     public void setUtilizador(Utilizador utilizador) {
         this.utilizador = utilizador;
     }
@@ -67,6 +79,7 @@ public class FAE implements Comparable<FAE> {
      *
      * @param identificador id
      */
+    @XmlElement
     public void setIdentificador(String identificador) {
         if (identificador == null || identificador.trim().isEmpty()) {
             throw new IllegalArgumentException("Identificador inválido!");
