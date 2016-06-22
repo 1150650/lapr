@@ -79,5 +79,12 @@
             <username>barros115</username>
         </utilizador>
     </registoUtilizadoresConf>
-    <listarecursos/>
+    <listarecursos>
+        <Recurso>
+            <recurso>lapis</recurso>
+        </Recurso>
+        <Recurso>
+            <recurso>caneta</recurso>
+        </Recurso>
+    </listarecursos>
 </CentroExposicoes>
