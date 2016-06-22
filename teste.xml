@@ -24,8 +24,24 @@
             </listaFAE>
             <dataFim>3916-10-22T00:00:00+01:00</dataFim>
             <dataInicio>3915-10-22T00:00:00+01:00</dataInicio>
-            <listaCandidaturasDemonstracoes/>
-            <listaCandidaturasExposicoes/>
+            <listaCandidaturasDemonstracoes>
+                <candidatura>
+                    <morada>Rua da rua</morada>
+                    <nomeEmpresa>Empresa1</nomeEmpresa>
+                    <produtos>muitos produtos</produtos>
+                    <quantidadeConvites>53</quantidadeConvites>
+                    <telemovel>911803479</telemovel>
+                </candidatura>
+            </listaCandidaturasDemonstracoes>
+            <listaCandidaturasExposicoes>
+                <candidatura>
+                    <morada>Rua da rua</morada>
+                    <nomeEmpresa>Empresa1</nomeEmpresa>
+                    <produtos>muitos produtos</produtos>
+                    <quantidadeConvites>53</quantidadeConvites>
+                    <telemovel>911803479</telemovel>
+                </candidatura>
+            </listaCandidaturasExposicoes>
             <listaDemonstracao/>
             <local>Porto</local>
             <textoDescritivo>Melhor Exposicao</textoDescritivo>

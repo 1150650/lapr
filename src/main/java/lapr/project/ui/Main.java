@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.Date;
 import javax.swing.JFrame;
 import lapr.project.model.CalculatorExample;
+import lapr.project.model.Candidatura;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Stand;
@@ -29,10 +31,19 @@ class Main {
         
         Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         Utilizador u1 = new Utilizador("Diogo Barros1", "diogo1@gmail.com", "barros115", ".DiogoBarros10");
+        
         FAE fae = e.getListaFAE().addFAE(u, "barros16");
         FAE fae1 = e.getListaFAE().addFAE(u1, "barros116");
+        
+        Candidatura candidatura = new Candidatura("Empresa1", "Rua da rua", 911803479, "muitos produtos", 53);
+        
+        Demonstracao d = new Demonstracao();
+        
         e.getListaFAE().registaFAE(fae);
         e.getListaFAE().registaFAE(fae1);
+        e.getListaCandidaturasExposicoes().adicionarCandidatura(candidatura);
+        e.getListaCandidaturasDemonstracoes().adicionarCandidatura(candidatura);
+        e.getListaDemonstracoes().addDemonstracao(d);
         
         
         Stand s = new Stand();

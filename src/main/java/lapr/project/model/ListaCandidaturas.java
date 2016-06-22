@@ -11,7 +11,7 @@ public class ListaCandidaturas {
     /**
      * Lista de Candidaturas
      */
-    @XmlElement
+    @XmlElement (name = "candidatura")
     private List<Candidatura> listaCandidaturas;
 
     /**
