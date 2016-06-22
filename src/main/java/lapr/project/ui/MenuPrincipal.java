@@ -442,9 +442,11 @@ public class MenuPrincipal extends JFrame {
     private JButton criarBotaoAtribuirCandidatura() {
         btnAtribuirCandidatura = new JButton("Atribuir Candidatura");
         btnAtribuirCandidatura.addActionListener(new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
+                int i = ce.getRegistoExposicoesConflitosAlterados().tamanho();
                 try {
-                    if (ce.getListaExposicoes().getRegistoExposicoesConflitosAlterados().tamanho() == 0) {
+                    if (i == 0) {
                         throw new NullPointerException("Não Existem Exposições Prontas para serem atribuidas");
                     } else {
                         new AtribuirCandidaturaUI(MenuPrincipal.this, ce);

@@ -6,7 +6,7 @@ import javax.swing.JList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement (name = "CentroExposicoes")
+@XmlRootElement(name = "CentroExposicoes")
 public class CentroExposicoes {
 
     /**
@@ -71,7 +71,6 @@ public class CentroExposicoes {
         return listaExposicoes.getArray();
     }
 
-    
     public ListaStands getListastands() {
         return listaStands;
     }
@@ -140,6 +139,16 @@ public class CentroExposicoes {
             string[i] = listaStands.obterStand(i);
         }
         return string;
+    }
+
+    public RegistoExposicoes getRegistoExposicoesConflitosAlterados() {
+        RegistoExposicoes lstExposicaoComConflitosAlterados = new RegistoExposicoes();
+        for (int i = 0; i <= listaExposicoes.tamanho(); i++) {
+            if (listaExposicoes.obterExposicao(i).getExposicaoEstado().isEstadoConflitosAlterados()) {
+                lstExposicaoComConflitosAlterados.adicionarExposicao(listaExposicoes.obterExposicao(i));
+            }
+        }
+        return lstExposicaoComConflitosAlterados;
     }
 
 }

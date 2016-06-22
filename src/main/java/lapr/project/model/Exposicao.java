@@ -168,8 +168,8 @@ public class Exposicao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setExposicaoCriada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean setExposicaoCriada() {
+        return m_state.setCriadoDefinido();
     }
 
     public void setExposicaoDemonstracoesDefinidas() {

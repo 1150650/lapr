@@ -54,15 +54,4 @@ public class RegistoExposicoes {
     public Exposicao novaExposicao() {
         return new Exposicao();
     }
-
-    public RegistoExposicoes getRegistoExposicoesConflitosAlterados() {
-        RegistoExposicoes lstExposicaoComConflitosAlterados = new RegistoExposicoes();
-        for (int i = 0; i < listaExposicoes.size(); i++) {
-            if (listaExposicoes.get(i).getExposicaoEstado().isEstadoConflitosAlterados()) {
-                lstExposicaoComConflitosAlterados.adicionarExposicao(listaExposicoes.get(i));
-            }
-        }
-        return lstExposicaoComConflitosAlterados;
-    }
-
 }

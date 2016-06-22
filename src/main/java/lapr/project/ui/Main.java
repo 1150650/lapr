@@ -14,7 +14,6 @@ import lapr.project.ui.AlterarCandidaturaUI;
  */
 class Main {
 
-
     /**
      * @param args the command line arguments
      *
@@ -23,13 +22,13 @@ class Main {
 
         CalculatorExample calculatorExample = new CalculatorExample();
         System.out.println(calculatorExample.sum(3, 5));
-        Exposicao e = new Exposicao("Expo1", "Melhor Exposicao", new Date(2015,9,22), new Date(2016,9,22), "Porto");
-        
+        Exposicao e = new Exposicao("Expo1", "Melhor Exposicao", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         Utilizador u = new Utilizador("Diogo Barros", "diogo@gmail.com", "barros15", ".DiogoBarros10");
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
-        
+        ce.getListaExposicoes().obterExposicao(0).setExposicaoCriada();
+
         new MenuPrincipal(ce, u);
         new JanelaPrincipal(ce);
     }
