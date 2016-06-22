@@ -64,7 +64,7 @@ public class AtribuirCandidaturaUI extends JFrame {
 
     public void selecionarExposicao() {
         Exposicao[] aux = ce.getArrayExposicao();
-        Exposicao[] arrayExposicao = ce.getArrayExposicaoConflitosAlterados().getArray();
+        Exposicao[] arrayExposicao = ce.getListaExposicoes().getRegistoExposicoesConflitosAlterados().getArray();
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
                 this.framePai,

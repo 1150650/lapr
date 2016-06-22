@@ -441,11 +441,21 @@ public class MenuPrincipal extends JFrame {
 
     private JButton criarBotaoAtribuirCandidatura() {
         btnAtribuirCandidatura = new JButton("Atribuir Candidatura");
-
         btnAtribuirCandidatura.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-                new AtribuirCandidaturaUI(MenuPrincipal.this, ce);
+                try {
+                    if (ce.getListaExposicoes().getRegistoExposicoesConflitosAlterados().tamanho() == 0) {
+                        throw new NullPointerException("Não Existem Exposições Prontas para serem atribuidas");
+                    } else {
+                        new AtribuirCandidaturaUI(MenuPrincipal.this, ce);
+                    }
+                } catch (IllegalArgumentException j) {
+                    JOptionPane.showMessageDialog(
+                            MenuPrincipal.this,
+                            j.getMessage(),
+                            "ERRO!",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         return btnAtribuirCandidatura;
@@ -598,7 +608,6 @@ public class MenuPrincipal extends JFrame {
 
     private JButton criarBotaoCandidatarExposicao() {
         btnCandidatarExposicao = new JButton("Candidatar a Exposicao");
-        ce.getListaExposicoes().adicionarExposicao(new Exposicao("Nova", "Gira", new Date(1, 1, 1), new Date(1, 1, 2), "ISEP"));
         btnCandidatarExposicao.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {

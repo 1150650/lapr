@@ -30,7 +30,7 @@ class Main {
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
         
-        //new MenuPrincipal(ce, u);
+        new MenuPrincipal(ce, u);
         new JanelaPrincipal(ce);
     }
 

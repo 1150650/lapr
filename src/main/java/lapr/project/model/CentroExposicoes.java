@@ -71,16 +71,7 @@ public class CentroExposicoes {
         return listaExposicoes.getArray();
     }
 
-    public RegistoExposicoes getArrayExposicaoConflitosAlterados() {
-        RegistoExposicoes lstExposicaoComConflitosAlterados = new RegistoExposicoes();
-        for (int i = 0; i < listaExposicoes.tamanho(); i++) {
-            if (listaExposicoes.obterExposicao(i).getExposicaoEstado().isEstadoConflitosAlterados()) {
-                lstExposicaoComConflitosAlterados.adicionarExposicao(listaExposicoes.obterExposicao(i));
-            }
-        }
-        return lstExposicaoComConflitosAlterados;
-    }
-
+    
     public ListaStands getListastands() {
         return listaStands;
     }
