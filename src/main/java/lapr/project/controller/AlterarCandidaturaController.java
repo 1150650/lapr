@@ -11,6 +11,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
 import lapr.project.model.Representante;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -38,14 +39,22 @@ public class AlterarCandidaturaController {
      */
     private CandidaturaExposicao novaCandidatura;
 
+    private Exposicao expo;
+
+    private Representante r;
+
+    private Utilizador u;
+
+    private CandidaturaExposicao c;
+
     /**
      * Construtor do controller a receber o representante
      *
      * @param r
      */
-    public AlterarCandidaturaController(Representante r, CentroExposicoes ce) {
-        this.lstCandidaturas = r.getListaCandidaturasSubmetidas();
+    public AlterarCandidaturaController(Utilizador u, CentroExposicoes ce) {
         this.ce = ce;
+        this.u = u;
     }
 
     /**
@@ -86,7 +95,7 @@ public class AlterarCandidaturaController {
      * @param quantidadeConvites
      */
     public void novaCandidatura(String nomeEmpresa, String morada, int telemovel, float areaExposicao, String produtos, int nConvites) {
-        CandidaturaExposicao c = new CandidaturaExposicao(nomeEmpresa, morada, telemovel, areaExposicao, produtos, nConvites);
+        c = new CandidaturaExposicao(nomeEmpresa, morada, telemovel, areaExposicao, produtos, nConvites);
     }
 
     public CandidaturaExposicao getCandidaturaSelecionada() {
@@ -95,5 +104,15 @@ public class AlterarCandidaturaController {
 
     public void alterarDadosCandidatura() {
         this.candidatura = novaCandidatura;
+    }
+
+    public void selecionaExposicao(Exposicao expo) {
+        this.expo = expo;
+        this.r = this.expo.getLstRep().obterRepresentantePorU(u);
+        this.lstCandidaturas = r.getListaCandidaturasPodemSerAlteradas();
+    }
+
+    public ListaCandidaturas getListaCandidaturas() {
+        return lstCandidaturas;
     }
 }

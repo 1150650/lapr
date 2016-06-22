@@ -187,5 +187,4 @@ public class Exposicao {
     public void setListaDemonstracao(ListaDemonstracoes listaDemonstracao) {
         this.listaDemonstracao = listaDemonstracao;
     }
-
 }

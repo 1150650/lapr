@@ -18,7 +18,9 @@ import javax.swing.JTextField;
 import lapr.project.controller.AlterarCandidaturaController;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
 import lapr.project.model.Representante;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -32,7 +34,7 @@ public class AlterarCandidaturaUI extends JFrame {
 
     private CentroExposicoes ce;
 
-    private Representante r;
+    private Utilizador u;
 
     private MenuPrincipal framePai;
 
@@ -43,10 +45,10 @@ public class AlterarCandidaturaUI extends JFrame {
     private JTextField produtosTF;
     private JTextField nConvitesTF;
 
-    public AlterarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Representante r) {
+    public AlterarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
         super("Alterar Candidatura");
         this.ce = ce;
-        this.crtl = new AlterarCandidaturaController(r, ce);
+        this.crtl = new AlterarCandidaturaController(u, ce);
         this.framePai = framePai;
         GridLayout g = new GridLayout(1, 1);
         g.setHgap(20);
@@ -62,8 +64,25 @@ public class AlterarCandidaturaUI extends JFrame {
 
     }
 
+    public void selecionarExposicao() {
+        Exposicao[] aux = ce.getArrayExposicao();
+        Exposicao expo;
+        expo = (Exposicao) JOptionPane.showInputDialog(
+                framePai,
+                "Indique candidatura que deseja remover"
+                + ":",
+                "Seleção De Candidatura a Remover",
+                JOptionPane.DEFAULT_OPTION,
+                icon,
+                aux,
+                "");
+
+        dispose();
+        crtl.selecionaExposicao(expo);
+    }
+
     public void selecionarCandidatura() {
-        CandidaturaExposicao[] aux = r.getListaCandidaturasPodemSerAlteradas().listaCandExposicaoToArray();
+        CandidaturaExposicao[] aux = crtl.getListaCandidaturas().listaCandExposicaoToArray();
         CandidaturaExposicao candi;
         candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
                 framePai,

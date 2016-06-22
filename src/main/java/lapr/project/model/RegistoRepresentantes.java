@@ -59,4 +59,8 @@ public class RegistoRepresentantes {
     public boolean containsRepresentante(Representante r) {
         return lstRepresentante.contains(r);
     }
+
+    public int tamanho() {
+        return lstRepresentante.size();
+    }
 }

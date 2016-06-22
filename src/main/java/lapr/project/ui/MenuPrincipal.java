@@ -443,7 +443,7 @@ public class MenuPrincipal extends JFrame {
         btnAtribuirCandidatura.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new AtribuirCandidaturaUI(MenuPrincipal.this, ce);
             }
         });
         return btnAtribuirCandidatura;
@@ -600,7 +600,7 @@ public class MenuPrincipal extends JFrame {
         btnCandidatarExposicao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new CriarCandidaturaOpcaoUI(MenuPrincipal.this, ce, utilizadorAtivo);
             }
         });
         return btnCandidatarExposicao;
@@ -610,9 +610,8 @@ public class MenuPrincipal extends JFrame {
         btnAlterarCandidatura = new JButton("Alterar Candidatura");
 
         btnAlterarCandidatura.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-
+                new AlterarCandidaturaUI(MenuPrincipal.this, ce, utilizadorAtivo);
             }
         });
         return btnAlterarCandidatura;
