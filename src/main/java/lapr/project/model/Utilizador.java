@@ -7,15 +7,21 @@ package lapr.project.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import lapr.project.utils.CaeserCypher;
 
 /**
  *
  * @author Diogo
  */
+@XmlRootElement (name = "utilizador")
 public class Utilizador {
 
+    
     private String nome, email, username, password;
+    
+    
     private CaeserCypher encriptacao;
 
     public Utilizador(String nome, String email, String username, String password) {
@@ -23,6 +29,10 @@ public class Utilizador {
         setEmail(email);
         setUsername(username);
         setPassword(password);
+    }
+    
+    public Utilizador() {
+
     }
 
     public String getNome() {
@@ -47,6 +57,7 @@ public class Utilizador {
         return passwordDes;
     }
 
+    @XmlElement
     public void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException("Nome inválido!");
@@ -55,7 +66,7 @@ public class Utilizador {
 
     }
 
-    //PERGUNTAR SE PODEMOS USAR REGEX
+    @XmlElement
     public void setEmail(String email) {
         String FUNCAO_OBJ = "(.*)[@](.*)((.com)|(.pt))$";
         Pattern FUNCAO_OBJETIVO = Pattern.compile(FUNCAO_OBJ);
@@ -66,6 +77,7 @@ public class Utilizador {
         this.email = email;
     }
 
+    @XmlElement
     public void setUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             throw new IllegalArgumentException("Username inválido!");
@@ -73,6 +85,7 @@ public class Utilizador {
         this.username = username;
     }
 
+    @XmlElement
     public void setPassword(String password) {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
