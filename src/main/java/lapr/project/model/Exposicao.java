@@ -18,7 +18,7 @@ public class Exposicao {
     private RegistoRepresentantes lstRep;
 
     public Exposicao() {
-       listaCandidaturasExposicoes = new ListaCandidaturas();
+        listaCandidaturasExposicoes = new ListaCandidaturas();
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();

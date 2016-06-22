@@ -5,6 +5,7 @@
  */
 package lapr.project.ui;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -45,6 +46,11 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         Janela = this;
         this.framePai = framePai;
         this.ce = ce;
+
+        GridLayout gl = new GridLayout(7, 1);
+        gl.setHgap(20);
+        gl.setVgap(20);
+        setLayout(gl);
         criarComponentes();
 
         crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
@@ -88,7 +94,8 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         return j;
     }
 
-    private JButton criarSubmeterFicheiroXml() {
+    private JPanel criarSubmeterFicheiroXml() {
+        JPanel pCentro = new JPanel(new BorderLayout());
         JButton j = new JButton("Submeter ficheiro em XML");
         j.addActionListener(new ActionListener() {
             @Override
@@ -96,7 +103,8 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
                 new SubmeterCandidaturaXML(Janela, crtlCriarCandidatura, ce);
             }
         });
-        return j;
+        pCentro.add(j, BorderLayout.CENTER);
+        return pCentro;
     }
 
     private JButton criarCandidaturaPrograma() {

@@ -2,6 +2,7 @@ package lapr.project.ui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
@@ -14,6 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import lapr.project.controller.CriarCandidaturaController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.utils.HintTextField;
@@ -63,6 +65,11 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
         this.framePai = framePai;
 
         criarComponentes();
+
+        GridLayout gl = new GridLayout(7, 2);
+        gl.setHgap(20);
+        gl.setVgap(20);
+        setLayout(gl);
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
@@ -188,9 +195,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
         JButton btnCancelar = criarBotaoCancelar();
 
-        JPanel p = new JPanel();
-        p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
-                MARGEM_INFERIOR, MARGEM_DIREITA));
+        JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER));
         p.add(btnOK);
         p.add(btnCancelar);
 
@@ -231,7 +236,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
     }
 
     private JPanel criarPainelKeyWords() {
-        JLabel l = new JLabel("Keywords:");
+        JLabel l = new JLabel("Keywords:", JLabel.CENTER);
         JPanel j = new JPanel();
         j.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
