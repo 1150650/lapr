@@ -57,7 +57,8 @@ public class MenuPrincipal extends JFrame {
             btnRegistarExposicao, btnConfirmarRegistoUtilizador,
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
-            btnRegistarCandDemonstracao, btnConfirmarStand;
+            btnRegistarCandDemonstracao, btnConfirmarStand, 
+            btnAlterarDadosUtilizador;
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
     private JPanel painelDadosUtilizador = new JPanel(),
@@ -312,7 +313,7 @@ public class MenuPrincipal extends JFrame {
         painelDadosUtilizador.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         painelDadosUtilizador.setLayout(new GridLayout(5, 1, 20, 20));
-        JButton btnAlterarDadosUtilizador = criarBotaoAlterarDadosUtilizador();
+        btnAlterarDadosUtilizador = criarBotaoAlterarDadosUtilizador();
         painelDadosUtilizador.add(lblNome);
         painelDadosUtilizador.add(lblEmail);
         painelDadosUtilizador.add(lblUsername);
@@ -413,15 +414,15 @@ public class MenuPrincipal extends JFrame {
     }
 
     private JButton criarBotaoAlterarDadosUtilizador() {
-        JButton btnAlterar = new JButton("Alterar Dados");
-        btnAlterar.addActionListener(new ActionListener() {
+        btnAlterarDadosUtilizador = new JButton("Alterar Dados");
+        btnAlterarDadosUtilizador.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 new AlterarPerfilUtilizadorUI(ce, utilizadorAtivo);
             }
         });
 
-        return btnAlterar;
+        return btnAlterarDadosUtilizador;
     }
 
     private JButton criarBotaoDecidirFAE() {
