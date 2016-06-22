@@ -120,7 +120,7 @@ public class ListaCandidaturas {
         return listaCandExpo;
     }
 
-    public List getListaCandidaturasDemo() {
+    public List<Candidatura> getListaCandidaturasDemo() {
         List<Candidatura> listaCandDemo = new ArrayList<>();
         for (Candidatura c : listaCandidaturas) {
             if (c instanceof CandidaturaDemonstracao) {
@@ -130,9 +130,10 @@ public class ListaCandidaturas {
         return listaCandDemo;
     }
 
-    public List getListaCandidaturasRetiradas() {
+    public List getListaCandidaturasExpoRetiradas() {
         List<Candidatura> candidaturasRetiradas = new ArrayList<>();
-        for (Candidatura c : listaCandidaturas) {
+        List<Candidatura> list = getListaCandidaturasExpo();
+        for (Candidatura c : list) {
             if (c.getState() instanceof CandidaturaRetiradaState) {
                 candidaturasRetiradas.add(c);
             }
@@ -140,6 +141,17 @@ public class ListaCandidaturas {
         return candidaturasRetiradas;
     }
 
+    public List getListaCandidaturasDemoRetiradas() {
+        List<Candidatura> candidaturasRetiradas = new ArrayList<>();
+        List<Candidatura> list = getListaCandidaturasDemo();
+        for (Candidatura c : list) {
+            if (c.getState() instanceof CandidaturaRetiradaState) {
+                candidaturasRetiradas.add(c);
+            }
+        }
+        return candidaturasRetiradas;
+    }
+    
     public CandidaturaDemonstracao newCandidaturaDemo(Candidatura candidatura) {
         String nomeEmpresa = candidatura.getNomeEmpresa();
         String morada = candidatura.getMorada();
