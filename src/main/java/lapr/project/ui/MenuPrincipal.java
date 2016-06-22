@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -31,6 +32,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
 import lapr.project.model.TipoUtilizador;
 import lapr.project.model.Utilizador;
 import lapr.project.utils.ImportarExportar;
@@ -596,9 +598,8 @@ public class MenuPrincipal extends JFrame {
 
     private JButton criarBotaoCandidatarExposicao() {
         btnCandidatarExposicao = new JButton("Candidatar a Exposicao");
-
+        ce.getListaExposicoes().adicionarExposicao(new Exposicao("Nova", "Gira", new Date(1, 1, 1), new Date(1, 1, 2), "ISEP"));
         btnCandidatarExposicao.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
                 try {
                     if (ce.getListaExposicoes().tamanho() == 0) {

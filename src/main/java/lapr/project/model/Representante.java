@@ -26,6 +26,7 @@ public class Representante {
      */
     public Representante(Utilizador u) {
         setUtilizador(u);
+        listaCandidaturasSubmetidas = new ListaCandidaturas();
     }
 
     /**

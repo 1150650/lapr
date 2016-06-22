@@ -21,6 +21,7 @@ public class Exposicao {
     private ListaOrganizadores listaOrganizadores;
     @XmlElement
     private ListaConflitos listaConflitos;
+    private ListaAtribuicoes lstAtribuicoes;
     private RegistoRepresentantes lstRep;
 
     public Exposicao() {
@@ -39,6 +40,7 @@ public class Exposicao {
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
+        lstRep = new RegistoRepresentantes();
     }
 
     public String getTitulo() {
@@ -209,5 +211,9 @@ public class Exposicao {
     @XmlElement
     public void setListaDemonstracao(ListaDemonstracoes listaDemonstracao) {
         this.listaDemonstracao = listaDemonstracao;
+    }
+
+    public void setListaAtribuicoes(ListaAtribuicoes lstA) {
+        this.lstAtribuicoes = lstA;
     }
 }
