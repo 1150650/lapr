@@ -30,14 +30,18 @@ public class Login {
                     utilizadorAtivo = ru.obterUtilizador(i);
                     tamanho = ru.tamanho();
 
-                } else {
-                    throw new IllegalArgumentException("Utilizador não registado/confirmado!");
-                }
+                } 
             }
         }
+        
+        if(utilizadorAtivo==null){
+            throw new IllegalArgumentException("Utilizador não registado/confirmado!");
+        }
+        
         if (!utilizadorAtivo.getPasswordDesencriptada().equalsIgnoreCase(password)) {
             throw new IllegalArgumentException("Password incorreta!");
         }
+       
 
         return utilizadorAtivo;
     }

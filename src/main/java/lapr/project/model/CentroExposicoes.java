@@ -3,12 +3,16 @@ package lapr.project.model;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JList;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement (name = "CentroExposicoes")
 public class CentroExposicoes {
 
     /**
      * Criação de instância da lista de exposições
      */
+    @XmlElement
     private RegistoExposicoes listaExposicoes;
 
     /**
@@ -16,18 +20,25 @@ public class CentroExposicoes {
      */
     private JList JListExposicoes;
 
+    @XmlElement
     private ListaStands listaStands;
 
+    @XmlElement
     private RegistoTipoDeConflito listaTipoDeConflito;
 
+    @XmlElement
     private RegistoUtilizadores registoUtilizadoresNConf;
 
+    @XmlElement
     private RegistoUtilizadores registoUtilizadoresConf;
 
+    @XmlElement
     private ListaRecursos listarecursos;
 
+    @XmlElement
     private RegistoMecanismos registoMecanismos;
 
+    @XmlElement
     private ListaDemonstracoes registoDemonstracoes;
 
     /**
