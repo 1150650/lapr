@@ -80,7 +80,7 @@ public class ListaCandidaturas {
     }
 
     public Candidatura novaCandidatura() {
-        return new Candidatura();
+        return new Candidatura() {};
     }
 
     public List getCandidaturasAceites() {

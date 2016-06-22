@@ -24,7 +24,7 @@ public class RegistarCandidaturaDemonstracaoController {
 
     private ListaCandidaturas listaCandidaturas;
 
-    private Candidatura candidatura;
+    private CandidaturaExposicao candidaturaExposicao;
     
     private List<Demonstracao> listaDemonstracoesComInteresse;
     
@@ -46,13 +46,13 @@ public class RegistarCandidaturaDemonstracaoController {
         listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
     }
     
-    public List selecionaCandidatura(Candidatura Candidatura){
-        this.candidatura = candidatura;
-        return listaDemonstracoesComInteresse = candidatura.getListaDemonstracoesComInteresse();
+    public List selecionaCandidatura(CandidaturaExposicao candidaturaExposicao){
+        this.candidaturaExposicao = candidaturaExposicao;
+        return listaDemonstracoesComInteresse = this.candidaturaExposicao.getDemonstracoesComInteresse();
     }
     
     public void newCandidaturaDemo(){
-        candidaturaDemo = listaCandidaturas.newCandidaturaDemo(candidatura);
+        candidaturaDemo = listaCandidaturas.newCandidaturaDemo(candidaturaExposicao);
     }
     
     public void guardaDadosCandidatura(Demonstracao demonstracao){
@@ -64,7 +64,7 @@ public class RegistarCandidaturaDemonstracaoController {
     }
     
     public void setCandidaturaEmSubmissao(){
-        candidatura.setCandidaturaEmSubmissao();
+        candidaturaExposicao.setCandidaturaEmSubmissao();
     }
     
 }

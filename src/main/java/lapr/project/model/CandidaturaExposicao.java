@@ -5,6 +5,8 @@
  */
 package lapr.project.model;
 
+import java.util.List;
+
 /**
  *
  * @author Filipe <FilipeCorreia.1150524>
@@ -15,6 +17,8 @@ public class CandidaturaExposicao extends Candidatura {
      * float com a area pretendida para apresentar o produto
      */
     private float areaPretendida;
+    
+    private List<Demonstracao> demonstracoesComInteresse;
 
     private String[] KEYWORDS;
 
@@ -66,6 +70,22 @@ public class CandidaturaExposicao extends Candidatura {
      */
     public void setKEYWORDS(String[] KEYWORDS) {
         this.KEYWORDS = KEYWORDS;
+    }
+    
+    public void setDemonstracoesComInteresse(List<Demonstracao> demonstracoesComInteresse){
+        this.demonstracoesComInteresse = demonstracoesComInteresse;
+    }
+    
+    public List getDemonstracoesComInteresse(){
+        return demonstracoesComInteresse;
+    }
+    
+    public boolean addDemonstracoesComInteresse(Demonstracao demonstracao){
+        if(!demonstracoesComInteresse.contains(demonstracao)){
+                demonstracoesComInteresse.add(demonstracao);
+                return true;
+        }else
+            return false;
     }
 
 }

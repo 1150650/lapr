@@ -5,6 +5,8 @@
  */
 package lapr.project.model;
 
+import java.util.List;
+
 /**
  *
  * @author Filipe <FilipeCorreia.1150524>

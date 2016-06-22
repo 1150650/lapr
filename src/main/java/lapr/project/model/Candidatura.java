@@ -37,8 +37,13 @@ public class Candidatura {
     private int quantidadeConvites;
 
     private int[] avalicaoFAE;
-    
+
     private Stand stand;
+
+    /**
+     * O representante que cria a candidatura;
+     */
+    private Representante representante;
 
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
@@ -201,27 +206,33 @@ public class Candidatura {
     public CandidaturaState getState() {
         return state;
     }
-    
+
     public void setEstado(CandidaturaState state) {
         this.state = state;
     }
-    
-    public boolean setCandidaturaEmSubmissao(){
+
+    public boolean setCandidaturaEmSubmissao() {
         return state.setCandidaturaEmSubmissao();
     }
 
     public void setStand(Stand stand) {
-        this.stand= stand;
+        this.stand = stand;
     }
+
     public Stand getStand() {
-         return this.stand;
+        return this.stand;
     }
-    
+
     public boolean setCandidaturaConflitosDetetados() {
         return state.setConflitosDetetados();
     }
 
-    public List<Demonstracao> getListaDemonstracoesComInteresse() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Representante getRepresentante() {
+        return representante;
     }
-}  
+
+    public void setRepresentante(Representante representante) {
+        this.representante = representante;
+        }
+
+}
