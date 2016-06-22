@@ -3,9 +3,13 @@ package lapr.project.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class RegistoExposicoes {
 
+    @XmlElement(name="Exposicao")
     private List<Exposicao> listaExposicoes;
 
     public RegistoExposicoes() {

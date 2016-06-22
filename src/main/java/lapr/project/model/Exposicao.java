@@ -1,7 +1,10 @@
 package lapr.project.model;
 
 import java.util.Date;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name="Exposicao")
 public class Exposicao {
 
     private String titulo;
@@ -11,9 +14,12 @@ public class Exposicao {
     private String local;
     private ListaCandidaturas listaCandidaturasExposicoes, listaCandidaturasDemonstracoes;
     private ListaDemonstracoes listaDemonstracao;
+    @XmlElement
     private ListaFAE listaFAE;
     private ExposiçãoState m_state;
+    @XmlElement
     private ListaOrganizadores listaOrganizadores;
+    @XmlElement
     private ListaConflitos listaConflitos;
     private RegistoRepresentantes lstRep;
 
@@ -67,6 +73,7 @@ public class Exposicao {
         return listaFAE;
     }
 
+    @XmlElement
     public final void setTitulo(String titulo) {
         if (titulo == null || titulo.trim().isEmpty()) {
             throw new IllegalArgumentException("Título inválido!");
@@ -74,6 +81,7 @@ public class Exposicao {
         this.titulo = titulo;
     }
 
+    @XmlElement
     public final void setTextoDescritivo(String texto) {
         if (texto == null || texto.trim().isEmpty()) {
             throw new IllegalArgumentException("Justificação inválida!");
@@ -81,14 +89,26 @@ public class Exposicao {
         this.textoDescritivo = texto;
     }
 
+
     public final void setPeriodo(Date dataInicio, Date dataFim) {
         if (dataInicio.after(dataFim) || dataInicio.equals(dataFim)) {
             throw new IllegalArgumentException("A data de Início deve ser anterior à data de Fim!");
         }
+        setDataInicio(dataInicio);
+        setDataFim(dataFim);
+    }
+    
+    @XmlElement
+    public final void setDataInicio(Date dataInicio){
         this.dataInicio = dataInicio;
+    }
+    
+    @XmlElement
+    public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
     }
 
+    @XmlElement
     public final void setLocal(String local) {
         if (local == null || local.trim().isEmpty()) {
             throw new IllegalArgumentException("Local inválido!");
@@ -96,6 +116,7 @@ public class Exposicao {
         this.local = local;
     }
 
+    @XmlElement
     public final void setListaCandidaturasExposicoes(ListaCandidaturas listaCandidaturasExposicoes) {
         this.listaCandidaturasExposicoes = listaCandidaturasExposicoes;
     }
@@ -176,6 +197,7 @@ public class Exposicao {
         return listaCandidaturasDemonstracoes;
     }
 
+    @XmlElement
     public void setListaCandidaturasDemonstracoes(ListaCandidaturas listaCandidaturasDemonstracoes) {
         this.listaCandidaturasDemonstracoes = listaCandidaturasDemonstracoes;
     }
@@ -184,6 +206,7 @@ public class Exposicao {
         return listaDemonstracao;
     }
 
+    @XmlElement
     public void setListaDemonstracao(ListaDemonstracoes listaDemonstracao) {
         this.listaDemonstracao = listaDemonstracao;
     }
