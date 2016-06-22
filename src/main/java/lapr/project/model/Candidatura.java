@@ -226,6 +226,34 @@ public class Candidatura {
     public boolean setCandidaturaConflitosDetetados() {
         return state.setConflitosDetetados();
     }
+    
+    public boolean setCandidaturaAceite() {
+        return state.setAceite();
+    }
+    
+    public boolean setCandidaturaAlterada() {
+        return state.setAlterada();
+    }
+    
+    public boolean setCandidaturaAvaliada() {
+        return state.setAvaliada();
+    }
+    
+    public boolean setCandidaturaEmAvaliacao() {
+        return state.setCandidaturaEmAvaliacao();
+    }
+    
+    public boolean setCandidaturaFechada() {
+        return state.setCandidaturaFechada();
+    }
+    
+    public boolean setCandidaturaRetirada() {
+        return state.setCandidaturaRetirada();
+    }
+    
+    public boolean setCandidaturaStandsAtribuidos() {
+        return state.isEstadoStandAtribuido();
+    }
 
     public Representante getRepresentante() {
         return representante;

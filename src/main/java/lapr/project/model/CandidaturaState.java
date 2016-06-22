@@ -11,10 +11,6 @@ package lapr.project.model;
  */
 public class CandidaturaState {
 
-    public boolean setCriadaDefinido() {
-        return false;
-    }
-
     public boolean setAlterada() {
         return false;
     }
@@ -38,26 +34,30 @@ public class CandidaturaState {
     public boolean setAceite() {
         return false;
     }
-    
-    public boolean setCandidaturaFechada(){
+
+    public boolean setCandidaturaFechada() {
+        return false;
+    }
+
+    public boolean setCandidaturaRetirada() {
+        return false;
+    }
+
+    public boolean setCandidaturaEmAvaliacao() {
+        return false;
+    }
+
+    public boolean setNaoAvaliada() {
+        return false;
+    }
+
+    public boolean setRejeitada() {
         return false;
     }
     
-    public boolean setCandidaturaRetirada(){
+    public boolean setInteresseConfirmado() {
         return false;
     }
-    
-    public boolean setCandidaturaEmAvaliacao(){
-        return false;
-    }
-    
-    public boolean setNaoAvaliada(){
-        return false;
-    }
-    
-     public boolean setRejeitada(){
-         return false;
-     }
 
     public boolean valida() {
         return false;
@@ -106,20 +106,25 @@ public class CandidaturaState {
     public boolean isEstadoEmSubmissao() {
         return false;
     }
-    
-    public boolean isEstadoFechada(){
+
+    public boolean isEstadoFechada() {
         return false;
     }
-    
-    public boolean isEstadoEmAvaliacao(){
+
+    public boolean isEstadoEmAvaliacao() {
         return false;
     }
-    
-     public boolean isEstadoRejeitada(){
+
+    public boolean isEstadoRejeitada() {
         return false;
     }
-     
-     public boolean isEstadoNaoAvaliada(){
-         return false;
-     }
+
+    public boolean isEstadoNaoAvaliada() {
+        return false;
+    }
+
+    public boolean isEstadoInteresseConfirmado() {
+        return false;
+    }
+
 }
