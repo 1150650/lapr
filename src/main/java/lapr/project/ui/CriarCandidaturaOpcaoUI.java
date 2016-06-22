@@ -46,15 +46,15 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         Janela = this;
         this.framePai = framePai;
         this.ce = ce;
+        crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
 
         GridLayout gl = new GridLayout(7, 1);
         gl.setHgap(20);
         gl.setVgap(20);
         setLayout(gl);
+
+        selecionarExposicao();
         criarComponentes();
-
-        crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setMinimumSize(new Dimension(500, 700));
@@ -74,16 +74,15 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
                 framePai,
-                "Indique candidatura que deseja remover"
+                "Indique  Exposição que se pretende candidatar"
                 + ":",
-                "Seleção De Candidatura a Remover",
-                JOptionPane.DEFAULT_OPTION,
+                "Seleção da Exposição que se pretende candidatar",
+                JOptionPane.CLOSED_OPTION,
                 icon,
                 aux,
                 "");
-
-        dispose();
         crtlCriarCandidatura.selecionaExposicao(expo);
+        dispose();
     }
 
     private JPanel criarBotoes() {

@@ -83,4 +83,8 @@ public class CriarCandidaturaController {
     public ListaDemonstracoes getListaDemonstracoes() {
         return lstDemo;
     }
+
+    public Exposicao getExposicaoSelecionada() {
+        return exposicaoSelecionada;
+    }
 }

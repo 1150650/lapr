@@ -600,7 +600,19 @@ public class MenuPrincipal extends JFrame {
         btnCandidatarExposicao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new CriarCandidaturaOpcaoUI(MenuPrincipal.this, ce, utilizadorAtivo);
+                try {
+                    if (ce.getListaExposicoes().tamanho() == 0) {
+                        throw new IllegalArgumentException("Não Existem Exposições Ativas");
+                    } else {
+                        new CriarCandidaturaOpcaoUI(MenuPrincipal.this, ce, utilizadorAtivo);
+                    }
+                } catch (IllegalArgumentException j) {
+                    JOptionPane.showMessageDialog(
+                            MenuPrincipal.this,
+                            j.getMessage(),
+                            "ERRO!",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         return btnCandidatarExposicao;
