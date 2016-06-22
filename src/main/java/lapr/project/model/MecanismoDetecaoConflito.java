@@ -25,7 +25,7 @@ public class MecanismoDetecaoConflito {
 
     private ListaConflitos listaConflitos;
 
-    public void detectConflitos() {
+    public void detectConflitosExposicao() {
         listaFAE = exposicao.getListaFAE();
         listFAE = listaFAE.getListaFAEs();
         listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
@@ -40,9 +40,26 @@ public class MecanismoDetecaoConflito {
         }
 
     }
+    
+     public void detectConflitosDemonstracao() {
+        listaFAE = exposicao.getListaFAE();
+        listFAE = listaFAE.getListaFAEs();
+        listaCandidaturas = exposicao.getListaCandidaturasDemonstracoes();
+        listCandidaturas = listaCandidaturas.getListaCandidaturas();
+        listaConflitos = exposicao.getListaConflitos();
+        for (FAE fae : listFAE) {
+            for (Candidatura candidatura : listCandidaturas) {
+                if (isConflito(fae, candidatura)) {
+                    listaConflitos.registarConflito(fae, candidatura);
+                }
+                candidatura.setCandidaturaConflitosDetetados();
+            }
+        }
+
+    }
 
     public boolean isConflito(FAE fae, Candidatura candidatura) {
-        return false;
+            return false;
     }
 
 }

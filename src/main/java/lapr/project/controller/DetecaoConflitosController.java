@@ -29,10 +29,16 @@ public class DetecaoConflitosController {
         this.centroExposicoes = centroExposicoes;
     }
     
-    public void detecaoConflitos(){
+    public void detecaoConflitosExposicao(){
         listaTiposConflito = centroExposicoes.getListaTipoDeConflito();
         listaTiposConflitoAtivos = listaTiposConflito.getTiposConflitoAtivos();
-        mecanismoDetecao.detectConflitos();
+        mecanismoDetecao.detectConflitosExposicao();
+    }
+    
+     public void detecaoConflitosDemonstracao(){
+        listaTiposConflito = centroExposicoes.getListaTipoDeConflito();
+        listaTiposConflitoAtivos = listaTiposConflito.getTiposConflitoAtivos();
+        mecanismoDetecao.detectConflitosDemonstracao();
     }
 
 }
