@@ -85,7 +85,7 @@ public class AtribuirCandidaturaDemonstracaoController {
     }
 
     public void setCandidaturasAtribuidas() {
-        exposicao.setCandidaturasAtribuidas();
+        exposicao.setExposicaoCandidaturasAtribuidas();
     }
 
 }

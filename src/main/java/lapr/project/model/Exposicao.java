@@ -205,23 +205,88 @@ public class Exposicao {
         return m_state;
     }
 
-    public boolean setCandidaturasAtribuidas() {
-        return m_state.setExposicaoCandidaturasAtribuidas();
+    public void setEstado(ExposiçãoState m_state2) {
+        m_state = m_state2;
     }
 
     public boolean setExposicaoCriada() {
         return m_state.setExposicaoCriada();
     }
 
-    public void setExposicaoDemonstracoesDefinidas() {
-        m_state.setDemonstracoesSemFAE();
+    public boolean setExposicaoDemonstracoesSemFAE() {
+        return m_state.setDemonstracoesSemFAE();
     }
 
-    public boolean setFAEDefinido() {
+    public boolean setExposicaoFAESemDemonstracoes() {
         return m_state.setExposicaoFAESemDemonstracoes();
     }
 
-    public void setEstado(ExposiçãoState m_state2) {
-        this.m_state = m_state2;
+    public boolean setExposicaoCompleta() {
+        return m_state.setExposicaoCompleta();
     }
+
+    public boolean setExposicaoAbertaParaCandidaturas() {
+        return m_state.setExposicaoAbertaParaCandidaturas();
+    }
+
+    public boolean setExposicaoCandidaturasFechadas() {
+        return m_state.setExposicaoCandidaturasFechadas();
+    }
+
+    public boolean setExposicaoCandidaturaConflitosDetetados() {
+        return m_state.setExposicaoCandidaturasConflitosDetetados();
+    }
+
+    public boolean setExposicaoCandidaturaConflitosAlterados() {
+        return m_state.setExposicaoCandidaturasConflitosAlterados();
+    }
+
+    public boolean setExposicaoCandidaturasAtribuidas() {
+        return m_state.setExposicaoCandidaturasAtribuidas();
+    }
+
+    public boolean setExposicaoCandidaturasAvaliadas() {
+        return m_state.setExposicaoCandidaturasAvaliadas();
+    }
+
+    public boolean setExposicaoCandidaturasAtribuidasStand() {
+        return m_state.setExposicaoCandidaturasAtribuidasStand();
+    }
+
+    public boolean setExposicaoStandsConfirmados() {
+        return m_state.setExposicaoStandsConfirmados();
+    }
+
+    public boolean setExposicaoDemonstracoesDefinidas() {
+        return m_state.setExposicaoDemonstracoesDefinidas();
+    }
+
+    public boolean setExposicaoAbertaCandDemonstracao() {
+        return m_state.setExposicaoAbertaCandidaturasDemonstracoes();
+    }
+
+    public boolean setExposicaoFechadaCandDemonstracao() {
+        return m_state.setExposicaoFechadaCandidaturasDemonstracoes();
+    }
+
+    public boolean setExposicaoConflitosDetetadosDemonstracao() {
+        return m_state.setExposicaoConflitosDemonstracoesDetetados();
+    }
+
+    public boolean setExposicaoConflitosAlteradosDemonstracao() {
+        return m_state.setExposicaoConflitosDemonstracoesAlterados();
+    }
+
+    public boolean setExposicaoCandidaturasDemonstracaoAtribuidas() {
+        return m_state.setExposicaoDemonstracoesAtribuidas();
+    }
+
+    public boolean setExposicaoCandidaturasDemonstracaoAvaliadas() {
+        return m_state.setExposicaoCandidaturasAvaliadas();
+    }
+
+    public boolean setExposicaoCandidaturasDemonstracaoAceites() {
+        return m_state.setCandidaturasDemonstracoesAceites();
+    }
+
 }

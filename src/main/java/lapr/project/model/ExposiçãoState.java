@@ -47,7 +47,7 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean setExposicaoCandidaturasAlteradas() {
+    public boolean setExposicaoCandidaturasAvaliadas() {
         return false;
     }
 
@@ -79,6 +79,10 @@ public class ExposiçãoState {
         return false;
     }
 
+    public boolean setExposicaoDemonstracoesAtribuidas() {
+        return false;
+    }
+
     public boolean setCandidaturasDemonstracoesAvaliadas() {
         return false;
     }
@@ -99,19 +103,15 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean isEstadoConflitosAlterados() {
+    public boolean isEstadoFAESemDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoCompleta() {
         return false;
     }
 
     public boolean isEstadoAbertaParaCandidaturas() {
-        return false;
-    }
-
-    public boolean isEstadoCandidaturasAtribuidas() {
-        return false;
-    }
-
-    public boolean isEstadoCandidaturasAvaliadas() {
         return false;
     }
 
@@ -123,11 +123,15 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean isEstadoCompleta() {
+    public boolean isEstadoConflitosAlterados() {
         return false;
     }
 
-    public boolean isEstadoFAESemDemonstracao() {
+    public boolean isEstadoCandidaturasAtribuidas() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturasAvaliadas() {
         return false;
     }
 
@@ -136,6 +140,34 @@ public class ExposiçãoState {
     }
 
     public boolean isEstadoStandConfirmado() {
+        return false;
+    }
+
+    public boolean isEstadoDemonstracoesDefinidas() {
+        return false;
+    }
+
+    public boolean isEstadoAbertaParaCandidaturasDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoFechadaParaCandidaturasDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoConflitosAlteradosDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturasAtribuidasDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturasAvaliadasDemonstracao() {
+        return false;
+    }
+
+    public boolean isEstadoCandidaturaAceiteDemonstracao() {
         return false;
     }
 

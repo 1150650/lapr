@@ -124,7 +124,7 @@ public class DecidirDemonstraçõesUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    cntrlDecidirDemo.getExpo().setExposicaoDemonstracoesDefinidas();
+                    cntrlDecidirDemo.getExpo().setExposicaoDemonstracoesSemFAE();
 
                     dispose();
 

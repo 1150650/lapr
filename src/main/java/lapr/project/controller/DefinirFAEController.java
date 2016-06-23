@@ -52,7 +52,7 @@ public class DefinirFAEController {
     }
     
     public boolean setFAEDefinido(){
-        return exposicao.setFAEDefinido();
+        return exposicao.setExposicaoFAESemDemonstracoes();
     }
     
 }
