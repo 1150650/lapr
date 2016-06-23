@@ -40,7 +40,9 @@ public class MecanismoCargaEquitativaPorFAE implements Mecanismo {
      * @return
      */
     @Override
-    public ListaAtribuicoes atribuirCandidaturasAFAE() {
+    public ListaAtribuicoes atribuirCandidaturasAFAE(ListaCandidaturas lstc, ListaFAE lstf) {
+        this.lstCand = lstc;
+        this.lstFAE = lstf;
         ListaAtribuicoes lstAtrib = new ListaAtribuicoes();
         int j = 0;
         for (int i = 0; i < lstCand.tamanho(); i++) {

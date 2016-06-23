@@ -517,7 +517,7 @@ public class MenuPrincipal extends JFrame {
         btnAtribuirCandDemonstracao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new AtribuirCandidaturaDemonstracaoUI(MenuPrincipal.this, ce);
             }
         });
         return btnAtribuirCandDemonstracao;

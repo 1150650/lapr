@@ -46,7 +46,9 @@ public class MecanismoNumeroFAEPorCandidatura implements Mecanismo {
      * @return
      */
     @Override
-    public ListaAtribuicoes atribuirCandidaturasAFAE() {
+    public ListaAtribuicoes atribuirCandidaturasAFAE(ListaCandidaturas lstc, ListaFAE lstf) {
+        this.lstCand = lstc;
+        this.lstFAE = lstf;
         ListaAtribuicoes listaAtribuiçao = new ListaAtribuicoes();
         for (int i = 0; i < lstCand.tamanho(); i++) {
             for (int j = 0; j < nFAEPCand; j++) {

@@ -21,7 +21,7 @@ import lapr.project.model.RegistoMecanismos;
  *
  * @author Filipe <FilipeCorreia.1150524>
  */
-public class AtribuirCandidaturaDemonstracao {
+public class AtribuirCandidaturaDemonstracaoController {
 
     private RegistoExposicoes registoExposicoes;
 
@@ -32,61 +32,60 @@ public class AtribuirCandidaturaDemonstracao {
     private ListaFAE listaFAE;
 
     private List<FAE> listFAEs;
-    
+
     private Exposicao exposicao;
-    
+
     private ListaCandidaturas listaCandidaturas;
-    
+
     private List<Candidatura> listCandidatura;
-    
+
     private RegistoMecanismos registoMecanismos;
-    
+
     private List<Mecanismo> listaMecanismos;
-    
+
     private Mecanismo mecanismo;
-    
+
     private ListaAtribuicoes listaAtribuicao;
 
-    public AtribuirCandidaturaDemonstracao(CentroExposicoes centroExposicoes) {
+    public AtribuirCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
 
     public List getListaExposicoes() {
         centroExposicoes.getListaExposicoes();
-        
+
         return listaExposicao = registoExposicoes.getListaExposicoes();
 
     }
-    
-    public List getListaFAE(Exposicao exposicao){
+
+    public List getListaFAE(Exposicao exposicao) {
         this.exposicao = exposicao;
         listaFAE = this.exposicao.getListaFAE();
         return listFAEs = listaFAE.getListaFAEs();
     }
-    
-    public List getListaCandidatura(){
+
+    public List getListaCandidatura() {
         listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
         return listCandidatura = listaCandidaturas.getCandidaturasSemAtribuicao();
     }
-    
-    public List getRegistoMecanismos(){
+
+    public List getRegistoMecanismos() {
         registoMecanismos = centroExposicoes.getRegistoMecanismos();
         return listaMecanismos = registoMecanismos.getListaMecanismos();
     }
-    
-    public void selecionaMecanismo(Mecanismo mecanismo){
+
+    public void selecionaMecanismo(Mecanismo mecanismo) {
         this.mecanismo = mecanismo;
-        listaAtribuicao = mecanismo.atribuirCandidaturasAFAE();
-        
+        listaAtribuicao = mecanismo.atribuirCandidaturasAFAE(listaCandidaturas, listaFAE);
+
     }
-    
-    public void registaAtribuicao(){
+
+    public void registaAtribuicao() {
         exposicao.setAtribuicoes(listaAtribuicao);
     }
-    
-    public void setCandidaturasAtribuidas(){
+
+    public void setCandidaturasAtribuidas() {
         exposicao.setCandidaturasAtribuidas();
     }
-    
 
 }

@@ -39,7 +39,9 @@ public class MecanismoExperienciaPorFAE implements Mecanismo {
      * @return listaAtribuições
      */
     @Override
-    public ListaAtribuicoes atribuirCandidaturasAFAE() {
+    public ListaAtribuicoes atribuirCandidaturasAFAE(ListaCandidaturas lstc, ListaFAE lstf) {
+        this.lstCand = lstc;
+        this.lstFAE = lstf;
         ListaAtribuicoes listaAtribuiçao = new ListaAtribuicoes();
         lstFAE.ordenarListaFAE();
         int nFaes = lstFAE.tamanho();

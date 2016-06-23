@@ -11,5 +11,5 @@ package lapr.project.model;
  */
 public interface Mecanismo {
 
-    public abstract ListaAtribuicoes atribuirCandidaturasAFAE();
+    public abstract ListaAtribuicoes atribuirCandidaturasAFAE(ListaCandidaturas lstc, ListaFAE lstf);
 }
