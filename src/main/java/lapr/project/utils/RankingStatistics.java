@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class RankingStatistics {
 
-    public double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listMedia) {
-        double media = calcularMedia(listMedia);
+    public double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listDouble) {
+        double media = calcularMedia(listInteger);
         double total = 0;
-        for (int avaliacao : listInteger) {
+        for (double avaliacao : listInteger) {
             total = total + Math.abs(avaliacao - media);
         }
         return total / listInteger.size();
