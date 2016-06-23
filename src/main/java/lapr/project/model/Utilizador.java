@@ -28,7 +28,7 @@ public class Utilizador {
         setNome(nome);
         setEmail(email);
         setUsername(username);
-        setPassword(password);
+        setPasswordDesencriptada(password);
     }
     
     public Utilizador() {
@@ -86,7 +86,11 @@ public class Utilizador {
     }
 
     @XmlElement
-    public void setPassword(String password) {
+    public void setPassword(String password){
+        this.password=password;
+    }
+    
+    public void setPasswordDesencriptada(String password) {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
         }

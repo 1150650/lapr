@@ -28,6 +28,10 @@ public class Representante {
         setUtilizador(u);
         listaCandidaturasSubmetidas = new ListaCandidaturas();
     }
+    
+    public Representante(){
+        
+    }
 
     /**
      * @return Retorna o Utilizador

@@ -8,10 +8,11 @@
                     <listaCandidaturasParaAvaliar/>
                     <identificador>barros16</identificador>
                     <utilizador>
-                        <email>diogo@gmail.com</email>
-                        <nome>Diogo Barros</nome>
-                        <password>0FkqiqDcttqu32</password>
-                        <username>barros15</username>
+                        <email>lapr2@gmail.com</email>
+                        <nome>Lapr2</nome>
+                        <password>0Ncrt4238</password>
+                        <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
+                        <username>lapr2</username>
                     </utilizador>
                 </FAE>
                 <FAE>
@@ -19,10 +20,11 @@
                     <listaCandidaturasParaAvaliar/>
                     <identificador>barros116</identificador>
                     <utilizador>
-                        <email>diogo1@gmail.com</email>
-                        <nome>Diogo Barros1</nome>
-                        <password>0FkqiqDcttqu32</password>
-                        <username>barros115</username>
+                        <email>error404@gmail.com</email>
+                        <nome>Error404</nome>
+                        <password>0Gttqt626</password>
+                        <passwordDesencriptada>.Error404</passwordDesencriptada>
+                        <username>error404</username>
                     </utilizador>
                 </FAE>
             </listaFAE>
@@ -31,10 +33,11 @@
                 <representante>
                     <listaCandidaturasSubmetidas/>
                     <utilizador>
-                        <email>diogo@gmail.com</email>
-                        <nome>Diogo Barros</nome>
-                        <password>0FkqiqDcttqu32</password>
-                        <username>barros15</username>
+                        <email>lapr2@gmail.com</email>
+                        <nome>Lapr2</nome>
+                        <password>0Ncrt4238</password>
+                        <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
+                        <username>lapr2</username>
                     </utilizador>
                 </representante>
             </listaRepresentantes>
@@ -54,10 +57,11 @@
                         <listaCandidaturasParaAvaliar/>
                         <identificador>barros16</identificador>
                         <utilizador>
-                            <email>diogo@gmail.com</email>
-                            <nome>Diogo Barros</nome>
-                            <password>0FkqiqDcttqu32</password>
-                            <username>barros15</username>
+                            <email>lapr2@gmail.com</email>
+                            <nome>Lapr2</nome>
+                            <password>0Ncrt4238</password>
+                            <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
+                            <username>lapr2</username>
                         </utilizador>
                     </FAE>
                 </atribuiçao>
@@ -104,18 +108,20 @@
     </listaTipoDeConflito>
     <registoUtilizadoresNConf>
         <utilizador>
-            <email>diogo@gmail.com</email>
-            <nome>Diogo Barros</nome>
-            <password>0FkqiqDcttqu32</password>
-            <username>barros15</username>
+            <email>lapr2@gmail.com</email>
+            <nome>Lapr2</nome>
+            <password>0Ncrt4238</password>
+            <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
+            <username>lapr2</username>
         </utilizador>
     </registoUtilizadoresNConf>
     <registoUtilizadoresConf>
         <utilizador>
-            <email>diogo1@gmail.com</email>
-            <nome>Diogo Barros1</nome>
-            <password>0FkqiqDcttqu32</password>
-            <username>barros115</username>
+            <email>error404@gmail.com</email>
+            <nome>Error404</nome>
+            <password>0Gttqt626</password>
+            <passwordDesencriptada>.Error404</passwordDesencriptada>
+            <username>error404</username>
         </utilizador>
     </registoUtilizadoresConf>
     <listarecursos>

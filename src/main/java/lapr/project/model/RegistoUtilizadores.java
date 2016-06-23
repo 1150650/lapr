@@ -105,7 +105,7 @@ public class RegistoUtilizadores {
         utilizadorAtivo.setNome(nome);
         utilizadorAtivo.setEmail(email);
         utilizadorAtivo.setUsername(username);
-        utilizadorAtivo.setPassword(password);
+        utilizadorAtivo.setPasswordDesencriptada(password);
     }
 
     public List<Utilizador> getRegistoUtilizadores() {

@@ -128,14 +128,14 @@ public class UtilizadorTest {
     }
 
     /**
-     * Test of setPassword method, of class Utilizador.
+     * Test of setPasswordDesencriptada method, of class Utilizador.
      */
     @Test
-    public void testSetPassword() {
+    public void testSetPasswordDesencriptada() {
         System.out.println("setPassword");
         String password = ".DiogoBarros10";
         Utilizador instance = new Utilizador();
-        instance.setPassword(password);
+        instance.setPasswordDesencriptada(password);
         // TODO review the generated test code and remove the default call to fail.
     }
 
