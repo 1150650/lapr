@@ -89,14 +89,13 @@ class JanelaPrincipal extends JFrame {
         menu.add(criarImportar());
         menu.addSeparator();
         menu.add(criarSair());
-        //    menu.add(criarItemSair());
 
         return menu;
     }
     
     private JMenuItem criarImportar() {
-        JMenuItem item = new JMenuItem("Importar Novo", KeyEvent.VK_T);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
+        JMenuItem item = new JMenuItem("Importar Novo", KeyEvent.VK_I);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_MASK));
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -132,8 +131,8 @@ class JanelaPrincipal extends JFrame {
     }
     
     private JMenuItem criarSair() {
-        JMenuItem item = new JMenuItem("Sair", KeyEvent.VK_T);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
+        JMenuItem item = new JMenuItem("Sair", KeyEvent.VK_S);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
