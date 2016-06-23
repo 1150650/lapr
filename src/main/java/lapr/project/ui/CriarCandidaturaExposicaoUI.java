@@ -215,7 +215,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
                 } catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(
-                            framePai,
+                            CriarCandidaturaExposicaoUI.this,
                             ex.getMessage(),
                             "ERRO!",
                             JOptionPane.WARNING_MESSAGE);

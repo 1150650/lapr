@@ -5,12 +5,17 @@
  */
 package lapr.project.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author SimãoPedro
  */
+ @XmlRootElement
 public class ExposiçãoCriadaState extends ExposiçãoState {
 
+    @XmlElement
     Exposicao m_e;
 
     public ExposiçãoCriadaState(Exposicao e) {

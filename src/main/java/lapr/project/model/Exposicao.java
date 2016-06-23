@@ -4,10 +4,9 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="Exposicao")
+@XmlRootElement(name = "Exposicao")
 public class Exposicao {
 
-    
     private String titulo;
     private String textoDescritivo;
     private Date dataInicio;
@@ -45,6 +44,7 @@ public class Exposicao {
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
         listaRepresentantes = new RegistoRepresentantes();
         lstAtribuicoes = new ListaAtribuicoes();
+        m_state = new ExposiçãoCriadaState(this);
     }
 
     public String getTitulo() {
@@ -95,7 +95,6 @@ public class Exposicao {
         this.textoDescritivo = texto;
     }
 
-
     public final void setPeriodo(Date dataInicio, Date dataFim) {
         if (dataInicio.after(dataFim) || dataInicio.equals(dataFim)) {
             throw new IllegalArgumentException("A data de Início deve ser anterior à data de Fim!");
@@ -103,12 +102,12 @@ public class Exposicao {
         setDataInicio(dataInicio);
         setDataFim(dataFim);
     }
-    
+
     @XmlElement
-    public final void setDataInicio(Date dataInicio){
+    public final void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
-    
+
     @XmlElement
     public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
@@ -171,7 +170,7 @@ public class Exposicao {
     public void setCandidaturasAtribuidas() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+   
     public boolean setExposicaoCriada() {
         return m_state.setCriadoDefinido();
     }
@@ -221,7 +220,7 @@ public class Exposicao {
     public void setListaAtribuicoes(ListaAtribuicoes lstA) {
         this.lstAtribuicoes = lstA;
     }
-    
+
     public ListaAtribuicoes getListaAtribuicoes() {
         return lstAtribuicoes;
     }
