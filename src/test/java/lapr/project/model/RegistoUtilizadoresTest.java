@@ -16,14 +16,14 @@ import static org.junit.Assert.*;
  * @author Simão Pedro
  */
 public class RegistoUtilizadoresTest {
-    
+
     public RegistoUtilizadoresTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
@@ -152,13 +152,14 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        Utilizador u = null;
+        Utilizador u = new Utilizador();
         RegistoUtilizadores instance = new RegistoUtilizadores();
+        instance.registaUtilizador(u);
         int expResult = 0;
         int result = instance.indiceDe(u);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
 
     }
-    
+
 }
