@@ -63,6 +63,30 @@ public class ExposiçãoState {
         return false;
     }
 
+    public boolean setExposicaoAbertaCandidaturasDemonstracoes() {
+        return false;
+    }
+
+    public boolean setExposicaoFechadaCandidaturasDemonstracoes() {
+        return false;
+    }
+
+    public boolean setExposicaoConflitosDemonstracoesDetetados() {
+        return false;
+    }
+
+    public boolean setExposicaoConflitosDemonstracoesAlterados() {
+        return false;
+    }
+
+    public boolean setCandidaturasDemonstracoesAvaliadas() {
+        return false;
+    }
+
+    public boolean setCandidaturasDemonstracoesAceites() {
+        return false;
+    }
+
     public boolean valida() {
         return false;
     }
