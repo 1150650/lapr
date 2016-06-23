@@ -55,4 +55,8 @@ public class ListaRecursos {
         listaRecurso.remove(r);
         return true;
     }
+    
+    public ArrayList getListaRecursos(){
+        return listaRecurso;
+    }
 }

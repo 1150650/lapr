@@ -5,6 +5,7 @@
  */
 package lapr.project.controller;
 
+import java.util.List;
 import lapr.project.model.*;
 
 /**
@@ -30,6 +31,9 @@ public class DefinirRecursosController {
         registoRecursos.addRecurso(recurso);
     }
     
+    public List getListaRecursos(){
+        return registoRecursos.getListaRecursos();
+    }
     
     
 }
