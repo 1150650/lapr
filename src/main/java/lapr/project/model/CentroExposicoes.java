@@ -1,7 +1,5 @@
 package lapr.project.model;
 
-import java.util.Date;
-import java.util.List;
 import javax.swing.JList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

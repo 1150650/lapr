@@ -5,7 +5,6 @@
  */
 package lapr.project.ui;
 
-import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import lapr.project.controller.CriarCandidaturaController;
 import lapr.project.model.CentroExposicoes;

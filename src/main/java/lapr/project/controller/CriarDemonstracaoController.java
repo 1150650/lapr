@@ -5,16 +5,12 @@
  */
 package lapr.project.controller;
 
-import java.util.Date;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaRecursos;
-import lapr.project.model.Organizador;
 import lapr.project.model.Recurso;
 import lapr.project.model.RegistoExposicoes;
-import lapr.project.model.RegistoUtilizadores;
-import lapr.project.model.Utilizador;
 
 /**
  *

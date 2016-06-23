@@ -2,9 +2,7 @@ package lapr.project.ui;
 
 import javax.swing.AbstractListModel;
 import lapr.project.model.Demonstracao;
-import lapr.project.model.Exposicao;
 import lapr.project.model.ListaDemonstracoes;
-import lapr.project.model.RegistoExposicoes;
 
 public class ModeloListaDemonstracoes extends AbstractListModel {
 

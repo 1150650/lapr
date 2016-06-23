@@ -15,7 +15,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.basic.BasicSplitPaneUI;
 import lapr.project.controller.CriarCandidaturaController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.utils.HintTextField;

@@ -1,12 +1,6 @@
 package lapr.project.ui;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
-import javax.swing.JFrame;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import lapr.project.model.AtribuicaoFAE;
 import lapr.project.model.CalculatorExample;
 import lapr.project.model.Candidatura;
@@ -19,7 +13,6 @@ import lapr.project.model.Representante;
 import lapr.project.model.Stand;
 import lapr.project.model.TipoDeConflito;
 import lapr.project.model.Utilizador;
-import lapr.project.ui.AlterarCandidaturaUI;
 import lapr.project.utils.ImportarExportar;
 
 /**

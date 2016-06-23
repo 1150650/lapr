@@ -1,18 +1,11 @@
 package lapr.project.controller;
 
 import lapr.project.model.Avaliacao;
-import java.util.ArrayList;
-import java.util.List;
-import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
-import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
-import lapr.project.model.ListaAtribuicoes;
 import lapr.project.model.ListaAvaliacoes;
 import lapr.project.model.ListaCandidaturas;
-import lapr.project.model.ListaFAE;
-import lapr.project.model.Utilizador;
 
 public class AvaliarCandidaturaFAEController {
 

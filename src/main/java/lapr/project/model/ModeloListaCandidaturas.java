@@ -6,7 +6,6 @@
 package lapr.project.model;
 
 import javax.swing.AbstractListModel;
-import lapr.project.model.*;
 
 public class ModeloListaCandidaturas extends AbstractListModel {
 

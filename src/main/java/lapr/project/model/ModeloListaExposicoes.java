@@ -1,8 +1,6 @@
 package lapr.project.model;
 
 import javax.swing.AbstractListModel;
-import lapr.project.model.Exposicao;
-import lapr.project.model.RegistoExposicoes;
 
 public class ModeloListaExposicoes extends AbstractListModel {
 

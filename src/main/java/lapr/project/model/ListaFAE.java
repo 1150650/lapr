@@ -7,12 +7,10 @@
 package lapr.project.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import lapr.project.model.FAE;
 
 /**
  *

@@ -1,8 +1,6 @@
 package lapr.project.controller;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
-import jdk.nashorn.internal.scripts.JD;
 import lapr.project.model.*;
 
 public class AtribuirCandidaturaController {

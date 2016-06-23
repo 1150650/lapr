@@ -7,7 +7,6 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import lapr.project.model.Avaliacao;
 
 /**
  *

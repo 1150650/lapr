@@ -1,8 +1,5 @@
 package lapr.project.controller;
 
-import java.util.List;
-import javax.swing.JList;
-import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;

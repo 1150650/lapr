@@ -19,7 +19,6 @@ import lapr.project.controller.AlterarCandidaturaController;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
-import lapr.project.model.Representante;
 import lapr.project.model.Utilizador;
 
 /**

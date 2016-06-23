@@ -9,7 +9,6 @@ import java.util.Date;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.Organizador;
-import lapr.project.model.RegistoExposicoes;
 import lapr.project.model.RegistoUtilizadores;
 import lapr.project.model.Utilizador;
 
