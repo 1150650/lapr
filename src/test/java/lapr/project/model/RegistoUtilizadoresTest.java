@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -34,15 +35,14 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testCriarUtilizador() {
         System.out.println("criarUtilizador");
-        String nome = "";
-        String email = "";
-        String username = "";
-        String password = "";
+        String nome = "Diogo";
+        String email = "diogo@gmail.com";
+        String username = "barros16";
+        String password = ".DiogoBarros10";
         RegistoUtilizadores instance = new RegistoUtilizadores();
-        Utilizador expResult = null;
+        Utilizador expResult = new Utilizador(nome, email, username, password);
         Utilizador result = instance.criarUtilizador(nome, email, username, password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
@@ -53,10 +53,12 @@ public class RegistoUtilizadoresTest {
         System.out.println("obterUtilizador");
         int indice = 0;
         RegistoUtilizadores instance = new RegistoUtilizadores();
-        Utilizador expResult = null;
+        Utilizador u = new Utilizador();
+        instance.registaUtilizador(u);
+        Utilizador expResult = u;
         Utilizador result = instance.obterUtilizador(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
     }
 
     /**
@@ -69,7 +71,7 @@ public class RegistoUtilizadoresTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
     }
 
     /**
@@ -78,12 +80,12 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testRegistaUtilizador() {
         System.out.println("registaUtilizador");
-        Utilizador u = null;
+        Utilizador u = new Utilizador("Diogo", "diogo@gmail.com", "barros16", ".DiogoBarros10");
         RegistoUtilizadores instance = new RegistoUtilizadores();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.registaUtilizador(u);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
     }
 
     /**
@@ -92,12 +94,12 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testValidaAlteracaoDados() {
         System.out.println("validaAlteracaoDados");
-        Utilizador u = null;
-        String email = "";
-        String username = "";
+        Utilizador u = new Utilizador("Diogo", "diogo@gmail.com", "barros16", ".DiogoBarros10");
+        String email = "diogo2@gmail.com";
+        String username = "barros15";
         RegistoUtilizadores instance = new RegistoUtilizadores();
         instance.validaAlteracaoDados(u, email, username);
-        // TODO review the generated test code and remove the default call to fail.
+
     }
 
     /**
@@ -106,13 +108,12 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testRemoverUtilizador() {
         System.out.println("removerUtilizador");
-        Utilizador u = null;
+        Utilizador u = new Utilizador("Diogo", "diogo@gmail.com", "barros16", ".DiogoBarros10");
         RegistoUtilizadores instance = new RegistoUtilizadores();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.removerUtilizador(u);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -121,14 +122,14 @@ public class RegistoUtilizadoresTest {
     @Test
     public void testAlterarDados() {
         System.out.println("alterarDados");
-        Utilizador utilizadorAtivo = null;
-        String nome = "";
-        String email = "";
-        String username = "";
-        String password = "";
+        Utilizador utilizadorAtivo = new Utilizador("Diogo", "diogo@gmail.com", "barros16", ".DiogoBarros10");
+        String nome = "Diogo1";
+        String email = "diogo1@gmail.com";
+        String username = "barros17";
+        String password = ".DiogoBarros11";
         RegistoUtilizadores instance = new RegistoUtilizadores();
         instance.alterarDados(utilizadorAtivo, nome, email, username, password);
-        // TODO review the generated test code and remove the default call to fail.
+
 
     }
 
@@ -139,10 +140,9 @@ public class RegistoUtilizadoresTest {
     public void testGetRegistoUtilizadores() {
         System.out.println("getRegistoUtilizadores");
         RegistoUtilizadores instance = new RegistoUtilizadores();
-        List<Utilizador> expResult = null;
+        List<Utilizador> expResult = new ArrayList<>();
         List<Utilizador> result = instance.getRegistoUtilizadores();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
 
     }
 
