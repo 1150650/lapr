@@ -7,16 +7,20 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Simão Pedro
  */
+@XmlRootElement 
 public class RegistoRepresentantes {
 
     /**
      * Lista de objetos Atribuicao
      */
+    @XmlElement (name = "representante")
     private List<Representante> lstRepresentante;
 
     /**

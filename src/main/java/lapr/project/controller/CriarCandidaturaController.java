@@ -65,7 +65,7 @@ public class CriarCandidaturaController {
     }
 
     private Representante verificarRepresentante() {
-        return exposicaoSelecionada.getLstRep().obterRepresentantePorU(u);
+        return exposicaoSelecionada.getListaRepresentantes().obterRepresentantePorU(u);
     }
 
     /**

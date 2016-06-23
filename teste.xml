@@ -26,8 +26,41 @@
                     </utilizador>
                 </FAE>
             </listaFAE>
+            <listaRepresentantes>
+                <representante>
+                    <listaCandidaturasSubmetidas/>
+                    <utilizador>
+                        <email>diogo@gmail.com</email>
+                        <nome>Diogo Barros</nome>
+                        <password>0FkqiqDcttqu32</password>
+                        <username>barros15</username>
+                    </utilizador>
+                </representante>
+            </listaRepresentantes>
             <dataFim>3916-10-22T00:00:00+01:00</dataFim>
             <dataInicio>3915-10-22T00:00:00+01:00</dataInicio>
+            <listaAtribuicoes>
+                <atribuiçao>
+                    <candidatura>
+                        <morada>Rua da rua</morada>
+                        <nomeEmpresa>Empresa1</nomeEmpresa>
+                        <produtos>muitos produtos</produtos>
+                        <quantidadeConvites>53</quantidadeConvites>
+                        <telemovel>911803479</telemovel>
+                    </candidatura>
+                    <FAE>
+                        <experienciaFAE>0</experienciaFAE>
+                        <listaCandidaturasParaAvaliar/>
+                        <identificador>barros16</identificador>
+                        <utilizador>
+                            <email>diogo@gmail.com</email>
+                            <nome>Diogo Barros</nome>
+                            <password>0FkqiqDcttqu32</password>
+                            <username>barros15</username>
+                        </utilizador>
+                    </FAE>
+                </atribuiçao>
+            </listaAtribuicoes>
             <listaCandidaturasDemonstracoes>
                 <candidatura>
                     <morada>Rua da rua</morada>
@@ -49,7 +82,8 @@
             <listaDemonstracao>
                 <Demonstração>
                     <codigo>1</codigo>
-                    <dados></dados>
+                    <descricao>isto é uma descriçao</descricao>
+                    <listalRecursos/>
                 </Demonstração>
             </listaDemonstracao>
             <local>Porto</local>

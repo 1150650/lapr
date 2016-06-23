@@ -43,7 +43,7 @@ public class ListaDemonstracoes {
      *
      * @param listalDemonstracao a nova lista de demonstracoes
      */
-    @XmlElement (name = "Demonstração")
+    @XmlElement(name = "Demonstração")
     public void setListalDemonstracao(ArrayList<Demonstracao> listalDemonstracao) {
 
         this.listalDemonstracao = listalDemonstracao;
@@ -63,8 +63,7 @@ public class ListaDemonstracoes {
      * Metodo que cria uma demonstracao
      */
     public Demonstracao criacaoDemonstracao() {
-        Demonstracao d=  new Demonstracao();
-        return d;
+        return new Demonstracao();
     }
 
     /**

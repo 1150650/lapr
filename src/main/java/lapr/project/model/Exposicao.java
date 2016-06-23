@@ -17,13 +17,15 @@ public class Exposicao {
     private ListaDemonstracoes listaDemonstracao;
     @XmlElement
     private ListaFAE listaFAE;
+    @XmlElement
     private ExposiçãoState m_state;
     @XmlElement
     private ListaOrganizadores listaOrganizadores;
     @XmlElement
     private ListaConflitos listaConflitos;
     private ListaAtribuicoes lstAtribuicoes;
-    private RegistoRepresentantes lstRep;
+    @XmlElement
+    private RegistoRepresentantes listaRepresentantes;
 
     public Exposicao() {
         listaCandidaturasExposicoes = new ListaCandidaturas();
@@ -41,7 +43,8 @@ public class Exposicao {
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
-        lstRep = new RegistoRepresentantes();
+        listaRepresentantes = new RegistoRepresentantes();
+        lstAtribuicoes = new ListaAtribuicoes();
     }
 
     public String getTitulo() {
@@ -186,14 +189,14 @@ public class Exposicao {
     }
 
     /**
-     * @return the lstRep
+     * @return the listaRepresentantes
      */
-    public RegistoRepresentantes getLstRep() {
-        return lstRep;
+    public RegistoRepresentantes getListaRepresentantes() {
+        return listaRepresentantes;
     }
 
     public void adicionarRepresentante(Representante r) {
-        lstRep.addRepresentante(r);
+        listaRepresentantes.addRepresentante(r);
     }
 
     public ListaCandidaturas getListaCandidaturasDemonstracoes() {
@@ -214,7 +217,12 @@ public class Exposicao {
         this.listaDemonstracao = listaDemonstracao;
     }
 
+    @XmlElement
     public void setListaAtribuicoes(ListaAtribuicoes lstA) {
         this.lstAtribuicoes = lstA;
+    }
+    
+    public ListaAtribuicoes getListaAtribuicoes() {
+        return lstAtribuicoes;
     }
 }

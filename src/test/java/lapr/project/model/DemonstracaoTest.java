@@ -7,6 +7,7 @@ package lapr.project.model;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -18,12 +19,12 @@ public class DemonstracaoTest {
     public void test() {
         Demonstracao u = new Demonstracao();
         String descricao = "hall";
-        u.setDados("hall");
+        u.setDescricao("hall");
         int codigo = 100;
         u.setCodigo(100);
         Recurso r = null;
-        u.setRecurso(r);
+        u.addRecurso(r);
 
-        assertEquals(descricao, u.getDados());
+        assertEquals(descricao, u.getDescricao());
     }
 }

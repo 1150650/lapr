@@ -5,6 +5,8 @@
  */
 package lapr.project.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import lapr.project.utils.Exportable;
 import lapr.project.utils.Importable;
 import org.w3c.dom.Node;
@@ -13,21 +15,25 @@ import org.w3c.dom.Node;
  *
  * @author JOAO
  */
+@XmlRootElement
 public class Demonstracao implements Exportable, Importable<Demonstracao> {
 
     /**
      * o codigo da demonstracao
      */
+    
     private int Codigo;
 
     /**
      * a descricao da demonstracao
      */
+   
     private String descricao;
 
     /**
      * a lista de recursos da demonstracao
      */
+    
     private ListaRecursos listalRecursos;
 
     /**
@@ -40,11 +46,14 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     /**
      * Cria uma instancia de Demonstracao
      */
-    public Demonstracao() {
+    public Demonstracao(String descricao) {
         Codigo = codigo;
-        descricao = "";
+        setDescricao(descricao);
         listalRecursos = new ListaRecursos();
         codigo++;
+    }
+
+    public Demonstracao() {
     }
 
     /**
@@ -70,12 +79,9 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      *
      * @return the listalRecursos
      */
+    @XmlElement
     public ListaRecursos getListalRecursos() {
         return listalRecursos;
-    }
-
-    public String getDados() {
-        return descricao;
     }
 
     /**
@@ -83,8 +89,13 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      *
      * @param descricao - a nova descricao da demonstracao
      */
-    public void setDados(String descricao) {
-        this.descricao = descricao;
+    @XmlElement
+    public void setDescricao(String descricao) {
+        if (!descricao.equalsIgnoreCase("")) {
+            this.descricao = descricao;
+        } else {
+            throw new IllegalArgumentException("Insira uma descrição");
+        }
     }
 
     /**
@@ -92,27 +103,19 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      *
      * @param r - a nova lista de recursos da demonstracao
      */
-    public void setRecurso(Recurso r) {
+    public void addRecurso(Recurso r) {
         getListalRecursos().addRecurso(r);
     }
+    
 
     /**
      * Metodo que altera o codigo da demonstracao
      *
      * @param Codigo - o novo condigo da demonstracao
      */
+    @XmlElement
     public void setCodigo(int Codigo) {
         this.Codigo = Codigo;
-    }
-
-    /**
-     * Metodo que retorna uma descricao textual da demonstracao
-     *
-     * @return descricao da demonstracao
-     */
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
     @Override

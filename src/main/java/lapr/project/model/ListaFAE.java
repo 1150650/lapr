@@ -24,7 +24,7 @@ public class ListaFAE {
     /**
      * Lista de objetos Atribuicao
      */
-    @XmlElement (name = "FAE")
+    @XmlElement(name = "FAE")
     private ArrayList<FAE> listaFAE;
 
     /**
@@ -118,9 +118,9 @@ public class ListaFAE {
     }
 
     public void registaFAE(FAE fae) {
-       // if (validaMembroFAE(fae)) {
+        if (validaMembroFAE(fae)) {
             addMembroFAE(fae);
-        //}
+        }
 
     }
 
@@ -129,7 +129,10 @@ public class ListaFAE {
     }
 
     private boolean validaMembroFAE(FAE fae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (listaFAE.contains(fae)) {
+            throw new IllegalArgumentException("FAE Já existe");
+        }
+        return true;
     }
 
 }

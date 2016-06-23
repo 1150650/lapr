@@ -41,7 +41,7 @@ public class CriarDemonstracaoController {
     
     
     public void setDados (String Descricao){
-        demonstracao.setDados(Descricao);
+        demonstracao.setDescricao(Descricao);
     }
      
     
@@ -49,7 +49,7 @@ public class CriarDemonstracaoController {
        return centroExposicoes.getRegistoRecursos();
     }
     public void adicionarRecurso (Recurso r){
-        demonstracao.setRecurso(r);
+        demonstracao.addRecurso(r);
     }
     
     public void validaRegistaDemonstracao (){

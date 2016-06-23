@@ -108,7 +108,7 @@ public class AlterarCandidaturaController {
 
     public void selecionaExposicao(Exposicao expo) {
         this.expo = expo;
-        this.r = this.expo.getLstRep().obterRepresentantePorU(u);
+        this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u);
         this.lstCandidaturas = r.getListaCandidaturasPodemSerAlteradas();
     }
 

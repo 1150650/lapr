@@ -7,17 +7,21 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import lapr.project.model.AtribuicaoFAE;
 
 /**
  *
  * @author SimãoPedro
  */
+@XmlRootElement
 public class ListaAtribuicoes {
 
     /**
      * Lista de objetos AtribuicaoFAE
      */
+    @XmlElement (name = "atribuiçao")
     private List<AtribuicaoFAE> listaAtribuiçao;
 
     /**
@@ -112,5 +116,9 @@ public class ListaAtribuicoes {
    public AtribuicaoFAE  obterAtribuicao(int i) {
        return listaAtribuiçao.get(i);
     }
+   
+   public List<AtribuicaoFAE> getListaAtribuicoes(){
+       return listaAtribuiçao;
+   }
 
 }
