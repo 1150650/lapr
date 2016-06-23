@@ -98,6 +98,7 @@ class Main {
 //
 ////        new MenuPrincipal(ce, u);
       new JanelaPrincipal(ce);
+      
     }
     }
 
