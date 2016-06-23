@@ -14,6 +14,8 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -21,12 +23,19 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.utils.ImportarExportar;
+import lapr.project.utils.MyJFileChooser;
 
 /**
  *
@@ -59,7 +68,79 @@ class JanelaPrincipal extends JFrame {
         add(criarPainelTitulo(), BorderLayout.NORTH);
         add(criarLblImagem(), BorderLayout.CENTER);
         add(criarPainelBotoes(), BorderLayout.SOUTH);
+        JMenuBar menuBar = criarBarraMenus();
+            setJMenuBar(menuBar);
 
+    }
+    
+    private JMenuBar criarBarraMenus() {
+        JMenuBar menuBar = new JMenuBar();
+
+        menuBar.add(criarMenuCE());
+        //   menuBar.add(criarMenuOpcoes());
+
+        return menuBar;
+    }
+    
+    private JMenu criarMenuCE() {
+        JMenu menu = new JMenu("Centro de Exposições");
+        menu.setMnemonic(KeyEvent.VK_C);
+
+        menu.add(criarImportar());
+        menu.addSeparator();
+        menu.add(criarSair());
+        //    menu.add(criarItemSair());
+
+        return menu;
+    }
+    
+    private JMenuItem criarImportar() {
+        JMenuItem item = new JMenuItem("Importar Novo", KeyEvent.VK_T);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ImportarExportar imp = new ImportarExportar();
+                MyJFileChooser fileChooser = new MyJFileChooser();
+                int resposta = fileChooser.showOpenDialog(JanelaPrincipal.this);
+
+                if (resposta == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    CentroExposicoes ce;
+                    try {
+                        ce = imp.importar(file.getPath());
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(
+                                JanelaPrincipal.this,
+                                "Impossível ler o ficheiro: " + file.getPath() + " !",
+                                "Importar",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    JOptionPane.showMessageDialog(
+                            JanelaPrincipal.this,
+                            "Centro de Exposições adicionado",
+                            "Importar Centro de Exposição",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                }
+
+            
+            }
+        });
+        return item;
+    }
+    
+    private JMenuItem criarSair() {
+        JMenuItem item = new JMenuItem("Sair", KeyEvent.VK_T);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, InputEvent.CTRL_MASK));
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        return item;
     }
 
     private JPanel criarPainelTitulo() {
