@@ -155,38 +155,6 @@ public class Exposicao {
         return listaConflitos;
     }
 
-    public boolean setAtribuicoes(ListaAtribuicoes listaAtribuicao) {
-        return validaAtribuicao();
-    }
-
-    private boolean validaAtribuicao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public ExposiçãoState getExposicaoEstado() {
-        return m_state;
-    }
-
-    public void setCandidaturasAtribuidas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-   
-    public boolean setExposicaoCriada() {
-        return m_state.setCriadoDefinido();
-    }
-
-    public void setExposicaoDemonstracoesDefinidas() {
-        m_state.setDemonstraçãoDefinido();
-    }
-
-    public boolean setFAEDefinido() {
-        return m_state.setFAEDefinido();
-    }
-
-    public void setEstado(ExposiçãoState m_state2) {
-        this.m_state = m_state2;
-    }
-
     /**
      * @return the listaRepresentantes
      */
@@ -202,13 +170,17 @@ public class Exposicao {
         return listaCandidaturasDemonstracoes;
     }
 
-    @XmlElement
-    public void setListaCandidaturasDemonstracoes(ListaCandidaturas listaCandidaturasDemonstracoes) {
-        this.listaCandidaturasDemonstracoes = listaCandidaturasDemonstracoes;
+    private boolean validaAtribuicao() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public ListaDemonstracoes getListaDemonstracao() {
         return listaDemonstracao;
+    }
+
+    @XmlElement
+    public void setListaCandidaturasDemonstracoes(ListaCandidaturas listaCandidaturasDemonstracoes) {
+        this.listaCandidaturasDemonstracoes = listaCandidaturasDemonstracoes;
     }
 
     @XmlElement
@@ -223,5 +195,33 @@ public class Exposicao {
 
     public ListaAtribuicoes getListaAtribuicoes() {
         return lstAtribuicoes;
+    }
+
+    public boolean setAtribuicoes(ListaAtribuicoes listaAtribuicao) {
+        return validaAtribuicao();
+    }
+
+    public ExposiçãoState getExposicaoEstado() {
+        return m_state;
+    }
+
+    public boolean setCandidaturasAtribuidas() {
+        return m_state.setExposicaoCandidaturasAtribuidas();
+    }
+
+    public boolean setExposicaoCriada() {
+        return m_state.setExposicaoCriada();
+    }
+
+    public void setExposicaoDemonstracoesDefinidas() {
+        m_state.setDemonstracoesSemFAE();
+    }
+
+    public boolean setFAEDefinido() {
+        return m_state.setExposicaoFAESemDemonstracoes();
+    }
+
+    public void setEstado(ExposiçãoState m_state2) {
+        this.m_state = m_state2;
     }
 }

@@ -27,7 +27,7 @@ public class ExposiçãoConflitosAlteradosState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setCandidaturasAtribuidas() {
+    public boolean setExposicaoCandidaturasAtribuidas() {
         boolean verify = false;
         if (valida()) {
             m_e.setEstado(new ExposiçãoCandidaturasAtribuidasState(m_e));

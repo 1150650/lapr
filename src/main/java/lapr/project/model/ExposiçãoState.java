@@ -11,19 +11,19 @@ package lapr.project.model;
  */
 public class ExposiçãoState {
 
-    public boolean setCriadoDefinido() {
+    public boolean setExposicaoCriada() {
         return false;
     }
 
-    public boolean setFAEDefinido() {
+    public boolean setExposicaoFAESemDemonstracoes() {
         return false;
     }
 
-    public boolean setDemonstraçãoDefinido() {
+    public boolean setDemonstracoesSemFAE() {
         return false;
     }
 
-    public boolean setCompleta() {
+    public boolean setExposicaoCompleta() {
         return false;
     }
 
@@ -31,31 +31,35 @@ public class ExposiçãoState {
         return false;
     }
 
-    public boolean setCandidaturasFechadas() {
+    public boolean setExposicaoCandidaturasFechadas() {
         return false;
     }
 
-    public boolean setCandidaturasAvaliadas() {
+    public boolean setExposicaoCandidaturasConflitosDetetados() {
         return false;
     }
 
-    public boolean setConflitosDetetados() {
+    public boolean setExposicaoCandidaturasConflitosAlterados() {
         return false;
     }
 
-    public boolean setConflitosAlterados() {
+    public boolean setExposicaoCandidaturasAtribuidas() {
         return false;
     }
 
-    public boolean setCandidaturasAtribuidas() {
+    public boolean setExposicaoCandidaturasAlteradas() {
         return false;
     }
 
-    public boolean setCandidaturasAtribuidasStand() {
+    public boolean setExposicaoCandidaturasAtribuidasStand() {
         return false;
     }
 
-    public boolean setStandsConfirmados() {
+    public boolean setExposicaoStandsConfirmados() {
+        return false;
+    }
+
+    public boolean setExposicaoDemonstracoesDefinidas() {
         return false;
     }
 

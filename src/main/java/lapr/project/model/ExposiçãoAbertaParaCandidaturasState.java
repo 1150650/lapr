@@ -26,7 +26,7 @@ public class ExposiçãoAbertaParaCandidaturasState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setCandidaturasFechadas() {
+    public boolean setExposicaoCandidaturasFechadas() {
         boolean verify = false;
         if (valida()) {
             m_e.setEstado(new ExposiçãoCandidaturasFechadasState(m_e));
