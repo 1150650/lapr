@@ -31,8 +31,9 @@ public class CandidaturaDemonstracao extends Candidatura{
         this.demonstracao =demonstracao;
     }
     
+    @Override
      public String toString() {
-        return super.toString() + String.format("%n Demonstracao: %d", demonstracao.getDescricao());
+        return super.toString() + String.format("%n Demonstracao: %s", demonstracao.getDescricao());
     }
     
 }

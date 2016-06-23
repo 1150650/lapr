@@ -21,12 +21,12 @@ public class DefinirRecursosController {
         this.centroExposicoes = centroExposicoes;
     }
     
-    public void newRecurso(){
+    public Recurso newRecurso(String recurso){
         registoRecursos = centroExposicoes.getRegistoRecursos();
-        recurso = registoRecursos.criarRecurso();
+        return this.recurso = registoRecursos.criarRecurso(recurso);
     }
     
-    public void addRecurso(){
+    public void addRecurso(Recurso recurso){
         registoRecursos.addRecurso(recurso);
     }
     

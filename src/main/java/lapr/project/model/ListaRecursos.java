@@ -29,8 +29,8 @@ public class ListaRecursos {
         listaRecurso = new ArrayList<>();
     }
 
-    public Recurso criarRecurso() {
-        Recurso r = new Recurso();
+    public Recurso criarRecurso(String recurso) {
+        Recurso r = new Recurso(recurso);
         return r;
     }
 
