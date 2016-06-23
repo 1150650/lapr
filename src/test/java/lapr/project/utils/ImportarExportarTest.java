@@ -35,7 +35,7 @@ public class ImportarExportarTest {
     public void testExportar() throws Exception {
         System.out.println("exportar");
         CentroExposicoes ce = new CentroExposicoes();
-        String filename = "teste.xml";
+        String filename = "teste1.xml";
         ImportarExportar instance = new ImportarExportar();
         instance.exportar(ce, filename);
     }
@@ -46,7 +46,7 @@ public class ImportarExportarTest {
     @Test
     public void testImportar() throws Exception {
         System.out.println("importar");
-        String filename = "teste.xml";
+        String filename = "teste1.xml";
         ImportarExportar instance = new ImportarExportar();
         CentroExposicoes expResult = new CentroExposicoes();
         CentroExposicoes result = instance.importar(filename);
