@@ -27,7 +27,7 @@ public class ExposiçãoCandidaturasAvaliadasState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setCandidaturasAtribuidasStand() {
+    public boolean setExposicaoCandidaturasAtribuidasStand() {
         boolean verify = false;
         if (valida()) {
             m_e.setEstado(new ExposicaoCandidaturaAtribuidaStandState(m_e));

@@ -69,7 +69,7 @@ public class AtribuirCandidaturaController {
             lstAtribuicoes.obterAtribuicao(j).getFAE().aumentarExperienciaFAE();
             lstAtribuicoes.obterAtribuiçao(j).getCandidatura().getState().setAtribuida();
         }
-        expo.getExposicaoEstado().setCandidaturasAtribuidas();
+        expo.getExposicaoEstado().setExposicaoCandidaturasAtribuidas();
     }
 
     /**

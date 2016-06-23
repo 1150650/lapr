@@ -26,7 +26,7 @@ public class ExposicaoStandsConfirmadosState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setStandsConfirmados() {
+    public boolean setExposicaoStandsConfirmados() {
         boolean verify = false;
         if (valida()) {
             //m_e.setEstado(new ex(m_e));

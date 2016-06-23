@@ -97,7 +97,7 @@ public class DecidirDemonstraçõesController {
      * @return
      */
     public boolean setExposicaoDemonstracaoDefinidas() {
-        return getExpo().getExposicaoEstado().setDemonstraçãoDefinido();
+        return getExpo().getExposicaoEstado().setDemonstracoesSemFAE();
     }
 
     /**

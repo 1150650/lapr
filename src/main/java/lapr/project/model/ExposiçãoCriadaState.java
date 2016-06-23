@@ -23,7 +23,7 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setFAEDefinido() {
+    public boolean setExposicaoFAESemDemonstracoes() {
         if (valida()) {
             m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
             return true;

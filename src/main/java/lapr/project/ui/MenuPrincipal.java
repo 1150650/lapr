@@ -589,7 +589,7 @@ public class MenuPrincipal extends JFrame {
         btnDefinirRecursos.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new DefinirRecursosUI(MenuPrincipal.this, ce);
             }
         });
         return btnDefinirRecursos;

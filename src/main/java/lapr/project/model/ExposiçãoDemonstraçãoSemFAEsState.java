@@ -18,7 +18,7 @@ class ExposiçãoDemonstraçãoSemFAEsState extends ExposiçãoState {
     }
 
     @Override
-    public boolean setCompleta() {
+    public boolean setExposicaoCompleta() {
         if (valida()) {
             m_e.setEstado(new ExposiçãoCompletaState(m_e));
             return true;
