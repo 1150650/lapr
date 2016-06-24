@@ -101,9 +101,11 @@ public class AlterarCandidaturaController {
 
     public void alterarDadosCandidatura() {
         getCandidaturaAlterada().getState().setAlterada();
+        expo.getListaCandidaturasExposicoes().removerCandidatura(candidatura);
         r.getListaCandidaturasSubmetidas().removerCandidatura(candidatura);
         this.candidatura = novaCandidatura;
         r.getListaCandidaturasSubmetidas().adicionarCandidatura(candidatura);
+        expo.getListaCandidaturasExposicoes().adicionarCandidatura(candidatura);
     }
 
     public void selecionaExposicao(Exposicao expo) {

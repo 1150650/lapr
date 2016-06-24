@@ -201,7 +201,6 @@ public class AlterarCandidaturaUI extends JFrame {
                     int QuantidadeConvites = Integer.parseInt(nConvitesTF.getText());
                     crtl.novaCandidatura(NomeEmpresa, Morada, Telemovel, AreaExposicao, Produtos, QuantidadeConvites);
                     if (!crtl.validarNovosDadosGlobal()) {
-                        
                         crtl.alterarDadosCandidatura();
                     }
                 } catch (IllegalArgumentException ex) {
