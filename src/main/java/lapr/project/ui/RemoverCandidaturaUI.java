@@ -34,21 +34,19 @@ public class RemoverCandidaturaUI extends JFrame {
   
    private  ModeloListaCandidaturas lstCandidaturasExposicao , lstCandidaturasDemonstracao ;
     private JButton btnRemoverCandidaturaExposicao, btnRemoverCandidaturaDemonstracao;
-    private RemoverCandidaturaController contr;
-    private CentroExposicoes centroexpo;
-    private MenuPrincipal framePai;
+    private final RemoverCandidaturaController contr;
+    private final CentroExposicoes centroexpo;
     private Icon icon;
     private Exposicao expo;
-    private Candidatura candi;
 
     public RemoverCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
         super( "Remover Candidatura ");
         this.centroexpo = ce;
         this.contr = new RemoverCandidaturaController(ce);
-        this.framePai = framePai;
         this.expo=new Exposicao();
         this.centroexpo.getListaExposicoes().adicionarExposicao(expo);
+        
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,17 +57,17 @@ public class RemoverCandidaturaUI extends JFrame {
     }
 
     private void criarComponentes() {
-        JPanel p1 = criarPainelNorte();
-        JPanel p3= criarPainelCentro();
-        JPanel p2 = criarPainelSul();
-
-        add(p1, BorderLayout.NORTH);
-        add(p3,BorderLayout.CENTER);
-        add(p2, BorderLayout.SOUTH);
+        JPanel painel1 = criarPainelN();
+        JPanel painel3= criarPainelC();
+        JPanel painel2 = criarPainelS();
+        
+        add(painel1, BorderLayout.NORTH);
+        add(painel3,BorderLayout.CENTER);
+        add(painel2, BorderLayout.SOUTH);
 
     }
 
-    private JPanel criarPainelNorte() {
+    private JPanel criarPainelN() {
         JButton btnSelecionarExposicao = criarBotaoSelecionarExposicao();
 
         JPanel pCentro = new JPanel();
@@ -78,7 +76,7 @@ public class RemoverCandidaturaUI extends JFrame {
         return pCentro;
     }
 
-    private JPanel criarPainelSul() {
+    private JPanel criarPainelS() {
         JButton btnOK = criarBotaoConcluirProcesso();
         JButton btnCancelar = criarBotaoCancelar();
 
@@ -88,7 +86,7 @@ public class RemoverCandidaturaUI extends JFrame {
 
         return pSul;
     }
-private JPanel criarPainelCentro() {
+private JPanel criarPainelC() {
         
          final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
@@ -103,7 +101,7 @@ private JPanel criarPainelCentro() {
          btnRemoverCandidaturaExposicao.setToolTipText("Remove uma candidatura a Exposicao");
          
         
-        p.add(criarPainelLista( "Lista de Candidaturas (Exposicao):",
+        p.add(criarPainelListas( "Lista de Candidaturas (Exposicao):",
                                 lstCompleta,
                                 lstCandidaturasExposicao,
                                 btnRemoverCandidaturaExposicao));
@@ -114,7 +112,7 @@ private JPanel criarPainelCentro() {
         btnRemoverCandidaturaDemonstracao = criarBotaoRemoverCandidaturaDemonstracao(lstCompleta);
        btnRemoverCandidaturaDemonstracao.setToolTipText("Remove uma candidatura a Demonstracao");
         
-        p.add(criarPainelLista( "Lista de Candidaturas (Demonstracao):",
+        p.add(criarPainelListas( "Lista de Candidaturas (Demonstracao):",
                                 lstCompleta1,
                                 lstCandidaturasDemonstracao,
                                 btnRemoverCandidaturaDemonstracao));
@@ -122,7 +120,7 @@ private JPanel criarPainelCentro() {
         return p;
     }
     
-     private JPanel criarPainelLista(
+     private JPanel criarPainelListas(
             String tituloLista,
             JList lstLista,
             ModeloListaCandidaturas modeloLista,
@@ -131,21 +129,21 @@ private JPanel criarPainelCentro() {
         lstLista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane scrPane = new JScrollPane(lstLista);
 
-        JPanel p = new JPanel(new BorderLayout());
+        JPanel p1 = new JPanel(new BorderLayout());
         
-        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 20;
-        final int MARGEM_ESQUERDA = 20, MARGEM_DIREITA = 20;
-        p.setBorder(BorderFactory.createEmptyBorder( MARGEM_SUPERIOR, 
-                                                     MARGEM_ESQUERDA,
-                                                     MARGEM_INFERIOR, 
+        final int MARGEM_SUPERIOR1 = 20, MARGEM_INFERIOR1 = 20;
+        final int MARGEM_ESQUERDA1 = 20, MARGEM_DIREITA = 20;
+        p1.setBorder(BorderFactory.createEmptyBorder( MARGEM_SUPERIOR1, 
+                                                     MARGEM_ESQUERDA1,
+                                                     MARGEM_INFERIOR1, 
                                                      MARGEM_DIREITA));
         
-        p.add(lblTitulo, BorderLayout.NORTH);
-        p.add(scrPane, BorderLayout.CENTER);
+        p1.add(lblTitulo, BorderLayout.NORTH);
+        p1.add(scrPane, BorderLayout.CENTER);
 
         JPanel pBotoes = criarPainelBotao(btnSuperior);
-        p.add(pBotoes, BorderLayout.SOUTH);
-        return p;
+        p1.add(pBotoes, BorderLayout.SOUTH);
+        return p1;
     }
     private JPanel criarPainelBotao(JButton btnSuperior) {
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 1;
