@@ -51,6 +51,9 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     }
 
     public Demonstracao() {
+        listalRecursos = new ListaRecursos();
+        Codigo = codigo;
+        codigo++;
     }
 
     /**
@@ -101,7 +104,7 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      * @param r - a nova lista de recursos da demonstracao
      */
     public void addRecurso(Recurso r) {
-        getListalRecursos().addRecurso(r);
+        listalRecursos.addRecurso(r);
     }
 
     @Override

@@ -6,6 +6,7 @@
 package lapr.project.controller;
 
 import lapr.project.model.Candidatura;
+import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
@@ -54,6 +55,8 @@ public class AceitarCandidaturaControllerTest {
          CentroExposicoes ce= new CentroExposicoes();
         System.out.println("getListaCandidaturasExposicoes");
         Exposicao expo = new Exposicao();
+        ce.getListaExposicoes().adicionarExposicao(expo);
+    
         AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
         ListaCandidaturas expResult = expo.getListaCandidaturasExposicoes() ;
         ListaCandidaturas result = instance.getListaCandidaturasExposicoes(expo);
@@ -69,6 +72,8 @@ public class AceitarCandidaturaControllerTest {
          CentroExposicoes ce= new CentroExposicoes();
         System.out.println("getListaCandidaturasDemonstracoes");
         Exposicao expo = new Exposicao();
+
+        ce.getListaExposicoes().adicionarExposicao(expo);
         AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
         ListaCandidaturas expResult =expo.getListaCandidaturasDemonstracoes() ;
         ListaCandidaturas result = instance.getListaCandidaturasDemonstracoes(expo);
@@ -83,6 +88,7 @@ public class AceitarCandidaturaControllerTest {
     public void testAceitarCandidaturaDemonstracao() {
          CentroExposicoes ce= new CentroExposicoes();
         System.out.println("aceitarCandidaturaDemonstracao");
+        
         Candidatura c = new Candidatura();
         AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
         instance.aceitarCandidaturaDemonstracao(c);
