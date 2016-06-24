@@ -215,7 +215,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
                     keywords[3] = KeyWord4.getText();
                     keywords[4] = KeyWord5.getText();
                     crtlCriarCandidatura.setDados(nomeEmpresaTF.getText(), moradaTF.getText(), Integer.parseInt(telemovelTF.getText()), Float.parseFloat(areaExposicaoTF.getText()), produtosTF.getText(), Integer.parseInt(nConvitesTF.getText()), keywords);
-                    new SelecionarDemonstracoesInteresse(CriarCandidaturaExposicaoUI.this, crtlCriarCandidatura);
+                    new DemonstracoesComInteresseUI(CriarCandidaturaExposicaoUI.this, crtlCriarCandidatura);
                     crtlCriarCandidatura.adicionarCandidatura();
                     dispose();
 

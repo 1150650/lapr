@@ -15,13 +15,11 @@ import lapr.project.utils.CaeserCypher;
  *
  * @author Diogo
  */
-@XmlRootElement (name = "utilizador")
+@XmlRootElement(name = "utilizador")
 public class Utilizador {
 
-    
     private String nome, email, username, password;
-    
-    
+
     private CaeserCypher encriptacao;
 
     public Utilizador(String nome, String email, String username, String password) {
@@ -30,7 +28,7 @@ public class Utilizador {
         setUsername(username);
         setPasswordDesencriptada(password);
     }
-    
+
     public Utilizador() {
 
     }
@@ -50,7 +48,7 @@ public class Utilizador {
     public String getPassword() {
         return password;
     }
-    
+
     public String getPasswordDesencriptada() {
         encriptacao = new CaeserCypher(password);
         String passwordDes = encriptacao.desencriptar();
@@ -86,10 +84,10 @@ public class Utilizador {
     }
 
     @XmlElement
-    public void setPassword(String password){
-        this.password=password;
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
+
     public void setPasswordDesencriptada(String password) {
         if (password.length() < 8) {
             throw new IllegalArgumentException("Password inválida! Deve conter pelo menos 8 carateres.");
@@ -124,6 +122,6 @@ public class Utilizador {
 
     @Override
     public String toString() {
-        return String.format("Nome: %s%nEmail: %s%nUsername: %s", nome, email, username);
+        return ("Nome: " + nome + "     Email:   " + email + "    Username: " + username);
     }
 }

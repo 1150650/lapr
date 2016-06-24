@@ -68,4 +68,9 @@ public class ConfirmarUtilizadorController {
     public void selecionarUtilizador(Utilizador u) {
         this.u = u;
     }
+
+    public void confirmarUtilizador() {
+        registoUtilizadores.removerUtilizador(u);
+        registoUtilizadoresNConfirmado.registaUtilizador(u);
+    }
 }

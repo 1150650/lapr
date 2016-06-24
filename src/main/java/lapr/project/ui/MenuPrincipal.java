@@ -596,7 +596,7 @@ public class MenuPrincipal extends JFrame {
         btnConfirmarRegistoUtilizador.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new ConfirmarUtilizadorUI(MenuPrincipal.this, ce);
             }
         });
         return btnConfirmarRegistoUtilizador;
