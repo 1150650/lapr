@@ -59,7 +59,7 @@ public class MenuPrincipal extends JFrame {
     private JPanel painelDadosUtilizador = new JPanel(),
             painelBotoesOrganizador = new JPanel(),
             painelBotoesFAE = new JPanel(), painelBotoesGestor = new JPanel(),
-            painelBotoesRepresentante = new JPanel(), 
+            painelBotoesRepresentante = new JPanel(),
             painelSemPermissoes = new JPanel();
     private boolean FAE, organizador, gestor;
 
@@ -101,8 +101,8 @@ public class MenuPrincipal extends JFrame {
 
         } else if (tipoUtilizador.equals("FAE")) {
             eliminarPaineis();
-            if(FAE == true){
-            add(criarPainelBotoesFAE(), BorderLayout.CENTER);
+            if (FAE == true) {
+                add(criarPainelBotoesFAE(), BorderLayout.CENTER);
             } else {
                 add(criarPainelSemPermissoes(), BorderLayout.CENTER);
             }
@@ -293,18 +293,18 @@ public class MenuPrincipal extends JFrame {
         });
         return cbTipo;
     }
-    
-    private JPanel criarPainelSemPermissoes(){
+
+    private JPanel criarPainelSemPermissoes() {
         JLabel lblPermissoes = new JLabel("Não tem permissões para aceder as estas opções", JLabel.LEFT);
         lblPermissoes.setFont(new Font("Arial", Font.PLAIN, 20));
-        
+
         painelSemPermissoes = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         painelSemPermissoes.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         painelSemPermissoes.add(lblPermissoes);
-        
+
         return painelSemPermissoes;
     }
 
@@ -378,8 +378,8 @@ public class MenuPrincipal extends JFrame {
         btnAvaliarCandDemonstracao = criarBotaoAvaliarCandDemonstracao();
 
         painelBotoesFAE = new JPanel();
-        final int MARGEM_SUPERIOR = 100, MARGEM_INFERIOR = 100;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
+        final int MARGEM_SUPERIOR = 70, MARGEM_INFERIOR = 70;
+        final int MARGEM_ESQUERDA = 30, MARGEM_DIREITA = 30;
         painelBotoesFAE.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
         painelBotoesFAE.setLayout(new GridLayout(3, 1, 40, 40));
@@ -711,16 +711,19 @@ public class MenuPrincipal extends JFrame {
 
     private void verificarPapeisUtilizador() {
         for (int i = 0; i < ce.getListaExposicoes().tamanho(); i++) {
-            for(int j = 0; j < ce.getListaExposicoes().obterExposicao(i).getListaFAE().tamanho();j++) {
-            if (ce.getListaExposicoes().obterExposicao(i).getListaFAE().obterFAE(j).getUtilizador().equals(utilizadorAtivo)) {
-                FAE = true;
+            for (int j = 0; j < ce.getListaExposicoes().obterExposicao(i).getListaFAE().tamanho(); j++) {
+                if (ce.getListaExposicoes().obterExposicao(i).getListaFAE().obterFAE(j).getUtilizador().getUsername().equals(utilizadorAtivo.getUsername())) {
+                    FAE = true;
+                }
             }
+            for (int j = 0; j < ce.getListaExposicoes().obterExposicao(i).getListaOrganizadores().tamanho(); j++) {
+                if (ce.getListaExposicoes().obterExposicao(i).getListaOrganizadores().obterOrganizador(j).getUtilizador().getUsername().equals(utilizadorAtivo.getUsername())) {
+                    organizador = true;
+                }
             }
-            if (ce.getListaExposicoes().obterExposicao(i).getListaOrganizadores().getListaOrganizadores().contains(utilizadorAtivo)) {
-                organizador = true;
-            }
-//            if(ce.getListaExposicoes().obterExposicao(i).getListaRepresentantes().)
         }
+//            if(ce.getListaExposicoes().obterExposicao(i).getListaRepresentantes().)
+
     }
 
 }
