@@ -19,7 +19,6 @@ public class ListaDemonstracoes {
     /**
      * A lista de demonstracoes
      */
-    
     private ArrayList<Demonstracao> listalDemonstracao;
 
     /**
@@ -85,6 +84,18 @@ public class ListaDemonstracoes {
 
     public Demonstracao[] listaDemonstracaoToArray() {
         return ((Demonstracao[]) listalDemonstracao.toArray());
+    }
+
+    public int indiceDe(Demonstracao demo) {
+        return listalDemonstracao.indexOf(demo);
+    }
+
+    public boolean removerCandidatura(Demonstracao demo) {
+        return listalDemonstracao.remove(demo);
+    }
+
+    public boolean contains(Demonstracao demo) {
+        return listalDemonstracao.contains(demo);
     }
 
 }

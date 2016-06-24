@@ -25,11 +25,11 @@ public class RegistarCandidaturaDemonstracaoController {
     private ListaCandidaturas listaCandidaturas;
 
     private CandidaturaExposicao candidaturaExposicao;
-    
-    private List<Demonstracao> listaDemonstracoesComInteresse;
-    
+
+    private ListaDemonstracoes listaDemonstracoesComInteresse;
+
     private CandidaturaDemonstracao candidaturaDemo;
-    
+
     public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
@@ -45,26 +45,26 @@ public class RegistarCandidaturaDemonstracaoController {
         this.exposicao = exposicao;
         listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
     }
-    
-    public List selecionaCandidatura(CandidaturaExposicao candidaturaExposicao){
+
+    public ListaDemonstracoes selecionaCandidatura(CandidaturaExposicao candidaturaExposicao) {
         this.candidaturaExposicao = candidaturaExposicao;
         return listaDemonstracoesComInteresse = this.candidaturaExposicao.getDemonstracoesComInteresse();
     }
-    
-    public void newCandidaturaDemo(){
+
+    public void newCandidaturaDemo() {
         candidaturaDemo = listaCandidaturas.newCandidaturaDemo(candidaturaExposicao);
     }
-    
-    public void guardaDadosCandidatura(Demonstracao demonstracao){
+
+    public void guardaDadosCandidatura(Demonstracao demonstracao) {
         candidaturaDemo.setDemonstracao(demonstracao);
     }
-    
-    public void registaCandidatura(){
+
+    public void registaCandidatura() {
         listaCandidaturas.adicionarCandidatura(candidaturaDemo);
     }
-    
-    public void setCandidaturaEmSubmissao(){
+
+    public void setCandidaturaEmSubmissao() {
         candidaturaExposicao.setCandidaturaEmSubmissao();
     }
-    
+
 }

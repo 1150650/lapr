@@ -1,5 +1,6 @@
 package lapr.project.controller;
 
+import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
@@ -83,5 +84,9 @@ public class CriarCandidaturaExposicaoController {
 
     public Exposicao getExposicaoSelecionada() {
         return exposicaoSelecionada;
+    }
+
+    public CandidaturaExposicao getCandidaturaCriada() {
+        return c;
     }
 }

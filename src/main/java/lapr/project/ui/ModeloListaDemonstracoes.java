@@ -24,7 +24,15 @@ public class ModeloListaDemonstracoes extends AbstractListModel {
 
     public void addElement(Demonstracao d) {
         listaDemonstracoes.addDemonstracao(d);
+    }
 
+    public boolean removeElement(Demonstracao demo) {
+        int indice = listaDemonstracoes.indiceDe(demo);
+        boolean removida = listaDemonstracoes.removerCandidatura(demo);
+        if (removida) {
+            fireIntervalRemoved(this, indice, indice);
+        }
+        return removida;
     }
 
 }

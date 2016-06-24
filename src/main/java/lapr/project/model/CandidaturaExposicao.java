@@ -17,18 +17,20 @@ public class CandidaturaExposicao extends Candidatura {
      * float com a area pretendida para apresentar o produto
      */
     private float areaPretendida;
-    
-    private List<Demonstracao> demonstracoesComInteresse;
+
+    private ListaDemonstracoes demonstracoesComInteresse;
 
     private String[] KEYWORDS;
 
     public CandidaturaExposicao(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int quantidadeConvites) {
         super(nomeEmpresa, morada, telemovel, produtos, quantidadeConvites);
         setAreaPretendida(areaPretendida);
+        demonstracoesComInteresse = new ListaDemonstracoes();
     }
 
     public CandidaturaExposicao() {
         super();
+        demonstracoesComInteresse = new ListaDemonstracoes();
     }
 
     /**
@@ -71,21 +73,22 @@ public class CandidaturaExposicao extends Candidatura {
     public void setKEYWORDS(String[] KEYWORDS) {
         this.KEYWORDS = KEYWORDS;
     }
-    
-    public void setDemonstracoesComInteresse(List<Demonstracao> demonstracoesComInteresse){
+
+    public void setDemonstracoesComInteresse(ListaDemonstracoes demonstracoesComInteresse) {
         this.demonstracoesComInteresse = demonstracoesComInteresse;
     }
-    
-    public List getDemonstracoesComInteresse(){
+
+    public ListaDemonstracoes getDemonstracoesComInteresse() {
         return demonstracoesComInteresse;
     }
-    
-    public boolean addDemonstracoesComInteresse(Demonstracao demonstracao){
-        if(!demonstracoesComInteresse.contains(demonstracao)){
-                demonstracoesComInteresse.add(demonstracao);
-                return true;
-        }else
+
+    public boolean addDemonstracoesComInteresse(Demonstracao demonstracao) {
+        if (!demonstracoesComInteresse.contains(demonstracao)) {
+            demonstracoesComInteresse.addDemonstracao(demonstracao);
+            return true;
+        } else {
             return false;
+        }
     }
 
 }
