@@ -103,6 +103,13 @@
             <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
             <username>lapr2</username>
         </utilizador>
+        <utilizador>
+            <email>gestor@gmail.com</email>
+            <nome>Gestor</nome>
+            <password>0Iguvqt626</password>
+            <passwordDesencriptada>.Gestor404</passwordDesencriptada>
+            <username>gestor</username>
+        </utilizador>
     </registoUtilizadoresNConf>
     <registoUtilizadoresConf>
         <utilizador>
@@ -121,4 +128,15 @@
             <recurso>caneta</recurso>
         </Recurso>
     </listarecursos>
+    <listaGestores>
+        <Gestor>
+            <utilizador>
+                <email>gestor@gmail.com</email>
+                <nome>Gestor</nome>
+                <password>0Iguvqt626</password>
+                <passwordDesencriptada>.Gestor404</passwordDesencriptada>
+                <username>gestor</username>
+            </utilizador>
+        </Gestor>
+    </listaGestores>
 </CentroExposicoes>

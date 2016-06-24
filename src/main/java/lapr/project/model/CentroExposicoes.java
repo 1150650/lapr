@@ -41,7 +41,8 @@ public class CentroExposicoes {
     @XmlElement
     private ListaDemonstracoes registoDemonstracoes;
     
-    private List<Gestor> listaGestores;
+    @XmlElement
+    private ListaGestores listaGestores;
 
     /**
      * Contrutor do centro de exposicoes
@@ -53,7 +54,7 @@ public class CentroExposicoes {
         this.listarecursos = new ListaRecursos();
         this.registoUtilizadoresConf = new RegistoUtilizadores();
         this.registoUtilizadoresNConf = new RegistoUtilizadores();
-        this.listaGestores = new ArrayList<>();
+        this.listaGestores = new ListaGestores();
     }
 
     /**
@@ -131,6 +132,10 @@ public class CentroExposicoes {
 
     public ListaRecursos getRegistoRecursos() {
         return listarecursos;
+    }
+    
+    public ListaGestores getListaGestores(){
+        return listaGestores;
     }
 
     public Stand[] mostrarListaStand() {

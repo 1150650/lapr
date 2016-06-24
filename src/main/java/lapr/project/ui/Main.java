@@ -12,6 +12,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
+import lapr.project.model.Gestor;
 import lapr.project.model.Recurso;
 import lapr.project.model.Representante;
 import lapr.project.model.Stand;
@@ -56,6 +57,7 @@ class Main {
         
         Utilizador u = new Utilizador("Lapr2", "lapr2@gmail.com", "lapr2", ".Lapr2016");
         Utilizador u1 = new Utilizador("Error404", "error404@gmail.com", "error404", ".Error404");
+        Utilizador gestor = new Utilizador("Gestor", "gestor@gmail.com", "gestor", ".Gestor404");
         
         FAE fae = e.getListaFAE().addFAE(u, "lapr2");
         FAE fae1 = e.getListaFAE().addFAE(u1, "error404");
@@ -70,6 +72,8 @@ class Main {
         
         Recurso r1 = new Recurso("lapis");
         Recurso r2 = new Recurso("caneta");
+        
+        Gestor g1 = new Gestor(gestor);
         
         
         AtribuicaoFAE atribuicao = new AtribuicaoFAE(fae, candidatura);
@@ -89,10 +93,12 @@ class Main {
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
         ce.getRegistoUtilizadoresConf().registaUtilizador(u1);
+        ce.getRegistoUtilizadoresNConf().registaUtilizador(gestor);
         ce.getListastands().adicionarStand(s);
         ce.getListaTipoDeConflito().adicionarTipoDeConflito(tc);
         ce.getRegistoRecursos().addRecurso(r1);
         ce.getRegistoRecursos().addRecurso(r2);
+        ce.getListaGestores().adicionarGestor(g1);
         
 
 //

@@ -109,7 +109,11 @@ public class MenuPrincipal extends JFrame {
 
         } else if (tipoUtilizador.equals("Gestor de Exposições")) {
             eliminarPaineis();
-            add(criarPainelBotoesGestor(), BorderLayout.CENTER);
+            if (gestor == true) {
+                add(criarPainelBotoesGestor(), BorderLayout.CENTER);
+            } else {
+                add(criarPainelSemPermissoes(), BorderLayout.CENTER);
+            }
 
         } else if (tipoUtilizador.equals("Representante de expositor")) {
             eliminarPaineis();
@@ -722,8 +726,14 @@ public class MenuPrincipal extends JFrame {
                 }
             }
         }
-            if(ce.)
+        for (int k = 0; k < ce.getListaGestores().tamanho(); k++) {
+            if (ce.getListaGestores().obterGestor(k).getUtilizador().getUsername().equals(utilizadorAtivo.getUsername())) {
+                gestor = true;
+            }
+        }
 
     }
 
 }
+
+
