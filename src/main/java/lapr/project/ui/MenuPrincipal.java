@@ -722,7 +722,7 @@ public class MenuPrincipal extends JFrame {
                 }
             }
         }
-//            if(ce.getListaExposicoes().obterExposicao(i).getListaRepresentantes().)
+            if(ce.)
 
     }
 
