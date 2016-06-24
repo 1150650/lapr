@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import lapr.project.controller.AlterarCandidaturaController;
+import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
@@ -81,7 +82,7 @@ public class AlterarCandidaturaUI extends JFrame {
     }
 
     public void selecionarCandidatura() {
-        CandidaturaExposicao[] aux = crtl.getListaCandidaturas().listaCandExposicaoToArray();
+        Candidatura[] aux = crtl.getListaCandidaturas().listaCandExposicaoToArray();
         CandidaturaExposicao candi;
         candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
                 framePai,
@@ -98,6 +99,7 @@ public class AlterarCandidaturaUI extends JFrame {
     }
 
     private void criarComponentes() {
+        selecionarExposicao();
         selecionarCandidatura();
         JLabel l = new JLabel("Alterar Candidatura");
         JPanel nomeEmpresa = criarPainelNomeEmpresa();

@@ -46,13 +46,14 @@ public class CriarCandidaturaController {
         c = new CandidaturaExposicao();
     }
 
-    public void setDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites) {
+    public void setDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites, String[] Keywords) {
         this.c.setNomeEmpresa(nomeEmpresa);
         this.c.setMorada(morada);
         this.c.setTelemovel(telemovel);
         this.c.setAreaPretendida(areaPretendida);
         this.c.setProdutos(produtos);
         this.c.setQuantidadeConvites(nConvites);
+        this.c.setKEYWORDS(Keywords);
 
     }
 

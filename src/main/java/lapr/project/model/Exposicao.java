@@ -131,7 +131,7 @@ public class Exposicao {
         return String.format("Título: %s; Local: %s", titulo, local);
     }
 
-    public void adicionarCandidatura(Candidatura d) {
+    public void adicionarCandidatura(CandidaturaExposicao d) {
         this.listaCandidaturasExposicoes.adicionarCandidatura(d);
 
     }

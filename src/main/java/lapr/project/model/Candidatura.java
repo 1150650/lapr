@@ -1,6 +1,5 @@
 package lapr.project.model;
 
-
 public class Candidatura {
 
     private CandidaturaState state;
@@ -38,11 +37,6 @@ public class Candidatura {
     private int[] avalicaoFAE;
 
     private Stand stand;
-
-    /**
-     * O representante que cria a candidatura;
-     */
-    private Representante representante;
 
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
@@ -225,41 +219,32 @@ public class Candidatura {
     public boolean setCandidaturaConflitosDetetados() {
         return state.setConflitosDetetados();
     }
-    
+
     public boolean setCandidaturaAceite() {
         return state.setAceite();
     }
-    
+
     public boolean setCandidaturaAlterada() {
         return state.setAlterada();
     }
-    
+
     public boolean setCandidaturaAvaliada() {
         return state.setAvaliada();
     }
-    
+
     public boolean setCandidaturaEmAvaliacao() {
         return state.setCandidaturaEmAvaliacao();
     }
-    
+
     public boolean setCandidaturaFechada() {
         return state.setCandidaturaFechada();
     }
-    
+
     public boolean setCandidaturaRetirada() {
         return state.setCandidaturaRetirada();
     }
-    
+
     public boolean setCandidaturaStandsAtribuidos() {
         return state.isEstadoStandAtribuido();
     }
-
-    public Representante getRepresentante() {
-        return representante;
-    }
-
-    public void setRepresentante(Representante representante) {
-        this.representante = representante;
-        }
-
 }

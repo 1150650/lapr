@@ -28,9 +28,9 @@ public class Representante {
         setUtilizador(u);
         listaCandidaturasSubmetidas = new ListaCandidaturas();
     }
-    
-    public Representante(){
-        
+
+    public Representante() {
+
     }
 
     /**
@@ -57,9 +57,9 @@ public class Representante {
     public ListaCandidaturas getListaCandidaturasPodemSerAlteradas() {
         ListaCandidaturas lstCandPodemSerAlteradas = new ListaCandidaturas();
         for (int i = 0; i < listaCandidaturasSubmetidas.tamanho(); i++) {
-            if (listaCandidaturasSubmetidas.obterCandidatura(i).getState().isEstadoEmSubmissao()) {
+            //if (listaCandidaturasSubmetidas.obterCandidatura(i).getState().isEstadoEmSubmissao()) {
                 lstCandPodemSerAlteradas.adicionarCandidatura(listaCandidaturasSubmetidas.obterCandidatura(i));
-            }
+            //}
         }
         return lstCandPodemSerAlteradas;
     }
@@ -76,7 +76,7 @@ public class Representante {
      *
      * @param c
      */
-    public void adicionarCandidatura(Candidatura c) {
+    public void adicionarCandidatura(CandidaturaExposicao c) {
         listaCandidaturasSubmetidas.adicionarCandidatura(c);
     }
 

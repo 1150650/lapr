@@ -208,7 +208,13 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    crtlCriarCandidatura.setDados(nomeEmpresaTF.getText(), moradaTF.getText(), Integer.parseInt(telemovelTF.getText()), Float.parseFloat(areaExposicaoTF.getText()), produtosTF.getText(), Integer.parseInt(nConvitesTF.getText()));
+                    String[] keywords = new String[5];
+                    keywords[0] = KeyWord1.getText();
+                    keywords[1] = KeyWord2.getText();
+                    keywords[2] = KeyWord3.getText();
+                    keywords[3] = KeyWord4.getText();
+                    keywords[4] = KeyWord5.getText();
+                    crtlCriarCandidatura.setDados(nomeEmpresaTF.getText(), moradaTF.getText(), Integer.parseInt(telemovelTF.getText()), Float.parseFloat(areaExposicaoTF.getText()), produtosTF.getText(), Integer.parseInt(nConvitesTF.getText()), keywords);
                     crtlCriarCandidatura.adicionarCandidatura();
                     dispose();
 

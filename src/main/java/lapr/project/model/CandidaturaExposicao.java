@@ -28,7 +28,7 @@ public class CandidaturaExposicao extends Candidatura {
     }
 
     public CandidaturaExposicao() {
-
+        super();
     }
 
     /**

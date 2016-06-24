@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author SimãoPedro
  */
- @XmlRootElement
+@XmlRootElement
 public class ExposiçãoCriadaState extends ExposiçãoState {
 
     @XmlElement
@@ -24,6 +24,16 @@ public class ExposiçãoCriadaState extends ExposiçãoState {
 
     @Override
     public boolean setExposicaoFAESemDemonstracoes() {
+        if (valida()) {
+            m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean setDemonstracoesSemFAE() {
         if (valida()) {
             m_e.setEstado(new ExposiçãoFAESemDemonstraçãoState(m_e));
             return true;

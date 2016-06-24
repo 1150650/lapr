@@ -11,7 +11,7 @@ public class ListaCandidaturas {
     /**
      * Lista de Candidaturas
      */
-    @XmlElement (name = "candidatura")
+    @XmlElement(name = "candidatura")
     private List<Candidatura> listaCandidaturas;
 
     /**
@@ -84,7 +84,8 @@ public class ListaCandidaturas {
     }
 
     public Candidatura novaCandidatura() {
-        return new Candidatura() {};
+        return new Candidatura() {
+        };
     }
 
     public List getCandidaturasAceites() {
@@ -110,8 +111,8 @@ public class ListaCandidaturas {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public CandidaturaExposicao[] listaCandExposicaoToArray() {
-        return (CandidaturaExposicao[]) listaCandidaturas.toArray();
+    public Candidatura[] listaCandExposicaoToArray() {
+        return (Candidatura[]) listaCandidaturas.toArray();
     }
 
     public List getListaCandidaturasExpo() {
@@ -155,7 +156,7 @@ public class ListaCandidaturas {
         }
         return candidaturasRetiradas;
     }
-    
+
     public CandidaturaDemonstracao newCandidaturaDemo(Candidatura candidatura) {
         String nomeEmpresa = candidatura.getNomeEmpresa();
         String morada = candidatura.getMorada();
