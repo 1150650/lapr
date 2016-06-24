@@ -171,7 +171,7 @@ public class Candidatura {
 
     @Override
     public String toString() {
-        return String.format("Empresa:%s", nomeEmpresa);
+        return String.format(" Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites);
     }
 
     /**

@@ -39,7 +39,7 @@ public class RemoverCandidaturaController {
         
         for (i=0; i<lst.tamanho();i++){
             
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==false){
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }
@@ -60,7 +60,7 @@ public class RemoverCandidaturaController {
         
         for (i=0; i<lst.tamanho();i++){
             
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==true){
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==false){
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }

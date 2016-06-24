@@ -50,7 +50,6 @@ public class DefinirTpoDeConflitoControllerTest {
         System.out.println("criarTipoDeConflito");
         DefinirTpoDeConflitoController instance = new DefinirTpoDeConflitoController(ce);
         instance.criarTipoDeConflito();
-        instance.criarTipoDeConflito();
         
     }
 

@@ -66,6 +66,7 @@ public class CriarDemonstracaoControllerTest {
         System.out.println("setDados");
         String Descricao = "eqwrqewr";
         CriarDemonstracaoController instance = new CriarDemonstracaoController(ce);
+        instance.novaDemonstracao();
         instance.setDados(Descricao);
        
     }
@@ -108,6 +109,9 @@ public class CriarDemonstracaoControllerTest {
         CentroExposicoes ce= new CentroExposicoes();
         System.out.println("validaRegistaDemonstracao");
         CriarDemonstracaoController instance = new CriarDemonstracaoController(ce);
+        Exposicao exposicao = new Exposicao();
+        ce.getListaExposicoes().adicionarExposicao(exposicao);
+        instance.selecionarExposicao(exposicao);
         instance.novaDemonstracao();
         instance.validaRegistaDemonstracao();
         

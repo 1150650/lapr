@@ -19,7 +19,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 import lapr.project.controller.CriarDemonstracaoController;
 import lapr.project.model.CentroExposicoes;
@@ -32,7 +32,7 @@ import lapr.project.model.Recurso;
  */
 public class CriarDemonstracaoUI extends JFrame {
 
-    private JTextField txtDescricao;
+    private JTextArea txtDescricaoDemonstracao;
     private JButton btnAdicionarRecurso;
     private ModeloListaRecursos lstRecursos;
     private CriarDemonstracaoController contr;
@@ -100,13 +100,14 @@ public class CriarDemonstracaoUI extends JFrame {
     private JPanel criarPainelDescricao() {
         JLabel lbl = new JLabel("Descricao:", JLabel.RIGHT);
 
-        final int CAMPO_LARGURA = 10;
-        txtDescricao = new JTextField(CAMPO_LARGURA);
+        
+        txtDescricaoDemonstracao = new JTextArea(5,50);
+        JScrollPane scrollPane2 = new JScrollPane(txtDescricaoDemonstracao);
 
         JPanel p = new JPanel();
 
         p.add(lbl);
-        p.add(txtDescricao);
+        p.add(scrollPane2);
 
         return p;
     }
@@ -195,7 +196,7 @@ public class CriarDemonstracaoUI extends JFrame {
                         aux,
                         "");
                 contr.selecionarExposicao(expo);
-                String Descricao = txtDescricao.getText();
+                String Descricao = txtDescricaoDemonstracao.getText();
               contr.setDados(Descricao);
               contr.setEstadoDemonstracaoCriada();
               contr.validaRegistaDemonstracao();

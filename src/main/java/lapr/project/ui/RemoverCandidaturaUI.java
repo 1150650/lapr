@@ -38,14 +38,15 @@ public class RemoverCandidaturaUI extends JFrame {
     private final CentroExposicoes centroexpo;
     private Icon icon;
     private Exposicao expo;
+    private JPanel painellista;
+    private int condicaoParagem=0;
 
     public RemoverCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
         super( "Remover Candidatura ");
         this.centroexpo = ce;
         this.contr = new RemoverCandidaturaController(ce);
-        this.expo=new Exposicao();
-        this.centroexpo.getListaExposicoes().adicionarExposicao(expo);
+        this.expo=ce.getListaExposicoes().obterExposicao(0);
         
         criarComponentes();
 
@@ -57,13 +58,20 @@ public class RemoverCandidaturaUI extends JFrame {
     }
 
     private void criarComponentes() {
-        JPanel painel1 = criarPainelN();
-        JPanel painel3= criarPainelC();
-        JPanel painel2 = criarPainelS();
+        if (condicaoParagem == 0){
+            JPanel painel1 = criarPainelN();
+            JPanel painel2 = criarPainelS();
+            
+            add(painel1, BorderLayout.NORTH);
+            add(painel2, BorderLayout.SOUTH);
+            condicaoParagem = 1;
+        }
+        painellista= criarPainelC();
         
-        add(painel1, BorderLayout.NORTH);
-        add(painel3,BorderLayout.CENTER);
-        add(painel2, BorderLayout.SOUTH);
+        
+        add(painellista,BorderLayout.CENTER);
+        
+        revalidate();
 
     }
 
@@ -90,7 +98,7 @@ private JPanel criarPainelC() {
         
          final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        JPanel p = new JPanel(new GridLayout( NUMERO_LINHAS, 
+        painellista = new JPanel(new GridLayout( NUMERO_LINHAS, 
                                               NUMERO_COLUNAS, 
                                               INTERVALO_HORIZONTAL,
                                               INTERVALO_VERTICAL));
@@ -101,7 +109,7 @@ private JPanel criarPainelC() {
          btnRemoverCandidaturaExposicao.setToolTipText("Remove uma candidatura a Exposicao");
          
         
-        p.add(criarPainelListas( "Lista de Candidaturas (Exposicao):",
+        painellista.add(criarPainelListas( "Lista de Candidaturas (Exposicao):",
                                 lstCompleta,
                                 lstCandidaturasExposicao,
                                 btnRemoverCandidaturaExposicao));
@@ -109,15 +117,15 @@ private JPanel criarPainelC() {
         lstCandidaturasDemonstracao = new ModeloListaCandidaturas (contr.getListaCandidaturasDemonstracoes(expo));
          JList lstCompleta1 = new JList(lstCandidaturasDemonstracao );
         
-        btnRemoverCandidaturaDemonstracao = criarBotaoRemoverCandidaturaDemonstracao(lstCompleta);
+        btnRemoverCandidaturaDemonstracao = criarBotaoRemoverCandidaturaDemonstracao(lstCompleta1);
        btnRemoverCandidaturaDemonstracao.setToolTipText("Remove uma candidatura a Demonstracao");
         
-        p.add(criarPainelListas( "Lista de Candidaturas (Demonstracao):",
+        painellista.add(criarPainelListas( "Lista de Candidaturas (Demonstracao):",
                                 lstCompleta1,
                                 lstCandidaturasDemonstracao,
                                 btnRemoverCandidaturaDemonstracao));
 
-        return p;
+        return painellista;
     }
     
      private JPanel criarPainelListas(
@@ -185,6 +193,7 @@ private JPanel criarPainelC() {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try{
                 Exposicao[] aux = contr.getListaExposicoes();
 
                 expo = (Exposicao) JOptionPane.showInputDialog(
@@ -196,9 +205,17 @@ private JPanel criarPainelC() {
                         icon,
                         aux,
                         "");
+                
+                
 
-               
+           
+                }catch(Exception e1){
+                    
+                }
+                
+                criarComponentes();
             }
+            
         });
 
         return btn;
@@ -226,7 +243,7 @@ private JPanel criarPainelC() {
                     Candidatura m1 =(Candidatura ) lstCompleta.getSelectedValue();
                 contr.removerCandidaturaDemonstracao(m1);
                 m.removeElement(m1);
-                    dispose();
+                    
                 
 
             }
@@ -244,7 +261,7 @@ private JPanel criarPainelC() {
                     Candidatura m1 =(Candidatura ) lstCompleta.getSelectedValue();
                 contr.removerCandidaturaDemonstracao(m1);
                 m.removeElement(m1);
-                    dispose();
+                    
                 
 
             }
