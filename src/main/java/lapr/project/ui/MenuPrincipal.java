@@ -41,13 +41,10 @@ import lapr.project.utils.MyJFileChooser;
 public class MenuPrincipal extends JFrame {
 
     private CentroExposicoes ce;
-    private JanelaPrincipal framePrincipal;
     private String tipoUtilizador = "Utilizador";
     private int termoParagem = 0;
-    private DialogoLogin login;
     private JComboBox<TipoUtilizador> cbTipo;
     private Utilizador utilizadorAtivo;
-    private JTabbedPane tabPane;
     private JButton btnDecidirFAE, btnAtribuirCandidatura, btnCriarStand,
             btnAvaliacaoFinalCand, btnCriarDemonstracao, btnAtribuirStands,
             btnAtribuirCandDemonstracao, btnDecidirCandidatura,
@@ -62,12 +59,15 @@ public class MenuPrincipal extends JFrame {
     private JPanel painelDadosUtilizador = new JPanel(),
             painelBotoesOrganizador = new JPanel(),
             painelBotoesFAE = new JPanel(), painelBotoesGestor = new JPanel(),
-            painelBotoesRepresentante = new JPanel();
+            painelBotoesRepresentante = new JPanel(), 
+            painelSemPermissoes = new JPanel();
+    private boolean FAE, organizador, gestor;
 
     public MenuPrincipal(CentroExposicoes centroexposicao, Utilizador u) {
         super("Menu Principal");
         this.ce = centroexposicao;
         this.utilizadorAtivo = u;
+        verificarPapeisUtilizador();
 
         criarComponentes();
 
@@ -93,11 +93,19 @@ public class MenuPrincipal extends JFrame {
 
         } else if (tipoUtilizador.equals("Organizador")) {
             eliminarPaineis();
-            add(criarPainelBotoesOrganizador(), BorderLayout.CENTER);
+            if (organizador == true) {
+                add(criarPainelBotoesOrganizador(), BorderLayout.CENTER);
+            } else {
+                add(criarPainelSemPermissoes(), BorderLayout.CENTER);
+            }
 
         } else if (tipoUtilizador.equals("FAE")) {
             eliminarPaineis();
+            if(FAE == true){
             add(criarPainelBotoesFAE(), BorderLayout.CENTER);
+            } else {
+                add(criarPainelSemPermissoes(), BorderLayout.CENTER);
+            }
 
         } else if (tipoUtilizador.equals("Gestor de Exposições")) {
             eliminarPaineis();
@@ -117,6 +125,7 @@ public class MenuPrincipal extends JFrame {
         remove(painelBotoesOrganizador);
         remove(painelBotoesRepresentante);
         remove(painelDadosUtilizador);
+        remove(painelSemPermissoes);
     }
 
     private JMenuBar criarBarraMenus() {
@@ -283,6 +292,20 @@ public class MenuPrincipal extends JFrame {
             }
         });
         return cbTipo;
+    }
+    
+    private JPanel criarPainelSemPermissoes(){
+        JLabel lblPermissoes = new JLabel("Não tem permissões para aceder as estas opções", JLabel.LEFT);
+        lblPermissoes.setFont(new Font("Arial", Font.PLAIN, 20));
+        
+        painelSemPermissoes = new JPanel();
+        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
+        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
+        painelSemPermissoes.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
+                MARGEM_INFERIOR, MARGEM_DIREITA));
+        painelSemPermissoes.add(lblPermissoes);
+        
+        return painelSemPermissoes;
     }
 
     private JPanel criarPainelDadosUtilizador() {
@@ -684,6 +707,18 @@ public class MenuPrincipal extends JFrame {
             }
         });
         return btnConfirmarStand;
+    }
+
+    private void verificarPapeisUtilizador() {
+        for (int i = 0; i < ce.getListaExposicoes().tamanho(); i++) {
+            if (ce.getListaExposicoes().obterExposicao(i).getListaFAE().getListaFAEs().contains(utilizadorAtivo)) {
+                FAE = true;
+            }
+            if (ce.getListaExposicoes().obterExposicao(i).getListaOrganizadores().getListaOrganizadores().contains(utilizadorAtivo)) {
+                organizador = true;
+            }
+//            if(ce.getListaExposicoes().obterExposicao(i).getListaRepresentantes().)
+        }
     }
 
 }

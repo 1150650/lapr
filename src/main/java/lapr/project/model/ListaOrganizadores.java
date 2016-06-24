@@ -7,13 +7,17 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Filipe <FilipeCorreia.1150524>
  */
+@XmlRootElement
 public class ListaOrganizadores {
 
+    @XmlElement(name = "Organizador")
     private List<Organizador> listaOrganizadores;
 
     public ListaOrganizadores() {
@@ -49,6 +53,10 @@ public class ListaOrganizadores {
         } else {
             return false;
         }
+    }
+    
+    public List getListaOrganizadores() {
+        return listaOrganizadores;
     }
 
 }
