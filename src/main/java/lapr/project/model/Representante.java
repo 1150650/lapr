@@ -12,7 +12,7 @@ package lapr.project.model;
 public class Representante {
 
     /**
-     * Utilizador que será FAE
+     * Utilizador que será Representante
      */
     private Utilizador utilizador;
 

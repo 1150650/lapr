@@ -1,5 +1,7 @@
 package lapr.project.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -38,6 +40,8 @@ public class CentroExposicoes {
 
     @XmlElement
     private ListaDemonstracoes registoDemonstracoes;
+    
+    private List<Gestor> listaGestores;
 
     /**
      * Contrutor do centro de exposicoes
@@ -49,6 +53,7 @@ public class CentroExposicoes {
         this.listarecursos = new ListaRecursos();
         this.registoUtilizadoresConf = new RegistoUtilizadores();
         this.registoUtilizadoresNConf = new RegistoUtilizadores();
+        this.listaGestores = new ArrayList<>();
     }
 
     /**
