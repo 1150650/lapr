@@ -100,6 +100,7 @@ public class AlterarCandidaturaController {
     }
 
     public void alterarDadosCandidatura() {
+        getCandidaturaAlterada().getState().setAlterada();
         r.getListaCandidaturasSubmetidas().removerCandidatura(candidatura);
         this.candidatura = novaCandidatura;
         r.getListaCandidaturasSubmetidas().adicionarCandidatura(candidatura);

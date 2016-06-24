@@ -29,6 +29,11 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
 
     private MenuPrincipal framePai;
 
+    final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 1;
+    final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
+    final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 0;
+    final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
+
     private CriarCandidaturaOpcaoUI Janela;
 
     private CentroExposicoes ce;
@@ -45,11 +50,6 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         this.ce = ce;
         crtlCriarCandidatura = new CriarCandidaturaExposicaoController(ce, u);
 
-        GridLayout gl = new GridLayout(7, 1);
-        gl.setHgap(20);
-        gl.setVgap(20);
-        setLayout(gl);
-
         selecionarExposicao();
         criarComponentes();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,13 +57,8 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
         setVisible(true);
+        pack();
         setResizable(false);
-    }
-
-    private void criarComponentes() {
-
-        add(criarBotoes());
-
     }
 
     public void selecionarExposicao() {
@@ -82,16 +77,13 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         dispose();
     }
 
-    private JPanel criarBotoes() {
-        JPanel j = new JPanel();
-        add(criarSubmeterFicheiroXml());
-        add(criarCandidaturaPrograma());
-        add(criarBotaoSair());
-        return j;
+    private void criarComponentes() {
+        add(criarSubmeterFicheiroXml(), BorderLayout.NORTH);
+        add(criarCandidaturaPrograma(), BorderLayout.CENTER);
+        add(criarBotaoSair(), BorderLayout.SOUTH);
     }
 
-    private JPanel criarSubmeterFicheiroXml() {
-        JPanel pCentro = new JPanel(new BorderLayout());
+    private JButton criarSubmeterFicheiroXml() {
         JButton j = new JButton("Submeter ficheiro em XML");
         j.addActionListener(new ActionListener() {
             @Override
@@ -99,8 +91,7 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
                 new SubmeterCandidaturaXML(Janela, crtlCriarCandidatura, ce);
             }
         });
-        pCentro.add(j, BorderLayout.CENTER);
-        return pCentro;
+        return j;
     }
 
     private JButton criarCandidaturaPrograma() {
