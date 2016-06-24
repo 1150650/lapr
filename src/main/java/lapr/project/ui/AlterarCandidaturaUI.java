@@ -82,7 +82,6 @@ public class AlterarCandidaturaUI extends JFrame {
     }
 
     public void selecionarCandidatura() {
-        Candidatura[] aux = crtl.getListaCandidaturas().listaCandExposicaoToArray();
         CandidaturaExposicao candi;
         candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
                 framePai,
@@ -91,7 +90,7 @@ public class AlterarCandidaturaUI extends JFrame {
                 "Seleção De Candidatura a Remover",
                 JOptionPane.DEFAULT_OPTION,
                 icon,
-                aux,
+                crtl.getListaCandidaturas().listaCandExposicaoToArray(),
                 "");
 
         dispose();

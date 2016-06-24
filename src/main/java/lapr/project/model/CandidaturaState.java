@@ -54,7 +54,7 @@ public class CandidaturaState {
     public boolean setRejeitada() {
         return false;
     }
-    
+
     public boolean setInteresseConfirmado() {
         return false;
     }
@@ -64,6 +64,10 @@ public class CandidaturaState {
     }
 
     public boolean setCandidaturaEmSubmissao() {
+        return false;
+    }
+
+    public boolean setCandidaturaStandAtribuido() {
         return false;
     }
 
@@ -84,6 +88,10 @@ public class CandidaturaState {
     }
 
     public boolean isEstadoConflitosDetetados() {
+        return false;
+    }
+
+    public boolean isEstadoConflitosAlterados() {
         return false;
     }
 

@@ -10,25 +10,30 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class CandidaturaAlteradaState extends CandidaturaState {
-    
+
     private Candidatura candidatura;
 
-    CandidaturaAlteradaState(Candidatura candidatura) {
+    public CandidaturaAlteradaState(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
 
     @Override
-    public boolean setAtribuida() {
-        if(valida()){
-            candidatura.setEstado(new CandidaturaAtribuidaState(candidatura));
+    public boolean valida() {
+        if (candidatura.getState().isEstadoEmSubmissao()) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     @Override
-    public boolean valida() {
-        return candidatura.getState().isEstadoAlterada();
+    public boolean setCandidaturaEmSubmissao() {
+        boolean verify = false;
+        if (valida()) {
+            candidatura.setEstado(new CandidaturaFechadaState(candidatura));
+            verify = true;
+        }
+        return verify;
     }
 
     @Override

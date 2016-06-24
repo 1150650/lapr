@@ -108,11 +108,18 @@ public class ListaCandidaturas {
     }
 
     public List<Candidatura> getCandidaturasSemAtribuicao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Candidatura> candidaturasRetiradas = new ArrayList<>();
+        List<Candidatura> list = getListaCandidaturasExpo();
+        for (Candidatura c : list) {
+            if (c.getState().isEstadoConflitosAlterados()) {
+                candidaturasRetiradas.add(c);
+            }
+        }
+        return candidaturasRetiradas;
     }
 
-    public Candidatura[] listaCandExposicaoToArray() {
-        return (Candidatura[]) listaCandidaturas.toArray();
+    public CandidaturaExposicao[] listaCandExposicaoToArray() {
+        return (CandidaturaExposicao[]) listaCandidaturas.toArray();
     }
 
     public List getListaCandidaturasExpo() {

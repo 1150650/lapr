@@ -10,16 +10,27 @@ package lapr.project.model;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class CandidaturaComInteresseConfirmado extends CandidaturaState {
-    
+
     private Candidatura candidatura;
-    
-    public CandidaturaComInteresseConfirmado(Candidatura candidatura){
+
+    public CandidaturaComInteresseConfirmado(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
-    
+
     @Override
-    public boolean isEstadoInteresseConfirmado(){
+    public boolean setCandidaturaStandAtribuido() {
+        if (valida()) {
+            candidatura.setEstado(new CandidaturaStandAtribuidoState(candidatura));
+            return true;
+
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean isEstadoInteresseConfirmado() {
         return true;
     }
-    
+
 }

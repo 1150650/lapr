@@ -10,12 +10,16 @@ package lapr.project.model;
  * @author SimãoPedro
  */
 public class CandidaturaConflitosDetetadosState extends CandidaturaState {
-    
-   private Candidatura candidatura; 
-    
+
+    private Candidatura candidatura;
+
+    CandidaturaConflitosDetetadosState(Candidatura candidatura) {
+        this.candidatura = candidatura;
+    }
+
     @Override
     public boolean setAlterada() {
-        if(valida()){
+        if (valida()) {
             candidatura.setEstado(new CandidaturaAlteradaState(candidatura));
             return true;
         }
@@ -29,6 +33,7 @@ public class CandidaturaConflitosDetetadosState extends CandidaturaState {
 
     @Override
     public boolean isEstadoConflitosDetetados() {
+
         return true;
     }
 
