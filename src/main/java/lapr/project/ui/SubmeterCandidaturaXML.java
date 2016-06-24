@@ -6,7 +6,7 @@
 package lapr.project.ui;
 
 import javax.swing.JFrame;
-import lapr.project.controller.CriarCandidaturaController;
+import lapr.project.controller.CriarCandidaturaExposicaoController;
 import lapr.project.model.CentroExposicoes;
 
 /**
@@ -17,11 +17,11 @@ public class SubmeterCandidaturaXML extends JFrame {
 
     private CriarCandidaturaOpcaoUI framePai;
 
-    private CriarCandidaturaController crtlCandidaturaController;
+    private CriarCandidaturaExposicaoController crtlCandidaturaController;
 
     private CentroExposicoes ce;
 
-    public SubmeterCandidaturaXML(CriarCandidaturaOpcaoUI framepai, CriarCandidaturaController crt, CentroExposicoes ce) {
+    public SubmeterCandidaturaXML(CriarCandidaturaOpcaoUI framepai, CriarCandidaturaExposicaoController crt, CentroExposicoes ce) {
         this.framePai = framepai;
         this.ce = ce;
         this.crtlCandidaturaController = crt;

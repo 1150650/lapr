@@ -9,7 +9,7 @@ import lapr.project.model.RegistoExposicoes;
 import lapr.project.model.Representante;
 import lapr.project.model.Utilizador;
 
-public class CriarCandidaturaController {
+public class CriarCandidaturaExposicaoController {
 
     private CentroExposicoes centroExposicoes;
 
@@ -25,7 +25,7 @@ public class CriarCandidaturaController {
 
     private Utilizador u;
 
-    public CriarCandidaturaController(CentroExposicoes ce, Utilizador u) {
+    public CriarCandidaturaExposicaoController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
         this.u = u;
 

@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import lapr.project.controller.CriarCandidaturaController;
+import lapr.project.controller.CriarCandidaturaExposicaoController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.utils.HintTextField;
 
@@ -25,7 +25,7 @@ import lapr.project.utils.HintTextField;
  */
 public class CriarCandidaturaExposicaoUI extends JFrame {
 
-    private CriarCandidaturaController crtlCriarCandidatura;
+    private CriarCandidaturaExposicaoController crtlCriarCandidatura;
 
     final int MARGEM_SUPERIOR = 5, MARGEM_INFERIOR = 0;
     final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
@@ -58,7 +58,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
 
     private JTextField KeyWord5;
 
-    public CriarCandidaturaExposicaoUI(CriarCandidaturaOpcaoUI framePai, CriarCandidaturaController crtlCriarCandidatura) {
+    public CriarCandidaturaExposicaoUI(CriarCandidaturaOpcaoUI framePai, CriarCandidaturaExposicaoController crtlCriarCandidatura) {
         this.crtlCriarCandidatura = crtlCriarCandidatura;
         crtlCriarCandidatura.novaCandidatura();
         this.ce = ce;
@@ -215,6 +215,7 @@ public class CriarCandidaturaExposicaoUI extends JFrame {
                     keywords[3] = KeyWord4.getText();
                     keywords[4] = KeyWord5.getText();
                     crtlCriarCandidatura.setDados(nomeEmpresaTF.getText(), moradaTF.getText(), Integer.parseInt(telemovelTF.getText()), Float.parseFloat(areaExposicaoTF.getText()), produtosTF.getText(), Integer.parseInt(nConvitesTF.getText()), keywords);
+                    new SelecionarDemonstracoesInteresse(CriarCandidaturaExposicaoUI.this, crtlCriarCandidatura);
                     crtlCriarCandidatura.adicionarCandidatura();
                     dispose();
 

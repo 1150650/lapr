@@ -15,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import lapr.project.controller.CriarCandidaturaController;
+import lapr.project.controller.CriarCandidaturaExposicaoController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.Representante;
@@ -37,13 +37,13 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
 
     private Representante r;
 
-    private CriarCandidaturaController crtlCriarCandidatura;
+    private CriarCandidaturaExposicaoController crtlCriarCandidatura;
 
     public CriarCandidaturaOpcaoUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
         Janela = this;
         this.framePai = framePai;
         this.ce = ce;
-        crtlCriarCandidatura = new CriarCandidaturaController(ce, u);
+        crtlCriarCandidatura = new CriarCandidaturaExposicaoController(ce, u);
 
         GridLayout gl = new GridLayout(7, 1);
         gl.setHgap(20);

@@ -6,6 +6,7 @@
 package lapr.project.ui;
 
 import javax.swing.JFrame;
+import lapr.project.controller.CriarCandidaturaExposicaoController;
 
 /**
  *
