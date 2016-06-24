@@ -21,19 +21,16 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     /**
      * o codigo da demonstracao
      */
-    
     private int Codigo;
 
     /**
      * a descricao da demonstracao
      */
-   
     private String descricao;
 
     /**
      * a lista de recursos da demonstracao
      */
-    
     private ListaRecursos listalRecursos;
 
     /**
@@ -106,7 +103,11 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     public void addRecurso(Recurso r) {
         getListalRecursos().addRecurso(r);
     }
-    
+
+    @Override
+    public String toString() {
+        return "Demonstração:" + descricao + "   " + Codigo;
+    }
 
     /**
      * Metodo que altera o codigo da demonstracao
