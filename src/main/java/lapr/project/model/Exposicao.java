@@ -43,6 +43,7 @@ public class Exposicao {
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
         listaRepresentantes = new RegistoRepresentantes();
+        listaOrganizadores = new ListaOrganizadores();
         lstAtribuicoes = new ListaAtribuicoes();
         m_state = new ExposiçãoCriadaState(this);
     }

@@ -6,7 +6,7 @@
                 <FAE>
                     <experienciaFAE>0</experienciaFAE>
                     <listaCandidaturasParaAvaliar/>
-                    <identificador>barros16</identificador>
+                    <identificador>lapr2</identificador>
                     <utilizador>
                         <email>lapr2@gmail.com</email>
                         <nome>Lapr2</nome>
@@ -15,20 +15,9 @@
                         <username>lapr2</username>
                     </utilizador>
                 </FAE>
-                <FAE>
-                    <experienciaFAE>0</experienciaFAE>
-                    <listaCandidaturasParaAvaliar/>
-                    <identificador>barros116</identificador>
-                    <utilizador>
-                        <email>error404@gmail.com</email>
-                        <nome>Error404</nome>
-                        <password>0Gttqt626</password>
-                        <passwordDesencriptada>.Error404</passwordDesencriptada>
-                        <username>error404</username>
-                    </utilizador>
-                </FAE>
             </listaFAE>
             <m_state/>
+            <listaOrganizadores/>
             <listaRepresentantes>
                 <representante>
                     <listaCandidaturasSubmetidas/>
@@ -55,7 +44,7 @@
                     <FAE>
                         <experienciaFAE>0</experienciaFAE>
                         <listaCandidaturasParaAvaliar/>
-                        <identificador>barros16</identificador>
+                        <identificador>lapr2</identificador>
                         <utilizador>
                             <email>lapr2@gmail.com</email>
                             <nome>Lapr2</nome>

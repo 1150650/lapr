@@ -378,11 +378,11 @@ public class MenuPrincipal extends JFrame {
         btnAvaliarCandDemonstracao = criarBotaoAvaliarCandDemonstracao();
 
         painelBotoesFAE = new JPanel();
-        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
+        final int MARGEM_SUPERIOR = 100, MARGEM_INFERIOR = 100;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         painelBotoesFAE.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        painelBotoesFAE.setLayout(new GridLayout(3, 1, 20, 20));
+        painelBotoesFAE.setLayout(new GridLayout(3, 1, 40, 40));
         painelBotoesFAE.add(btnDecidirCandidatura);
         painelBotoesFAE.add(btnAtualizarConflitosInteresse);
         painelBotoesFAE.add(btnAvaliarCandDemonstracao);
@@ -396,11 +396,11 @@ public class MenuPrincipal extends JFrame {
         btnDefinirTipoConflito = criarBotaoDefinirTipoConflito();
 
         painelBotoesGestor = new JPanel();
-        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
+        final int MARGEM_SUPERIOR = 100, MARGEM_INFERIOR = 100;
+        final int MARGEM_ESQUERDA = 30, MARGEM_DIREITA = 30;
         painelBotoesGestor.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        painelBotoesGestor.setLayout(new GridLayout(2, 2, 20, 20));
+        painelBotoesGestor.setLayout(new GridLayout(2, 2, 40, 40));
 
         painelBotoesGestor.add(btnRegistarExposicao);
         painelBotoesGestor.add(btnConfirmarRegistoUtilizador);
@@ -418,11 +418,11 @@ public class MenuPrincipal extends JFrame {
         btnConfirmarStand = criarBotaoConfirmarStand();
 
         painelBotoesRepresentante = new JPanel();
-        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
-        final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
+        final int MARGEM_SUPERIOR = 30, MARGEM_INFERIOR = 30;
+        final int MARGEM_ESQUERDA = 30, MARGEM_DIREITA = 30;
         painelBotoesRepresentante.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        painelBotoesRepresentante.setLayout(new GridLayout(3, 2, 20, 20));
+        painelBotoesRepresentante.setLayout(new GridLayout(3, 2, 40, 40));
 
         painelBotoesRepresentante.add(btnCandidatarExposicao);
         painelBotoesRepresentante.add(btnAlterarCandidatura);
@@ -711,8 +711,10 @@ public class MenuPrincipal extends JFrame {
 
     private void verificarPapeisUtilizador() {
         for (int i = 0; i < ce.getListaExposicoes().tamanho(); i++) {
-            if (ce.getListaExposicoes().obterExposicao(i).getListaFAE().getListaFAEs().contains(utilizadorAtivo)) {
+            for(int j = 0; j < ce.getListaExposicoes().obterExposicao(i).getListaFAE().tamanho();j++) {
+            if (ce.getListaExposicoes().obterExposicao(i).getListaFAE().obterFAE(j).getUtilizador().equals(utilizadorAtivo)) {
                 FAE = true;
+            }
             }
             if (ce.getListaExposicoes().obterExposicao(i).getListaOrganizadores().getListaOrganizadores().contains(utilizadorAtivo)) {
                 organizador = true;
