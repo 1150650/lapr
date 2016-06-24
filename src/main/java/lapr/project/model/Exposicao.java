@@ -31,6 +31,10 @@ public class Exposicao {
         listaFAE = new ListaFAE();
         listaDemonstracao = new ListaDemonstracoes();
         listaCandidaturasDemonstracoes = new ListaCandidaturas();
+        listaRepresentantes = new RegistoRepresentantes();
+        listaOrganizadores = new ListaOrganizadores();
+        lstAtribuicoes = new ListaAtribuicoes();
+        m_state = new ExposiçãoCriadaState(this);
     }
 
     public Exposicao(String titulo, String textoDescritivo, Date dataInicio, Date dataFim, String local) {
