@@ -205,14 +205,14 @@ private JPanel criarPainelC() {
     }
 
     private JButton criarBotaoCancelar() {
-        JButton btn = new JButton("Cancelar");
-        btn.addActionListener(new ActionListener() {
+        JButton btn1 = new JButton("Cancelar");
+        btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btn;
+        return btn1;
     }
 
 

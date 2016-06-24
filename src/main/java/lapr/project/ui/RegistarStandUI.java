@@ -13,7 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 import lapr.project.controller.RegistarStandController;
 import lapr.project.model.CentroExposicoes;
 
@@ -23,7 +25,7 @@ import lapr.project.model.CentroExposicoes;
  */
 public class RegistarStandUI extends JFrame {
 
-    private JTextField txtDescricao;
+    private JTextArea txtDescricaoStand;
     private RegistarStandController contr;
     private CentroExposicoes centroexpo;
     private MenuPrincipal framePai;
@@ -53,11 +55,12 @@ public class RegistarStandUI extends JFrame {
 
     private JPanel criarPainelCentro() {
         JLabel lbl = new JLabel("Descricao Stand :", JLabel.RIGHT);
-        txtDescricao = new JTextField(40);
+        txtDescricaoStand = new JTextArea(5,40);
+        JScrollPane scrollPane = new JScrollPane(txtDescricaoStand);
 
         JPanel pNorte = new JPanel();
         pNorte.add(lbl);
-        pNorte.add(txtDescricao);
+        pNorte.add(scrollPane);
 
         return pNorte;
     }
@@ -79,7 +82,7 @@ public class RegistarStandUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String descricao = txtDescricao.getText();
+                String descricao = txtDescricaoStand.getText();
                 contr.criarStand();
                 contr.setDadosStand(descricao);
                 contr.registarStand();

@@ -136,14 +136,15 @@ public class RegistarExposicaoUI extends JDialog {
         JLabel lbl = new JLabel("Descricao:");
 
       
-        txtDescricao =  new JTextArea();
-        txtDescricao.setColumns(CAMPO_LARGURA);
+        txtDescricao =  new JTextArea(5,30);
+        JScrollPane scrollPane1 = new JScrollPane(txtDescricao);
+        
         
 
         JPanel p = new JPanel();
        
         p.add(lbl);
-        p.add(txtDescricao);
+        p.add( scrollPane1);
 
         return p;
     }

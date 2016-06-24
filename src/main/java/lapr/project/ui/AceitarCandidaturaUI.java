@@ -36,8 +36,7 @@ public class AceitarCandidaturaUI extends JFrame {
      private AceitarCandidaturaController contr;
       private  ModeloListaCandidaturas lstCandidaturasExposicao , lstCandidaturasDemonstracao ;
     private JButton btnAceitarCandidaturaExposicao, btnAceitarCandidaturaDemonstracao;
-    private CentroExposicoes centroexpo;
-    private MenuPrincipal framePai;
+    private final CentroExposicoes centroexpo;
     private Icon icon;
     private Exposicao expo;
     private Candidatura candi;
@@ -47,7 +46,6 @@ public class AceitarCandidaturaUI extends JFrame {
         super( "Aceitar Candidatura ");
         this.centroexpo = ce;
         this.contr = new AceitarCandidaturaController(ce);
-        this.framePai = framePai;
          this.expo= new Exposicao ();
          expo.setTitulo("joao");
         Candidatura c =new Candidatura();
@@ -66,8 +64,8 @@ public class AceitarCandidaturaUI extends JFrame {
 
     private void criarComponentes() {
         JPanel p1 = criarPainelNorth();
-        JPanel p2 = criarPainelSul();
-        JPanel p3= criarPainelCentro();
+        JPanel p2 = criarPainelSouth();
+        JPanel p3= criarPainelCenter();
 
         add(p1, BorderLayout.NORTH);
         add(p2, BorderLayout.SOUTH);
@@ -85,9 +83,9 @@ public class AceitarCandidaturaUI extends JFrame {
         return pCentro;
     }
 
-    private JPanel criarPainelSul() {
+    private JPanel criarPainelSouth() {
         JButton btnOK = criarBotaoConcluirProcesso();
-        JButton btnCancelar = criarBotaoCancelar();
+        JButton btnCancelar = criarBotaoCancel();
 
         JPanel pSul = new JPanel();
         pSul.add(btnOK);
@@ -95,11 +93,11 @@ public class AceitarCandidaturaUI extends JFrame {
 
         return pSul;
     }
-     private JPanel criarPainelCentro() {
+     private JPanel criarPainelCenter() {
         
          final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        JPanel p = new JPanel(new GridLayout( NUMERO_LINHAS, 
+        JPanel painel1 = new JPanel(new GridLayout( NUMERO_LINHAS, 
                                               NUMERO_COLUNAS, 
                                               INTERVALO_HORIZONTAL,
                                               INTERVALO_VERTICAL));
@@ -108,7 +106,7 @@ public class AceitarCandidaturaUI extends JFrame {
         
         btnAceitarCandidaturaExposicao = criarBotaoAceitarCandidaturaExposicao(lstCompleta);
         
-        p.add(criarPainelLista( "Lista de Candidaturas (Exposicao):",
+        painel1.add(criarPainelLista( "Lista de Candidaturas (Exposicao):",
                                 lstCompleta,
                                 lstCandidaturasExposicao,
                                 btnAceitarCandidaturaExposicao));
@@ -118,12 +116,12 @@ public class AceitarCandidaturaUI extends JFrame {
         
         btnAceitarCandidaturaDemonstracao = criarBotaoAceitarCandidaturaDemonstracao(lstCompleta);
         
-        p.add(criarPainelLista( "Lista de Candidaturas (Demonstracao):",
+        painel1.add(criarPainelLista( "Lista de Candidaturas (Demonstracao):",
                                 lstCompleta1,
                                 lstCandidaturasDemonstracao,
                                 btnAceitarCandidaturaDemonstracao));
 
-        return p;
+        return painel1;
     }
     
      private JPanel criarPainelLista(
@@ -211,15 +209,15 @@ public class AceitarCandidaturaUI extends JFrame {
         return btn;
     }
 
-    private JButton criarBotaoCancelar() {
-        JButton btn = new JButton("Cancelar");
-        btn.addActionListener(new ActionListener() {
+    private JButton criarBotaoCancel() {
+        JButton btn1 = new JButton("Cancelar");
+        btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btn;
+        return btn1;
     }
 
    
@@ -266,7 +264,7 @@ public class AceitarCandidaturaUI extends JFrame {
                     Stand[] aux = contr.getListaStands();
 
                Stand s = (Stand) JOptionPane.showInputDialog(
-                        framePai,
+                        AceitarCandidaturaUI.this,
                         "Indique o Stand que deseja atribui a candidatura"
                         + ":",
                         "Seleção De Stand",

@@ -13,7 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import lapr.project.controller.DefinirTpoDeConflitoController;
 import lapr.project.model.CentroExposicoes;
 
@@ -23,20 +24,20 @@ import lapr.project.model.CentroExposicoes;
  */
 public class DefinirTipoDeConflitoUI extends JFrame{
 
-    private JTextField txtDescricao;
-    private DefinirTpoDeConflitoController contr;
-    private CentroExposicoes centroexpo;
-    private MenuPrincipal framePai;
+    private JTextArea txtDescricaoConflito;
+    private final DefinirTpoDeConflitoController contr;
+    private final CentroExposicoes centroexpo;
+    
 
     public DefinirTipoDeConflitoUI(MenuPrincipal framePai, CentroExposicoes ce) {
 
         super( "Definir Tipo de Conflito");
         this.centroexpo = ce;
         this.contr = new DefinirTpoDeConflitoController(ce);
-        this.framePai = framePai;
+        
 
         criarComponentes();
- setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
@@ -44,21 +45,22 @@ public class DefinirTipoDeConflitoUI extends JFrame{
     }
 
     private void criarComponentes() {
-        JPanel p1 = criarPainelCentro();
-        JPanel p2 = criarPainelSul();
+        JPanel painel1 = criarPainelCentro();
+        JPanel painel2 = criarPainelSul();
 
-        add(p1, BorderLayout.CENTER);
-        add(p2, BorderLayout.SOUTH);
+        add(painel1, BorderLayout.CENTER);
+        add(painel2, BorderLayout.SOUTH);
 
     }
 
     private JPanel criarPainelCentro() {
-        JLabel lbl = new JLabel("Descricao Do Tipo De Conflito:", JLabel.RIGHT);
-        txtDescricao = new JTextField(40);
+        JLabel lbl1 = new JLabel("Descricao Do Tipo De Conflito:", JLabel.RIGHT);
+        txtDescricaoConflito = new JTextArea(5,50);
+        JScrollPane scrollPane2 = new JScrollPane(txtDescricaoConflito);
 
         JPanel pNorte = new JPanel();
-        pNorte.add(lbl);
-        pNorte.add(txtDescricao);
+        pNorte.add(lbl1);
+        pNorte.add(scrollPane2);
 
         return pNorte;
     }
@@ -80,7 +82,7 @@ public class DefinirTipoDeConflitoUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String descricao = txtDescricao.getText();
+                String descricao = txtDescricaoConflito.getText();
                 contr.criarTipoDeConflito();
                 contr.definirTipoDeConflito(descricao);
                 contr.registarTipoDeConflito();
