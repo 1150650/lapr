@@ -64,7 +64,6 @@ public class Candidatura {
         setNomeEmpresa(nomeEmpresa);
         setMorada(morada);
         setTelemovel(telemovel);
-
         setProdutos(produtos);
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
@@ -172,7 +171,7 @@ public class Candidatura {
 
     @Override
     public String toString() {
-        return String.format("Empresa:%s Telemóvel:%d", nomeEmpresa, telemovel);
+        return String.format("Empresa:%s", nomeEmpresa);
     }
 
     /**

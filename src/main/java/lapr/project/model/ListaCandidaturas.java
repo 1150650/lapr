@@ -103,8 +103,7 @@ public class ListaCandidaturas {
     }
 
     public boolean validaCandidatura(Candidatura c) {
-        boolean a, b = false;
-        return b;
+        return listaCandidaturas.contains(c);
     }
 
     public List<Candidatura> getCandidaturasSemAtribuicao() {
@@ -116,10 +115,6 @@ public class ListaCandidaturas {
             }
         }
         return candidaturasRetiradas;
-    }
-
-    public CandidaturaExposicao[] listaCandExposicaoToArray() {
-        return (CandidaturaExposicao[]) listaCandidaturas.toArray();
     }
 
     public List getListaCandidaturasExpo() {

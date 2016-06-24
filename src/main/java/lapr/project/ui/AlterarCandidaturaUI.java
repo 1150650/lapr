@@ -5,6 +5,7 @@
  */
 package lapr.project.ui;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,9 +35,7 @@ public class AlterarCandidaturaUI extends JFrame {
 
     private CentroExposicoes ce;
 
-    private Utilizador u;
-
-    private MenuPrincipal framePai;
+    private AlterarCandidaturaOpcao framePai;
 
     private JTextField nomeEmpresaTF;
     private JTextField moradaTF;
@@ -45,17 +44,17 @@ public class AlterarCandidaturaUI extends JFrame {
     private JTextField produtosTF;
     private JTextField nConvitesTF;
 
-    public AlterarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
+    public AlterarCandidaturaUI(AlterarCandidaturaOpcao framepai, AlterarCandidaturaController controller) {
         super("Alterar Candidatura");
         this.ce = ce;
-        this.crtl = new AlterarCandidaturaController(u, ce);
+        this.crtl = controller;
         this.framePai = framePai;
-        GridLayout g = new GridLayout(1, 1);
+        GridLayout g = new GridLayout(8, 0);
         g.setHgap(20);
         g.setVgap(20);
         setLayout(g);
-        criarComponentes();
 
+        criarComponentes();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setResizable(false);
@@ -81,26 +80,8 @@ public class AlterarCandidaturaUI extends JFrame {
         crtl.selecionaExposicao(expo);
     }
 
-    public void selecionarCandidatura() {
-        CandidaturaExposicao candi;
-        candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
-                framePai,
-                "Indique candidatura que deseja remover"
-                + ":",
-                "Seleção De Candidatura a Remover",
-                JOptionPane.DEFAULT_OPTION,
-                icon,
-                crtl.getListaCandidaturas().listaCandExposicaoToArray(),
-                "");
-
-        dispose();
-        crtl.selecionarCandidatura(candi);
-    }
-
-    private void criarComponentes() {
-        selecionarExposicao();
-        selecionarCandidatura();
-        JLabel l = new JLabel("Alterar Candidatura");
+    public void criarComponentes() {
+        JLabel l = new JLabel("Alterar Candidatura", JLabel.CENTER);
         JPanel nomeEmpresa = criarPainelNomeEmpresa();
         JPanel morada = criarPainelMorada();
         JPanel telemovel = criarPainelTelemovel();
@@ -219,7 +200,8 @@ public class AlterarCandidaturaUI extends JFrame {
                     float AreaExposicao = Float.parseFloat(areaExposicaoTF.getText());
                     int QuantidadeConvites = Integer.parseInt(nConvitesTF.getText());
                     crtl.novaCandidatura(NomeEmpresa, Morada, Telemovel, AreaExposicao, Produtos, QuantidadeConvites);
-                    if (crtl.validarNovosDadosGlobal()) {
+                    if (!crtl.validarNovosDadosGlobal()) {
+                        crtl.getCandidaturaAlterada().getState().setAlterada();
                         crtl.alterarDadosCandidatura();
                     }
                 } catch (IllegalArgumentException ex) {
@@ -229,7 +211,7 @@ public class AlterarCandidaturaUI extends JFrame {
                             "ERRO",
                             JOptionPane.WARNING_MESSAGE);
                 }
-                crtl.getCandidaturaSelecionada().getState().setAlterada();
+                dispose();
             }
         }
         );

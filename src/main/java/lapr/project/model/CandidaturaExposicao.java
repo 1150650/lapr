@@ -49,10 +49,6 @@ public class CandidaturaExposicao extends Candidatura {
         this.areaPretendida = areaPretendida;
     }
 
-    public String toString() {
-        return super.toString() + String.format("%n Area Pretendida: %d", getAreaPretendida());
-    }
-
     /**
      * @return the areaPretendida
      */
@@ -89,6 +85,11 @@ public class CandidaturaExposicao extends Candidatura {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
 }

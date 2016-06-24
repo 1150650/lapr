@@ -654,7 +654,7 @@ public class MenuPrincipal extends JFrame {
 
         btnAlterarCandidatura.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new AlterarCandidaturaUI(MenuPrincipal.this, ce, utilizadorAtivo);
+                new AlterarCandidaturaOpcao(MenuPrincipal.this, utilizadorAtivo, ce);
             }
         });
         return btnAlterarCandidatura;
