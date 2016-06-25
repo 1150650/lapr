@@ -35,5 +35,9 @@ public class DefinirRecursosController {
         return registoRecursos.getListaRecursos();
     }
     
+    public ListaRecursos getRegistoRecursos(){
+        return registoRecursos;
+    }
+    
     
 }

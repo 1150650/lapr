@@ -47,9 +47,11 @@ public class DefinirRecursosUI extends JFrame {
 
     private Recurso recurso;
 
+    private ModeloListaRecursos lstRecursos;
+
     public DefinirRecursosUI(MenuPrincipal framePai, CentroExposicoes centroExposicoes) {
 
-        super();
+        super("Definir Recursos");
         this.centroExposicoes = centroExposicoes;
 
         criarComponentes();
@@ -138,8 +140,24 @@ public class DefinirRecursosUI extends JFrame {
     }
 
     private JPanel criarPainelLista() {
+        final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
+        final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
+        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
+                NUMERO_COLUNAS,
+                INTERVALO_HORIZONTAL,
+                INTERVALO_VERTICAL));
+        lstRecursos = new ModeloListaRecursos(controller.getRegistoRecursos());
+        JList lstCompleta = new JList(lstRecursos);
+
+        p.add(criarPainelLista(lstCompleta));
+
+        return p;
+    }
+    
+    private JPanel criarPainelLista(JList lstCompleta) {
         JLabel lblTitulo = new JLabel("Lista de Recursos", JLabel.LEFT);
-        listaRecursos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        lstCompleta.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scrPane = new JScrollPane(lstCompleta);
 
         JPanel p = new JPanel(new BorderLayout());
 
@@ -151,6 +169,7 @@ public class DefinirRecursosUI extends JFrame {
                 MARGEM_DIREITA));
 
         p.add(lblTitulo, BorderLayout.NORTH);
+        p.add(scrPane, BorderLayout.CENTER);
         return p;
     }
 
