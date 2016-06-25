@@ -84,7 +84,7 @@ public class CriarDemonstracaoUI extends JFrame {
     }
 
     private JPanel criarPainelSul() {
-        JButton btnOK = criarBotaoOK();
+        JButton btnOK = criarBotaoRegistar();
         getRootPane().setDefaultButton(btnOK);
 
         JButton btnCancelar = criarBotaoCancelar();
@@ -153,12 +153,12 @@ public class CriarDemonstracaoUI extends JFrame {
         p.add(lblTitulo, BorderLayout.NORTH);
         p.add(scrPane, BorderLayout.CENTER);
 
-        JPanel pBotoes = criarPainelBotoes(btnSuperior);
+        JPanel pBotoes = criarPainelBotao(btnSuperior);
         p.add(pBotoes, BorderLayout.SOUTH);
         return p;
     }
 
-    private JPanel criarPainelBotoes(JButton btnSuperior) {
+    private JPanel criarPainelBotao(JButton btnSuperior) {
         final int NUMERO_LINHAS = 2, NUMERO_COLUNAS = 1;
         final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
         JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
@@ -166,9 +166,9 @@ public class CriarDemonstracaoUI extends JFrame {
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
 
-        final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 0;
+        final int MARGEM_1SUPERIOR = 10, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_1SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
@@ -178,7 +178,7 @@ public class CriarDemonstracaoUI extends JFrame {
         return p;
     }
 
-    private JButton criarBotaoOK() {
+    private JButton criarBotaoRegistar() {
         JButton btn = new JButton("Registar Demonstração");
         btn.addActionListener(new ActionListener() {
             @Override
@@ -211,14 +211,14 @@ public class CriarDemonstracaoUI extends JFrame {
     }
 
     private JButton criarBotaoCancelar() {
-        JButton btn = new JButton("Cancelar");
-        btn.addActionListener(new ActionListener() {
+        JButton btnCancell = new JButton("Cancelar");
+        btnCancell.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btn;
+        return btnCancell;
     }
 
     private JButton criarBotaoAdiconarRecurso(JList lstCompleta) {

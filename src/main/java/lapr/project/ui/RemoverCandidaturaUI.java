@@ -94,7 +94,7 @@ public class RemoverCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelS() {
-        JButton btnOK = criarBotaoConcluirProcesso();
+        JButton btnOK = criarBotaoConcluirProcess();
         JButton btnCancelar = criarBotaoCancelar();
 
         JPanel pSul = new JPanel();
@@ -166,24 +166,24 @@ public class RemoverCandidaturaUI extends JFrame {
     private JPanel criarPainelBotao(JButton btnSuperior) {
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 1;
         final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
-        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
+        JPanel painelButton = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
 
         final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        painelButton.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
 
-        p.add(btnSuperior);
+        painelButton.add(btnSuperior);
 
-        return p;
+        return painelButton;
     }
 
-    private JButton criarBotaoConcluirProcesso() {
+    private JButton criarBotaoConcluirProcess() {
         JButton btn = new JButton("Concluir Processo");
         btn.addActionListener(new ActionListener() {
             @Override
@@ -255,8 +255,8 @@ public class RemoverCandidaturaUI extends JFrame {
     }
 
     private JButton criarBotaoRemoverCandidaturaExposicao(JList lstCompleta) {
-        JButton btn = new JButton("Remover Candidatura a Exposicao");
-        btn.addActionListener(new ActionListener() {
+        JButton butn = new JButton("Remover Candidatura a Exposicao");
+        butn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModeloListaCandidaturas m = (ModeloListaCandidaturas) lstCompleta.getModel();
@@ -267,6 +267,6 @@ public class RemoverCandidaturaUI extends JFrame {
             }
         });
 
-        return btn;
+        return butn;
     }
 }

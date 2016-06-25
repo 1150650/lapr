@@ -46,7 +46,7 @@ public class DefinirTipoDeConflitoUI extends JFrame{
 
     private void criarComponentes() {
         JPanel painel1 = criarPainelCentro();
-        JPanel painel2 = criarPainelSul();
+        JPanel painel2 = criarPanelSul();
 
         add(painel1, BorderLayout.CENTER);
         add(painel2, BorderLayout.SOUTH);
@@ -65,9 +65,9 @@ public class DefinirTipoDeConflitoUI extends JFrame{
         return pNorte;
     }
 
-    private JPanel criarPainelSul() {
+    private JPanel criarPanelSul() {
         JButton btnOK = criarBotaoOK();
-        JButton btnCancelar = criarBotaoCancelar();
+        JButton btnCancelar = criarBotaoCancela();
 
         JPanel pCentro = new JPanel();
         pCentro.add(btnOK);
@@ -77,8 +77,8 @@ public class DefinirTipoDeConflitoUI extends JFrame{
     }
 
     private JButton criarBotaoOK() {
-        JButton btn = new JButton("Registar Tipo De Conflito");
-        btn.addActionListener(new ActionListener() {
+        JButton button = new JButton("Registar Tipo De Conflito");
+        button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -90,10 +90,10 @@ public class DefinirTipoDeConflitoUI extends JFrame{
             }
         });
 
-        return btn;
+        return button;
     }
 
-    private JButton criarBotaoCancelar() {
+    private JButton criarBotaoCancela() {
         JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
             @Override

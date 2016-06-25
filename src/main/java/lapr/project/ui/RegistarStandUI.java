@@ -66,19 +66,19 @@ public class RegistarStandUI extends JFrame {
     }
 
     private JPanel criarPainelSul() {
-        JButton btnOK = criarBotaoOK();
-        JButton btnCancelar = criarBotaoCancelar();
+        JButton btnOK1 = criarBotaoOK();
+        JButton btnCancelar = criarButtonCancelar();
 
         JPanel pCentro = new JPanel();
-        pCentro.add(btnOK);
+        pCentro.add(btnOK1);
         pCentro.add(btnCancelar);
 
         return pCentro;
     }
 
     private JButton criarBotaoOK() {
-        JButton btn = new JButton("Registar Stand");
-        btn.addActionListener(new ActionListener() {
+        JButton btn3 = new JButton("Registar Stand");
+        btn3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -90,10 +90,10 @@ public class RegistarStandUI extends JFrame {
             }
         });
 
-        return btn;
+        return btn3;
     }
 
-    private JButton criarBotaoCancelar() {
+    private JButton criarButtonCancelar() {
         JButton btn = new JButton("Cancelar");
         btn.addActionListener(new ActionListener() {
             @Override
