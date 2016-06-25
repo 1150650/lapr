@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -50,7 +51,7 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
         super("Definir Demonstrações Efetivas");
         this.ce = ce;
         this.framePai = framePai;
-        crtlDecidirDemos=new DecidirDemonstraçõesController(ce);
+        crtlDecidirDemos = new DecidirDemonstraçõesController(ce);
 
         selecionarExposicao();
         criarComponentes();
@@ -117,6 +118,7 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
                 if (d != null) {
                     crtlDecidirDemos.selecionarDemonstracao(d);
                     new AceitarUmaDemonstracaoUI(crtlDecidirDemos, DefinirDemonstraçõesEfetivasUI.this);
+                    lstDemonstracoes.removeElement(d);
                 } else {
                     JOptionPane.showMessageDialog(DefinirDemonstraçõesEfetivasUI.this, "Nenhuma Demonstração Selecionada", "Erro", ERROR);
                 }

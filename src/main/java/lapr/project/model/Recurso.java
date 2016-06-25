@@ -5,14 +5,12 @@
  */
 package lapr.project.model;
 
-
 /**
  *
  * @author JOAO
  */
 public class Recurso {
 
-    
     private String recurso;
 
     public Recurso(String recurso) {
@@ -26,8 +24,13 @@ public class Recurso {
     public void setRecurso(String r) {
         recurso = r;
     }
-    
-    public String getRecurso(){
+
+    public String getRecurso() {
+        return recurso;
+    }
+
+    @Override
+    public String toString() {
         return recurso;
     }
 }

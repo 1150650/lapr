@@ -10,6 +10,7 @@ import java.awt.GridLayout;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,6 +35,8 @@ public class AceitarUmaDemonstracaoUI extends JFrame {
     private JTextField txtInicio, txtFim;
 
     private JButton btnSair, btnAceitar;
+
+    private Date dtIncio, dtFim;
 
     private DefinirDemonstraçõesEfetivasUI framePai;
 
@@ -104,7 +107,13 @@ public class AceitarUmaDemonstracaoUI extends JFrame {
         btnAceitar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                crtlDecidirDemo.getDemonstraccao().setDemonstracaoAbertaCandidaturas();
+                String[] data1 = txtInicio.getText().split("-");
+                String[] data2 = txtFim.getText().split("-");
+                dtIncio = new Date(Integer.parseInt(data1[0]), Integer.parseInt(data1[1]), Integer.parseInt(data1[2]));
+                dtFim = new Date(Integer.parseInt(data2[0]), Integer.parseInt(data2[1]), Integer.parseInt(data2[2]));
+                crtlDecidirDemo.getDemonstraccao().setDataInicio(dtIncio);
+                crtlDecidirDemo.getDemonstraccao().setDataFim(dtFim);
+                crtlDecidirDemo.getDemonstraccao().setDemonstracaoAprovada();
                 dispose();
             }
         });

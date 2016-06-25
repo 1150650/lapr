@@ -22,6 +22,7 @@ public class AtribuirCandidaturaController {
     public AtribuirCandidaturaController(CentroExposicoes ce) {
         this.ce = ce;
         this.lstExpo = ce.getListaExposicoes();
+        lstAtribuicoes = new ListaAtribuicoes();
     }
 
     public void selecionarExposicao(Exposicao expo) {
