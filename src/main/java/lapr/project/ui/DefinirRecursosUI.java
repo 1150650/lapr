@@ -10,16 +10,13 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import lapr.project.controller.DefinirRecursosController;
 import lapr.project.model.CentroExposicoes;
@@ -53,17 +50,18 @@ public class DefinirRecursosUI extends JFrame {
 
         super("Definir Recursos");
         this.centroExposicoes = centroExposicoes;
+        this.controller = new DefinirRecursosController(this.centroExposicoes);
 
-        criarComponentes();
-
-        GridLayout gl = new GridLayout(7, 2);
+        GridLayout gl = new GridLayout(8, 0);
         gl.setHgap(20);
         gl.setVgap(20);
         setLayout(gl);
 
+        criarComponentes();
+
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(framePai);
         setVisible(true);
     }
@@ -71,11 +69,9 @@ public class DefinirRecursosUI extends JFrame {
     private void criarComponentes() {
         JPanel descricao = criarPainelDescricao();
         JPanel botoes = criarPainelBotoes();
-        JPanel lista = criarPainelLista();
 
-        add(descricao);
-        add(lista);
-        add(botoes);
+        add(descricao, BorderLayout.NORTH);
+        add(botoes, BorderLayout.SOUTH);
 
     }
 
@@ -138,39 +134,4 @@ public class DefinirRecursosUI extends JFrame {
         });
         return btn;
     }
-
-    private JPanel criarPainelLista() {
-        final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
-        final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
-                NUMERO_COLUNAS,
-                INTERVALO_HORIZONTAL,
-                INTERVALO_VERTICAL));
-        lstRecursos = new ModeloListaRecursos(controller.getRegistoRecursos());
-        JList lstCompleta = new JList(lstRecursos);
-
-        p.add(criarPainelLista(lstCompleta));
-
-        return p;
-    }
-    
-    private JPanel criarPainelLista(JList lstCompleta) {
-        JLabel lblTitulo = new JLabel("Lista de Recursos", JLabel.LEFT);
-        lstCompleta.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        JScrollPane scrPane = new JScrollPane(lstCompleta);
-
-        JPanel p = new JPanel(new BorderLayout());
-
-        final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 20;
-        final int MARGEM_ESQUERDA = 20, MARGEM_DIREITA = 20;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
-                MARGEM_ESQUERDA,
-                MARGEM_INFERIOR,
-                MARGEM_DIREITA));
-
-        p.add(lblTitulo, BorderLayout.NORTH);
-        p.add(scrPane, BorderLayout.CENTER);
-        return p;
-    }
-
 }
