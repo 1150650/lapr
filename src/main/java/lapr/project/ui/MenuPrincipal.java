@@ -53,7 +53,7 @@ public class MenuPrincipal extends JFrame {
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
             btnRegistarCandDemonstracao, btnConfirmarStand,
-            btnAlterarDadosUtilizador;
+            btnAlterarDadosUtilizador, btnKeywordStatistics;
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
     private JPanel painelDadosUtilizador = new JPanel(),
@@ -398,18 +398,20 @@ public class MenuPrincipal extends JFrame {
         btnConfirmarRegistoUtilizador = criarBotaoConfirmarRegistoUtilizador();
         btnDefinirRecursos = criarBotaoDefinirRecursos();
         btnDefinirTipoConflito = criarBotaoDefinirTipoConflito();
+        btnKeywordStatistics = criarBotaoKeywordStatistics();
 
         painelBotoesGestor = new JPanel();
         final int MARGEM_SUPERIOR = 100, MARGEM_INFERIOR = 100;
         final int MARGEM_ESQUERDA = 30, MARGEM_DIREITA = 30;
         painelBotoesGestor.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        painelBotoesGestor.setLayout(new GridLayout(2, 2, 40, 40));
+        painelBotoesGestor.setLayout(new GridLayout(3, 2, 40, 40));
 
         painelBotoesGestor.add(btnRegistarExposicao);
         painelBotoesGestor.add(btnConfirmarRegistoUtilizador);
         painelBotoesGestor.add(btnDefinirRecursos);
         painelBotoesGestor.add(btnDefinirTipoConflito);
+        painelBotoesGestor.add(btnKeywordStatistics);
 
         return painelBotoesGestor;
     }
@@ -711,6 +713,18 @@ public class MenuPrincipal extends JFrame {
             }
         });
         return btnConfirmarStand;
+    }
+    
+    private JButton criarBotaoKeywordStatistics() {
+        btnKeywordStatistics = new JButton("Keyword Statistics");
+
+        btnKeywordStatistics.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        return btnKeywordStatistics;
     }
 
     private void verificarPapeisUtilizador() {
