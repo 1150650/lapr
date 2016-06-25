@@ -117,7 +117,7 @@ public class Utilizador {
         }
 
         CaeserCypher  encriptacao = new CaeserCypher(password);
-        this.password = encriptacao.encriptar();
+        setPassword(encriptacao.encriptar());
     }
 
     @Override
