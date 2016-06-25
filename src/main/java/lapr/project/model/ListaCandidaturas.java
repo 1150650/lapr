@@ -169,4 +169,8 @@ public class ListaCandidaturas {
         return new CandidaturaDemonstracao(nomeEmpresa, morada, telemovel, demonstracao, produtos, quantidadeConvites);
     }
 
+    public CandidaturaExposicao[] listaCandExposicaoToArray() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

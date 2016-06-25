@@ -6,7 +6,6 @@
 package lapr.project.model;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -21,7 +20,7 @@ public class ListaRecursos {
      * A lista de recursos da exposicao
      */
     @XmlElement(name = "Recurso")
-    private List<Recurso> listaRecurso;
+    private ArrayList<Recurso> listaRecurso;
 
     /**
      * Cria uma instancia de ListaRecursos
