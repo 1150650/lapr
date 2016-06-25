@@ -90,7 +90,7 @@ class Main {
         e.getListaDemonstracoes().addDemonstracao(d);
         e.getListaRepresentantes().addRepresentante(r);
         e.getListaAtribuicoes().adicionarAtribuição(atribuicao);
-        e.getListaOrganizadores().adicionarOrganizador(organizador);
+        e.getListaOrganizadores().adicionarOrganizador(o);
         
         
         
