@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import lapr.project.utils.Exportable;
@@ -17,6 +18,10 @@ import org.w3c.dom.Node;
  */
 @XmlRootElement
 public class Demonstracao implements Exportable, Importable<Demonstracao> {
+
+    private Date dataInicio;
+
+    private Date dataFim;
 
     /**
      * o codigo da demonstracao
@@ -32,8 +37,6 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      * a lista de recursos da demonstracao
      */
     private ListaRecursos listalRecursos;
-
-   
 
     /**
      * o nº da demonstracao
@@ -81,7 +84,6 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      *
      * @return the listalRecursos
      */
-
     public ListaRecursos getListalRecursos() {
         return listalRecursos;
     }
@@ -199,7 +201,15 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     }
 
     @XmlElement
-     public void setListalRecursos(ListaRecursos listalRecursos) {
+    public void setListalRecursos(ListaRecursos listalRecursos) {
         this.listalRecursos = listalRecursos;
+    }
+
+    public void setDataInicio(Date dtIncio) {
+        this.dataInicio = dtIncio;
+    }
+
+    public void setDataFim(Date dtFim) {
+        this.dataFim = dtFim;
     }
 }

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package lapr.project.ui;
-
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.PopupMenu;
