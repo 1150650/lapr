@@ -12,35 +12,22 @@ public class CentroExposicoes {
     /**
      * Criação de instância da lista de exposições
      */
-    @XmlElement
     private RegistoExposicoes listaExposicoes;
 
-   
-
-    @XmlElement
     private ListaStands listaStands;
 
-  
-
-    @XmlElement
     private RegistoTipoDeConflito listaTipoDeConflito;
 
-    @XmlElement
     private RegistoUtilizadores registoUtilizadoresNConf;
 
-    @XmlElement
     private RegistoUtilizadores registoUtilizadoresConf;
 
-    @XmlElement
     private ListaRecursos listarecursos;
 
-    @XmlElement
     private RegistoMecanismos registoMecanismos;
 
-    @XmlElement
     private ListaDemonstracoes registoDemonstracoes;
     
-    @XmlElement
     private ListaGestores listaGestores;
 
     
@@ -158,6 +145,7 @@ public class CentroExposicoes {
         return listaStands;
     }
 
+  @XmlElement
     public void setListaStands(ListaStands listaStands) {
         this.listaStands = listaStands;
     }
@@ -166,6 +154,7 @@ public class CentroExposicoes {
         return listarecursos;
     }
 
+    @XmlElement
     public void setListarecursos(ListaRecursos listarecursos) {
         this.listarecursos = listarecursos;
     }
@@ -174,29 +163,37 @@ public class CentroExposicoes {
         return registoDemonstracoes;
     }
 
+    @XmlElement
     public void setRegistoDemonstracoes(ListaDemonstracoes registoDemonstracoes) {
         this.registoDemonstracoes = registoDemonstracoes;
     }
+    
+    @XmlElement
     public void setListaExposicoes(RegistoExposicoes listaExposicoes) {
         this.listaExposicoes = listaExposicoes;
     }
 
+    @XmlElement
     public void setListaTipoDeConflito(RegistoTipoDeConflito listaTipoDeConflito) {
         this.listaTipoDeConflito = listaTipoDeConflito;
     }
 
+    @XmlElement
     public void setRegistoUtilizadoresNConf(RegistoUtilizadores registoUtilizadoresNConf) {
         this.registoUtilizadoresNConf = registoUtilizadoresNConf;
     }
 
+    @XmlElement
     public void setRegistoUtilizadoresConf(RegistoUtilizadores registoUtilizadoresConf) {
         this.registoUtilizadoresConf = registoUtilizadoresConf;
     }
 
+    @XmlElement
     public void setRegistoMecanismos(RegistoMecanismos registoMecanismos) {
         this.registoMecanismos = registoMecanismos;
     }
 
+    @XmlElement
     public void setListaGestores(ListaGestores listaGestores) {
         this.listaGestores = listaGestores;
     }
