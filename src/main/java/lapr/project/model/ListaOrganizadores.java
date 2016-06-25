@@ -48,13 +48,19 @@ public class ListaOrganizadores {
     }
 
     public boolean isUserOrganizador(Utilizador utilizador) {
-        if (listaOrganizadores.contains(utilizador)) {
-            return true;
-        } else {
-            return false;
+        boolean validator = false;
+        for (Organizador o : listaOrganizadores) {
+            if (o.getUtilizador().getUsername().equals(utilizador.getUsername())) {
+                validator = true;
+                break;
+            } else {
+                validator = false;
+            }
         }
+   
+        return validator;
     }
-    
+
     public List getListaOrganizadores() {
         return listaOrganizadores;
     }

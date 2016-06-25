@@ -37,7 +37,6 @@ public class RegistoExposicoes {
 
     public List getExposicoesOrganizador(Utilizador utilizador) {
         List<Exposicao> exposicoesDoOrganizador = new ArrayList<Exposicao>();
-
         for (Exposicao expo : listaExposicoes) {
             if (expo.getListaOrganizadores().isUserOrganizador(utilizador)) {
                 exposicoesDoOrganizador.add(expo);

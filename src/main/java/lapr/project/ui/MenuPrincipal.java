@@ -462,7 +462,7 @@ public class MenuPrincipal extends JFrame {
         btnDecidirFAE.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new DefinirFAEUI(MenuPrincipal.this, ce, utilizadorAtivo);
             }
         });
         return btnDecidirFAE;
