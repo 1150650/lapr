@@ -13,6 +13,7 @@ import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Gestor;
+import lapr.project.model.Organizador;
 import lapr.project.model.Recurso;
 import lapr.project.model.Representante;
 import lapr.project.model.Stand;
@@ -75,6 +76,8 @@ class Main {
         Recurso r2 = new Recurso("caneta");
         
         Gestor g1 = new Gestor(gestor);
+        
+        Organizador o = new Organizador(organizador);
         
         
         AtribuicaoFAE atribuicao = new AtribuicaoFAE(fae, candidatura);
