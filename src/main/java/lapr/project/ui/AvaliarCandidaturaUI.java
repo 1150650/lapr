@@ -51,14 +51,12 @@ public class AvaliarCandidaturaUI extends JFrame {
 
     private FAE fae;
 
-    public AvaliarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
+    public AvaliarCandidaturaUI(AvaliarCandidaturaSelecionarCandidaturaUI framePai, AvaliarCandidaturaFAEController crtlAvaliarCand) {
         super();
         this.framePai = framePai;
         this.fae = fae;
         this.ce = ce;
-        this.crtlAvaliarCand = new AvaliarCandidaturaFAEController(ce, fae);
-        selecionarExposicao();
-        selecionarCandidatura();
+        this.crtlAvaliarCand = crtlAvaliarCand;
 
         GridLayout g = new GridLayout(1, 1);
         g.setHgap(20);
@@ -102,23 +100,6 @@ public class AvaliarCandidaturaUI extends JFrame {
 
         return p;
 
-    }
-
-    public void selecionarCandidatura() {
-        CandidaturaExposicao[] aux = fae.getListacandidatura().listaCandExposicaoToArray();
-        CandidaturaExposicao candi;
-        candi = (CandidaturaExposicao) JOptionPane.showInputDialog(
-                framePai,
-                "Indique candidatura que deseja Avaliar"
-                + ":",
-                "Seleção De Candidatura Avaliar",
-                JOptionPane.DEFAULT_OPTION,
-                icon,
-                aux,
-                "");
-
-        dispose();
-        crtlAvaliarCand.selecionarCandidatura(candi);
     }
 
     private JPanel criarPainelInformaçãoCandidatura() {
@@ -194,22 +175,4 @@ public class AvaliarCandidaturaUI extends JFrame {
         );
         return btn;
     }
-
-    private void selecionarExposicao() {
-        Exposicao[] aux = ce.getArrayExposicao();
-        Exposicao expo;
-        expo = (Exposicao) JOptionPane.showInputDialog(
-                this.framePai,
-                "Selecionar Exposição"
-                + ":",
-                "Seleção De Exposição",
-                JOptionPane.DEFAULT_OPTION,
-                icon,
-                aux,
-                "");
-
-        dispose();
-        crtlAvaliarCand.selecionarExposicao(expo);
-    }
-
 }

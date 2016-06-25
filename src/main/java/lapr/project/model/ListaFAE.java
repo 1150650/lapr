@@ -133,4 +133,13 @@ public class ListaFAE {
         return true;
     }
 
+    public FAE obterFAEPorUtilizador(Utilizador u) {
+        for (int i = 0; i < listaFAE.size(); i++) {
+            if (listaFAE.get(i).getUtilizador() == u) {
+                return listaFAE.get(i);
+            }
+        }
+        return null;
+    }
+
 }

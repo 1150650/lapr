@@ -38,6 +38,7 @@ public class AvaliarCandidaturaFAEController {
 
     public void selecionarExposicao(Exposicao e) {
         this.expo = expo;
+        this.fae = expo.getListaFAE().obterFAEPorUtilizador(u);
     }
 
     public String getInfo() {
@@ -62,6 +63,10 @@ public class AvaliarCandidaturaFAEController {
 
     public CandidaturaExposicao candidaturaSelecionada() {
         return candidatura;
+    }
+
+    public FAE getFAE() {
+        return fae;
     }
 
 }
