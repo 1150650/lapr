@@ -54,7 +54,7 @@ public class AtribuirCandidaturaUI extends JFrame {
         this.framePai = framePai;
         this.ce = ce;
         this.crtAtribuir = new AtribuirCandidaturaController(ce);
-        GridLayout g = new GridLayout(1, 1);
+        GridLayout g = new GridLayout(4, 1);
         g.setHgap(5);
         g.setVgap(5);
         setLayout(g);

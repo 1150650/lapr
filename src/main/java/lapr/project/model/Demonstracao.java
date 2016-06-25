@@ -205,10 +205,12 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
         this.listalRecursos = listalRecursos;
     }
 
+    @XmlElement
     public void setDataInicio(Date dtIncio) {
         this.dataInicio = dtIncio;
     }
 
+    @XmlElement
     public void setDataFim(Date dtFim) {
         this.dataFim = dtFim;
     }
