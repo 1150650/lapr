@@ -20,6 +20,10 @@ public class Representante {
     * Lista de Candidaturas que submeteu
      */
     private ListaCandidaturas listaCandidaturasSubmetidas;
+    private ListaCandidaturas listaCandidaturasExposicao;
+
+   
+    private ListaCandidaturas listaCandidaturasDemonstracao;
 
     /*
     * Construtor de um Representante recebendo um Utilizador
@@ -27,10 +31,15 @@ public class Representante {
     public Representante(Utilizador u) {
         setUtilizador(u);
         listaCandidaturasSubmetidas = new ListaCandidaturas();
+        listaCandidaturasExposicao= new ListaCandidaturas();
+                listaCandidaturasDemonstracao= new ListaCandidaturas();
     }
 
     public Representante() {
 listaCandidaturasSubmetidas = new ListaCandidaturas();
+listaCandidaturasSubmetidas = new ListaCandidaturas();
+        listaCandidaturasExposicao= new ListaCandidaturas();
+                listaCandidaturasDemonstracao= new ListaCandidaturas();
     }
 
     /**
@@ -79,5 +88,11 @@ listaCandidaturasSubmetidas = new ListaCandidaturas();
     public void adicionarCandidatura(CandidaturaExposicao c) {
         listaCandidaturasSubmetidas.adicionarCandidatura(c);
     }
+  public ListaCandidaturas getListaCandidaturasExposicao() {
+        return listaCandidaturasExposicao;
+    }
 
+    public ListaCandidaturas getListaCandidaturasDemonstracao() {
+        return listaCandidaturasDemonstracao;
+    }
 }

@@ -26,6 +26,7 @@ import lapr.project.model.Candidatura;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ModeloListaCandidaturas;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -41,12 +42,14 @@ public class RemoverCandidaturaUI extends JFrame {
     private Exposicao expo;
     private JPanel painellista;
     private int condicaoParagem = 0;
+    private Utilizador u;
 
-    public RemoverCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce) {
+    public RemoverCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce,Utilizador u) {
 
         super("Remover Candidatura ");
         this.centroexpo = ce;
-        this.contr = new RemoverCandidaturaController(ce);
+        this.u=u;
+        this.contr = new RemoverCandidaturaController(ce,u);
         this.expo = ce.getListaExposicoes().obterExposicao(0);
 
         criarComponentes();

@@ -9,6 +9,8 @@ import lapr.project.model.Candidatura;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.Representante;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -19,10 +21,15 @@ public class RemoverCandidaturaController {
     private CentroExposicoes centroexpo;
     private Exposicao expo;
     private int indice;
+    private Representante r;
+    private Utilizador u;
 
-    public RemoverCandidaturaController(CentroExposicoes centroexpo) {
+    public RemoverCandidaturaController(CentroExposicoes centroexpo,Utilizador u) {
 
         this.centroexpo = centroexpo;
+        this.u=u;
+       
+        
 
     }
 
@@ -31,15 +38,18 @@ public class RemoverCandidaturaController {
     }
 
     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
+        this.expo=expo;
+        this.indice=centroexpo.getListaExposicoes().indiceDe(expo);
+         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u);
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
-        this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
-        lst=this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes();
+        
+        lst=r.getListaCandidaturasExposicao();
         int i;
         
         for (i=0; i<lst.tamanho();i++){
             
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==false){
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()){
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }
@@ -52,15 +62,18 @@ public class RemoverCandidaturaController {
     
     
     public ListaCandidaturas getListaCandidaturasDemonstracoes(Exposicao expo) {
+       this.expo=expo;
+         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u);
+         this.indice=centroexpo.getListaExposicoes().indiceDe(expo);
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
-        this.indice = this.centroexpo.getListaExposicoes().indiceDe(expo);
-        lst=this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes();
+        
+        lst=r.getListaCandidaturasDemonstracao();
         int i;
         
         for (i=0; i<lst.tamanho();i++){
             
-            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()==false){
+            if(lst.obterCandidatura(i).getState().isEstadoEmSubmissao()){
                 lst1.adicionarCandidatura(lst.obterCandidatura(i));
             }
         }
