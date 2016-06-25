@@ -50,7 +50,7 @@ public class CriarDemonstracaoUI extends JFrame {
         contr.novaDemonstracao();
         criarComponentes();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setMinimumSize(new Dimension(500, 700));
+        setMinimumSize(new Dimension(500, 500));
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -101,7 +101,7 @@ public class CriarDemonstracaoUI extends JFrame {
         JLabel lbl = new JLabel("Descricao:", JLabel.RIGHT);
 
         
-        txtDescricaoDemonstracao = new JTextArea(5,50);
+        txtDescricaoDemonstracao = new JTextArea(5,30);
         JScrollPane scrollPane2 = new JScrollPane(txtDescricaoDemonstracao);
 
         JPanel p = new JPanel();
@@ -195,10 +195,12 @@ public class CriarDemonstracaoUI extends JFrame {
                         icon,
                         aux,
                         "");
+                
+                
                 contr.selecionarExposicao(expo);
                 String Descricao = txtDescricaoDemonstracao.getText();
               contr.setDados(Descricao);
-              contr.setEstadoDemonstracaoCriada();
+    
               contr.validaRegistaDemonstracao();
                 dispose();
 
@@ -228,6 +230,7 @@ public class CriarDemonstracaoUI extends JFrame {
                     ModeloListaRecursos m = (ModeloListaRecursos) lstCompleta.getModel();
                     Recurso r = (Recurso) lstCompleta.getSelectedValue();
                     contr.adicionarRecurso(r);
+                    m.removeElement(r);
 
                 } catch (NumberFormatException ex) {
 

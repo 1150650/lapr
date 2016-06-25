@@ -33,11 +33,10 @@ public class GestorTest {
     @Test
     public void testSetUtilizador() {
         System.out.println("setUtilizador");
-        Utilizador utilizador = null;
+        Utilizador utilizador = new Utilizador();
         Gestor instance = new Gestor();
         instance.setUtilizador(utilizador);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -46,12 +45,14 @@ public class GestorTest {
     @Test
     public void testGetUtilizador() {
         System.out.println("getUtilizador");
+        Utilizador utilizador = new Utilizador();
         Gestor instance = new Gestor();
-        Utilizador expResult = null;
+        instance.setUtilizador(utilizador);
+        
+        Utilizador expResult = utilizador;
         Utilizador result = instance.getUtilizador();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

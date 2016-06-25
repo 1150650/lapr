@@ -33,6 +33,8 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      */
     private ListaRecursos listalRecursos;
 
+   
+
     /**
      * o nº da demonstracao
      */
@@ -79,7 +81,7 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
      *
      * @return the listalRecursos
      */
-    @XmlElement
+
     public ListaRecursos getListalRecursos() {
         return listalRecursos;
     }
@@ -196,4 +198,8 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
         return state.setFechadaACandidaturas();
     }
 
+    @XmlElement
+     public void setListalRecursos(ListaRecursos listalRecursos) {
+        this.listalRecursos = listalRecursos;
+    }
 }

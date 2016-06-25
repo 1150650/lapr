@@ -35,11 +35,13 @@ public class DemonstracaoTest {
     public void testGetCodigo() {
         System.out.println("getCodigo");
         Demonstracao instance = new Demonstracao();
+        int Codigo = 0;
+       
+        instance.setCodigo(Codigo);
         int expResult = 0;
         int result = instance.getCodigo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -49,26 +51,16 @@ public class DemonstracaoTest {
     public void testGetDescricao() {
         System.out.println("getDescricao");
         Demonstracao instance = new Demonstracao();
-        String expResult = "";
+          String descricao = "1324";
+        
+        instance.setDescricao(descricao);
+        String expResult = "1324";
         String result = instance.getDescricao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of getListalRecursos method, of class Demonstracao.
-     */
-    @Test
-    public void testGetListalRecursos() {
-        System.out.println("getListalRecursos");
-        Demonstracao instance = new Demonstracao();
-        ListaRecursos expResult = null;
-        ListaRecursos result = instance.getListalRecursos();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
     /**
      * Test of setDescricao method, of class Demonstracao.
@@ -76,11 +68,10 @@ public class DemonstracaoTest {
     @Test
     public void testSetDescricao() {
         System.out.println("setDescricao");
-        String descricao = "";
+        String descricao = "1324";
         Demonstracao instance = new Demonstracao();
         instance.setDescricao(descricao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -89,11 +80,10 @@ public class DemonstracaoTest {
     @Test
     public void testAddRecurso() {
         System.out.println("addRecurso");
-        Recurso r = null;
+        Recurso r = new Recurso();
         Demonstracao instance = new Demonstracao();
         instance.addRecurso(r);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -103,11 +93,10 @@ public class DemonstracaoTest {
     public void testToString() {
         System.out.println("toString");
         Demonstracao instance = new Demonstracao();
-        String expResult = "";
+        String expResult = instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -119,38 +108,9 @@ public class DemonstracaoTest {
         int Codigo = 0;
         Demonstracao instance = new Demonstracao();
         instance.setCodigo(Codigo);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of exportContentToXMLNode method, of class Demonstracao.
-     */
-    @Test
-    public void testExportContentToXMLNode() {
-        System.out.println("exportContentToXMLNode");
-        Demonstracao instance = new Demonstracao();
-        Node expResult = null;
-        Node result = instance.exportContentToXMLNode();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of importContentFromXMLNode method, of class Demonstracao.
-     */
-    @Test
-    public void testImportContentFromXMLNode() {
-        System.out.println("importContentFromXMLNode");
-        Node node = null;
-        Demonstracao instance = new Demonstracao();
-        Demonstracao expResult = null;
-        Demonstracao result = instance.importContentFromXMLNode(node);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of getEstado method, of class Demonstracao.
@@ -159,11 +119,12 @@ public class DemonstracaoTest {
     public void testGetEstado() {
         System.out.println("getEstado");
         Demonstracao instance = new Demonstracao();
-        DemonstracaoState expResult = null;
+         DemonstracaoState state = new DemonstracaoState ();
+        instance.setEstado(state);
+        DemonstracaoState expResult = state;
         DemonstracaoState result = instance.getEstado();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -172,207 +133,14 @@ public class DemonstracaoTest {
     @Test
     public void testSetEstado() {
         System.out.println("setEstado");
-        DemonstracaoState state = null;
+        DemonstracaoState state = new DemonstracaoState ();
         Demonstracao instance = new Demonstracao();
         instance.setEstado(state);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
+    
+   
 
-    /**
-     * Test of setDemonstracaoCriada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoCriada() {
-        System.out.println("setDemonstracaoCriada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoCriada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoAbertaCandidaturas method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoAbertaCandidaturas() {
-        System.out.println("setDemonstracaoAbertaCandidaturas");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoAbertaCandidaturas();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoCandidaturaAceite method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoCandidaturaAceite() {
-        System.out.println("setDemonstracaoCandidaturaAceite");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoCandidaturaAceite();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoCandidaturaAvaliada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoCandidaturaAvaliada() {
-        System.out.println("setDemonstracaoCandidaturaAvaliada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoCandidaturaAvaliada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoCandidaturaEmAvaliacao method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoCandidaturaEmAvaliacao() {
-        System.out.println("setDemonstracaoCandidaturaEmAvaliacao");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoCandidaturaEmAvaliacao();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoCandidaturaNaoAvaliada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoCandidaturaNaoAvaliada() {
-        System.out.println("setDemonstracaoCandidaturaNaoAvaliada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoCandidaturaNaoAvaliada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCandidaturaRejeitada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetCandidaturaRejeitada() {
-        System.out.println("setCandidaturaRejeitada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setCandidaturaRejeitada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCandidaturaRetirada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetCandidaturaRetirada() {
-        System.out.println("setCandidaturaRetirada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setCandidaturaRetirada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCandidaturasAtribuidas method, of class Demonstracao.
-     */
-    @Test
-    public void testSetCandidaturasAtribuidas() {
-        System.out.println("setCandidaturasAtribuidas");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setCandidaturasAtribuidas();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCandidaturasEmSubmissao method, of class Demonstracao.
-     */
-    @Test
-    public void testSetCandidaturasEmSubmissao() {
-        System.out.println("setCandidaturasEmSubmissao");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setCandidaturasEmSubmissao();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setConflitosCandidaturaAlterados method, of class Demonstracao.
-     */
-    @Test
-    public void testSetConflitosCandidaturaAlterados() {
-        System.out.println("setConflitosCandidaturaAlterados");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setConflitosCandidaturaAlterados();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setConflitosCandidaturaDetetados method, of class Demonstracao.
-     */
-    @Test
-    public void testSetConflitosCandidaturaDetetados() {
-        System.out.println("setConflitosCandidaturaDetetados");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setConflitosCandidaturaDetetados();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoAprovada method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoAprovada() {
-        System.out.println("setDemonstracaoAprovada");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoAprovada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDemonstracaoFechadaACandidaturas method, of class Demonstracao.
-     */
-    @Test
-    public void testSetDemonstracaoFechadaACandidaturas() {
-        System.out.println("setDemonstracaoFechadaACandidaturas");
-        Demonstracao instance = new Demonstracao();
-        boolean expResult = false;
-        boolean result = instance.setDemonstracaoFechadaACandidaturas();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     
 }

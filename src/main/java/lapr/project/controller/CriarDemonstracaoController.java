@@ -52,9 +52,7 @@ public class CriarDemonstracaoController {
         exposicao.getListaDemonstracoes().addDemonstracao(demonstracao);
     }
     
-    public void setEstadoDemonstracaoCriada (){
-        
-    }
+  
 
     public Exposicao[] getListaExposicoes() {
        return this.centroExposicoes.getArrayExposicao();

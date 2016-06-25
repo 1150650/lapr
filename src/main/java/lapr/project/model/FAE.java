@@ -23,7 +23,7 @@ public class FAE implements Comparable<FAE> {
      * desempenhou o seu papel de FAE
      */
     @XmlElement
-    private int experienciaFAE;
+    private int experienciaFAE=0;
 
     /**
      * Construtor de um objeto do tipo FAE

@@ -117,18 +117,6 @@ public class CriarDemonstracaoControllerTest {
         
     }
 
-    /**
-     * Test of setEstadoDemonstracaoCriada method, of class CriarDemonstracaoController.
-     */
-    @Test
-    public void testSetEstadoDemonstracaoCriada() {
-        CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("setEstadoDemonstracaoCriada");
-        CriarDemonstracaoController instance = new CriarDemonstracaoController(ce);
-        instance.novaDemonstracao();
-        instance.setEstadoDemonstracaoCriada();
-        
-    }
 
     /**
      * Test of getListaExposicoes method, of class CriarDemonstracaoController.

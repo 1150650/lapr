@@ -34,11 +34,13 @@ public class FAETest {
     public void testGetIdentificador() {
         System.out.println("getIdentificador");
         FAE instance = new FAE();
-        String expResult = "";
+        String identificador = "123";
+        
+        instance.setIdentificador(identificador);
+        String expResult = "123";
         String result = instance.getIdentificador();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -48,11 +50,13 @@ public class FAETest {
     public void testGetUtilizador() {
         System.out.println("getUtilizador");
         FAE instance = new FAE();
-        Utilizador expResult = null;
+        Utilizador utilizador = new Utilizador ();
+        
+        instance.setUtilizador(utilizador);
+        Utilizador expResult = utilizador;
         Utilizador result = instance.getUtilizador();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -61,11 +65,10 @@ public class FAETest {
     @Test
     public void testSetUtilizador() {
         System.out.println("setUtilizador");
-        Utilizador utilizador = null;
+        Utilizador utilizador = new Utilizador ();
         FAE instance = new FAE();
         instance.setUtilizador(utilizador);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -74,11 +77,10 @@ public class FAETest {
     @Test
     public void testSetIdentificador() {
         System.out.println("setIdentificador");
-        String identificador = "";
+        String identificador = "123";
         FAE instance = new FAE();
         instance.setIdentificador(identificador);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -91,8 +93,7 @@ public class FAETest {
         int expResult = 0;
         int result = instance.getExperienciaFAE();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -103,8 +104,7 @@ public class FAETest {
         System.out.println("aumentarExperienciaFAE");
         FAE instance = new FAE();
         instance.aumentarExperienciaFAE();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -114,11 +114,10 @@ public class FAETest {
     public void testToString() {
         System.out.println("toString");
         FAE instance = new FAE();
-        String expResult = "";
+        String expResult = instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -128,11 +127,10 @@ public class FAETest {
     public void testGetListacandidatura() {
         System.out.println("getListacandidatura");
         FAE instance = new FAE();
-        ListaCandidaturas expResult = null;
+        ListaCandidaturas expResult = instance.getListacandidatura();
         ListaCandidaturas result = instance.getListacandidatura();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -141,11 +139,10 @@ public class FAETest {
     @Test
     public void testAdicionarCandidatura() {
         System.out.println("adicionarCandidatura");
-        Candidatura c = null;
+        Candidatura c = new Candidatura();
         FAE instance = new FAE();
         instance.adicionarCandidatura(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -154,13 +151,12 @@ public class FAETest {
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
-        FAE o = null;
+        FAE o = new FAE();
         FAE instance = new FAE();
         int expResult = 0;
         int result = instance.compareTo(o);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
