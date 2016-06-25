@@ -26,6 +26,11 @@ public class Organizador {
         listaAtribuicoes = new ListaAtribuicoes();
        
     }
+    
+    public Organizador() {
+       
+    }
+    
 
     /**
      * @return the utilizador

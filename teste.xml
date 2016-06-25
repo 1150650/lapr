@@ -17,7 +17,17 @@
                 </FAE>
             </listaFAE>
             <m_state/>
-            <listaOrganizadores/>
+            <listaOrganizadores>
+                <Organizador>
+                    <utilizador>
+                        <email>organizador@gmail.com</email>
+                        <nome>Organizador</nome>
+                        <password>0Qticpkbcfqt626</password>
+                        <passwordDesencriptada>.Organi`ador404</passwordDesencriptada>
+                        <username>organizador</username>
+                    </utilizador>
+                </Organizador>
+            </listaOrganizadores>
             <listaRepresentantes>
                 <representante>
                     <listaCandidaturasSubmetidas/>
