@@ -29,7 +29,10 @@ public class CentroExposicoes {
     private ListaDemonstracoes registoDemonstracoes;
     
     private ListaGestores listaGestores;
+    
+    private ListaKeywords lstkeyword ;
 
+   
     
 
     /**
@@ -45,6 +48,7 @@ public class CentroExposicoes {
         this.listaGestores = new ListaGestores();
         this.registoDemonstracoes=new ListaDemonstracoes ();
         this.registoMecanismos=new RegistoMecanismos ();
+        this.lstkeyword=new ListaKeywords();
     }
 
     /**
@@ -197,4 +201,13 @@ public class CentroExposicoes {
     public void setListaGestores(ListaGestores listaGestores) {
         this.listaGestores = listaGestores;
     }
+     public ListaKeywords getLstkeyword() {
+        return lstkeyword;
+    }
+
+     @XmlElement
+    public void setLstkeyword(ListaKeywords lstkeyword) {
+        this.lstkeyword = lstkeyword;
+    }
+
 }

@@ -55,6 +55,7 @@ public class CriarCandidaturaExposicaoController {
         this.c.setProdutos(produtos);
         this.c.setQuantidadeConvites(nConvites);
         this.c.setKEYWORDS(Keywords);
+        centroExposicoes.getLstkeyword().addKey(Keywords);
 
     }
 

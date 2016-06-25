@@ -46,5 +46,12 @@ public class ListaKeywords {
     public boolean contem(KeywordExample keyword) {
         return listaKeyword.contains(keyword);
     }
+    
+    public void addKey (String[] Keywords){
+        int i;
+        for (i=0;i< Keywords.length; i++){
+            listaKeyword.add(new KeywordExample(Keywords[i]));
+        }
+    }
 
 }
