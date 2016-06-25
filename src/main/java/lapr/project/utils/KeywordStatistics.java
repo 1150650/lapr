@@ -20,7 +20,11 @@ public class KeywordStatistics {
     private ListaKeywords lstkeywordnotDuplicat;
     private ArrayList<String> lstrepeticoeskeyword;
 
-    public KeywordStatistics() {
+    public KeywordStatistics(ListaKeywords lstkeyword) {
+        
+        this.lstkeyword=lstkeyword;
+        this.lstkeywordnotDuplicat=new ListaKeywords();
+        this.lstrepeticoeskeyword=new ArrayList();
 
     }
 
