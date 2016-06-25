@@ -53,12 +53,14 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
         setDescricao(descricao);
         listalRecursos = new ListaRecursos();
         codigo++;
+        state = new DemonstracaoCriadaState(this);
     }
 
     public Demonstracao() {
         listalRecursos = new ListaRecursos();
         Codigo = codigo;
         codigo++;
+        state = new DemonstracaoCriadaState(this);
     }
 
     /**

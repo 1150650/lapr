@@ -17,44 +17,42 @@ import lapr.project.model.RegistoExposicoes;
  * @author JOAO
  */
 public class CriarDemonstracaoController {
-      private RegistoExposicoes registoExposicoes;
-     private CentroExposicoes centroExposicoes;
-     private Demonstracao demonstracao;
+
+    private RegistoExposicoes registoExposicoes;
+    private CentroExposicoes centroExposicoes;
+    private Demonstracao demonstracao;
 
     private Exposicao exposicao;
-    
-    public CriarDemonstracaoController(CentroExposicoes centroexpo ){
-        this.centroExposicoes=centroexpo ;
+
+    public CriarDemonstracaoController(CentroExposicoes centroexpo) {
+        this.centroExposicoes = centroexpo;
     }
-    
-    public void selecionarExposicao (Exposicao exposicao){
-        this.exposicao=exposicao;
+
+    public void selecionarExposicao(Exposicao exposicao) {
+        this.exposicao = exposicao;
     }
-    
-    public void novaDemonstracao (){
-        demonstracao=new Demonstracao();
+
+    public void novaDemonstracao() {
+        demonstracao = new Demonstracao();
     }
-    
-    
-    public void setDados (String Descricao){
+
+    public void setDados(String Descricao) {
         demonstracao.setDescricao(Descricao);
     }
-     
-    
-    public ListaRecursos getListaRecursos (){
-       return centroExposicoes.getRegistoRecursos();
+
+    public ListaRecursos getListaRecursos() {
+        return centroExposicoes.getRegistoRecursos();
     }
-    public void adicionarRecurso (Recurso r){
+
+    public void adicionarRecurso(Recurso r) {
         demonstracao.addRecurso(r);
     }
-    
-    public void validaRegistaDemonstracao (){
+
+    public void validaRegistaDemonstracao() {
         exposicao.getListaDemonstracoes().addDemonstracao(demonstracao);
     }
-    
-  
 
     public Exposicao[] getListaExposicoes() {
-       return this.centroExposicoes.getArrayExposicao();
+        return this.centroExposicoes.getArrayExposicao();
     }
 }

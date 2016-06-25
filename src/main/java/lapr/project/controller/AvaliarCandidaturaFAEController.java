@@ -3,29 +3,41 @@ package lapr.project.controller;
 import lapr.project.model.Avaliacao;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.ListaAvaliacoes;
 import lapr.project.model.ListaCandidaturas;
+import lapr.project.model.Utilizador;
 
 public class AvaliarCandidaturaFAEController {
 
     private FAE fae;
 
+    private Utilizador u;
+
+    private CentroExposicoes ce;
+
     private CandidaturaExposicao candidatura;
 
     private Avaliacao avaliacao;
+
+    private Exposicao expo;
 
     private ListaCandidaturas lstCand;
 
     private ListaAvaliacoes lstAval;
 
-    public AvaliarCandidaturaFAEController(CentroExposicoes ce, FAE fae) {
-        this.fae = fae;
-        this.lstCand = fae.getListacandidatura();
+    public AvaliarCandidaturaFAEController(CentroExposicoes ce, Utilizador u) {
+        this.ce = ce;
+        this.u = u;
     }
 
     public void selecionarCandidatura(CandidaturaExposicao a) {
         this.candidatura = a;
+    }
+
+    public void selecionarExposicao(Exposicao e) {
+        this.expo = expo;
     }
 
     public String getInfo() {

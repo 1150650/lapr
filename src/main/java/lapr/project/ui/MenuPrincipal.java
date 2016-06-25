@@ -552,7 +552,7 @@ public class MenuPrincipal extends JFrame {
         btnDecidirCandidatura.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new AvaliarCandidaturaUI(MenuPrincipal.this, ce, utilizadorAtivo);
             }
         });
         return btnDecidirCandidatura;

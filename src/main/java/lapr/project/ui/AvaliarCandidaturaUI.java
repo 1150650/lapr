@@ -23,7 +23,9 @@ import javax.swing.JTextArea;
 import lapr.project.controller.AvaliarCandidaturaFAEController;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
+import lapr.project.model.Utilizador;
 
 /**
  *
@@ -49,12 +51,13 @@ public class AvaliarCandidaturaUI extends JFrame {
 
     private FAE fae;
 
-    public AvaliarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, FAE fae) {
+    public AvaliarCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce, Utilizador u) {
         super();
         this.framePai = framePai;
         this.fae = fae;
         this.ce = ce;
         this.crtlAvaliarCand = new AvaliarCandidaturaFAEController(ce, fae);
+        selecionarExposicao();
         selecionarCandidatura();
 
         GridLayout g = new GridLayout(1, 1);
@@ -190,6 +193,23 @@ public class AvaliarCandidaturaUI extends JFrame {
         }
         );
         return btn;
+    }
+
+    private void selecionarExposicao() {
+        Exposicao[] aux = ce.getArrayExposicao();
+        Exposicao expo;
+        expo = (Exposicao) JOptionPane.showInputDialog(
+                this.framePai,
+                "Selecionar Exposição"
+                + ":",
+                "Seleção De Exposição",
+                JOptionPane.DEFAULT_OPTION,
+                icon,
+                aux,
+                "");
+
+        dispose();
+        crtlAvaliarCand.selecionarExposicao(expo);
     }
 
 }

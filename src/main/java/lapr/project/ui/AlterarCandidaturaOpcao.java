@@ -57,7 +57,6 @@ public class AlterarCandidaturaOpcao extends JFrame {
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
         setMinimumSize(new Dimension(400, 400));
         setLocationRelativeTo(null);
         setVisible(true);
