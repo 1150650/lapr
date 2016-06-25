@@ -50,7 +50,8 @@ public class ListaKeywords {
     public void addKey (String[] Keywords){
         int i;
         for (i=0;i< Keywords.length; i++){
-            listaKeyword.add(new KeywordExample(Keywords[i]));
+            KeywordExample k = new KeywordExample (Keywords[i]);
+            listaKeyword.add(k);
         }
     }
 

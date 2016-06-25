@@ -15,6 +15,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -32,6 +35,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.TipoUtilizador;
 import lapr.project.model.Utilizador;
 import lapr.project.utils.ImportarExportar;
+import lapr.project.utils.KeywordStatistics;
 import lapr.project.utils.MyJFileChooser;
 
 /**
@@ -401,7 +405,7 @@ public class MenuPrincipal extends JFrame {
         btnKeywordStatistics = criarBotaoKeywordStatistics();
 
         painelBotoesGestor = new JPanel();
-        final int MARGEM_SUPERIOR = 100, MARGEM_INFERIOR = 100;
+        final int MARGEM_SUPERIOR = 30, MARGEM_INFERIOR = 30;
         final int MARGEM_ESQUERDA = 30, MARGEM_DIREITA = 30;
         painelBotoesGestor.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
@@ -721,6 +725,15 @@ public class MenuPrincipal extends JFrame {
         btnKeywordStatistics.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
+                
+                try {
+                    KeywordStatistics k = new KeywordStatistics (ce.getLstkeyword());
+                    k.retirarDuplicados();
+                    k.numeroRepeticoes();
+                    k.escreverNoFicherioCSV();
+                } catch (IOException ex) {
+                    Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
             }
         });

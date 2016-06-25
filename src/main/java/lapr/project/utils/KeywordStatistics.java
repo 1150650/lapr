@@ -68,7 +68,7 @@ public class KeywordStatistics {
         writer.append('\n');
 
         for (i = 0; i < lstkeywordnotDuplicat.tamanho(); i++) {
-            writer.append(lstkeywordnotDuplicat.obterKeyword(i).exportContentToString());
+            writer.append(lstkeywordnotDuplicat.obterKeyword(i).getValue());
             writer.append(';');
             writer.append(lstrepeticoeskeyword.get(i));
             writer.append('\n');

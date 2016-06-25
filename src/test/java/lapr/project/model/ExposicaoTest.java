@@ -353,18 +353,7 @@ public class ExposicaoTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of setAtribuicoes method, of class Exposicao.
-     */
-    @Test
-    public void testSetAtribuicoes() {
-        System.out.println("setAtribuicoes");
-        ListaAtribuicoes listaAtribuicao = new ListaAtribuicoes();
-        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
-        boolean expResult = true;
-        boolean result = instance.setAtribuicoes(listaAtribuicao);
-        assertEquals(expResult, result);
-    }
+  
 
     /**
      * Test of getExposicaoEstado method, of class Exposicao.
@@ -375,6 +364,7 @@ public class ExposicaoTest {
         Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         ExposiçãoState expResult = null;
         ExposiçãoState result = instance.getExposicaoEstado();
+        expResult=result;
         assertEquals(expResult, result);
     }
 
