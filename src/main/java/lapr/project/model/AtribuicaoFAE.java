@@ -77,7 +77,7 @@ public class AtribuicaoFAE {
      */
     @Override
     public String toString() {
-        return candidatura.toString() + "  ----->  " + FAE.toString();
+        return candidatura.getNomeEmpresa() + "      :         " + FAE.getIdentificador();
     }
 
     public void addCandidaturaFae() {

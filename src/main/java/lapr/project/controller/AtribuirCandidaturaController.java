@@ -22,19 +22,21 @@ public class AtribuirCandidaturaController {
     public AtribuirCandidaturaController(CentroExposicoes ce) {
         this.ce = ce;
         this.lstExpo = ce.getListaExposicoes();
-        lstAtribuicoes = new ListaAtribuicoes();
+        this.lstAtribuicoes = new ListaAtribuicoes();
     }
 
     public void selecionarExposicao(Exposicao expo) {
         this.expo = expo;
+        this.listaFae = getListaFAE();
+        this.lstCandidaturas = getListaCandidatura();
     }
 
-    public void getListaFAE() {
-        this.listaFae = expo.getListaFAE();
+    public ListaFAE getListaFAE() {
+        return expo.getListaFAE();
     }
 
-    public void getListaCandidatura() {
-        this.expo.getListaCandidaturasExposicoes();
+    public ListaCandidaturas getListaCandidatura() {
+        return expo.getListaCandidaturasExposicoes();
     }
 
     public Exposicao getExposicaoSelecionada() {
@@ -76,6 +78,10 @@ public class AtribuirCandidaturaController {
      */
     public ListaAtribuicoes getLstAtribuicoes() {
         return lstAtribuicoes;
+    }
+
+    public void atribuir() {
+        lstAtribuicoes = m.atribuirCandidaturasAFAE(lstCandidaturas, listaFae);
     }
 
 }

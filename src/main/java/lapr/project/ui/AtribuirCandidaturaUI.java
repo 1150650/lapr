@@ -47,13 +47,20 @@ public class AtribuirCandidaturaUI extends JFrame {
 
     private JButton btnOk, btnCancelar;
 
+    private JPanel pLista;
+
+    private JPanel pMeca, pDesc, pBot;
+
     private JComboBox cbMec;
+
+    private int termoParagem = 0;
 
     public AtribuirCandidaturaUI(MenuPrincipal framePai, CentroExposicoes ce) {
         super("Atribuir Candidatura");
         this.framePai = framePai;
         this.ce = ce;
         this.crtAtribuir = new AtribuirCandidaturaController(ce);
+        selecionarExposicao();
         GridLayout g = new GridLayout(4, 1);
         g.setHgap(5);
         g.setVgap(5);
@@ -68,11 +75,27 @@ public class AtribuirCandidaturaUI extends JFrame {
     }
 
     private void criarComponentes() {
-        selecionarExposicao();
-        add(criarPainelMecanismo());
-        add(criarPainelDescrição());
-        add(criarPainelListaAtribuicoes());
-        add(criarPainelBotoes());
+        if (termoParagem == 0) {
+            add(criarPainelMecanismo());
+            add(criarPainelDescrição());
+            add(criarPainelListaAtribuicoes());
+            add(criarPainelBotoes());
+            termoParagem++;
+        } else {
+            remove(pBot);
+            remove(pLista);
+            remove(pMeca);
+            remove(pDesc);
+            pMeca = criarPainelMecanismo();
+            pDesc = criarPainelDescrição();
+            pLista = criarPainelListaAtribuicoes();
+            pBot = criarPainelBotoes();
+            add(pMeca);
+            add(pDesc);
+            add(pLista);
+            add(pBot);
+            revalidate();
+        }
     }
 
     public void selecionarExposicao() {
@@ -94,59 +117,67 @@ public class AtribuirCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelMecanismo() {
-        JPanel p = new JPanel();
+        pMeca = new JPanel();
         JLabel label = new JLabel("Mecanismos");
         String[] mecanismo = {"", "Mecanismo Carga Equitativa Por FAE", "Mecanismo Experiencia por FAE", "Mecanismo numero candidaturas por FAE"};
         cbMec = new JComboBox(mecanismo);
         cbMec.setEditable(false);
         cbMec.setMaximumRowCount(4);
 
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        pMeca.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
-        crtAtribuir.selecionarMecanismo(cbMec.getSelectedIndex());
-        p.add(label, new FlowLayout(FlowLayout.LEFT));
-        p.add(cbMec, new FlowLayout(FlowLayout.CENTER));
-        return p;
+        cbMec.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int s1 = cbMec.getSelectedIndex();
+                crtAtribuir.selecionarMecanismo(s1);
+                crtAtribuir.atribuir();
+                criarComponentes();
+            }
+        });
+        pMeca.add(label, new FlowLayout(FlowLayout.LEFT));
+        pMeca.add(cbMec, new FlowLayout(FlowLayout.CENTER));
+        return pMeca;
     }
 
     private JPanel criarPainelDescrição() {
-        JPanel p = new JPanel();
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        pDesc = new JPanel();
+        pDesc.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
         JLabel jl = new JLabel(crtAtribuir.getExposicaoSelecionada().getTitulo());
-        p.add(jl, new FlowLayout(FlowLayout.CENTER));
-        return p;
+        pDesc.add(jl, new FlowLayout(FlowLayout.CENTER));
+        return pDesc;
 
     }
 
     private JPanel criarPainelListaAtribuicoes() {
-        JPanel p = new JPanel();
+        pLista = new JPanel();
         modeloListaAtribuicoes = new ModeloListaAtribuicoes(crtAtribuir.getLstAtribuicoes());
         JList lstCompleta = new JList(modeloListaAtribuicoes);
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        pLista.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
-        p.add(criarPainelLista(lstCompleta));
-
-        return p;
+        pLista.add(criarPainelLista(lstCompleta));
+        lstCompleta.revalidate();
+        return pLista;
     }
 
     private JPanel criarPainelBotoes() {
-        JPanel j = new JPanel();
+        pBot = new JPanel();
         JButton j1 = criarBotaoCancelar();
         JButton j2 = criarBotaoOk();
-        j.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        pBot.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
-        j.add(j1, new FlowLayout(FlowLayout.CENTER));
-        j.add(j2, new FlowLayout(FlowLayout.CENTER));
-        return j;
+        pBot.add(j1, new FlowLayout(FlowLayout.CENTER));
+        pBot.add(j2, new FlowLayout(FlowLayout.CENTER));
+        return pBot;
     }
 
     private JButton criarBotaoCancelar() {
