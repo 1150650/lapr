@@ -42,8 +42,7 @@ public class RegistarExposicaoController {
     }
     
     public void adicionarOrganizador (Utilizador selecionado){
-        Organizador u =new Organizador ();
-        u.setUtilizador(selecionado);
+        Organizador u =new Organizador (selecionado);
         exposicao.getListaOrganizadores().adicionarOrganizador(u);
     }
     
