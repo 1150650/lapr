@@ -33,12 +33,11 @@ public class ListaConflitosTest {
     @Test
     public void testRegistarConflito() {
         System.out.println("registarConflito");
-        FAE fae = null;
-        Candidatura candidatura = null;
+        FAE fae =new FAE();
+        Candidatura candidatura = new Candidatura();
         ListaConflitos instance = new ListaConflitos();
         instance.registarConflito(fae, candidatura);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

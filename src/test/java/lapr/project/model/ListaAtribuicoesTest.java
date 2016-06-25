@@ -5,6 +5,7 @@
  */
 package lapr.project.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -33,14 +34,16 @@ public class ListaAtribuicoesTest {
      */
     @Test
     public void testObterAtribuiçao() {
-        System.out.println("obterAtribui\u00e7ao");
-        int indice = 0;
+        System.out.println("obterAtribuicao");
+        int i = 0;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
-        AtribuicaoFAE expResult = null;
-        AtribuicaoFAE result = instance.obterAtribuiçao(indice);
+        instance.adicionarAtribuição(atribuicao);
+        
+        AtribuicaoFAE expResult =atribuicao;
+        AtribuicaoFAE result = instance.obterAtribuicao(i);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -49,13 +52,12 @@ public class ListaAtribuicoesTest {
     @Test
     public void testAdicionarAtribuição() {
         System.out.println("adicionarAtribui\u00e7\u00e3o");
-        AtribuicaoFAE atribuicao = null;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.adicionarAtribuição(atribuicao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -64,13 +66,12 @@ public class ListaAtribuicoesTest {
     @Test
     public void testRemoverAtribuicao() {
         System.out.println("removerAtribuicao");
-        AtribuicaoFAE atribuicao = null;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
         boolean expResult = false;
         boolean result = instance.removerAtribuicao(atribuicao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -83,8 +84,7 @@ public class ListaAtribuicoesTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -93,13 +93,13 @@ public class ListaAtribuicoesTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        AtribuicaoFAE atribuicao = null;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
+        instance.adicionarAtribuição(atribuicao);
         int expResult = 0;
         int result = instance.indiceDe(atribuicao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -108,13 +108,13 @@ public class ListaAtribuicoesTest {
     @Test
     public void testContem() {
         System.out.println("contem");
-        AtribuicaoFAE atribuicao = null;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
-        boolean expResult = false;
+        instance.adicionarAtribuição(atribuicao);
+        boolean expResult = true;
         boolean result = instance.contem(atribuicao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -123,11 +123,10 @@ public class ListaAtribuicoesTest {
     @Test
     public void testAdicionarNovaLista() {
         System.out.println("adicionarNovaLista");
-        List<AtribuicaoFAE> listaAtribuiçao = null;
+        List<AtribuicaoFAE> listaAtribuiçao = new ArrayList();
         ListaAtribuicoes instance = new ListaAtribuicoes();
         instance.adicionarNovaLista(listaAtribuiçao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -138,8 +137,7 @@ public class ListaAtribuicoesTest {
         System.out.println("adicionarAtribui\u00e7oesFAE");
         ListaAtribuicoes instance = new ListaAtribuicoes();
         instance.adicionarAtribuiçoesFAE();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -149,12 +147,14 @@ public class ListaAtribuicoesTest {
     public void testObterAtribuicao() {
         System.out.println("obterAtribuicao");
         int i = 0;
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE ();
         ListaAtribuicoes instance = new ListaAtribuicoes();
-        AtribuicaoFAE expResult = null;
+        instance.adicionarAtribuição(atribuicao);
+        
+        AtribuicaoFAE expResult =atribuicao;
         AtribuicaoFAE result = instance.obterAtribuicao(i);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -163,12 +163,14 @@ public class ListaAtribuicoesTest {
     @Test
     public void testGetListaAtribuicoes() {
         System.out.println("getListaAtribuicoes");
+        List<AtribuicaoFAE> listaAtribuiçao = new ArrayList();
         ListaAtribuicoes instance = new ListaAtribuicoes();
-        List<AtribuicaoFAE> expResult = null;
+        instance.adicionarNovaLista(listaAtribuiçao);
+        
+        List<AtribuicaoFAE> expResult =listaAtribuiçao;
         List<AtribuicaoFAE> result = instance.getListaAtribuicoes();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

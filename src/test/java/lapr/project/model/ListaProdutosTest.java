@@ -33,11 +33,10 @@ public class ListaProdutosTest {
     @Test
     public void testAddProduto() {
         System.out.println("addProduto");
-        Produto e = null;
+        Produto e = new Produto();
         ListaProdutos instance = new ListaProdutos();
         instance.addProduto(e);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -46,13 +45,13 @@ public class ListaProdutosTest {
     @Test
     public void testValidaProduto() {
         System.out.println("validaProduto");
-        Produto e = null;
+        Produto e = new Produto();
         ListaProdutos instance = new ListaProdutos();
-        boolean expResult = false;
+       
+        boolean expResult = true;
         boolean result = instance.validaProduto(e);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

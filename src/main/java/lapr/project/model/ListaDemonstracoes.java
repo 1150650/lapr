@@ -48,15 +48,7 @@ public class ListaDemonstracoes {
         this.listalDemonstracao = listalDemonstracao;
     }
 
-    /**
-     * Metodo que retorna uma descricao textual da lista de demonstracao
-     *
-     * @return descricao da lista de demonstracoes
-     */
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+    
 
     /**
      * Metodo que cria uma demonstracao

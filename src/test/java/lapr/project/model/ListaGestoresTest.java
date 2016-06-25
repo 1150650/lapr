@@ -35,12 +35,13 @@ public class ListaGestoresTest {
     public void testObterGestor() {
         System.out.println("obterGestor");
         int indice = 0;
+        Gestor gestor =new Gestor();
         ListaGestores instance = new ListaGestores();
-        Gestor expResult = null;
+        instance.adicionarGestor(gestor);
+        Gestor expResult =gestor;
         Gestor result = instance.obterGestor(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -53,8 +54,7 @@ public class ListaGestoresTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -64,11 +64,10 @@ public class ListaGestoresTest {
     public void testGetListaGestores() {
         System.out.println("getListaGestores");
         ListaGestores instance = new ListaGestores();
-        List expResult = null;
+        List expResult = instance.getListaGestores();
         List result = instance.getListaGestores();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -77,13 +76,12 @@ public class ListaGestoresTest {
     @Test
     public void testAdicionarGestor() {
         System.out.println("adicionarGestor");
-        Gestor gestor = null;
+        Gestor gestor =new Gestor();
         ListaGestores instance = new ListaGestores();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.adicionarGestor(gestor);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

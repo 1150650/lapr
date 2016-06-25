@@ -35,11 +35,13 @@ public class ListaKeywordsTest {
         System.out.println("obterKeyword");
         int indice = 0;
         ListaKeywords instance = new ListaKeywords();
-        KeywordExample expResult = null;
+        KeywordExample keyword = new KeywordExample();
+        instance.adicionarKeyword(keyword);
+        KeywordExample expResult = keyword;
+        
         KeywordExample result = instance.obterKeyword(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -48,13 +50,12 @@ public class ListaKeywordsTest {
     @Test
     public void testAdicionarKeyword() {
         System.out.println("adicionarKeyword");
-        KeywordExample keyword = null;
+        KeywordExample keyword = new KeywordExample();
         ListaKeywords instance = new ListaKeywords();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.adicionarKeyword(keyword);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -63,13 +64,14 @@ public class ListaKeywordsTest {
     @Test
     public void testRemoverKeyword() {
         System.out.println("removerKeyword");
-        KeywordExample keyword = null;
+        KeywordExample keyword = new KeywordExample();
         ListaKeywords instance = new ListaKeywords();
-        boolean expResult = false;
+        
+        instance.adicionarKeyword(keyword);
+        boolean expResult = true;
         boolean result = instance.removerKeyword(keyword);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -82,8 +84,7 @@ public class ListaKeywordsTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -92,13 +93,13 @@ public class ListaKeywordsTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        KeywordExample keyword = null;
+        KeywordExample keyword = new KeywordExample();
         ListaKeywords instance = new ListaKeywords();
+        instance.adicionarKeyword(keyword);
         int expResult = 0;
         int result = instance.indiceDe(keyword);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -107,13 +108,13 @@ public class ListaKeywordsTest {
     @Test
     public void testContem() {
         System.out.println("contem");
-        KeywordExample keyword = null;
+        KeywordExample keyword = new KeywordExample();
         ListaKeywords instance = new ListaKeywords();
-        boolean expResult = false;
+        instance.adicionarKeyword(keyword);
+        boolean expResult = true;
         boolean result = instance.contem(keyword);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

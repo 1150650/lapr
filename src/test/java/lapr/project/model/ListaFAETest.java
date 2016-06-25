@@ -36,12 +36,15 @@ public class ListaFAETest {
     public void testObterFAE() {
         System.out.println("obterFAE");
         int indice = 0;
+        
         ListaFAE instance = new ListaFAE();
-        FAE expResult = null;
+        FAE fae = new FAE();
+        instance.adicionarFAE(fae);
+        
+        FAE expResult = fae;
         FAE result = instance.obterFAE(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -50,13 +53,12 @@ public class ListaFAETest {
     @Test
     public void testAdicionarFAE() {
         System.out.println("adicionarFAE");
-        FAE fae = null;
+        FAE fae = new FAE();
         ListaFAE instance = new ListaFAE();
-        boolean expResult = false;
+        boolean expResult =true ;
         boolean result = instance.adicionarFAE(fae);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -65,13 +67,13 @@ public class ListaFAETest {
     @Test
     public void testRemoverFAE() {
         System.out.println("removerFAE");
-        FAE fae = null;
+        FAE fae = new FAE();
         ListaFAE instance = new ListaFAE();
-        boolean expResult = false;
+        instance.adicionarFAE(fae);
+        boolean expResult =true;
         boolean result = instance.removerFAE(fae);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -84,8 +86,7 @@ public class ListaFAETest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -94,13 +95,13 @@ public class ListaFAETest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        FAE fae = null;
+        FAE fae = new FAE();
         ListaFAE instance = new ListaFAE();
+        instance.adicionarFAE(fae);
         int expResult = 0;
         int result = instance.indiceDe(fae);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -110,11 +111,10 @@ public class ListaFAETest {
     public void testOrdenarListaFAE() {
         System.out.println("ordenarListaFAE");
         ListaFAE instance = new ListaFAE();
-        ArrayList<FAE> expResult = null;
+        ArrayList<FAE> expResult = instance.ordenarListaFAE();
         ArrayList<FAE> result = instance.ordenarListaFAE();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -123,13 +123,18 @@ public class ListaFAETest {
     @Test
     public void testObterFAEId() {
         System.out.println("obterFAEId");
-        String identificador = "";
+        Utilizador utilizador = new Utilizador();
+        String id = "123";
+        
+        
+        FAE exp = new FAE(utilizador,id);
+        String identificador = "123";
         ListaFAE instance = new ListaFAE();
-        FAE expResult = null;
+        instance.adicionarFAE(exp);
+        FAE expResult = exp;
         FAE result = instance.obterFAEId(identificador);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -139,28 +144,13 @@ public class ListaFAETest {
     public void testGetListaFAEs() {
         System.out.println("getListaFAEs");
         ListaFAE instance = new ListaFAE();
-        List expResult = null;
+        List expResult = instance.getListaFAEs();
         List result = instance.getListaFAEs();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of addFAE method, of class ListaFAE.
-     */
-    @Test
-    public void testAddFAE() {
-        System.out.println("addFAE");
-        Utilizador utilizador = null;
-        String id = "";
-        ListaFAE instance = new ListaFAE();
-        FAE expResult = null;
-        FAE result = instance.addFAE(utilizador, id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
 
     /**
      * Test of registaFAE method, of class ListaFAE.
@@ -168,11 +158,10 @@ public class ListaFAETest {
     @Test
     public void testRegistaFAE() {
         System.out.println("registaFAE");
-        FAE fae = null;
+        FAE fae = new FAE();
         ListaFAE instance = new ListaFAE();
         instance.registaFAE(fae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

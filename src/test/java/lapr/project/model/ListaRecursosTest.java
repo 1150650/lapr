@@ -28,20 +28,7 @@ public class ListaRecursosTest {
     public static void tearDownClass() {
     }
 
-    /**
-     * Test of criarRecurso method, of class ListaRecursos.
-     */
-    @Test
-    public void testCriarRecurso() {
-        System.out.println("criarRecurso");
-        String recurso = "";
-        ListaRecursos instance = new ListaRecursos();
-        Recurso expResult = null;
-        Recurso result = instance.criarRecurso(recurso);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
     /**
      * Test of addRecurso method, of class ListaRecursos.
@@ -49,13 +36,12 @@ public class ListaRecursosTest {
     @Test
     public void testAddRecurso() {
         System.out.println("addRecurso");
-        Recurso r = null;
+        Recurso r = new Recurso ();
         ListaRecursos instance = new ListaRecursos();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.addRecurso(r);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -65,12 +51,13 @@ public class ListaRecursosTest {
     public void testObterRecurso() {
         System.out.println("obterRecurso");
         int indice = 0;
+        Recurso r = new Recurso ();
         ListaRecursos instance = new ListaRecursos();
-        Recurso expResult = null;
+        instance.addRecurso(r);
+        Recurso expResult = r;
         Recurso result = instance.obterRecurso(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -83,8 +70,7 @@ public class ListaRecursosTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -93,13 +79,13 @@ public class ListaRecursosTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        Recurso r = null;
+        Recurso r = new Recurso();
         ListaRecursos instance = new ListaRecursos();
+        instance.addRecurso(r);
         int expResult = 0;
         int result = instance.indiceDe(r);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -108,13 +94,13 @@ public class ListaRecursosTest {
     @Test
     public void testRemoverRecurso() {
         System.out.println("removerRecurso");
-        Recurso r = null;
+        Recurso r = new Recurso();
         ListaRecursos instance = new ListaRecursos();
-        boolean expResult = false;
+         instance.addRecurso(r);
+        boolean expResult = true;
         boolean result = instance.removerRecurso(r);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -124,11 +110,10 @@ public class ListaRecursosTest {
     public void testGetListaRecursos() {
         System.out.println("getListaRecursos");
         ListaRecursos instance = new ListaRecursos();
-        ArrayList expResult = null;
+        ArrayList expResult = instance.getListaRecursos();
         ArrayList result = instance.getListaRecursos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

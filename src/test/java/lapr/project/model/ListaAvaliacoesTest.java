@@ -33,13 +33,12 @@ public class ListaAvaliacoesTest {
     @Test
     public void testAddAvaliacao() {
         System.out.println("addAvaliacao");
-        Avaliacao avaliacao = null;
+        Avaliacao avaliacao = new Avaliacao();
         ListaAvaliacoes instance = new ListaAvaliacoes();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.addAvaliacao(avaliacao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -48,13 +47,13 @@ public class ListaAvaliacoesTest {
     @Test
     public void testRemoverAvaliacao() {
         System.out.println("removerAvaliacao");
-        Avaliacao avaliacao = null;
+        Avaliacao avaliacao = new Avaliacao();
         ListaAvaliacoes instance = new ListaAvaliacoes();
-        boolean expResult = false;
+        instance.adicionarAvaliacao(avaliacao);
+        boolean expResult = true;
         boolean result = instance.removerAvaliacao(avaliacao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -63,13 +62,16 @@ public class ListaAvaliacoesTest {
     @Test
     public void testObterAvaliacao() {
         System.out.println("obterAvaliacao");
-        int indice = 0;
+        Avaliacao avaliacao = new Avaliacao();
+        
         ListaAvaliacoes instance = new ListaAvaliacoes();
-        Avaliacao expResult = null;
+        instance.adicionarAvaliacao(avaliacao);
+        int indice = 0;
+        
+        Avaliacao expResult = avaliacao;
         Avaliacao result = instance.obterAvaliacao(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -82,8 +84,7 @@ public class ListaAvaliacoesTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -92,13 +93,15 @@ public class ListaAvaliacoesTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        Avaliacao avaliacao = null;
+        Avaliacao avaliacao = new Avaliacao();
+        
         ListaAvaliacoes instance = new ListaAvaliacoes();
+        instance.adicionarAvaliacao(avaliacao);
+        
         int expResult = 0;
         int result = instance.indiceDe(avaliacao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -107,11 +110,10 @@ public class ListaAvaliacoesTest {
     @Test
     public void testAdicionarAvaliacao() {
         System.out.println("adicionarAvaliacao");
-        Avaliacao avaliacao = null;
+        Avaliacao avaliacao = new Avaliacao();
         ListaAvaliacoes instance = new ListaAvaliacoes();
         instance.adicionarAvaliacao(avaliacao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

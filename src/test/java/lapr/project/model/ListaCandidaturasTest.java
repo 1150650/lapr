@@ -36,11 +36,12 @@ public class ListaCandidaturasTest {
         System.out.println("obterCandidatura");
         int indice = 0;
         ListaCandidaturas instance = new ListaCandidaturas();
-        Candidatura expResult = null;
+        Candidatura candidatura = new Candidatura ();
+        instance.adicionarCandidatura(candidatura);
+        Candidatura expResult = candidatura;
         Candidatura result = instance.obterCandidatura(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -49,13 +50,12 @@ public class ListaCandidaturasTest {
     @Test
     public void testAdicionarCandidatura() {
         System.out.println("adicionarCandidatura");
-        Candidatura candidatura = null;
+        Candidatura candidatura = new Candidatura ();
         ListaCandidaturas instance = new ListaCandidaturas();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.adicionarCandidatura(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -64,13 +64,14 @@ public class ListaCandidaturasTest {
     @Test
     public void testRemoverCandidatura() {
         System.out.println("removerCandidatura");
-        Candidatura candidatura = null;
+       Candidatura candidatura = new Candidatura ();
+        
         ListaCandidaturas instance = new ListaCandidaturas();
-        boolean expResult = false;
+        instance.adicionarCandidatura(candidatura);
+        boolean expResult = true;
         boolean result = instance.removerCandidatura(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -83,8 +84,7 @@ public class ListaCandidaturasTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -93,13 +93,14 @@ public class ListaCandidaturasTest {
     @Test
     public void testIndiceDe() {
         System.out.println("indiceDe");
-        Candidatura candidatura = null;
+        
         ListaCandidaturas instance = new ListaCandidaturas();
+        Candidatura candidatura = new Candidatura ();
+        instance.adicionarCandidatura(candidatura);
         int expResult = 0;
         int result = instance.indiceDe(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -108,28 +109,17 @@ public class ListaCandidaturasTest {
     @Test
     public void testContem() {
         System.out.println("contem");
-        Candidatura candidatura = null;
+        
         ListaCandidaturas instance = new ListaCandidaturas();
-        boolean expResult = false;
+        Candidatura candidatura = new Candidatura ();
+        instance.adicionarCandidatura(candidatura);
+        boolean expResult = true;
         boolean result = instance.contem(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of novaCandidatura method, of class ListaCandidaturas.
-     */
-    @Test
-    public void testNovaCandidatura() {
-        System.out.println("novaCandidatura");
-        ListaCandidaturas instance = new ListaCandidaturas();
-        Candidatura expResult = null;
-        Candidatura result = instance.novaCandidatura();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
     /**
      * Test of getCandidaturasAceites method, of class ListaCandidaturas.
@@ -138,11 +128,10 @@ public class ListaCandidaturasTest {
     public void testGetCandidaturasAceites() {
         System.out.println("getCandidaturasAceites");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List expResult = null;
+        List expResult = instance.getCandidaturasAceites();
         List result = instance.getCandidaturasAceites();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -152,11 +141,10 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturas() {
         System.out.println("getListaCandidaturas");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List expResult = null;
+        List expResult = instance.getListaCandidaturas();
         List result = instance.getListaCandidaturas();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -165,13 +153,13 @@ public class ListaCandidaturasTest {
     @Test
     public void testValidaCandidatura() {
         System.out.println("validaCandidatura");
-        Candidatura c = null;
+        Candidatura candidatura = new Candidatura ();
+        
         ListaCandidaturas instance = new ListaCandidaturas();
         boolean expResult = false;
-        boolean result = instance.validaCandidatura(c);
+        boolean result = instance.validaCandidatura(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -181,11 +169,10 @@ public class ListaCandidaturasTest {
     public void testGetCandidaturasSemAtribuicao() {
         System.out.println("getCandidaturasSemAtribuicao");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List<Candidatura> expResult = null;
+        List<Candidatura> expResult = instance.getCandidaturasSemAtribuicao();
         List<Candidatura> result = instance.getCandidaturasSemAtribuicao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -195,11 +182,10 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturasExpo() {
         System.out.println("getListaCandidaturasExpo");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List expResult = null;
+        List expResult = instance.getListaCandidaturasExpo();
         List result = instance.getListaCandidaturasExpo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -209,11 +195,10 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturasDemo() {
         System.out.println("getListaCandidaturasDemo");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List<Candidatura> expResult = null;
+        List<Candidatura> expResult =instance.getListaCandidaturasDemo();
         List<Candidatura> result = instance.getListaCandidaturasDemo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -223,11 +208,10 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturasExpoRetiradas() {
         System.out.println("getListaCandidaturasExpoRetiradas");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List expResult = null;
+        List expResult = instance.getListaCandidaturasExpoRetiradas();
         List result = instance.getListaCandidaturasExpoRetiradas();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -237,40 +221,14 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturasDemoRetiradas() {
         System.out.println("getListaCandidaturasDemoRetiradas");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List expResult = null;
+        List expResult = instance.getListaCandidaturasDemoRetiradas();
         List result = instance.getListaCandidaturasDemoRetiradas();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of newCandidaturaDemo method, of class ListaCandidaturas.
-     */
-    @Test
-    public void testNewCandidaturaDemo() {
-        System.out.println("newCandidaturaDemo");
-        Candidatura candidatura = null;
-        ListaCandidaturas instance = new ListaCandidaturas();
-        CandidaturaDemonstracao expResult = null;
-        CandidaturaDemonstracao result = instance.newCandidaturaDemo(candidatura);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
 
-    /**
-     * Test of listaCandExposicaoToArray method, of class ListaCandidaturas.
-     */
-    @Test
-    public void testListaCandExposicaoToArray() {
-        System.out.println("listaCandExposicaoToArray");
-        ListaCandidaturas instance = new ListaCandidaturas();
-        CandidaturaExposicao[] expResult = null;
-        CandidaturaExposicao[] result = instance.listaCandExposicaoToArray();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     
 }
