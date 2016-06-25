@@ -82,7 +82,7 @@ public class CandidaturaTest {
         System.out.println("getProdutos");
         Candidatura instance = new Candidatura();
        
-        String produtos = "1324";
+        String produtos = "1234";
         instance.setProdutos(produtos);
       
         String expResult = "1234";
@@ -107,18 +107,6 @@ public class CandidaturaTest {
        
     }
 
-    /**
-     * Test of getListaAvaliacoes method, of class Candidatura.
-     */
-    @Test
-    public void testGetListaAvaliacoes() {
-        System.out.println("getListaAvaliacoes");
-        Candidatura instance = new Candidatura();
-        ListaAvaliacoes expResult = new ListaAvaliacoes ();
-        ListaAvaliacoes result = instance.getListaAvaliacoes();
-        assertEquals(expResult, result);
-        
-    }
 
     /**
      * Test of setNomeEmpresa method, of class Candidatura.
@@ -233,18 +221,6 @@ public class CandidaturaTest {
         
     }
 
-    /**
-     * Test of getState method, of class Candidatura.
-     */
-    @Test
-    public void testGetState() {
-        System.out.println("getState");
-        Candidatura instance = new Candidatura();
-        CandidaturaState expResult = new CandidaturaState();
-        CandidaturaState result = instance.getState();
-        assertEquals(expResult, result);
-        
-    }
 
     /**
      * Test of setEstado method, of class Candidatura.
@@ -258,18 +234,6 @@ public class CandidaturaTest {
         
     }
 
-    /**
-     * Test of setCandidaturaEmSubmissao method, of class Candidatura.
-     */
-    @Test
-    public void testSetCandidaturaEmSubmissao() {
-        System.out.println("setCandidaturaEmSubmissao");
-        Candidatura instance = new Candidatura();
-        boolean expResult = false;
-        boolean result = instance.setCandidaturaEmSubmissao();
-        assertEquals(expResult, result);
-        
-    }
 
     /**
      * Test of setStand method, of class Candidatura.

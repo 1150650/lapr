@@ -35,27 +35,6 @@ public class CandidaturaExampleTest {
 
     }
 
-    @Test
-    public void ensureXMLElementExportToStringIsValid() throws Exception {
-        String expected = "<candidatura>\n"
-                + "<description>MyCandidatura</description>\n"
-                + "<keywords>\n"
-                + "<keyword>\n"
-                + "<value>Doors</value>\n"
-                + "</keyword>\n"
-                + "<keyword>\n"
-                + "<value>Windows</value>\n"
-                + "</keyword>\n"
-                + "</keywords>\n"
-                + "</candidatura>\n";
-
-        List<KeywordExample> keywordList = new ArrayList<>();
-        keywordList.add(new KeywordExample("Doors"));
-        keywordList.add(new KeywordExample("Windows"));
-        CandidaturaExample candidaturaExample = new CandidaturaExample("MyCandidatura", keywordList);
-        String result = candidaturaExample.exportContentToString();
-        assertEquals(expected, result);
-    }
 
     @Test
     public void ensureImportFromXMLElementNodeIsValid() throws Exception {

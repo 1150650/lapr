@@ -46,66 +46,7 @@ public class AceitarCandidaturaControllerTest {
         
     }
 
-    /**
-     * Test of getListaCandidaturasExposicoes method, of class AceitarCandidaturaController.
-     */
-    @Test
-    public void testGetListaCandidaturasExposicoes() {
-         CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("getListaCandidaturasExposicoes");
-        Exposicao expo = new Exposicao();
-        ce.getListaExposicoes().adicionarExposicao(expo);
-    
-        AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
-        ListaCandidaturas expResult = expo.getListaCandidaturasExposicoes() ;
-        ListaCandidaturas result = instance.getListaCandidaturasExposicoes(expo);
-        assertEquals(expResult, result);
-       
-    }
 
-    /**
-     * Test of getListaCandidaturasDemonstracoes method, of class AceitarCandidaturaController.
-     */
-    @Test
-    public void testGetListaCandidaturasDemonstracoes() {
-         CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("getListaCandidaturasDemonstracoes");
-        Exposicao expo = new Exposicao();
-
-        ce.getListaExposicoes().adicionarExposicao(expo);
-        AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
-        ListaCandidaturas expResult =expo.getListaCandidaturasDemonstracoes() ;
-        ListaCandidaturas result = instance.getListaCandidaturasDemonstracoes(expo);
-        assertEquals(expResult, result);
-        
-    }
-
-    /**
-     * Test of aceitarCandidaturaDemonstracao method, of class AceitarCandidaturaController.
-     */
-    @Test
-    public void testAceitarCandidaturaDemonstracao() {
-         CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("aceitarCandidaturaDemonstracao");
-        
-        Candidatura c = new Candidatura();
-        AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
-        instance.aceitarCandidaturaDemonstracao(c);
-        
-    }
-
-    /**
-     * Test of aceitarCandidaturaExposciao method, of class AceitarCandidaturaController.
-     */
-    @Test
-    public void testAceitarCandidaturaExposciao() {
-         CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("aceitarCandidaturaExposciao");
-        Candidatura c = new Candidatura();
-        AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
-        instance.aceitarCandidaturaExposciao(c);
-       
-    }
 
     /**
      * Test of getListaStands method, of class AceitarCandidaturaController.
@@ -121,17 +62,5 @@ public class AceitarCandidaturaControllerTest {
         
     }
 
-    /**
-     * Test of adicionarStandCandidaturaExposciao method, of class AceitarCandidaturaController.
-     */
-    @Test
-    public void testAdicionarStandCandidaturaExposciao() {
-         CentroExposicoes ce= new CentroExposicoes();
-        System.out.println("adicionarStandCandidaturaExposciao");
-        Stand s = new Stand("teste");
-        AceitarCandidaturaController instance = new AceitarCandidaturaController(ce) ;
-        instance.adicionarStandCandidaturaExposciao(s);
-        
-    }
     
 }
