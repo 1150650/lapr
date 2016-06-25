@@ -22,7 +22,7 @@ public class Conflito {
     }
 
     Conflito() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
   public FAE getFae() {
         return fae;
