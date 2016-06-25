@@ -151,5 +151,18 @@ public class UtilizadorTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+
+    /**
+     * Test of setPassword method, of class Utilizador.
+     */
+    @Test
+    public void testSetPassword() {
+        System.out.println("setPassword");
+        String password = "";
+        Utilizador instance = new Utilizador();
+        instance.setPassword(password);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     
 }

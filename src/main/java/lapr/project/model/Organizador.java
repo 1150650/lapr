@@ -23,8 +23,7 @@ public class Organizador {
     public Organizador(Utilizador utilizador) {
         setUtilizador(utilizador);
         listacandidatura = new ListaCandidaturas();
-        listaAtribuicoes = new ListaAtribuicoes();
-       
+        listaAtribuicoes = new ListaAtribuicoes(); 
     }
     
     public Organizador() {
