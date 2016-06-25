@@ -49,7 +49,10 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         this.framePai = framePai;
         this.ce = ce;
         crtlCriarCandidatura = new CriarCandidaturaExposicaoController(ce, u);
-
+        GridLayout g = new GridLayout(0, 1);
+        g.setHgap(20);
+        g.setVgap(20);
+        setLayout(g);
         selecionarExposicao();
         criarComponentes();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +60,6 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
         setVisible(true);
-        pack();
         setResizable(false);
     }
 
@@ -78,9 +80,9 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
     }
 
     private void criarComponentes() {
-        add(criarSubmeterFicheiroXml(), BorderLayout.NORTH);
-        add(criarCandidaturaPrograma(), BorderLayout.CENTER);
-        add(criarBotaoSair(), BorderLayout.SOUTH);
+        add(criarSubmeterFicheiroXml());
+        add(criarCandidaturaPrograma());
+        add(criarBotaoSair());
     }
 
     private JButton criarSubmeterFicheiroXml() {

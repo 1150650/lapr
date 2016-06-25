@@ -48,6 +48,7 @@ public class AlterarCandidaturaOpcao extends JFrame {
     private MenuPrincipal framePai;
 
     public AlterarCandidaturaOpcao(MenuPrincipal framePai, Utilizador u, CentroExposicoes ce) {
+        super("Alterar Candidatura");
         this.framePai = framePai;
         this.u = u;
         this.ce = ce;

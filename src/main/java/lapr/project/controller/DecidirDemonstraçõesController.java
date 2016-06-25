@@ -55,6 +55,8 @@ public class DecidirDemonstraçõesController {
      */
     public void selecionarExposicao(Exposicao e) {
         this.expo = e;
+        validarExposicao();
+        
     }
 
     /**
@@ -126,5 +128,11 @@ public class DecidirDemonstraçõesController {
      */
     public Exposicao getExpo() {
         return expo;
+    }
+
+    private void validarExposicao() {
+        if!(expo.getExposicaoEstado().isEstadoStandConfirmado()){
+            throw new Exception("Esta Exposição ainda não pode ser Definidas as Demonstrações");
+        }
     }
 }

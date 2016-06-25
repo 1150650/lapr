@@ -670,7 +670,7 @@ public class MenuPrincipal extends JFrame {
         btnDecidirDemonstracao.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+                new DefinirDemonstraçõesEfetivasUI(MenuPrincipal.this, ce);
             }
         });
         return btnDecidirDemonstracao;
