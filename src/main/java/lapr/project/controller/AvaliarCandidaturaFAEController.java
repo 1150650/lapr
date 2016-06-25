@@ -29,7 +29,7 @@ public class AvaliarCandidaturaFAEController {
     }
 
     public String getInfo() {
-        return candidatura.apresentarDados();
+        return candidatura.toString();
     }
 
     public void getListaAvaliacoes() {

@@ -18,15 +18,16 @@ public class CandidaturaDemonstracao extends Candidatura{
          super(nomeEmpresa, morada, telemovel, produtos, quantidadeConvites);
          setDemonstracao(demonstracao);
     }
+     public CandidaturaDemonstracao(){
+         super();
+    }
     
     public Demonstracao getDemonstracao(){
         return demonstracao;
     }
 
     public void setDemonstracao(Demonstracao demonstracao) {
-        if (demonstracao == null) {
-            throw new IllegalArgumentException("Área pretendida é inválida!");
-        }
+        
         this.demonstracao =demonstracao;
     }
     

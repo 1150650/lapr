@@ -47,6 +47,8 @@ public class FAE implements Comparable<FAE> {
     }
 
     public FAE() {
+        
+        listaCandidaturasParaAvaliar=new ListaCandidaturas();
 
     }
     /**

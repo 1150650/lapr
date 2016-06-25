@@ -63,14 +63,7 @@ public class AlterarCandidaturaController {
         this.candidatura = c;
     }
 
-    /**
-     * Obtem a informação da candidatura
-     *
-     * @return
-     */
-    public String getCandidaturaInfo() {
-        return candidatura.apresentarDados();
-    }
+ 
 
     /**
      * Valida os novos dados da candidatura para ver se pode alterar

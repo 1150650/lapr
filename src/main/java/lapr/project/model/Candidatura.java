@@ -41,6 +41,7 @@ public class Candidatura {
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
         state = new CandidaturaAbertaState(this);
+        this.avalicaoFAE=new int [5];
 
     }
 
@@ -68,6 +69,7 @@ public class Candidatura {
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
         state = new CandidaturaAbertaState(this);
+        this.avalicaoFAE=new int [5];
     }
 
     /**
@@ -174,14 +176,7 @@ public class Candidatura {
         return String.format(" Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites);
     }
 
-    /**
-     * Mostra todas as especificaçoes da candidatura
-     *
-     * @return string
-     */
-    public String apresentarDados() {
-        return " Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites;
-    }
+  
 
     public boolean setCandidaturaStandAtribuido() {
         return state.setStandsAtribuidos();

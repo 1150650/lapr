@@ -15,13 +15,12 @@ public class CentroExposicoes {
     @XmlElement
     private RegistoExposicoes listaExposicoes;
 
-    /**
-     * Criação de uma instância de uma JList
-     */
-    private JList JListExposicoes;
+   
 
     @XmlElement
     private ListaStands listaStands;
+
+  
 
     @XmlElement
     private RegistoTipoDeConflito listaTipoDeConflito;
@@ -44,6 +43,8 @@ public class CentroExposicoes {
     @XmlElement
     private ListaGestores listaGestores;
 
+    
+
     /**
      * Contrutor do centro de exposicoes
      */
@@ -55,6 +56,8 @@ public class CentroExposicoes {
         this.registoUtilizadoresConf = new RegistoUtilizadores();
         this.registoUtilizadoresNConf = new RegistoUtilizadores();
         this.listaGestores = new ListaGestores();
+        this.registoDemonstracoes=new ListaDemonstracoes ();
+        this.registoMecanismos=new RegistoMecanismos ();
     }
 
     /**
@@ -84,14 +87,7 @@ public class CentroExposicoes {
         return listaTipoDeConflito;
     }
 
-    /**
-     * Retorna a JList da lista de exposições
-     *
-     * @return a JList da lista de exposições
-     */
-    public JList getJListExposicoes() {
-        return JListExposicoes;
-    }
+ 
 
     public RegistoUtilizadores getRegistoUtilizadoresConf() {
         return registoUtilizadoresConf;
@@ -158,5 +154,50 @@ public class CentroExposicoes {
         }
         return lstExposicaoComConflitosAlterados;
     }
+  public ListaStands getListaStands() {
+        return listaStands;
+    }
 
+    public void setListaStands(ListaStands listaStands) {
+        this.listaStands = listaStands;
+    }
+
+    public ListaRecursos getListarecursos() {
+        return listarecursos;
+    }
+
+    public void setListarecursos(ListaRecursos listarecursos) {
+        this.listarecursos = listarecursos;
+    }
+
+    public ListaDemonstracoes getRegistoDemonstracoes() {
+        return registoDemonstracoes;
+    }
+
+    public void setRegistoDemonstracoes(ListaDemonstracoes registoDemonstracoes) {
+        this.registoDemonstracoes = registoDemonstracoes;
+    }
+    public void setListaExposicoes(RegistoExposicoes listaExposicoes) {
+        this.listaExposicoes = listaExposicoes;
+    }
+
+    public void setListaTipoDeConflito(RegistoTipoDeConflito listaTipoDeConflito) {
+        this.listaTipoDeConflito = listaTipoDeConflito;
+    }
+
+    public void setRegistoUtilizadoresNConf(RegistoUtilizadores registoUtilizadoresNConf) {
+        this.registoUtilizadoresNConf = registoUtilizadoresNConf;
+    }
+
+    public void setRegistoUtilizadoresConf(RegistoUtilizadores registoUtilizadoresConf) {
+        this.registoUtilizadoresConf = registoUtilizadoresConf;
+    }
+
+    public void setRegistoMecanismos(RegistoMecanismos registoMecanismos) {
+        this.registoMecanismos = registoMecanismos;
+    }
+
+    public void setListaGestores(ListaGestores listaGestores) {
+        this.listaGestores = listaGestores;
+    }
 }
