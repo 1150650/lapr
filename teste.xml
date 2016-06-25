@@ -22,8 +22,8 @@
                     <utilizador>
                         <email>organizador@gmail.com</email>
                         <nome>Organizador</nome>
-                        <password>0Qticpkbcfqt626</password>
-                        <passwordDesencriptada>.Organi`ador404</passwordDesencriptada>
+                        <password>0Qticpkucfqt626</password>
+                        <passwordDesencriptada>.Organisador404</passwordDesencriptada>
                         <username>organizador</username>
                     </utilizador>
                 </Organizador>
@@ -95,6 +95,17 @@
             <titulo>Expo1</titulo>
         </Exposicao>
     </listaExposicoes>
+    <listaGestores>
+        <Gestor>
+            <utilizador>
+                <email>gestor@gmail.com</email>
+                <nome>Gestor</nome>
+                <password>0Iguvqt626</password>
+                <passwordDesencriptada>.Gestor404</passwordDesencriptada>
+                <username>gestor</username>
+            </utilizador>
+        </Gestor>
+    </listaGestores>
     <listaStands>
         <stand>
             <descricao>Isto é um Stand</descricao>
@@ -105,6 +116,25 @@
             <descricao>ISto é um conflito</descricao>
         </Conflito>
     </listaTipoDeConflito>
+    <listarecursos>
+        <Recurso>
+            <recurso>lapis</recurso>
+        </Recurso>
+        <Recurso>
+            <recurso>caneta</recurso>
+        </Recurso>
+    </listarecursos>
+    <registoDemonstracoes/>
+    <registoMecanismos/>
+    <registoUtilizadoresConf>
+        <utilizador>
+            <email>error404@gmail.com</email>
+            <nome>Error404</nome>
+            <password>0Gttqt626</password>
+            <passwordDesencriptada>.Error404</passwordDesencriptada>
+            <username>error404</username>
+        </utilizador>
+    </registoUtilizadoresConf>
     <registoUtilizadoresNConf>
         <utilizador>
             <email>lapr2@gmail.com</email>
@@ -123,37 +153,9 @@
         <utilizador>
             <email>organizador@gmail.com</email>
             <nome>Organizador</nome>
-            <password>0Qticpkbcfqt626</password>
-            <passwordDesencriptada>.Organi`ador404</passwordDesencriptada>
+            <password>0Qticpkucfqt626</password>
+            <passwordDesencriptada>.Organisador404</passwordDesencriptada>
             <username>organizador</username>
         </utilizador>
     </registoUtilizadoresNConf>
-    <registoUtilizadoresConf>
-        <utilizador>
-            <email>error404@gmail.com</email>
-            <nome>Error404</nome>
-            <password>0Gttqt626</password>
-            <passwordDesencriptada>.Error404</passwordDesencriptada>
-            <username>error404</username>
-        </utilizador>
-    </registoUtilizadoresConf>
-    <listarecursos>
-        <Recurso>
-            <recurso>lapis</recurso>
-        </Recurso>
-        <Recurso>
-            <recurso>caneta</recurso>
-        </Recurso>
-    </listarecursos>
-    <listaGestores>
-        <Gestor>
-            <utilizador>
-                <email>gestor@gmail.com</email>
-                <nome>Gestor</nome>
-                <password>0Iguvqt626</password>
-                <passwordDesencriptada>.Gestor404</passwordDesencriptada>
-                <username>gestor</username>
-            </utilizador>
-        </Gestor>
-    </listaGestores>
 </CentroExposicoes>

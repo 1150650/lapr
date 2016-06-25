@@ -59,7 +59,7 @@ class Main {
         Utilizador u = new Utilizador("Lapr2", "lapr2@gmail.com", "lapr2", ".Lapr2016");
         Utilizador u1 = new Utilizador("Error404", "error404@gmail.com", "error404", ".Error404");
         Utilizador gestor = new Utilizador("Gestor", "gestor@gmail.com", "gestor", ".Gestor404");
-        Utilizador organizador = new Utilizador("Organizador", "organizador@gmail.com", "organizador", ".Organizador404");
+        Utilizador organizador = new Utilizador("Organizador", "organizador@gmail.com", "organizador", ".Organisador404");
 
         FAE fae = e.getListaFAE().addFAE(u, "lapr2");
         FAE fae1 = e.getListaFAE().addFAE(u1, "error404");
