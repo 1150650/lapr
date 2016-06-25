@@ -33,12 +33,14 @@ public class OrganizadorTest {
     @Test
     public void testGetUtilizador() {
         System.out.println("getUtilizador");
-        Organizador instance = null;
-        Utilizador expResult = null;
+        Utilizador utilizador = new Utilizador();
+        utilizador.setNome("asdfgh");
+        Organizador instance = new Organizador();
+        instance.setUtilizador(utilizador);
+        Utilizador expResult = utilizador;
         Utilizador result = instance.getUtilizador();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,11 +49,11 @@ public class OrganizadorTest {
     @Test
     public void testSetUtilizador() {
         System.out.println("setUtilizador");
-        Utilizador utilizador = null;
-        Organizador instance = null;
+        Utilizador utilizador = new Utilizador();
+        utilizador.setNome("asdfgh");
+        Organizador instance = new Organizador();
         instance.setUtilizador(utilizador);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -33,12 +33,13 @@ public class StandTest {
     @Test
     public void testGetDescricao() {
         System.out.println("getDescricao");
+        String descricao = "123";
         Stand instance = new Stand();
-        String expResult = "";
+        instance.setDescricao(descricao);
+        String expResult = "123";
         String result = instance.getDescricao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,11 +48,10 @@ public class StandTest {
     @Test
     public void testSetDescricao() {
         System.out.println("setDescricao");
-        String descricao = "";
+        String descricao = "123";
         Stand instance = new Stand();
         instance.setDescricao(descricao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -61,11 +61,10 @@ public class StandTest {
     public void testToString() {
         System.out.println("toString");
         Stand instance = new Stand();
-        String expResult = "";
+        String expResult =instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -78,8 +77,7 @@ public class StandTest {
         boolean expResult = false;
         boolean result = instance.hasCandidatura();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -88,11 +86,10 @@ public class StandTest {
     @Test
     public void testAddCandidatura() {
         System.out.println("addCandidatura");
-        Candidatura candidatura = null;
+        Candidatura candidatura =new Candidatura ();
         Stand instance = new Stand();
         instance.addCandidatura(candidatura);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }

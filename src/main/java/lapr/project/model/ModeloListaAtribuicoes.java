@@ -19,6 +19,11 @@ public class ModeloListaAtribuicoes extends AbstractListModel implements Seriali
     public ModeloListaAtribuicoes(ListaAtribuicoes listaAtribuicoes) {
         this.listaAtribuicoes = listaAtribuicoes;
     }
+    
+    public ModeloListaAtribuicoes() {
+        this.listaAtribuicoes = new ListaAtribuicoes();
+    }
+    
 
     @Override
     public int getSize() {

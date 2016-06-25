@@ -33,12 +33,12 @@ public class ModeloListaExposicoesTest {
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        ModeloListaExposicoes instance = null;
+        RegistoExposicoes lst = new RegistoExposicoes();
+        ModeloListaExposicoes instance = new  ModeloListaExposicoes (lst);
         int expResult = 0;
         int result = instance.getSize();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -48,12 +48,14 @@ public class ModeloListaExposicoesTest {
     public void testGetElementAt() {
         System.out.println("getElementAt");
         int indice = 0;
-        ModeloListaExposicoes instance = null;
-        Object expResult = null;
+        Exposicao e = new Exposicao ();
+         RegistoExposicoes lst = new RegistoExposicoes();
+         lst.adicionarExposicao(e);
+        ModeloListaExposicoes instance = new  ModeloListaExposicoes (lst);
+        Object expResult = e;
         Object result = instance.getElementAt(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -62,11 +64,11 @@ public class ModeloListaExposicoesTest {
     @Test
     public void testAddElement() {
         System.out.println("addElement");
-        Exposicao e = null;
-        ModeloListaExposicoes instance = null;
+        Exposicao e = new Exposicao ();
+         RegistoExposicoes lst = new RegistoExposicoes();
+        ModeloListaExposicoes instance = new  ModeloListaExposicoes (lst);
         instance.addElement(e);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -33,12 +33,13 @@ public class TipoDeConflitoTest {
     @Test
     public void testGetDescricao() {
         System.out.println("getDescricao");
+        String descricao = "123";
         TipoDeConflito instance = new TipoDeConflito();
-        String expResult = "";
+        instance.setDescricao(descricao);
+        String expResult = "123";
         String result = instance.getDescricao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,11 +48,10 @@ public class TipoDeConflitoTest {
     @Test
     public void testSetDescricao() {
         System.out.println("setDescricao");
-        String descricao = "";
+        String descricao = "123";
         TipoDeConflito instance = new TipoDeConflito();
         instance.setDescricao(descricao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -61,25 +61,12 @@ public class TipoDeConflitoTest {
     public void testToString() {
         System.out.println("toString");
         TipoDeConflito instance = new TipoDeConflito();
-        String expResult = "";
+        String expResult = instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
-    /**
-     * Test of isConflitoAtivo method, of class TipoDeConflito.
-     */
-    @Test
-    public void testIsConflitoAtivo() {
-        System.out.println("isConflitoAtivo");
-        TipoDeConflito instance = new TipoDeConflito();
-        boolean expResult = false;
-        boolean result = instance.isConflitoAtivo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
     
 }

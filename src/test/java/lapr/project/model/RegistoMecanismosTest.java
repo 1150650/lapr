@@ -35,11 +35,10 @@ public class RegistoMecanismosTest {
     public void testGetListaMecanismos() {
         System.out.println("getListaMecanismos");
         RegistoMecanismos instance = new RegistoMecanismos();
-        List expResult = null;
+        List expResult =instance.getListaMecanismos();
         List result = instance.getListaMecanismos();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -33,11 +33,10 @@ public class RecursoTest {
     @Test
     public void testSetRecurso() {
         System.out.println("setRecurso");
-        String r = "";
+        String r = "123";
         Recurso instance = new Recurso();
         instance.setRecurso(r);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,11 +46,12 @@ public class RecursoTest {
     public void testGetRecurso() {
         System.out.println("getRecurso");
         Recurso instance = new Recurso();
-        String expResult = "";
+         String r = "123";
+        instance.setRecurso(r);
+        String expResult = "123";
         String result = instance.getRecurso();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -33,11 +33,10 @@ public class ProdutoTest {
     @Test
     public void testSetDesignacao() {
         System.out.println("setDesignacao");
-        String designacao = "";
+        String designacao = "123";
         Produto instance = new Produto();
         instance.setDesignacao(designacao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,11 +46,12 @@ public class ProdutoTest {
     public void testGetDesignacao() {
         System.out.println("getDesignacao");
         Produto instance = new Produto();
-        String expResult = "";
+        String designacao = "123";
+        instance.setDesignacao(designacao);
+        String expResult = "123";
         String result = instance.getDesignacao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

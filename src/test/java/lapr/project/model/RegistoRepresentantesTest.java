@@ -33,11 +33,10 @@ public class RegistoRepresentantesTest {
     @Test
     public void testAddRepresentante() {
         System.out.println("addRepresentante");
-        Representante r = null;
+        Representante r = new Representante();
         RegistoRepresentantes instance = new RegistoRepresentantes();
         instance.addRepresentante(r);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -46,13 +45,13 @@ public class RegistoRepresentantesTest {
     @Test
     public void testValidaProduto() {
         System.out.println("validaProduto");
-        Representante r = null;
+        Representante r = new Representante();
         RegistoRepresentantes instance = new RegistoRepresentantes();
+        instance.addRepresentante(r);
         boolean expResult = false;
         boolean result = instance.validaProduto(r);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -61,13 +60,15 @@ public class RegistoRepresentantesTest {
     @Test
     public void testObterRepresentantePorU() {
         System.out.println("obterRepresentantePorU");
-        Utilizador u = null;
+        Utilizador u = new Utilizador();
+        Representante r = new Representante();
+        r.setUtilizador(u);
         RegistoRepresentantes instance = new RegistoRepresentantes();
-        Representante expResult = null;
+        instance.addRepresentante(r);
+        Representante expResult = r;
         Representante result = instance.obterRepresentantePorU(u);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -76,13 +77,13 @@ public class RegistoRepresentantesTest {
     @Test
     public void testContainsRepresentante() {
         System.out.println("containsRepresentante");
-        Representante r = null;
+        Representante r =new Representante();
         RegistoRepresentantes instance = new RegistoRepresentantes();
-        boolean expResult = false;
+        instance.addRepresentante(r);
+        boolean expResult = true;
         boolean result = instance.containsRepresentante(r);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -95,8 +96,7 @@ public class RegistoRepresentantesTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

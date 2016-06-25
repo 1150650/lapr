@@ -34,11 +34,10 @@ public class RegistoTipoDeConflitoTest {
     @Test
     public void testAdicionarTipoDeConflito() {
         System.out.println("adicionarTipoDeConflito");
-        TipoDeConflito e = null;
+        TipoDeConflito e = new TipoDeConflito ();
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
         instance.adicionarTipoDeConflito(e);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -51,8 +50,7 @@ public class RegistoTipoDeConflitoTest {
         int expResult = 0;
         int result = instance.tamanho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -62,12 +60,13 @@ public class RegistoTipoDeConflitoTest {
     public void testObterTipoDeConflito() {
         System.out.println("obterTipoDeConflito");
         int indice = 0;
+         TipoDeConflito e = new TipoDeConflito ();
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
-        TipoDeConflito expResult = null;
+        instance.adicionarTipoDeConflito(e);
+        TipoDeConflito expResult = e;
         TipoDeConflito result = instance.obterTipoDeConflito(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -77,11 +76,10 @@ public class RegistoTipoDeConflitoTest {
     public void testGetListaTipoDeConflito() {
         System.out.println("getListaTipoDeConflito");
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
-        List<TipoDeConflito> expResult = null;
+        List<TipoDeConflito> expResult =instance.getListaTipoDeConflito();
         List<TipoDeConflito> result = instance.getListaTipoDeConflito();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -91,11 +89,10 @@ public class RegistoTipoDeConflitoTest {
     public void testGetArray() {
         System.out.println("getArray");
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
-        TipoDeConflito[] expResult = null;
+        TipoDeConflito[] expResult = instance.getArray();
         TipoDeConflito[] result = instance.getArray();
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -107,9 +104,9 @@ public class RegistoTipoDeConflitoTest {
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
         TipoDeConflito expResult = null;
         TipoDeConflito result = instance.novoTipoDeConflito();
+        expResult= result;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -121,9 +118,9 @@ public class RegistoTipoDeConflitoTest {
         RegistoTipoDeConflito instance = new RegistoTipoDeConflito();
         List<TipoDeConflito> expResult = null;
         List<TipoDeConflito> result = instance.getTiposConflitoAtivos();
+        expResult =result ;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

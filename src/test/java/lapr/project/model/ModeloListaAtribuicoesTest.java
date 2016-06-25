@@ -33,12 +33,12 @@ public class ModeloListaAtribuicoesTest {
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        ModeloListaAtribuicoes instance = null;
+        ListaAtribuicoes listaAtribuicoes =new ListaAtribuicoes();
+        ModeloListaAtribuicoes instance = new ModeloListaAtribuicoes(listaAtribuicoes);
         int expResult = 0;
         int result = instance.getSize();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -47,13 +47,17 @@ public class ModeloListaAtribuicoesTest {
     @Test
     public void testGetElementAt() {
         System.out.println("getElementAt");
+        ListaAtribuicoes listaAtribuicoes =new ListaAtribuicoes();
         int indice = 0;
-        ModeloListaAtribuicoes instance = null;
-        Object expResult = null;
+        AtribuicaoFAE a = new AtribuicaoFAE();
+        listaAtribuicoes.adicionarAtribuição(a);
+        ModeloListaAtribuicoes instance = new ModeloListaAtribuicoes(listaAtribuicoes);
+        
+        
+        Object expResult = a;
         Object result = instance.getElementAt(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -62,14 +66,14 @@ public class ModeloListaAtribuicoesTest {
     @Test
     public void testAddElement() {
         System.out.println("addElement");
-        Candidatura candidatura = null;
-        FAE fae = null;
-        ModeloListaAtribuicoes instance = null;
-        boolean expResult = false;
+        ListaAtribuicoes listaAtribuicoes =new ListaAtribuicoes();
+        Candidatura candidatura = new Candidatura();
+        FAE fae = new FAE();
+        ModeloListaAtribuicoes instance = new ModeloListaAtribuicoes(listaAtribuicoes);
+        boolean expResult = true;
         boolean result = instance.addElement(candidatura, fae);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -78,13 +82,13 @@ public class ModeloListaAtribuicoesTest {
     @Test
     public void testContains() {
         System.out.println("contains");
-        AtribuicaoFAE atribuicao = null;
-        ModeloListaAtribuicoes instance = null;
+        ListaAtribuicoes listaAtribuicoes =new ListaAtribuicoes();
+        AtribuicaoFAE atribuicao = new AtribuicaoFAE();
+        ModeloListaAtribuicoes instance = new ModeloListaAtribuicoes(listaAtribuicoes);
         boolean expResult = false;
         boolean result = instance.contains(atribuicao);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

@@ -27,6 +27,8 @@ public class Organizador {
     }
     
     public Organizador() {
+        listacandidatura = new ListaCandidaturas();
+        listaAtribuicoes = new ListaAtribuicoes();
        
     }
     

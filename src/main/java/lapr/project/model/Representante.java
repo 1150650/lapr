@@ -30,7 +30,7 @@ public class Representante {
     }
 
     public Representante() {
-
+listaCandidaturasSubmetidas = new ListaCandidaturas();
     }
 
     /**

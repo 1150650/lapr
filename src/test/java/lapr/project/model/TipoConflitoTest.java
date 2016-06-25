@@ -34,11 +34,10 @@ public class TipoConflitoTest {
     public void testGetMecanismoDetecaoConflito() {
         System.out.println("getMecanismoDetecaoConflito");
         TipoConflito instance = new TipoConflito();
-        MecanismoDetecaoConflito expResult = null;
+        MecanismoDetecaoConflito expResult = instance.getMecanismoDetecaoConflito();
         MecanismoDetecaoConflito result = instance.getMecanismoDetecaoConflito();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

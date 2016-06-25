@@ -33,12 +33,12 @@ public class ModeloListaCandidaturasTest {
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        ModeloListaCandidaturas instance = null;
+        ListaCandidaturas lst = new ListaCandidaturas ();
+        ModeloListaCandidaturas instance = new ModeloListaCandidaturas(lst);
         int expResult = 0;
         int result = instance.getSize();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -48,12 +48,14 @@ public class ModeloListaCandidaturasTest {
     public void testGetElementAt() {
         System.out.println("getElementAt");
         int indice = 0;
-        ModeloListaCandidaturas instance = null;
-        Object expResult = null;
+        ListaCandidaturas lst = new ListaCandidaturas ();
+         Candidatura candidatura = new Candidatura();
+         lst.adicionarCandidatura(candidatura);
+        ModeloListaCandidaturas instance = new ModeloListaCandidaturas(lst);
+        Object expResult = candidatura;
         Object result = instance.getElementAt(indice);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -62,13 +64,13 @@ public class ModeloListaCandidaturasTest {
     @Test
     public void testAddElement() {
         System.out.println("addElement");
-        Candidatura candidatura = null;
-        ModeloListaCandidaturas instance = null;
-        boolean expResult = false;
+        Candidatura candidatura = new Candidatura();
+        ListaCandidaturas lst = new ListaCandidaturas ();
+        ModeloListaCandidaturas instance = new ModeloListaCandidaturas(lst);
+        boolean expResult = true;
         boolean result = instance.addElement(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -77,13 +79,14 @@ public class ModeloListaCandidaturasTest {
     @Test
     public void testRemoveElement() {
         System.out.println("removeElement");
-        Candidatura candidatura = null;
-        ModeloListaCandidaturas instance = null;
-        boolean expResult = false;
+        Candidatura candidatura = new Candidatura();
+       ListaCandidaturas lst = new ListaCandidaturas ();
+        lst.adicionarCandidatura(candidatura);
+        ModeloListaCandidaturas instance = new ModeloListaCandidaturas(lst);
+        boolean expResult = true;
         boolean result = instance.removeElement(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -92,13 +95,14 @@ public class ModeloListaCandidaturasTest {
     @Test
     public void testContains() {
         System.out.println("contains");
-        Candidatura candidatura = null;
-        ModeloListaCandidaturas instance = null;
-        boolean expResult = false;
+        Candidatura candidatura = new Candidatura();
+       ListaCandidaturas lst = new ListaCandidaturas ();
+        lst.adicionarCandidatura(candidatura);
+        ModeloListaCandidaturas instance = new ModeloListaCandidaturas(lst);
+        boolean expResult = true;
         boolean result = instance.contains(candidatura);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }
