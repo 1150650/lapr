@@ -95,7 +95,7 @@ public class Exposicao {
     @XmlElement
     public final void setTextoDescritivo(String texto) {
         if (texto == null || texto.trim().isEmpty()) {
-            throw new IllegalArgumentException("Justificação inválida!");
+            throw new IllegalArgumentException("Texto descritivo inválido!");
         }
         this.textoDescritivo = texto;
     }

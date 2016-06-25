@@ -34,8 +34,8 @@ public class ExposicaoTest {
     @Test
     public void testGetTitulo() {
         System.out.println("getTitulo");
-        Exposicao instance = new Exposicao();
-        String expResult = "";
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        String expResult = "Expo1";
         String result = instance.getTitulo();
         assertEquals(expResult, result);
     }
@@ -46,8 +46,8 @@ public class ExposicaoTest {
     @Test
     public void testGetTextoDescritivo() {
         System.out.println("getTextoDescritivo");
-        Exposicao instance = new Exposicao();
-        String expResult = "";
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        String expResult = "Isto é uma descrição";
         String result = instance.getTextoDescritivo();
         assertEquals(expResult, result);
     }
@@ -58,8 +58,8 @@ public class ExposicaoTest {
     @Test
     public void testGetDataInicio() {
         System.out.println("getDataInicio");
-        Exposicao instance = new Exposicao();
-        Date expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        Date expResult = new Date(2015, 9, 22);
         Date result = instance.getDataInicio();
         assertEquals(expResult, result);
     }
@@ -70,8 +70,8 @@ public class ExposicaoTest {
     @Test
     public void testGetDataFim() {
         System.out.println("getDataFim");
-        Exposicao instance = new Exposicao();
-        Date expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        Date expResult =  new Date(2016, 9, 22);
         Date result = instance.getDataFim();
         assertEquals(expResult, result);
     }
@@ -82,8 +82,8 @@ public class ExposicaoTest {
     @Test
     public void testGetLocal() {
         System.out.println("getLocal");
-        Exposicao instance = new Exposicao();
-        String expResult = "";
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        String expResult = "Porto";
         String result = instance.getLocal();
         assertEquals(expResult, result);
     }
@@ -94,8 +94,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaCandidaturasExposicoes() {
         System.out.println("getListaCandidaturasExposicoes");
-        Exposicao instance = new Exposicao();
-        ListaCandidaturas expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaCandidaturas expResult = instance.getListaCandidaturasExposicoes();
         ListaCandidaturas result = instance.getListaCandidaturasExposicoes();
         assertEquals(expResult, result);
     }
@@ -106,8 +106,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaDemonstracoes() {
         System.out.println("getListaDemonstracoes");
-        Exposicao instance = new Exposicao();
-        ListaDemonstracoes expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaDemonstracoes expResult = instance.getListaDemonstracao();
         ListaDemonstracoes result = instance.getListaDemonstracoes();
         assertEquals(expResult, result);
     }
@@ -118,8 +118,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaFAE() {
         System.out.println("getListaFAE");
-        Exposicao instance = new Exposicao();
-        ListaFAE expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaFAE expResult = instance.getListaFAE();
         ListaFAE result = instance.getListaFAE();
         assertEquals(expResult, result);
     }
@@ -130,8 +130,8 @@ public class ExposicaoTest {
     @Test
     public void testSetTitulo() {
         System.out.println("setTitulo");
-        String titulo = "";
-        Exposicao instance = new Exposicao();
+        String titulo = "Expo1";
+        Exposicao instance = new Exposicao(titulo, "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         instance.setTitulo(titulo);
     }
 
@@ -141,8 +141,8 @@ public class ExposicaoTest {
     @Test
     public void testSetTextoDescritivo() {
         System.out.println("setTextoDescritivo");
-        String texto = "";
-        Exposicao instance = new Exposicao();
+        String texto = "Isto é uma descrição";
+        Exposicao instance = new Exposicao("Expo1", texto, new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         instance.setTextoDescritivo(texto);
     }
 
@@ -152,9 +152,9 @@ public class ExposicaoTest {
     @Test
     public void testSetPeriodo() {
         System.out.println("setPeriodo");
-        Date dataInicio = null;
-        Date dataFim = null;
-        Exposicao instance = new Exposicao();
+        Date dataInicio = new Date(2015, 9, 22);
+        Date dataFim = new Date(2016, 9, 22);
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", dataInicio, dataFim, "Porto");
         instance.setPeriodo(dataInicio, dataFim);
     }
 
@@ -164,8 +164,8 @@ public class ExposicaoTest {
     @Test
     public void testSetDataInicio() {
         System.out.println("setDataInicio");
-        Date dataInicio = null;
-        Exposicao instance = new Exposicao();
+        Date dataInicio = new Date(2015, 9, 22);
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", dataInicio, new Date(2016, 9, 22), "Porto");
         instance.setDataInicio(dataInicio);
     }
 
@@ -175,8 +175,8 @@ public class ExposicaoTest {
     @Test
     public void testSetDataFim() {
         System.out.println("setDataFim");
-        Date dataFim = null;
-        Exposicao instance = new Exposicao();
+        Date dataFim = new Date(2016, 9, 22);
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), dataFim, "Porto");
         instance.setDataFim(dataFim);
     }
 
@@ -186,8 +186,8 @@ public class ExposicaoTest {
     @Test
     public void testSetLocal() {
         System.out.println("setLocal");
-        String local = "";
-        Exposicao instance = new Exposicao();
+        String local = "Porto";
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), local);
         instance.setLocal(local);
     }
 
@@ -197,7 +197,7 @@ public class ExposicaoTest {
     @Test
     public void testSetListaCandidaturasExposicoes() {
         System.out.println("setListaCandidaturasExposicoes");
-        ListaCandidaturas listaCandidaturasExposicoes = null;
+        ListaCandidaturas listaCandidaturasExposicoes = new ListaCandidaturas();
         Exposicao instance = new Exposicao();
         instance.setListaCandidaturasExposicoes(listaCandidaturasExposicoes);
     }
@@ -208,8 +208,8 @@ public class ExposicaoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Exposicao instance = new Exposicao();
-        String expResult = "";
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        String expResult = String.format("Título: %s; Local: %s", "Expo1", "Porto");
         String result = instance.toString();
         assertEquals(expResult, result);
     }
@@ -220,7 +220,7 @@ public class ExposicaoTest {
     @Test
     public void testAdicionarCandidatura() {
         System.out.println("adicionarCandidatura");
-        CandidaturaExposicao d = null;
+        CandidaturaExposicao d = new CandidaturaExposicao();
         Exposicao instance = new Exposicao();
         instance.adicionarCandidatura(d);
     }
@@ -231,8 +231,8 @@ public class ExposicaoTest {
     @Test
     public void testMostrarLista() {
         System.out.println("mostrarLista");
-        Exposicao instance = new Exposicao();
-        Candidatura[] expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        Candidatura[] expResult = instance.mostrarLista();
         Candidatura[] result = instance.mostrarLista();
         assertArrayEquals(expResult, result);
     }
@@ -243,8 +243,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaOrganizadores() {
         System.out.println("getListaOrganizadores");
-        Exposicao instance = new Exposicao();
-        ListaOrganizadores expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaOrganizadores expResult = instance.getListaOrganizadores();
         ListaOrganizadores result = instance.getListaOrganizadores();
         assertEquals(expResult, result);
     }
@@ -255,8 +255,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaConflitos() {
         System.out.println("getListaConflitos");
-        Exposicao instance = new Exposicao();
-        ListaConflitos expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaConflitos expResult = instance.getListaConflitos();
         ListaConflitos result = instance.getListaConflitos();
         assertEquals(expResult, result);
     }
@@ -267,8 +267,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaRepresentantes() {
         System.out.println("getListaRepresentantes");
-        Exposicao instance = new Exposicao();
-        RegistoRepresentantes expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        RegistoRepresentantes expResult = instance.getListaRepresentantes();
         RegistoRepresentantes result = instance.getListaRepresentantes();
         assertEquals(expResult, result);
     }
@@ -279,7 +279,7 @@ public class ExposicaoTest {
     @Test
     public void testAdicionarRepresentante() {
         System.out.println("adicionarRepresentante");
-        Representante r = null;
+        Representante r = new Representante();
         Exposicao instance = new Exposicao();
         instance.adicionarRepresentante(r);
     }
@@ -290,8 +290,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaCandidaturasDemonstracoes() {
         System.out.println("getListaCandidaturasDemonstracoes");
-        Exposicao instance = new Exposicao();
-        ListaCandidaturas expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaCandidaturas expResult = instance.getListaCandidaturasDemonstracoes();
         ListaCandidaturas result = instance.getListaCandidaturasDemonstracoes();
         assertEquals(expResult, result);
     }
@@ -302,8 +302,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaDemonstracao() {
         System.out.println("getListaDemonstracao");
-        Exposicao instance = new Exposicao();
-        ListaDemonstracoes expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaDemonstracoes expResult = instance.getListaDemonstracao();
         ListaDemonstracoes result = instance.getListaDemonstracao();
         assertEquals(expResult, result);
     }
@@ -314,7 +314,7 @@ public class ExposicaoTest {
     @Test
     public void testSetListaCandidaturasDemonstracoes() {
         System.out.println("setListaCandidaturasDemonstracoes");
-        ListaCandidaturas listaCandidaturasDemonstracoes = null;
+        ListaCandidaturas listaCandidaturasDemonstracoes = new ListaCandidaturas();
         Exposicao instance = new Exposicao();
         instance.setListaCandidaturasDemonstracoes(listaCandidaturasDemonstracoes);
     }
@@ -325,7 +325,7 @@ public class ExposicaoTest {
     @Test
     public void testSetListaDemonstracao() {
         System.out.println("setListaDemonstracao");
-        ListaDemonstracoes listaDemonstracao = null;
+        ListaDemonstracoes listaDemonstracao = new ListaDemonstracoes();
         Exposicao instance = new Exposicao();
         instance.setListaDemonstracao(listaDemonstracao);
     }
@@ -336,7 +336,7 @@ public class ExposicaoTest {
     @Test
     public void testSetListaAtribuicoes() {
         System.out.println("setListaAtribuicoes");
-        ListaAtribuicoes lstA = null;
+        ListaAtribuicoes lstA = new ListaAtribuicoes();
         Exposicao instance = new Exposicao();
         instance.setListaAtribuicoes(lstA);
     }
@@ -347,8 +347,8 @@ public class ExposicaoTest {
     @Test
     public void testGetListaAtribuicoes() {
         System.out.println("getListaAtribuicoes");
-        Exposicao instance = new Exposicao();
-        ListaAtribuicoes expResult = null;
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        ListaAtribuicoes expResult = instance.getListaAtribuicoes();
         ListaAtribuicoes result = instance.getListaAtribuicoes();
         assertEquals(expResult, result);
     }
@@ -359,9 +359,9 @@ public class ExposicaoTest {
     @Test
     public void testSetAtribuicoes() {
         System.out.println("setAtribuicoes");
-        ListaAtribuicoes listaAtribuicao = null;
-        Exposicao instance = new Exposicao();
-        boolean expResult = false;
+        ListaAtribuicoes listaAtribuicao = new ListaAtribuicoes();
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
+        boolean expResult = true;
         boolean result = instance.setAtribuicoes(listaAtribuicao);
         assertEquals(expResult, result);
     }
@@ -372,7 +372,7 @@ public class ExposicaoTest {
     @Test
     public void testGetExposicaoEstado() {
         System.out.println("getExposicaoEstado");
-        Exposicao instance = new Exposicao();
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         ExposiçãoState expResult = null;
         ExposiçãoState result = instance.getExposicaoEstado();
         assertEquals(expResult, result);
@@ -408,7 +408,7 @@ public class ExposicaoTest {
     public void testSetExposicaoDemonstracoesSemFAE() {
         System.out.println("setExposicaoDemonstracoesSemFAE");
         Exposicao instance = new Exposicao();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.setExposicaoDemonstracoesSemFAE();
         assertEquals(expResult, result);
     }
@@ -420,7 +420,7 @@ public class ExposicaoTest {
     public void testSetExposicaoFAESemDemonstracoes() {
         System.out.println("setExposicaoFAESemDemonstracoes");
         Exposicao instance = new Exposicao();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.setExposicaoFAESemDemonstracoes();
         assertEquals(expResult, result);
     }
@@ -431,7 +431,7 @@ public class ExposicaoTest {
     @Test
     public void testSetExposicaoCompleta() {
         System.out.println("setExposicaoCompleta");
-        Exposicao instance = new Exposicao();
+        Exposicao instance = new Exposicao("Expo1", "Isto é uma descrição", new Date(2015, 9, 22), new Date(2016, 9, 22), "Porto");
         boolean expResult = false;
         boolean result = instance.setExposicaoCompleta();
         assertEquals(expResult, result);
