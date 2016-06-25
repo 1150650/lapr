@@ -5,11 +5,13 @@
  */
 package lapr.project.controller;
 
+import javax.swing.JOptionPane;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ListaDemonstracoes;
 import lapr.project.model.RegistoExposicoes;
+import lapr.project.ui.DefinirDemonstraçõesEfetivasUI;
 
 /**
  *
@@ -45,6 +47,7 @@ public class DecidirDemonstraçõesController {
      * @param ce
      */
     public DecidirDemonstraçõesController(CentroExposicoes ce) {
+        this.ce=ce;
         this.lstExpo = ce.getListaExposicoes();
     }
 
@@ -53,10 +56,8 @@ public class DecidirDemonstraçõesController {
      *
      * @param e
      */
-    public void selecionarExposicao(Exposicao e) throws Exception {
+    public void selecionarExposicao(Exposicao e) {
         this.expo = e;
-        validarExposicao();
-        
     }
 
     /**
@@ -130,9 +131,4 @@ public class DecidirDemonstraçõesController {
         return expo;
     }
 
-    private void validarExposicao() throws Exception {
-        if(!expo.getExposicaoEstado().isEstadoStandConfirmado()){
-            throw new Exception("Esta Exposição ainda não pode ser Definidas as Demonstrações");
-        }
-    }
 }

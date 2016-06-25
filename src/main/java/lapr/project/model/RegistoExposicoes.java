@@ -53,4 +53,14 @@ public class RegistoExposicoes {
     public Exposicao novaExposicao() {
         return new Exposicao();
     }
+
+    public Exposicao[] getListaExposicaoParaDefinirDemos() {
+        RegistoExposicoes lstExpo = new RegistoExposicoes();
+        for (Exposicao expo : listaExposicoes) {
+            if (expo.getExposicaoEstado().isEstadoStandConfirmado()) {
+                lstExpo.adicionarExposicao(expo);
+            }
+        }
+        return lstExpo.getArray();
+    }
 }

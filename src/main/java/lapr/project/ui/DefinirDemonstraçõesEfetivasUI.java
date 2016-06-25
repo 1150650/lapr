@@ -50,17 +50,9 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
         super("Definir Demonstrações Efetivas");
         this.ce = ce;
         this.framePai = framePai;
-        criarComponentes();
-        try {
-            selecionarExposicao();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(DefinirDemonstraçõesEfetivasUI.this,
-                    ex.getMessage(),
-                    "Erro",
-                    JOptionPane.ERROR_MESSAGE);
-            dispose();
-        }
 
+        selecionarExposicao();
+        criarComponentes();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setMinimumSize(new Dimension(400, 400));
@@ -75,6 +67,7 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
     }
 
     public void selecionarExposicao() {
+        //Exposicao[] aux = ce.getListaExposicoes().getListaExposicaoParaDefinirDemos();
         Exposicao[] aux = ce.getArrayExposicao();
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
@@ -86,9 +79,8 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
                 icon,
                 aux,
                 "");
-
-        dispose();
         crtlDecidirDemos.selecionarExposicao(expo);
+        dispose();
     }
 
     private JPanel criarPainelNorte() {

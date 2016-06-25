@@ -120,6 +120,13 @@
             <passwordDesencriptada>.Gestor404</passwordDesencriptada>
             <username>gestor</username>
         </utilizador>
+        <utilizador>
+            <email>organizador@gmail.com</email>
+            <nome>Organizador</nome>
+            <password>0Qticpkbcfqt626</password>
+            <passwordDesencriptada>.Organi`ador404</passwordDesencriptada>
+            <username>organizador</username>
+        </utilizador>
     </registoUtilizadoresNConf>
     <registoUtilizadoresConf>
         <utilizador>

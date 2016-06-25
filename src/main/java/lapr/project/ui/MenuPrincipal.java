@@ -366,7 +366,7 @@ public class MenuPrincipal extends JFrame {
 
         painelBotoesOrganizador.add(btnDecidirFAE);
         painelBotoesOrganizador.add(btnAtribuirCandidatura);
-        painelBotoesRepresentante.add(btnDecidirDemonstracao);
+        painelBotoesOrganizador.add(btnDecidirDemonstracao);
         painelBotoesOrganizador.add(btnCriarStand);
         painelBotoesOrganizador.add(btnAvaliacaoFinalCand);
         painelBotoesOrganizador.add(btnCriarDemonstracao);
