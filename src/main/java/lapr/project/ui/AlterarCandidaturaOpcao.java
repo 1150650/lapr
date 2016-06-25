@@ -73,9 +73,9 @@ public class AlterarCandidaturaOpcao extends JFrame {
         Exposicao expo;
         expo = (Exposicao) JOptionPane.showInputDialog(
                 framePai,
-                "Indique candidatura que deseja remover"
+                "Indique Exposicao que se candidatou"
                 + ":",
-                "Seleção De Candidatura a Remover",
+                "Seleção Da Exposicao",
                 JOptionPane.DEFAULT_OPTION,
                 icon,
                 aux,
@@ -127,7 +127,7 @@ public class AlterarCandidaturaOpcao extends JFrame {
     }
 
     private JButton criarBotaoSelecionarCandidatura(JList lstCompleta) {
-        JButton btn = new JButton("SelecionarExposicao");
+        JButton btn = new JButton("Selecionar Candidatura");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,7 +135,6 @@ public class AlterarCandidaturaOpcao extends JFrame {
                 CandidaturaExposicao c = (CandidaturaExposicao) lstCompleta.getSelectedValue();
                 controller.selecionarCandidatura(c);
                 if (c != null) {
-                    m.removeElement(c);
                     new AlterarCandidaturaUI(AlterarCandidaturaOpcao.this, controller);
                 }
             }

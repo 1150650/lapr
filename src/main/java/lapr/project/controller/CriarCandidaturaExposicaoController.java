@@ -59,6 +59,7 @@ public class CriarCandidaturaExposicaoController {
     }
 
     public void adicionarCandidatura() {
+        c.setCandidaturaEmSubmissao();
         this.exposicaoSelecionada.adicionarCandidatura(c);
         this.r.adicionarCandidatura(c);
     }

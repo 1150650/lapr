@@ -63,23 +63,6 @@ public class AlterarCandidaturaUI extends JFrame {
 
     }
 
-    public void selecionarExposicao() {
-        Exposicao[] aux = ce.getArrayExposicao();
-        Exposicao expo;
-        expo = (Exposicao) JOptionPane.showInputDialog(
-                framePai,
-                "Indique candidatura que deseja remover"
-                + ":",
-                "Seleção De Candidatura a Remover",
-                JOptionPane.DEFAULT_OPTION,
-                icon,
-                aux,
-                "");
-
-        dispose();
-        crtl.selecionaExposicao(expo);
-    }
-
     public void criarComponentes() {
         JLabel l = new JLabel("Alterar Candidatura", JLabel.CENTER);
         JPanel nomeEmpresa = criarPainelNomeEmpresa();
