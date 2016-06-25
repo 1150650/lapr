@@ -14,6 +14,7 @@ class DemonstracaoFechadaACandidaturaState extends DemonstracaoState {
     private Demonstracao demonstracao;
 
     public DemonstracaoFechadaACandidaturaState(Demonstracao demonstracao) {
+        this.demonstracao=demonstracao;
     }
     
     @Override
