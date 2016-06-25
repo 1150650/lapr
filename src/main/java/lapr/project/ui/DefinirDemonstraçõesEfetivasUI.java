@@ -50,6 +50,7 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
         super("Definir Demonstrações Efetivas");
         this.ce = ce;
         this.framePai = framePai;
+        crtlDecidirDemos=new DecidirDemonstraçõesController(ce);
 
         selecionarExposicao();
         criarComponentes();
@@ -112,7 +113,6 @@ public class DefinirDemonstraçõesEfetivasUI extends JFrame {
         btnAceitar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModeloListaDemonstracoes demo = (ModeloListaDemonstracoes) lstCompleta.getModel();
                 Demonstracao d = (Demonstracao) lstCompleta.getSelectedValue();
                 if (d != null) {
                     crtlDecidirDemos.selecionarDemonstracao(d);

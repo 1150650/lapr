@@ -29,11 +29,6 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
 
     private MenuPrincipal framePai;
 
-    final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 1;
-    final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
-    final int MARGEM_SUPERIOR = 10, MARGEM_INFERIOR = 0;
-    final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
-
     private CriarCandidaturaOpcaoUI Janela;
 
     private CentroExposicoes ce;
@@ -50,8 +45,8 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         this.ce = ce;
         crtlCriarCandidatura = new CriarCandidaturaExposicaoController(ce, u);
         GridLayout g = new GridLayout(0, 1);
-        g.setHgap(20);
-        g.setVgap(20);
+        g.setHgap(200);
+        g.setVgap(200);
         setLayout(g);
         selecionarExposicao();
         criarComponentes();
@@ -90,7 +85,7 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         j.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SubmeterCandidaturaXML(Janela, crtlCriarCandidatura, ce);
+                
             }
         });
         return j;

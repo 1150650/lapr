@@ -58,6 +58,7 @@ public class DecidirDemonstraçõesController {
      */
     public void selecionarExposicao(Exposicao e) {
         this.expo = e;
+        this.lstDemo=expo.getListaDemonstracao();
     }
 
     /**
