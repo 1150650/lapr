@@ -71,7 +71,7 @@ public class ListaDemonstracoes {
      * @param d - a demonstracao a adicionar
      */
     public void addDemonstracao(Demonstracao d) {
-        getListalDemonstracao().add(d);
+        listalDemonstracao.add(d);
     }
 
     public int tamanho() {

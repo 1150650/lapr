@@ -20,7 +20,7 @@ public class Utilizador {
 
     private String nome, email, username, password;
 
-    private CaeserCypher encriptacao;
+ 
 
     public Utilizador(String nome, String email, String username, String password) {
         setNome(nome);
@@ -50,7 +50,7 @@ public class Utilizador {
     }
 
     public String getPasswordDesencriptada() {
-        encriptacao = new CaeserCypher(password);
+         CaeserCypher encriptacao = new CaeserCypher(password);
         String passwordDes = encriptacao.desencriptar();
         return passwordDes;
     }
@@ -116,7 +116,7 @@ public class Utilizador {
                     + "um número e um carater especial(,.;:-)");
         }
 
-        encriptacao = new CaeserCypher(password);
+        CaeserCypher  encriptacao = new CaeserCypher(password);
         this.password = encriptacao.encriptar();
     }
 
