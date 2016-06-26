@@ -24,67 +24,137 @@ import lapr.project.model.Representante;
  */
 public class AtribuirCandidaturaDemonstracaoController {
 
+    /**
+     * Registo de Exposições
+     */
     private RegistoExposicoes registoExposicoes;
 
+    /**
+     * Centro de Exposicoes
+     */
     private CentroExposicoes centroExposicoes;
 
+    /**
+     * Lista de Exposicoes do tipo List
+     */
     private List<Exposicao> listaExposicao;
 
+    /**
+     * Lista de FAE do tipo List
+     */
     private ListaFAE listaFAE;
 
+    /**
+     * Lista de FAE do tipo List
+     */
     private List<FAE> listFAEs;
 
+    /**
+     * Exposicao
+     */
     private Exposicao exposicao;
 
+    /**
+     * Lista de Candidaturas
+     */
     private ListaCandidaturas listaCandidaturas;
 
-    private List<Candidatura> listCandidatura;
-
+    /**
+     * Lista de Mecanismos
+     */
     private RegistoMecanismos registoMecanismos;
 
+    /**
+     * Lista de Mecanismos tipo List
+     */
     private List<Mecanismo> listaMecanismos;
 
+    /**
+     * Mecanismo
+     */
     private Mecanismo mecanismo;
 
+    /**
+     * Lista de Atribuicoes
+     */
     private ListaAtribuicoes listaAtribuicao;
 
+    /**
+     * Representante
+     */
     private Representante representante;
 
+    /**
+     * Construtor de Controller
+     *
+     * @param centroExposicoes Centro de Exposicoes
+     */
     public AtribuirCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
 
+    /**
+     * Altera o Parametro Representante
+     *
+     * @param representante novo Representantes
+     */
     public void setRepresentante(Representante representante) {
         this.representante = representante;
     }
 
+    /**
+     * Retorna Lista de FAE do tipo LiST
+     *
+     * @param exposicao Exposicao
+     * @return List de FAE
+     */
     public List getListaFAE(Exposicao exposicao) {
         this.exposicao = exposicao;
         listaFAE = this.exposicao.getListaFAE();
         return listFAEs = listaFAE.getListaFAEs();
     }
 
+    /**
+     * Retorna Lista de Candidaturas
+     *
+     * @return Lista de Candidaturas
+     */
     public ListaCandidaturas getListaCandidatura() {
         listaCandidaturas = representante.getListaCandidaturasDemonstracao();
         return listaCandidaturas;
     }
 
-
+    /**
+     * Retorna Lista de Mecanismos
+     *
+     * @return list de Mecanismos
+     */
     public List getRegistoMecanismos() {
         registoMecanismos = centroExposicoes.getRegistoMecanismos();
         return listaMecanismos = registoMecanismos.getListaMecanismos();
     }
 
+    /**
+     * Selecionar o Mecanismo
+     *
+     * @param mecanismo
+     */
     public void selecionaMecanismo(Mecanismo mecanismo) {
         this.mecanismo = mecanismo;
         listaAtribuicao = mecanismo.atribuirCandidaturasAFAE(listaCandidaturas, listaFAE);
 
     }
 
+    /**
+     * Regista as Atribuições
+     */
     public void registaAtribuicao() {
         exposicao.setAtribuicoes(listaAtribuicao);
     }
 
+    /**
+     * Altera estado da Exposição
+     */
     public void setCandidaturasAtribuidas() {
         exposicao.setExposicaoCandidaturasAtribuidas();
     }
