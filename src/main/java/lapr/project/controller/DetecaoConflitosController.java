@@ -17,25 +17,48 @@ import lapr.project.model.TipoDeConflito;
  */
 public class DetecaoConflitosController {
 
+    /**
+     * Registo de tipo de Conflitos
+     */
     private RegistoTipoDeConflito listaTiposConflito;
 
+    /**
+     * List do tipo conflito
+     */
     private List<TipoDeConflito> listaTiposConflitoAtivos;
 
+    /**
+     * Centro de Exposicao
+     */
     private CentroExposicoes centroExposicoes;
-    
+
+    /**
+     * Mecanismos de Detecao de Conflitos
+     */
     private MecanismoDetecaoConflito mecanismoDetecao;
 
+    /**
+     * COntroller de Detecao de Conflitos
+     *
+     * @param centroExposicoes
+     */
     public DetecaoConflitosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
-    
-    public void detecaoConflitosExposicao(){
+
+    /**
+     * Deteta Conflitos
+     */
+    public void detecaoConflitosExposicao() {
         listaTiposConflito = centroExposicoes.getListaTipoDeConflito();
         listaTiposConflitoAtivos = listaTiposConflito.getTiposConflitoAtivos();
         mecanismoDetecao.detectConflitosExposicao();
     }
-    
-     public void detecaoConflitosDemonstracao(){
+
+    /**
+     * Detete conflitos a demonstracao
+     */
+    public void detecaoConflitosDemonstracao() {
         listaTiposConflito = centroExposicoes.getListaTipoDeConflito();
         listaTiposConflitoAtivos = listaTiposConflito.getTiposConflitoAtivos();
         mecanismoDetecao.detectConflitosDemonstracao();

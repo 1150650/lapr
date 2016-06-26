@@ -13,31 +13,65 @@ import lapr.project.model.*;
  * @author Filipe <FilipeCorreia.1150524>
  */
 public class DefinirRecursosController {
-    
+
+    /**
+     * Centro de Exposicao
+     */
     private CentroExposicoes centroExposicoes;
+    /**
+     * Lista de Recursos
+     */
     private ListaRecursos registoRecursos;
+    /**
+     * Recurso
+     */
     private Recurso recurso;
-    
-    public DefinirRecursosController(CentroExposicoes centroExposicoes){
+
+    /**
+     * Construtor de Definir Recursos
+     *
+     * @param centroExposicoes
+     */
+    public DefinirRecursosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
-    
-    public Recurso newRecurso(String recurso){
+
+    /**
+     * Novo Recurso
+     *
+     * @param recurso
+     * @return
+     */
+    public Recurso newRecurso(String recurso) {
         registoRecursos = centroExposicoes.getRegistoRecursos();
         return this.recurso = registoRecursos.criarRecurso(recurso);
     }
-    
-    public void addRecurso(Recurso recurso){
+
+    /**
+     * Adiciona Recurso a Lista
+     *
+     * @param recurso
+     */
+    public void addRecurso(Recurso recurso) {
         registoRecursos.addRecurso(recurso);
     }
-    
-    public List getListaRecursos(){
+
+    /**
+     * Retorna Lista de Recursos
+     *
+     * @return
+     */
+    public List getListaRecursos() {
         return registoRecursos.getListaRecursos();
     }
-    
-    public ListaRecursos getRegistoRecursos(){
+
+    /**
+     * Retorna Lista de Recursos
+     *
+     * @return
+     */
+    public ListaRecursos getRegistoRecursos() {
         return registoRecursos;
     }
-    
-    
+
 }

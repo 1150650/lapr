@@ -22,11 +22,29 @@ public class DefinirInteresseStandController {
      * Centro de Exposicoes
      */
     private CentroExposicoes centroexpo;
+    /**
+     * Exposicao
+     */
     private Exposicao expo;
+    /**
+     * indice
+     */
     private int indice;
+    /**
+     * Representante
+     */
     private Representante r;
+    /**
+     * Utilizador
+     */
     private Utilizador u1;
 
+    /**
+     * Construtor do Controller Definir Interesse Stand
+     *
+     * @param centroexpo Centro Exposicoes
+     * @param u Utilizador
+     */
     public DefinirInteresseStandController(CentroExposicoes centroexpo, Utilizador u) {
 
         this.centroexpo = centroexpo;
@@ -34,10 +52,21 @@ public class DefinirInteresseStandController {
 
     }
 
+    /**
+     * Retorna Array List de Exposicoes
+     *
+     * @return
+     */
     public Exposicao[] getListaExposicoes() {
         return this.centroexpo.mostrarLista();
     }
 
+    /**
+     * Retorna Lista de Candidaturas
+     *
+     * @param expo Exposicao
+     * @return
+     */
     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
         this.expo = expo;
         this.indice = centroexpo.getListaExposicoes().indiceDe(expo);
@@ -58,6 +87,11 @@ public class DefinirInteresseStandController {
         return lst21;
     }
 
+    /**
+     * Aceita Stand
+     *
+     * @param candidatura
+     */
     public void aceitarStand(Candidatura candidatura) {
         int i = this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setCandidaturaStandAtribuido();

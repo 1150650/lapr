@@ -19,7 +19,7 @@ import lapr.project.model.Utilizador;
  * @author JOAO
  */
 public class RegistarExposicaoController {
-
+    
      private CentroExposicoes centroExposicoes;
 
     private Exposicao exposicao;

@@ -15,27 +15,55 @@ import lapr.project.model.TipoDeConflito;
  */
 public class DefinirTpoDeConflitoController {
 
+    /**
+     * Centro de Exposicao
+     */
     private CentroExposicoes centroexpo;
+    /**
+     * Tipo de Conflito
+     */
     private TipoDeConflito tipodeconflito;
+    /**
+     * Registo de tipo de Conflito
+     */
     private RegistoTipoDeConflito listaTipoDeConflitos;
 
+    /**
+     * Construtor de DefinirTipoDeConflito
+     *
+     * @param centroexpo
+     */
     public DefinirTpoDeConflitoController(CentroExposicoes centroexpo) {
         this.centroexpo = centroexpo;
     }
 
+    /**
+     * Retorna tipo de conflitos
+     */
     public void getListaTipoDeConflitos() {
         this.listaTipoDeConflitos = this.centroexpo.getListaTipoDeConflito();
     }
 
+    /**
+     * Criar tipo de Conflito
+     */
     public void criarTipoDeConflito() {
         this.tipodeconflito = new TipoDeConflito();
 
     }
 
+    /**
+     * Defininr tipo de Conflito
+     *
+     * @param descricao
+     */
     public void definirTipoDeConflito(String descricao) {
         this.tipodeconflito.setDescricao(descricao);
     }
 
+    /**
+     * Registar Tipo de COnflito
+     */
     public void registarTipoDeConflito() {
         this.centroexpo.getListaTipoDeConflito().adicionarTipoDeConflito(tipodeconflito);
     }
