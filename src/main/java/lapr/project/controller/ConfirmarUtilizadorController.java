@@ -65,10 +65,18 @@ public class ConfirmarUtilizadorController {
         return centroExposicoes.getRegistoUtilizadoresConf();
     }
 
+    /**
+     * Seleciona o Utilizador
+     *
+     * @param u
+     */
     public void selecionarUtilizador(Utilizador u) {
         this.u = u;
     }
 
+    /**
+     * Confirma Utilizador
+     */
     public void confirmarUtilizador() {
         registoUtilizadores.removerUtilizador(u);
         registoUtilizadoresNConfirmado.registaUtilizador(u);

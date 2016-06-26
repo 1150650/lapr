@@ -16,46 +16,107 @@ import lapr.project.model.*;
  */
 public class AtribuirStandCandidaturasAceitesController {
 
+    /**
+     * Centro de Exposicoes
+     */
     private CentroExposicoes centroExposicoes;
+    /**
+     * Exposicao
+     */
     private Exposicao exposicao;
+    /**
+     * Lista de Stands
+     */
     private ListaStands listaStands;
+    /**
+     * Lista de Candidaturas
+     */
     private ListaCandidaturas listaCandidaturas;
+    /**
+     * Registo de Exposicoes
+     */
     private RegistoExposicoes registoExposicoes;
+    /**
+     * Candidatura
+     */
     private Candidatura candidatura;
+    /**
+     * Stand
+     */
     private Stand stand;
 
+    /**
+     * Construtor do Controller
+     *
+     * @param centroExposicoes Centor de Exposicoes
+     */
     public AtribuirStandCandidaturasAceitesController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
 
+    /**
+     * Retorna uma List de Exposicoes com base no Organizador
+     *
+     * @param utilizador
+     * @return
+     */
     public List getExposicoesOrganizador(Utilizador utilizador) {
         return registoExposicoes.getExposicoesOrganizador(utilizador);
     }
 
+    /**
+     * Retorna Lista de Candidaturas Aceites de Uma exposição
+     *
+     * @param exposicao
+     * @return
+     */
     public List getCandidaturasAceites(Exposicao exposicao) {
         this.exposicao = exposicao;
         listaCandidaturas = this.exposicao.getListaCandidaturasExposicoes();
         return listaCandidaturas.getCandidaturasAceites();
     }
 
+    /**
+     * Altera o Parametro Candidaturas
+     *
+     * @param candidatura Candidatura Nova
+     */
     public void setCandidatura(Candidatura candidatura) {
         this.candidatura = candidatura;
     }
 
+    /**
+     * Retorna Lista de Stands que podem ser Usados
+     *
+     * @return List Stands
+     */
     public List getListaStandsDisponiveis() {
         this.listaStands = centroExposicoes.getListastands();
         return listaStands.getListaStandsDisponiveis();
     }
 
+    /**
+     * Altera o parametro Stand
+     *
+     * @param stand novo Stand
+     */
     public void setStand(Stand stand) {
         this.stand = stand;
     }
 
+    /**
+     * Regista o Stand
+     */
     public void registaStandCandidatura() {
         listaStands.registaStandCandidatura(stand, candidatura);
     }
-    
-    public boolean setCandidaturaStandAtribuido(){
+
+    /**
+     * Altera o Estado de Candidatura para Stand Atribuido
+     *
+     * @return
+     */
+    public boolean setCandidaturaStandAtribuido() {
         return candidatura.setCandidaturaStandAtribuido();
     }
 }
