@@ -38,10 +38,19 @@ public class AlterarCandidaturaController {
      */
     private CandidaturaExposicao novaCandidatura;
 
+    /**
+     * Exposicao
+     */
     private Exposicao expo;
 
+    /**
+     * Representante
+     */
     private Representante r;
 
+    /**
+     * Utilizador
+     */
     private Utilizador u;
 
     /**
@@ -62,8 +71,6 @@ public class AlterarCandidaturaController {
     public void selecionarCandidatura(CandidaturaExposicao c) {
         this.candidatura = c;
     }
-
- 
 
     /**
      * Valida os novos dados da candidatura para ver se pode alterar
@@ -88,10 +95,18 @@ public class AlterarCandidaturaController {
         novaCandidatura = new CandidaturaExposicao(nomeEmpresa, morada, telemovel, areaExposicao, produtos, nConvites);
     }
 
+    /**
+     * Retorna A candidatura selecionada
+     *
+     * @return
+     */
     public CandidaturaExposicao getCandidaturaSelecionada() {
         return candidatura;
     }
 
+    /**
+     * Altera os dados da candidatura para a nova
+     */
     public void alterarDadosCandidatura() {
         getCandidaturaAlterada().getState().setAlterada();
         expo.getListaCandidaturasExposicoes().removerCandidatura(candidatura);
@@ -101,12 +116,20 @@ public class AlterarCandidaturaController {
         expo.getListaCandidaturasExposicoes().adicionarCandidatura(candidatura);
     }
 
+    /**
+     * Seleciona a Exposicao
+     *
+     * @param expo
+     */
     public void selecionaExposicao(Exposicao expo) {
         this.expo = expo;
         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u);
         this.lstCandidaturas = r.getListaCandidaturasPodemSerAlteradas();
     }
 
+    /*
+    * Obtem a lista de Candidaturas 
+     */
     public ListaCandidaturas getListaCandidaturas() {
         return lstCandidaturas;
     }
