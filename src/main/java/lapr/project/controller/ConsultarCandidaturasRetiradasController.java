@@ -26,16 +26,20 @@ public class ConsultarCandidaturasRetiradasController {
         this.centroExposicoes = centroExposicoes;
     }
     
-    public List getListaCandidaturasExposicao(Exposicao exposicao){
-        this.exposicao=exposicao;
-        registoCandidaturas = this.exposicao.getListaCandidaturasExposicoes();
-        return listaCandidaturas = registoCandidaturas.getListaCandidaturasExpoRetiradas();
+    public Exposicao[] getListaExposicoes() {
+        return this.centroExposicoes.mostrarLista();
     }
     
-    public List getListaCandidaturasDemonstracao(Exposicao exposicao){
+    public ListaCandidaturas getListaCandidaturasExposicao(Exposicao exposicao){
         this.exposicao=exposicao;
-        registoCandidaturas = this.exposicao.getListaCandidaturasExposicoes();
-        return listaCandidaturas = registoCandidaturas.getListaCandidaturasDemoRetiradas();
+        return registoCandidaturas = this.exposicao.getLstCandidaturasExposicaoRemovidas();
+        
+    }
+    
+    public ListaCandidaturas getListaCandidaturasDemonstracao(Exposicao exposicao){
+        this.exposicao=exposicao;
+        return registoCandidaturas = this.exposicao.getLstCandidaturasDemonstracaoRemovidas();
+        
     }
     
 }

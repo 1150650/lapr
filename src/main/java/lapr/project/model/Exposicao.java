@@ -25,6 +25,11 @@ public class Exposicao {
     private ListaAtribuicoes lstAtribuicoes;
     @XmlElement
     private RegistoRepresentantes listaRepresentantes;
+    private ListaCandidaturas lstCandidaturasExposicaoRemovidas ;
+    private ListaCandidaturas lstCandidaturasDemonstracaoRemovidas ;
+
+   
+    
 
     public Exposicao() {
         listaCandidaturasExposicoes = new ListaCandidaturas();
@@ -35,6 +40,8 @@ public class Exposicao {
         listaOrganizadores = new ListaOrganizadores();
         lstAtribuicoes = new ListaAtribuicoes();
         m_state = new ExposiçãoCriadaState(this);
+         lstCandidaturasExposicaoRemovidas= new ListaCandidaturas ();
+         lstCandidaturasDemonstracaoRemovidas= new ListaCandidaturas ();
     }
 
     public Exposicao(String titulo, String textoDescritivo, Date dataInicio, Date dataFim, String local) {
@@ -50,6 +57,8 @@ public class Exposicao {
         listaOrganizadores = new ListaOrganizadores();
         lstAtribuicoes = new ListaAtribuicoes();
         m_state = new ExposiçãoCriadaState(this);
+        lstCandidaturasExposicaoRemovidas= new ListaCandidaturas ();
+        lstCandidaturasDemonstracaoRemovidas= new ListaCandidaturas ();
     }
 
     public String getTitulo() {
@@ -292,6 +301,12 @@ public class Exposicao {
 
     public boolean setExposicaoCandidaturasDemonstracaoAceites() {
         return m_state.setCandidaturasDemonstracoesAceites();
+    }
+public ListaCandidaturas getLstCandidaturasExposicaoRemovidas() {
+        return lstCandidaturasExposicaoRemovidas;
+    }
+ public ListaCandidaturas getLstCandidaturasDemonstracaoRemovidas() {
+        return lstCandidaturasDemonstracaoRemovidas;
     }
 
 }

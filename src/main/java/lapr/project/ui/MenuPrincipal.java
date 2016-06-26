@@ -688,7 +688,8 @@ public class MenuPrincipal extends JFrame {
         btnRetirarCandidatura.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                new RemoverCandidaturaUI(MenuPrincipal.this, ce,utilizadorAtivo);
+              new RemoverCandidaturaUI(MenuPrincipal.this, ce,utilizadorAtivo);
+
 
             }
         });

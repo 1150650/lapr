@@ -85,10 +85,12 @@ public class RemoverCandidaturaController {
     }
 
     public void removerCandidaturaExposicao(Candidatura c) {
+         this.centroexpo.getListaExposicoes().obterExposicao(indice).getLstCandidaturasExposicaoRemovidas().adicionarCandidatura(c);
         this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().removerCandidatura(c);
     }
     
     public void removerCandidaturaDemonstracao(Candidatura c) {
+        this.centroexpo.getListaExposicoes().obterExposicao(indice).getLstCandidaturasDemonstracaoRemovidas().adicionarCandidatura(c);
         this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().removerCandidatura(c);
     }
 
