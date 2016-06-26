@@ -88,7 +88,7 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
     private JPanel criarPainelNorte() {
         
         
-         JButton btnSelecionarExposicao = criarBotaoSelecionarExposicao();
+         JButton btnSelecionarExposicao = criarBotaoSelectExposicao();
 
 
         
@@ -100,10 +100,10 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
    
 
     private JPanel criarPainelSul() {
-        JButton btnOK = criarBotaoConclui();
+        JButton btnOK = criarBtnConclui();
         getRootPane().setDefaultButton(btnOK);
 
-        JButton btnCancelar = criarBotaoCancelar();
+        JButton btnCancelar = criarBtnCancelar();
 
         JPanel p = new JPanel();
 
@@ -144,46 +144,46 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
         lstLista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane scrPane = new JScrollPane(lstLista);
 
-        JPanel p = new JPanel(new BorderLayout());
+        JPanel paine = new JPanel(new BorderLayout());
 
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 20;
         final int MARGEM_ESQUERDA = 20, MARGEM_DIREITA = 20;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        paine.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
 
-        p.add(lblTitulo, BorderLayout.NORTH);
-        p.add(scrPane, BorderLayout.CENTER);
+        paine.add(lblTitulo, BorderLayout.NORTH);
+        paine.add(scrPane, BorderLayout.CENTER);
 
         JPanel pBotoes = criarPainelBotao(btnSuperior);
-        p.add(pBotoes, BorderLayout.SOUTH);
-        return p;
+        paine.add(pBotoes, BorderLayout.SOUTH);
+        return paine;
     }
 
     private JPanel criarPainelBotao(JButton btnSuperior) {
         final int NUMERO_LINHAS = 2, NUMERO_COLUNAS = 1;
         final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
-        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
+        JPanel paine1 = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
 
         final int MARGEM_1SUPERIOR = 10, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_1SUPERIOR,
+        paine1.setBorder(BorderFactory.createEmptyBorder(MARGEM_1SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
 
-        p.add(btnSuperior);
+        paine1.add(btnSuperior);
 
-        return p;
+        return paine1;
     }
 
     
 
-    private JButton criarBotaoCancelar() {
+    private JButton criarBtnCancelar() {
         JButton btnCancell = new JButton("Cancelar");
         btnCancell.addActionListener(new ActionListener() {
             @Override
@@ -195,8 +195,8 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
     }
 
     private JButton criarBotaoCandidatarDemonstracao(JList lstCompleta) {
-        JButton btn = new JButton("Candidatar Demonstracao");
-        btn.addActionListener(new ActionListener() {
+        JButton bt1n = new JButton("Candidatar Demonstracao");
+        bt1n.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -230,10 +230,10 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
             }
         });
 
-        return btn;
+        return bt1n;
     }
 
-    private JButton criarBotaoSelecionarExposicao() {
+    private JButton criarBotaoSelectExposicao() {
         JButton btn = new JButton("Selecionar Exposicao");
         btn.addActionListener(new ActionListener() {
             @Override
@@ -263,7 +263,7 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
         return btn;
     }
 
-    private JButton criarBotaoConclui() {
+    private JButton criarBtnConclui() {
         JButton btnConclui = new JButton("Concluir Processo");
         btnConclui.addActionListener(new ActionListener() {
             @Override

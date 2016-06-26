@@ -72,7 +72,7 @@ public class DefinirInteresseStandUI extends JFrame {
     private JPanel criarPainelNorte() {
         
         
-         JButton btnSelecionarExposicao = criarBotaoSelecionarExposicao();
+         JButton btnSelecionarExposicao = criarBotaoSeleExposicao();
 
 
         
@@ -82,7 +82,7 @@ public class DefinirInteresseStandUI extends JFrame {
     }
 
     private JPanel criarPainelCentro() {
-        JPanel p231 = criarPainelRecurso();
+        JPanel p231 = criarPainelCandi();
 
         JPanel pCentro = new JPanel(new BorderLayout());
         pCentro.add(p231, BorderLayout.CENTER);
@@ -106,7 +106,7 @@ public class DefinirInteresseStandUI extends JFrame {
 
    
 
-    private JPanel criarPainelRecurso() {
+    private JPanel criarPainelCandi() {
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
         JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
@@ -118,7 +118,7 @@ public class DefinirInteresseStandUI extends JFrame {
 
         btnAceitarStand = criarBotaoAceitarStand(lstCompleta);
 
-        p.add(criarPainelLista("Lista de Candidaturas:",
+        p.add(criarPainelList("Lista de Candidaturas:",
                 lstCompleta,
                 lstCandidaturas,
                 btnAceitarStand));
@@ -126,7 +126,7 @@ public class DefinirInteresseStandUI extends JFrame {
         return p;
     }
 
-    private JPanel criarPainelLista(
+    private JPanel criarPainelList(
             String tituloLista,
             JList lstLista,
             ModeloListaCandidaturas modeloLista,
@@ -135,54 +135,54 @@ public class DefinirInteresseStandUI extends JFrame {
         lstLista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane scrPane = new JScrollPane(lstLista);
 
-        JPanel p = new JPanel(new BorderLayout());
+        JPanel painelList = new JPanel(new BorderLayout());
 
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 20;
         final int MARGEM_ESQUERDA = 20, MARGEM_DIREITA = 20;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
+        painelList.setBorder(BorderFactory.createEmptyBorder(MARGEM_SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
 
-        p.add(lblTitulo, BorderLayout.NORTH);
-        p.add(scrPane, BorderLayout.CENTER);
+        painelList.add(lblTitulo, BorderLayout.NORTH);
+        painelList.add(scrPane, BorderLayout.CENTER);
 
         JPanel pBotoes = criarPainelBotao(btnSuperior);
-        p.add(pBotoes, BorderLayout.SOUTH);
-        return p;
+        painelList.add(pBotoes, BorderLayout.SOUTH);
+        return painelList;
     }
 
     private JPanel criarPainelBotao(JButton btnSuperior) {
         final int NUMERO_LINHAS = 2, NUMERO_COLUNAS = 1;
         final int INTERVALO_HORIZONTAL = 0, INTERVALO_VERTICAL = 10;
-        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
+        JPanel painellist1 = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
 
         final int MARGEM_1SUPERIOR = 10, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 0, MARGEM_DIREITA = 0;
-        p.setBorder(BorderFactory.createEmptyBorder(MARGEM_1SUPERIOR,
+        painellist1.setBorder(BorderFactory.createEmptyBorder(MARGEM_1SUPERIOR,
                 MARGEM_ESQUERDA,
                 MARGEM_INFERIOR,
                 MARGEM_DIREITA));
 
-        p.add(btnSuperior);
+        painellist1.add(btnSuperior);
 
-        return p;
+        return painellist1;
     }
 
     
 
     private JButton criarBotaoCancelar() {
-        JButton btnCancell = new JButton("Cancelar");
-        btnCancell.addActionListener(new ActionListener() {
+        JButton btnCancl = new JButton("Cancelar");
+        btnCancl.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btnCancell;
+        return btnCancl;
     }
 
     private JButton criarBotaoAceitarStand(JList lstCompleta) {
@@ -207,7 +207,7 @@ public class DefinirInteresseStandUI extends JFrame {
         return btn;
     }
 
-    private JButton criarBotaoSelecionarExposicao() {
+    private JButton criarBotaoSeleExposicao() {
         JButton btn = new JButton("Selecionar Exposicao");
         btn.addActionListener(new ActionListener() {
             @Override
@@ -238,13 +238,13 @@ public class DefinirInteresseStandUI extends JFrame {
     }
 
     private JButton criarBotaoConclui() {
-        JButton btnConclui = new JButton("Concluir Processo");
-        btnConclui.addActionListener(new ActionListener() {
+        JButton btn1Conclui = new JButton("Concluir Processo");
+        btn1Conclui.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
-        return btnConclui;
+        return btn1Conclui;
     }
 }
