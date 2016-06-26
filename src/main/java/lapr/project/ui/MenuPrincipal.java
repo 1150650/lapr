@@ -141,7 +141,6 @@ public class MenuPrincipal extends JFrame {
         JMenuBar menuBar = new JMenuBar();
 
         menuBar.add(criarMenuFicheiro());
-        //   menuBar.add(criarMenuOpcoes());
 
         return menuBar;
     }
@@ -154,8 +153,7 @@ public class MenuPrincipal extends JFrame {
         menu.addSeparator();
         menu.add(criarSubMenuLista());
         menu.addSeparator();
-        menu.addSeparator();
-        //    menu.add(criarItemSair());
+        menu.add(criarSair());
 
         return menu;
     }
@@ -177,50 +175,11 @@ public class MenuPrincipal extends JFrame {
         JMenu menu = new JMenu("Listas");
         menu.setMnemonic(KeyEvent.VK_L);
 
-        menu.add(criarItemImportarLista());
         menu.add(criarItemExportarLista());
 
         return menu;
     }
 
-    private JMenuItem criarItemImportarLista() {
-        JMenuItem item = new JMenuItem("Importar", 'I');
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_MASK));
-
-        item.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                ImportarExportar imp = new ImportarExportar();
-                MyJFileChooser fileChooser = new MyJFileChooser();
-                int resposta = fileChooser.showOpenDialog(MenuPrincipal.this);
-
-                if (resposta == JFileChooser.APPROVE_OPTION) {
-                    File file = fileChooser.getSelectedFile();
-                    CentroExposicoes ce;
-                    try {
-                        ce = imp.importar(file.getPath());
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(
-                                MenuPrincipal.this,
-                                "Impossível ler o ficheiro: " + file.getPath() + " !",
-                                "Importar",
-                                JOptionPane.ERROR_MESSAGE);
-                    }
-
-                    JOptionPane.showMessageDialog(
-                            MenuPrincipal.this,
-                            "Centro de Exposições adicionado",
-                            "Importar Centro de Exposição",
-                            JOptionPane.INFORMATION_MESSAGE);
-
-                }
-
-            }
-        });
-
-        return item;
-    }
 
     private JMenuItem criarItemExportarLista() {
         JMenuItem item = new JMenuItem("Exportar", 'X');
@@ -236,7 +195,7 @@ public class MenuPrincipal extends JFrame {
 
                 if (resposta == JFileChooser.APPROVE_OPTION) {
                     File file = fileChooser.getSelectedFile();
-                    if (!file.getName().endsWith(".bin")) {
+                    if (!file.getName().endsWith(".xml")) {
                         file = new File(file.getPath().trim() + ".xml");
                     }
                     try {
@@ -250,6 +209,24 @@ public class MenuPrincipal extends JFrame {
                     }
 
                 }
+            }
+        });
+        return item;
+    }
+    
+    private JMenuItem criarSair() {
+        JMenuItem item = new JMenuItem("Sair", KeyEvent.VK_S);
+        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+        item.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 ImportarExportar exp = new ImportarExportar();
+                try {
+                    exp.exportar(ce, "teste.xml");
+                } catch (Exception ex) {
+                    
+                }
+                dispose();
             }
         });
         return item;
