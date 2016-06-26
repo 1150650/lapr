@@ -108,7 +108,6 @@ public class ConfirmarUtilizadorUI extends JFrame {
                 crtl.selecionarUtilizador(m1);
                 crtl.confirmarUtilizador();
                 m.removeElement(m1);
-                dispose();
 
             }
         });
