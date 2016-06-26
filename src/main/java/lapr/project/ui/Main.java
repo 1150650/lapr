@@ -33,8 +33,8 @@ class Main {
      */
     public static void main(String[] args) throws Exception {
 
-        importar();
-//        exportar();
+//        importar();
+        exportar();
 
     }
 
@@ -91,13 +91,13 @@ class Main {
         e.getListaRepresentantes().addRepresentante(r);
         e.getListaAtribuicoes().adicionarAtribuição(atribuicao);
         e.getListaOrganizadores().adicionarOrganizador(o);
-        r.adicionarCandidatura((CandidaturaExposicao) candidatura);
+//        r.adicionarCandidatura((CandidaturaExposicao) candidatura);
 
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(u);
         ce.getRegistoUtilizadoresConf().registaUtilizador(u1);
-        ce.getRegistoUtilizadoresNConf().registaUtilizador(gestor);
+        ce.getRegistoUtilizadoresConf().registaUtilizador(gestor);
         ce.getRegistoUtilizadoresNConf().registaUtilizador(organizador);
         ce.getListastands().adicionarStand(s);
         ce.getListaTipoDeConflito().adicionarTipoDeConflito(tc);

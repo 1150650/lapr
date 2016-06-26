@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -27,6 +29,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.utils.ImportarExportar;
 import lapr.project.utils.MyJFileChooser;
@@ -63,10 +68,10 @@ class JanelaPrincipal extends JFrame {
         add(criarLblImagem(), BorderLayout.CENTER);
         add(criarPainelBotoes(), BorderLayout.SOUTH);
         JMenuBar menuBar = criarBarraMenus();
-            setJMenuBar(menuBar);
+        setJMenuBar(menuBar);
 
     }
-    
+
     private JMenuBar criarBarraMenus() {
         JMenuBar menuBar = new JMenuBar();
 
@@ -75,7 +80,7 @@ class JanelaPrincipal extends JFrame {
 
         return menuBar;
     }
-    
+
     private JMenu criarMenuCE() {
         JMenu menu = new JMenu("Centro de Exposições");
         menu.setMnemonic(KeyEvent.VK_C);
@@ -86,7 +91,7 @@ class JanelaPrincipal extends JFrame {
 
         return menu;
     }
-    
+
     private JMenuItem criarImportar() {
         JMenuItem item = new JMenuItem("Importar Novo", KeyEvent.VK_I);
         item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_MASK));
@@ -118,12 +123,11 @@ class JanelaPrincipal extends JFrame {
 
                 }
 
-            
             }
         });
         return item;
     }
-    
+
     private JMenuItem criarSair() {
         JMenuItem item = new JMenuItem("Sair", KeyEvent.VK_S);
         item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
@@ -153,42 +157,40 @@ class JanelaPrincipal extends JFrame {
 
     private JPanel criarLblImagem() {
         JLabel lbl = new JLabel(ICONE);
-       
+
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 0, MARGEM_INFERIOR = 0;
         final int MARGEM_ESQUERDA = 50, MARGEM_DIREITA = 50;
-         lbl.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA, MARGEM_INFERIOR, MARGEM_DIREITA));
+        lbl.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA, MARGEM_INFERIOR, MARGEM_DIREITA));
         p.add(lbl);
         return p;
     }
-    
+
     private JPanel criarPainelBotoes() {
         JButton btnEntrar = criarBotaoLogin();
-        btnEntrar.setFont(new Font("Monospaced", Font.BOLD, 25));    
-        
+        btnEntrar.setFont(new Font("Monospaced", Font.BOLD, 25));
+
         JButton btnNovo = criarBotaoRegistarUtilizador();
         btnNovo.setFont(new Font("Monospaced", Font.BOLD, 25));
-        
+
         JButton btnSair = criarBotaoSair();
         btnSair.setFont(new Font("Monospaced", Font.BOLD, 25));
-        
+
         JPanel p = new JPanel();
         final int MARGEM_SUPERIOR = 20, MARGEM_INFERIOR = 10;
         final int MARGEM_ESQUERDA = 10, MARGEM_DIREITA = 10;
         p.setBorder(new EmptyBorder(MARGEM_SUPERIOR, MARGEM_ESQUERDA,
                 MARGEM_INFERIOR, MARGEM_DIREITA));
-        
-        
-        p.add(btnNovo);
-        p.add(Box.createRigidArea(new Dimension(285,0)));
-        p.add(btnEntrar);        
-        p.add(btnSair);
 
+        p.add(btnNovo);
+        p.add(Box.createRigidArea(new Dimension(285, 0)));
+        p.add(btnEntrar);
+        p.add(btnSair);
 
         return p;
     }
-    
-    private JButton criarBotaoLogin(){
+
+    private JButton criarBotaoLogin() {
         btnLogin = new JButton("Fazer Login");
 
         btnLogin.addActionListener(new ActionListener() {
@@ -196,46 +198,41 @@ class JanelaPrincipal extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 new DialogoLogin(JanelaPrincipal.this, centroExpo);
 
-                
             }
         });
         return btnLogin;
     }
-    
-    private JButton criarBotaoRegistarUtilizador(){
+
+    private JButton criarBotaoRegistarUtilizador() {
         btnRegistar = new JButton("Registar Utilizador");
 
         btnRegistar.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 new RegistarUtilizadorUI(JanelaPrincipal.this, centroExpo);
-                
-                
+
             }
         });
         return btnRegistar;
     }
-    
-    private JButton criarBotaoSair(){
+
+    private JButton criarBotaoSair() {
         btnSair = new JButton("Sair");
 
         btnSair.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                
+                 ImportarExportar exp = new ImportarExportar();
+                try {
+                    exp.exportar(centroExpo, "teste.xml");
+                } catch (Exception ex) {
+                    
+                }
                 dispose();
-                
-                
+
             }
         });
         return btnSair;
     }
-    
-    
-    
-    
-    }
-    
-    
 
-
+}

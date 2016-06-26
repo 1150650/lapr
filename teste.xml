@@ -87,6 +87,7 @@
                 <Demonstração>
                     <codigo>1</codigo>
                     <descricao>isto é uma descriçao</descricao>
+                    <estado/>
                     <listalRecursos/>
                 </Demonstração>
             </listaDemonstracao>
@@ -124,6 +125,7 @@
             <recurso>caneta</recurso>
         </Recurso>
     </listarecursos>
+    <lstkeyword/>
     <registoDemonstracoes/>
     <registoMecanismos/>
     <registoUtilizadoresConf>

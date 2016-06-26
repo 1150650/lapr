@@ -128,15 +128,6 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
         this.Codigo = Codigo;
     }
 
-    @Override
-    public Node exportContentToXMLNode() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Demonstracao importContentFromXMLNode(Node node) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public DemonstracaoState getEstado() {
         return state;
@@ -215,5 +206,23 @@ public class Demonstracao implements Exportable, Importable<Demonstracao> {
     @XmlElement
     public void setDataFim(Date dtFim) {
         this.dataFim = dtFim;
+    }
+    
+    public Date getDataInicio(){
+        return dataInicio;
+    }
+    
+    public Date getDataFim(){
+        return dataFim;
+    }
+
+    @Override
+    public Node exportContentToXMLNode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Demonstracao importContentFromXMLNode(Node node) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
