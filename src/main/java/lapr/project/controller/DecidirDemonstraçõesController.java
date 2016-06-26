@@ -24,6 +24,9 @@ public class DecidirDemonstraçõesController {
      */
     private RegistoExposicoes lstExpo;
 
+    /**
+     * Centro de Exposicoes
+     */
     private CentroExposicoes ce;
 
     /**
@@ -47,7 +50,7 @@ public class DecidirDemonstraçõesController {
      * @param ce
      */
     public DecidirDemonstraçõesController(CentroExposicoes ce) {
-        this.ce=ce;
+        this.ce = ce;
         this.lstExpo = ce.getListaExposicoes();
     }
 
@@ -58,7 +61,7 @@ public class DecidirDemonstraçõesController {
      */
     public void selecionarExposicao(Exposicao e) {
         this.expo = e;
-        this.lstDemo=expo.getListaDemonstracao();
+        this.lstDemo = expo.getListaDemonstracao();
     }
 
     /**

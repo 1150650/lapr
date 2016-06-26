@@ -12,30 +12,67 @@ import lapr.project.model.Utilizador;
 
 public class CriarCandidaturaExposicaoController {
 
+    /**
+     * Centro de Exposicoes
+     */
     private CentroExposicoes centroExposicoes;
 
+    /**
+     * Lista de Candidaturas
+     */
     private ListaCandidaturas listaCandidaturas;
 
+    /**
+     * Lista de Demonstracoes
+     */
     private ListaDemonstracoes lstDemo;
 
+    /**
+     * Exposicao
+     */
     private Exposicao exposicaoSelecionada;
 
+    /**
+     * Candidatura a Exposicao
+     */
     private CandidaturaExposicao c;
 
+    /**
+     * Representante
+     */
     private Representante r;
 
+    /**
+     * Utilizador
+     */
     private Utilizador u;
 
+    /**
+     * Construtor do Controller
+     *
+     * @param ce
+     * @param u
+     */
     public CriarCandidaturaExposicaoController(CentroExposicoes ce, Utilizador u) {
         this.centroExposicoes = ce;
         this.u = u;
 
     }
 
+    /**
+     * Retorna o Registo de Exposicoes
+     *
+     * @return lista de Exposicoes
+     */
     public RegistoExposicoes getListaExposicoes() {
         return centroExposicoes.getListaExposicoes();
     }
 
+    /**
+     * Seleciona a Exposicao
+     *
+     * @param e Exposicao
+     */
     public void selecionaExposicao(Exposicao e) {
         exposicaoSelecionada = e;
         this.r = verificarRepresentante();
@@ -43,10 +80,24 @@ public class CriarCandidaturaExposicaoController {
         this.listaCandidaturas = exposicaoSelecionada.getListaCandidaturasExposicoes();
     }
 
+    /**
+     * Criar uma nova candidatura
+     */
     public void novaCandidatura() {
         c = new CandidaturaExposicao();
     }
 
+    /**
+     * Altera os Parametros para os parametros recebidos
+     *
+     * @param nomeEmpresa
+     * @param morada
+     * @param telemovel
+     * @param areaPretendida
+     * @param produtos
+     * @param nConvites
+     * @param Keywords
+     */
     public void setDados(String nomeEmpresa, String morada, int telemovel, float areaPretendida, String produtos, int nConvites, String[] Keywords) {
         this.c.setNomeEmpresa(nomeEmpresa);
         this.c.setMorada(morada);
@@ -59,6 +110,9 @@ public class CriarCandidaturaExposicaoController {
 
     }
 
+    /**
+     * Adiciona a Candidatura a desvidas Referenciass
+     */
     public void adicionarCandidatura() {
         c.setCandidaturaEmSubmissao();
         this.exposicaoSelecionada.adicionarCandidatura(c);
@@ -66,29 +120,56 @@ public class CriarCandidaturaExposicaoController {
         this.r.getListaCandidaturasExposicao().adicionarCandidatura(c);
     }
 
+    /**
+     * Retorna o Representante com Base no Utilizador
+     *
+     * @return Representante
+     *
+     */
     private Representante verificarRepresentante() {
         return exposicaoSelecionada.getListaRepresentantes().obterRepresentantePorU(u);
     }
 
     /**
-     * @return the r
+     * Retorna o Representante
+     *
+     * @return Representante
      */
     public Representante getRepresentante() {
         return r;
     }
 
+    /**
+     * Retorna a Lista de Candidaturas
+     *
+     * @return Lista de Candidaturas
+     */
     public ListaCandidaturas getListaCandidaturas() {
         return listaCandidaturas;
     }
 
+    /**
+     * Retorna a lista de Demonstracoes
+     *
+     * @return
+     */
     public ListaDemonstracoes getListaDemonstracoes() {
         return lstDemo;
     }
 
+    /**
+     * Retorna a Exposicao Selecionada
+     *
+     * @return Exposicao
+     */
     public Exposicao getExposicaoSelecionada() {
         return exposicaoSelecionada;
     }
-
+    
+    /**
+     * Retorna a Candidatura a Exposicao Criada
+     * @return candidatura Criada
+     */
     public CandidaturaExposicao getCandidaturaCriada() {
         return c;
     }

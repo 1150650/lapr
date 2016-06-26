@@ -17,49 +17,49 @@ import lapr.project.model.Utilizador;
  * @author JOAO
  */
 public class DefinirInteresseStandController {
-       private CentroExposicoes centroexpo;
+
+    /**
+     * Centro de Exposicoes
+     */
+    private CentroExposicoes centroexpo;
     private Exposicao expo;
     private int indice;
     private Representante r;
     private Utilizador u1;
 
-    public DefinirInteresseStandController(CentroExposicoes centroexpo,Utilizador u) {
+    public DefinirInteresseStandController(CentroExposicoes centroexpo, Utilizador u) {
 
         this.centroexpo = centroexpo;
-        this.u1=u;
-       
-        
+        this.u1 = u;
 
     }
 
     public Exposicao[] getListaExposicoes() {
         return this.centroexpo.mostrarLista();
     }
-    
-     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
-        this.expo=expo;
-        this.indice=centroexpo.getListaExposicoes().indiceDe(expo);
-         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u1);
+
+    public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
+        this.expo = expo;
+        this.indice = centroexpo.getListaExposicoes().indiceDe(expo);
+        this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u1);
         ListaCandidaturas lstcandi = new ListaCandidaturas();
         ListaCandidaturas lst21 = new ListaCandidaturas();
-        
-        lstcandi=r.getListaCandidaturasExposicao();
+
+        lstcandi = r.getListaCandidaturasExposicao();
         int i;
-        
-        for (i=0; i<lstcandi.tamanho();i++){
-            
-            if(lstcandi.obterCandidatura(i).getState().isEstadoStandAtribuido()){
+
+        for (i = 0; i < lstcandi.tamanho(); i++) {
+
+            if (lstcandi.obterCandidatura(i).getState().isEstadoStandAtribuido()) {
                 lst21.adicionarCandidatura(lstcandi.obterCandidatura(i));
             }
         }
-        
-        
-        
+
         return lst21;
-     }
-     
-     public void aceitarStand (Candidatura candidatura){
-         int i = this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
-            this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setCandidaturaStandAtribuido();
-     }
+    }
+
+    public void aceitarStand(Candidatura candidatura) {
+        int i = this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
+        this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setCandidaturaStandAtribuido();
+    }
 }
