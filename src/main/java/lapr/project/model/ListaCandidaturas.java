@@ -126,11 +126,11 @@ public class ListaCandidaturas {
         return listaCandExpo;
     }
 
-    public List<Candidatura> getListaCandidaturasDemo() {
-        List<Candidatura> listaCandDemo = new ArrayList<>();
+    public List<CandidaturaDemonstracao> getListaCandidaturasDemo() {
+        List<CandidaturaDemonstracao> listaCandDemo = new ArrayList<>();
         for (Candidatura c : listaCandidaturas) {
             if (c instanceof CandidaturaDemonstracao) {
-                listaCandDemo.add(c);
+                listaCandDemo.add((CandidaturaDemonstracao) c);
             }
         }
         return listaCandDemo;
@@ -149,7 +149,7 @@ public class ListaCandidaturas {
 
     public List getListaCandidaturasDemoRetiradas() {
         List<Candidatura> candidaturasRetiradas = new ArrayList<>();
-        List<Candidatura> list = getListaCandidaturasDemo();
+        List<CandidaturaDemonstracao> list = getListaCandidaturasDemo();
         for (Candidatura c : list) {
             if (c.getState() instanceof CandidaturaRetiradaState) {
                 candidaturasRetiradas.add(c);
@@ -170,6 +170,10 @@ public class ListaCandidaturas {
 
     public CandidaturaExposicao[] listaCandExposicaoToArray() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public CandidaturaDemonstracao newCandidaturaDemo(){
+        return new CandidaturaDemonstracao();
     }
 
 }

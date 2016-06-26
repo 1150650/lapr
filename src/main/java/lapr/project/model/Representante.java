@@ -95,4 +95,5 @@ listaCandidaturasSubmetidas = new ListaCandidaturas();
     public ListaCandidaturas getListaCandidaturasDemonstracao() {
         return listaCandidaturasDemonstracao;
     }
+ 
 }

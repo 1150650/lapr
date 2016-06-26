@@ -30,41 +30,47 @@ public class RegistarCandidaturaDemonstracaoController {
 
     private CandidaturaDemonstracao candidaturaDemo;
 
+    private Representante representante;
+
     public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
 
-    public List getListaExposicoes() {
-        registoExposicoes = centroExposicoes.getListaExposicoes();
-        listaExposicoes = registoExposicoes.getListaExposicoes();
-        return listaExposicoes;
-
+    public ListaCandidaturas getListaCandidaturas() {
+        return listaCandidaturas = representante.getListaCandidaturasSubmetidas();
     }
 
-    public void selecionaExposicao(Exposicao exposicao) {
-        this.exposicao = exposicao;
-        listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
-    }
-
-    public ListaDemonstracoes selecionaCandidatura(CandidaturaExposicao candidaturaExposicao) {
+    public void setCandidaturaExposicao(CandidaturaExposicao candidaturaExposicao) {
         this.candidaturaExposicao = candidaturaExposicao;
-        return listaDemonstracoesComInteresse = this.candidaturaExposicao.getDemonstracoesComInteresse();
     }
 
-    public void newCandidaturaDemo() {
-        candidaturaDemo = listaCandidaturas.newCandidaturaDemo(candidaturaExposicao);
+    public CandidaturaExposicao setCandidaturaExposicao() {
+        return candidaturaExposicao;
     }
 
-    public void guardaDadosCandidatura(Demonstracao demonstracao) {
+    public ListaDemonstracoes getListaDemonstracoesCInteresse() {
+        return candidaturaExposicao.getDemonstracoesComInteresse();
+    }
+    
+    public void addCandidaturaDemonstracao(){
+        representante.getListaCandidaturasDemonstracao().adicionarCandidatura(candidaturaDemo);
+    }
+
+    public CandidaturaDemonstracao newCandidaturaDemo(CandidaturaExposicao candidaturaExposicao) {
+        candidaturaDemo = exposicao.getListaCandidaturasExposicoes().newCandidaturaDemo(candidaturaExposicao);
+        return candidaturaDemo;
+    }
+        
+    public void setDemonstracao(Demonstracao demonstracao){
         candidaturaDemo.setDemonstracao(demonstracao);
     }
 
-    public void registaCandidatura() {
-        listaCandidaturas.adicionarCandidatura(candidaturaDemo);
+    public void setRepresentante(Representante representante) {
+        this.representante = representante;
     }
 
-    public void setCandidaturaEmSubmissao() {
-        candidaturaExposicao.setCandidaturaEmSubmissao();
+    public Representante getRepresentante() {
+        return representante;
     }
 
 }

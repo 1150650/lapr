@@ -195,8 +195,8 @@ public class ListaCandidaturasTest {
     public void testGetListaCandidaturasDemo() {
         System.out.println("getListaCandidaturasDemo");
         ListaCandidaturas instance = new ListaCandidaturas();
-        List<Candidatura> expResult =instance.getListaCandidaturasDemo();
-        List<Candidatura> result = instance.getListaCandidaturasDemo();
+        List<CandidaturaDemonstracao> expResult =instance.getListaCandidaturasDemo();
+        List<CandidaturaDemonstracao> result = instance.getListaCandidaturasDemo();
         assertEquals(expResult, result);
         
     }
