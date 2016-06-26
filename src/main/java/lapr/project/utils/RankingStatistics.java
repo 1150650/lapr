@@ -13,21 +13,25 @@ import java.util.List;
  */
 public class RankingStatistics {
 
-    public double calcularDesvioPadrao(List<Integer> listInteger, List<Integer> listDouble) {
-        double media = calcularMedia(listInteger);
-        double total = 0;
-        for (double avaliacao : listInteger) {
-            total = total + Math.abs(avaliacao - media);
-        }
-        return total / listInteger.size();
+    public double calcularDesvioPadrao(List<Double> listDouble) {
+        return Math.sqrt(calcularVariancia(listDouble));
     }
 
-    public double calcularMedia(List<Integer> listInteger) {
+    public double calcularVariancia(List<Double> listDouble) {
+        double media = calcularMedia(listDouble);
         double total = 0;
-        for (int avaliacao : listInteger) {
-            total = total + avaliacao;
+        for (double n : listDouble) {
+            total = total + Math.pow(n - media, 2);
         }
-        return total / listInteger.size();
+        return total / (listDouble.size() - 1);
+    }
+
+    public double calcularMedia(List<Double> listDouble) {
+        double total = 0;
+        for (double n : listDouble) {
+            total = total + n;
+        }
+        return total / listDouble.size();
     }
 
 }
