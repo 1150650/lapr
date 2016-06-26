@@ -59,6 +59,7 @@ public class DefinirFAEController {
      */
     public DefinirFAEController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
+        this.registoUtilizadores = centroExposicoes.getRegistoUtilizadoresConf();
     }
 
     /**

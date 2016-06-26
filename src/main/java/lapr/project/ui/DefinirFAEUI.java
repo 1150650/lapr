@@ -27,6 +27,7 @@ import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.FAE;
 import lapr.project.model.Utilizador;
+import lapr.project.utils.HintTextField;
 
 /**
  *
@@ -51,12 +52,12 @@ public class DefinirFAEUI extends JFrame {
     private Icon icon;
 
     private Utilizador utilizador;
-    
+
     private String id;
 
     private FAE fae;
-    
-    private JTextField txtFIdFae;
+
+    private HintTextField txtFIdFae;
 
     public DefinirFAEUI(MenuPrincipal framePai, CentroExposicoes centroExposicoes, Utilizador utilizador) {
         super("Definir FAEs");
@@ -102,7 +103,7 @@ public class DefinirFAEUI extends JFrame {
     private JPanel criarPainelNorte() {
         JLabel l = new JLabel(controller.getExposicao().getTitulo(), JLabel.CENTER);
         JPanel j = new JPanel();
-         txtFIdFae = new JTextField("Introduza o id do FAE", JTextField.CENTER);
+        txtFIdFae = new HintTextField("Introduza o id do FAE");
         j.add(l, BorderLayout.NORTH);
         j.add(txtFIdFae, BorderLayout.SOUTH);
         return j;
@@ -126,17 +127,28 @@ public class DefinirFAEUI extends JFrame {
     }
 
     private JButton criarBotaoAdicionarUtilizador(JList lstCompleta) {
-        addBtn = new JButton("Selecionar Candidatura");
+        addBtn = new JButton("Adicionar FAE");
         addBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                ModeloListaUtilizadores m = (ModeloListaUtilizadores) lstCompleta.getModel();
                 Utilizador u = (Utilizador) lstCompleta.getSelectedValue();
-                if (u != null) {
-                    id = txtFIdFae.getText();
-                    fae = controller.addFAE(u, id);
-                    controller.registaFAE(fae);
-                } else {
-                    JOptionPane.showMessageDialog(DefinirFAEUI.this, "Nenhum Utilizador Selecionado", "Erro", ERROR);
+                try {
+                    if (u != null) {
+                        id = txtFIdFae.getText();
+                        fae = controller.addFAE(u, id);
+                        controller.registaFAE(fae);
+                        m.removeElement(u);
+                        id = "";
+                    } else {
+                        JOptionPane.showMessageDialog(DefinirFAEUI.this, "Nenhum Utilizador Selecionado", "Erro", ERROR);
+                    }
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(
+                            framePai,
+                            ex.getMessage(),
+                            "ERRO!",
+                            JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
