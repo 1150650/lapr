@@ -33,8 +33,8 @@ class Main {
      */
     public static void main(String[] args) throws Exception {
 
-//        importar();
-        exportar();
+        importar();
+//        exportar();
 
     }
 

@@ -143,8 +143,6 @@
             <passwordDesencriptada>.Gestor404</passwordDesencriptada>
             <username>gestor</username>
         </utilizador>
-    </registoUtilizadoresConf>
-    <registoUtilizadoresNConf>
         <utilizador>
             <email>lapr2@gmail.com</email>
             <nome>Lapr2</nome>
@@ -159,5 +157,6 @@
             <passwordDesencriptada>.Organisador404</passwordDesencriptada>
             <username>organizador</username>
         </utilizador>
-    </registoUtilizadoresNConf>
+    </registoUtilizadoresConf>
+    <registoUtilizadoresNConf/>
 </CentroExposicoes>
