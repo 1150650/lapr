@@ -713,7 +713,7 @@ public class MenuPrincipal extends JFrame {
         btnConfirmarStand.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-
+   new DefinirInteresseStandUI (MenuPrincipal.this,ce,utilizadorAtivo);
             }
         });
         return btnConfirmarStand;

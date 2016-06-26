@@ -186,16 +186,18 @@ public class DefinirInteresseStandUI extends JFrame {
     }
 
     private JButton criarBotaoAceitarStand(JList lstCompleta) {
-        JButton btn = new JButton("Adicionar Recursos");
+        JButton btn = new JButton("Confirmar Stand");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     ModeloListaCandidaturas m = (ModeloListaCandidaturas) lstCompleta.getModel();
                     Candidatura r = (Candidatura) lstCompleta.getSelectedValue();
+                    if(r != null){
                     contr.aceitarStand(r);
                     m.removeElement(r);
-
+                    }
+                    
                 } catch (NumberFormatException ex) {
 
                 }
@@ -236,7 +238,7 @@ public class DefinirInteresseStandUI extends JFrame {
     }
 
     private JButton criarBotaoConclui() {
-        JButton btnConclui = new JButton("COncluir Processo");
+        JButton btnConclui = new JButton("Concluir Processo");
         btnConclui.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
