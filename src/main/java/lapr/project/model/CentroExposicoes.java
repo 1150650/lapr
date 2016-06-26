@@ -13,30 +13,51 @@ public class CentroExposicoes {
      * Criação de instância da lista de exposições
      */
     private RegistoExposicoes listaExposicoes;
-    
+
     /**
-     *Lista de Stands de CE
+     * Lista de Stands de CE
      */
     private ListaStands listaStands;
 
+    /**
+     * Registo de tipo Conflitos
+     */
     private RegistoTipoDeConflito listaTipoDeConflito;
 
+    /**
+     * Registo Utilizadores
+     */
     private RegistoUtilizadores registoUtilizadoresNConf;
 
+    /**
+     * Registo de Utilizadores nao confirmados
+     */
     private RegistoUtilizadores registoUtilizadoresConf;
 
+    /**
+     * Lista Recursos
+     */
     private ListaRecursos listarecursos;
 
+    /**
+     * Registo de Mecanismos
+     */
     private RegistoMecanismos registoMecanismos;
 
+    /**
+     * Lista de Demonstracoes
+     */
     private ListaDemonstracoes registoDemonstracoes;
-    
-    private ListaGestores listaGestores;
-    
-    private ListaKeywords lstkeyword ;
 
-   
-    
+    /**
+     * Lista de Gestores
+     */
+    private ListaGestores listaGestores;
+
+    /**
+     * Lista de KeyWords
+     */
+    private ListaKeywords lstkeyword;
 
     /**
      * Contrutor do centro de exposicoes
@@ -49,9 +70,9 @@ public class CentroExposicoes {
         this.registoUtilizadoresConf = new RegistoUtilizadores();
         this.registoUtilizadoresNConf = new RegistoUtilizadores();
         this.listaGestores = new ListaGestores();
-        this.registoDemonstracoes=new ListaDemonstracoes ();
-        this.registoMecanismos=new RegistoMecanismos ();
-        this.lstkeyword=new ListaKeywords();
+        this.registoDemonstracoes = new ListaDemonstracoes();
+        this.registoMecanismos = new RegistoMecanismos();
+        this.lstkeyword = new ListaKeywords();
     }
 
     /**
@@ -72,17 +93,29 @@ public class CentroExposicoes {
         return listaExposicoes.getArray();
     }
 
+    /**
+     * Retorna Lista de Stands
+     *
+     * @return lista de Stands
+     */
     public ListaStands getListastands() {
         return listaStands;
     }
 
+    /**
+     * Retorna Registo de Tipo de Conflitos
+     *
+     * @return Registo de Tipo de Conflito
+     */
     public RegistoTipoDeConflito getListaTipoDeConflito() {
-
         return listaTipoDeConflito;
     }
 
- 
-
+    /**
+     * Retorna Registo de Utilizadores
+     *
+     * @return Lista de Utilizadores confirmados
+     */
     public RegistoUtilizadores getRegistoUtilizadoresConf() {
         return registoUtilizadoresConf;
     }
@@ -112,22 +145,47 @@ public class CentroExposicoes {
         return registoUtilizadoresNConf;
     }
 
+    /**
+     * Retorna Registo Mecanismos
+     *
+     * @return
+     */
     public RegistoMecanismos getRegistoMecanismos() {
         return registoMecanismos;
     }
 
+    /**
+     * Lista Demonstracoes
+     *
+     * @return lista Demonstracoes
+     */
     public ListaDemonstracoes getListaDemonstracoes() {
         return registoDemonstracoes;
     }
 
+    /**
+     * Retorna Lista Recursos
+     *
+     * @return lista Recursos
+     */
     public ListaRecursos getRegistoRecursos() {
         return listarecursos;
     }
-    
-    public ListaGestores getListaGestores(){
+
+    /**
+     * Retorna Lista Gestores
+     *
+     * @return lista Gestores
+     */
+    public ListaGestores getListaGestores() {
         return listaGestores;
     }
 
+    /**
+     * Retorn Lista de Stand em Array List
+     *
+     * @return lista de Stand
+     */
     public Stand[] mostrarListaStand() {
         Stand[] string = new Stand[listaStands.tamanho()];
 
@@ -139,6 +197,11 @@ public class CentroExposicoes {
         return string;
     }
 
+    /**
+     * Retorna Registo de Exposicoes
+     *
+     * @return lista de exposicoes
+     */
     public RegistoExposicoes getRegistoExposicoesConflitosAlterados() {
         RegistoExposicoes lstExposicaoComConflitosAlterados = new RegistoExposicoes();
         for (int i = 0; i <= listaExposicoes.tamanho(); i++) {
@@ -148,67 +211,139 @@ public class CentroExposicoes {
         }
         return lstExposicaoComConflitosAlterados;
     }
-  public ListaStands getListaStands() {
+
+    /**
+     * Retorna Lista de Stand
+     *
+     * @return lista de Stands
+     */
+    public ListaStands getListaStands() {
         return listaStands;
     }
 
-  @XmlElement
+    /**
+     * Altera Lista de Stand
+     *
+     * @param listaStands Lista de Stand
+     */
+    @XmlElement
     public void setListaStands(ListaStands listaStands) {
         this.listaStands = listaStands;
     }
 
+    /**
+     * Retorna Lista de Recursos
+     *
+     * @return lista de Recursos
+     */
     public ListaRecursos getListarecursos() {
         return listarecursos;
     }
 
+    /**
+     * Altera a lista de Recursos
+     *
+     * @return Lista Recursos
+     */
     @XmlElement
     public void setListarecursos(ListaRecursos listarecursos) {
         this.listarecursos = listarecursos;
     }
 
+    /**
+     * Retorna Lista de Demonstracoes
+     *
+     * @return Lista Demonstracoes
+     */
     public ListaDemonstracoes getRegistoDemonstracoes() {
         return registoDemonstracoes;
     }
 
+    /**
+     * Altera o Registo de Demonstracoes
+     *
+     * @param registoDemonstracoes lista demonstracoes
+     */
     @XmlElement
     public void setRegistoDemonstracoes(ListaDemonstracoes registoDemonstracoes) {
         this.registoDemonstracoes = registoDemonstracoes;
     }
-    
+
+    /**
+     * Altera o Parametro Lista de Exposicao
+     *
+     * @param listaExposicoes
+     */
     @XmlElement
     public void setListaExposicoes(RegistoExposicoes listaExposicoes) {
         this.listaExposicoes = listaExposicoes;
     }
 
+    /**
+     * Altera o Parametro registo de conflitos
+     *
+     * @param listaTipoDeConflito registos de Conflitos
+     */
     @XmlElement
     public void setListaTipoDeConflito(RegistoTipoDeConflito listaTipoDeConflito) {
         this.listaTipoDeConflito = listaTipoDeConflito;
     }
 
+    /**
+     * Altera o Parametro registo de nao confirmados
+     *
+     * @param registoUtilizadoresNConf
+     */
     @XmlElement
     public void setRegistoUtilizadoresNConf(RegistoUtilizadores registoUtilizadoresNConf) {
         this.registoUtilizadoresNConf = registoUtilizadoresNConf;
     }
 
+    /**
+     * Altera o Parametro registo de Confirmados
+     *
+     * @param registoUtilizadoresConf
+     */
     @XmlElement
     public void setRegistoUtilizadoresConf(RegistoUtilizadores registoUtilizadoresConf) {
         this.registoUtilizadoresConf = registoUtilizadoresConf;
     }
 
+    /**
+     * Altera o Parametro Registos de Mecanismos
+     *
+     * @param registoMecanismos registo mecanismo
+     */
     @XmlElement
     public void setRegistoMecanismos(RegistoMecanismos registoMecanismos) {
         this.registoMecanismos = registoMecanismos;
     }
 
+    /**
+     * Altera o Parametro Lista Gestores
+     *
+     * @param registoMecanismos registo gestores
+     */
     @XmlElement
     public void setListaGestores(ListaGestores listaGestores) {
         this.listaGestores = listaGestores;
     }
-     public ListaKeywords getLstkeyword() {
+
+    /**
+     * Retorna a lista de Keywords
+     *
+     * @return Lista de Keywords
+     */
+    public ListaKeywords getLstkeyword() {
         return lstkeyword;
     }
 
-     @XmlElement
+    /**
+     * Altera o Parametro Keyword
+     *
+     * @param lstkeyword Lista de Keywords
+     */
+    @XmlElement
     public void setLstkeyword(ListaKeywords lstkeyword) {
         this.lstkeyword = lstkeyword;
     }
