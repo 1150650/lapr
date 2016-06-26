@@ -17,7 +17,7 @@ public class Login {
 
     public Login(CentroExposicoes centroExpo) {
         this.ce = centroExpo;
-        this.ru = ce.getRegistoUtilizadoresNConf();
+        this.ru = ce.getRegistoUtilizadoresConf();
     }
 
     public Utilizador authenticate(String username, String password) {
