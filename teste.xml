@@ -136,6 +136,13 @@
             <passwordDesencriptada>.Error404</passwordDesencriptada>
             <username>error404</username>
         </utilizador>
+        <utilizador>
+            <email>gestor@gmail.com</email>
+            <nome>Gestor</nome>
+            <password>0Iguvqt626</password>
+            <passwordDesencriptada>.Gestor404</passwordDesencriptada>
+            <username>gestor</username>
+        </utilizador>
     </registoUtilizadoresConf>
     <registoUtilizadoresNConf>
         <utilizador>
@@ -144,13 +151,6 @@
             <password>0Ncrt4238</password>
             <passwordDesencriptada>.Lapr2016</passwordDesencriptada>
             <username>lapr2</username>
-        </utilizador>
-        <utilizador>
-            <email>gestor@gmail.com</email>
-            <nome>Gestor</nome>
-            <password>0Iguvqt626</password>
-            <passwordDesencriptada>.Gestor404</passwordDesencriptada>
-            <username>gestor</username>
         </utilizador>
         <utilizador>
             <email>organizador@gmail.com</email>

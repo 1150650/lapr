@@ -7,12 +7,33 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Exposicao")
 public class Exposicao {
 
+    /**
+     * Titulo
+     */
     private String titulo;
+    /**
+     * Descricao
+     */
     private String textoDescritivo;
+    /**
+     * Data Inicio
+     */
     private Date dataInicio;
+    /**
+     * Data Fim
+     */
     private Date dataFim;
+    /**
+     * Local
+     */
     private String local;
+    /**
+     * Lista Candidaturas
+     */
     private ListaCandidaturas listaCandidaturasExposicoes, listaCandidaturasDemonstracoes;
+    /**
+     * Lista Demonstracoes
+     */
     private ListaDemonstracoes listaDemonstracao;
     @XmlElement
     private ListaFAE listaFAE;
@@ -25,11 +46,8 @@ public class Exposicao {
     private ListaAtribuicoes lstAtribuicoes;
     @XmlElement
     private RegistoRepresentantes listaRepresentantes;
-    private ListaCandidaturas lstCandidaturasExposicaoRemovidas ;
-    private ListaCandidaturas lstCandidaturasDemonstracaoRemovidas ;
-
-   
-    
+    private ListaCandidaturas lstCandidaturasExposicaoRemovidas;
+    private ListaCandidaturas lstCandidaturasDemonstracaoRemovidas;
 
     public Exposicao() {
         listaCandidaturasExposicoes = new ListaCandidaturas();
@@ -40,8 +58,8 @@ public class Exposicao {
         listaOrganizadores = new ListaOrganizadores();
         lstAtribuicoes = new ListaAtribuicoes();
         m_state = new ExposiçãoCriadaState(this);
-         lstCandidaturasExposicaoRemovidas= new ListaCandidaturas ();
-         lstCandidaturasDemonstracaoRemovidas= new ListaCandidaturas ();
+        lstCandidaturasExposicaoRemovidas = new ListaCandidaturas();
+        lstCandidaturasDemonstracaoRemovidas = new ListaCandidaturas();
     }
 
     public Exposicao(String titulo, String textoDescritivo, Date dataInicio, Date dataFim, String local) {
@@ -57,8 +75,8 @@ public class Exposicao {
         listaOrganizadores = new ListaOrganizadores();
         lstAtribuicoes = new ListaAtribuicoes();
         m_state = new ExposiçãoCriadaState(this);
-        lstCandidaturasExposicaoRemovidas= new ListaCandidaturas ();
-        lstCandidaturasDemonstracaoRemovidas= new ListaCandidaturas ();
+        lstCandidaturasExposicaoRemovidas = new ListaCandidaturas();
+        lstCandidaturasDemonstracaoRemovidas = new ListaCandidaturas();
     }
 
     public String getTitulo() {
@@ -302,10 +320,12 @@ public class Exposicao {
     public boolean setExposicaoCandidaturasDemonstracaoAceites() {
         return m_state.setCandidaturasDemonstracoesAceites();
     }
-public ListaCandidaturas getLstCandidaturasExposicaoRemovidas() {
+
+    public ListaCandidaturas getLstCandidaturasExposicaoRemovidas() {
         return lstCandidaturasExposicaoRemovidas;
     }
- public ListaCandidaturas getLstCandidaturasDemonstracaoRemovidas() {
+
+    public ListaCandidaturas getLstCandidaturasDemonstracaoRemovidas() {
         return lstCandidaturasDemonstracaoRemovidas;
     }
 

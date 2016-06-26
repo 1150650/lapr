@@ -16,10 +16,9 @@ public class RegistoUtilizadores {
     /**
      * Lista de Utilizadores
      */
-    @XmlElement (name = "utilizador")
+    @XmlElement(name = "utilizador")
     private List<Utilizador> registoUtilizadores;
 
-    
     private Utilizador u;
 
     public RegistoUtilizadores() {
@@ -62,7 +61,7 @@ public class RegistoUtilizadores {
             validaEmail(email);
         }
         if (!username.equals(u.getUsername())) {
-           validaUsername(username);
+            validaUsername(username);
         }
     }
 
@@ -92,7 +91,7 @@ public class RegistoUtilizadores {
         return valida;
     }
 
-    private void addUtilizador(Utilizador u) {
+    public void addUtilizador(Utilizador u) {
         registoUtilizadores.add(u);
     }
 

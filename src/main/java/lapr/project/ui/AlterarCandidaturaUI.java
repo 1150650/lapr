@@ -89,6 +89,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JLabel l = new JLabel("Nome Empresa ");
         nomeEmpresaTF = new JTextField(crtl.getCandidaturaSelecionada().getNomeEmpresa());
         nomeEmpresaTF.setEditable(false);
+        nomeEmpresaTF.setColumns(30);
 
         jp.add(nomeEmpresaTF);
         jp.add(l);
@@ -100,6 +101,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JLabel l = new JLabel("Morada ");
         moradaTF = new JTextField(crtl.getCandidaturaSelecionada().getMorada());
         moradaTF.setEditable(true);
+        moradaTF.setColumns(30);
 
         jp.add(moradaTF);
         jp.add(l);
@@ -111,6 +113,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JLabel l = new JLabel("Telemovel ");
         telemovelTF = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getTelemovel()));
         telemovelTF.setEditable(true);
+        telemovelTF.setColumns(30);
 
         jp.add(telemovelTF);
         jp.add(l);
@@ -122,6 +125,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JLabel l = new JLabel("Área da Exposição ");
         areaExposicaoTF = new JTextField(Float.toString(crtl.getCandidaturaSelecionada().getAreaPretendida()));
         areaExposicaoTF.setEditable(true);
+        areaExposicaoTF.setColumns(30);
 
         jp.add(areaExposicaoTF);
         jp.add(l);
@@ -132,6 +136,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JPanel jp = new JPanel();
         JLabel l = new JLabel("Produtos Exposicao ");
         produtosTF = new JTextField(crtl.getCandidaturaSelecionada().getProdutos());
+        produtosTF.setColumns(30);
         produtosTF.setEditable(true);
 
         jp.add(produtosTF);
@@ -144,6 +149,7 @@ public class AlterarCandidaturaUI extends JFrame {
         JLabel l = new JLabel("Número Convites ");
         nConvitesTF = new JTextField(Integer.toString(crtl.getCandidaturaSelecionada().getQuantidadeConvites()));
         nConvitesTF.setEditable(true);
+        nConvitesTF.setColumns(30);
 
         jp.add(nConvitesTF);
         jp.add(l);

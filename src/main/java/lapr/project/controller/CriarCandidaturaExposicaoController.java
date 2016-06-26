@@ -117,7 +117,7 @@ public class CriarCandidaturaExposicaoController {
         c.setCandidaturaEmSubmissao();
         this.exposicaoSelecionada.adicionarCandidatura(c);
         this.exposicaoSelecionada.adicionarRepresentante(r);
-        this.r.getListaCandidaturasExposicao().adicionarCandidatura(c);
+        this.r.getListaCandidaturasSubmetidas().adicionarCandidatura(c);
     }
 
     /**
