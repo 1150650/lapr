@@ -8,6 +8,7 @@ import javax.xml.bind.Unmarshaller;
 import lapr.project.model.AtribuicaoFAE;
 import lapr.project.model.CalculatorExample;
 import lapr.project.model.Candidatura;
+import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
@@ -90,6 +91,7 @@ class Main {
         e.getListaRepresentantes().addRepresentante(r);
         e.getListaAtribuicoes().adicionarAtribuição(atribuicao);
         e.getListaOrganizadores().adicionarOrganizador(o);
+        r.adicionarCandidatura((CandidaturaExposicao) candidatura);
 
         CentroExposicoes ce = new CentroExposicoes();
         ce.getListaExposicoes().adicionarExposicao(e);

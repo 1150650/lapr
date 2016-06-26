@@ -83,63 +83,63 @@ public class ListaFAE {
     public int indiceDe(FAE fae) {
         return listaFAE.indexOf(fae);
     }
-
+    
     public ArrayList<FAE> ordenarListaFAE() {
         ArrayList<FAE> listaFae = listaFAE;
         Collections.sort(listaFAE);
         return listaFae;
     }
-
+    
     public FAE obterFAEId(String identificador) {
         int i;
-
+        
         FAE FAESelecionado = obterFAE(0);
         for (i = 0; i < tamanho(); i++) {
             FAESelecionado = obterFAE(i);
             if (identificador.equalsIgnoreCase(FAESelecionado.getUtilizador().getEmail())) {
                 i = tamanho();
-
+                
             }
-
+            
         }
-
+        
         return FAESelecionado;
     }
-
+    
     public List getListaFAEs() {
         return listaFAE;
     }
-
+    
     public FAE addFAE(Utilizador utilizador, String id) {
         FAE fae = new FAE(utilizador, id);
         return fae;
     }
-
+    
     public void registaFAE(FAE fae) {
         if (validaMembroFAE(fae)) {
             addMembroFAE(fae);
         }
-
+        
     }
-
+    
     private void addMembroFAE(FAE fae) {
         listaFAE.add(fae);
     }
-
+    
     private boolean validaMembroFAE(FAE fae) {
         if (listaFAE.contains(fae)) {
             throw new IllegalArgumentException("FAE Já existe");
         }
         return true;
     }
-
+    
     public FAE obterFAEPorUtilizador(Utilizador u) {
         for (int i = 0; i < listaFAE.size(); i++) {
-            if (listaFAE.get(i).getUtilizador() == u) {
+            if (listaFAE.get(i).getUtilizador().getUsername().equals(u.getUsername())) {
                 return listaFAE.get(i);
             }
         }
         return null;
     }
-
+    
 }

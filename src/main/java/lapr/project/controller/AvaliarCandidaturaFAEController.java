@@ -1,6 +1,7 @@
 package lapr.project.controller;
 
 import lapr.project.model.Avaliacao;
+import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
@@ -17,7 +18,7 @@ public class AvaliarCandidaturaFAEController {
 
     private CentroExposicoes ce;
 
-    private CandidaturaExposicao candidatura;
+    private Candidatura candidatura;
 
     private Avaliacao avaliacao;
 
@@ -30,14 +31,16 @@ public class AvaliarCandidaturaFAEController {
     public AvaliarCandidaturaFAEController(CentroExposicoes ce, Utilizador u) {
         this.ce = ce;
         this.u = u;
+        fae = new FAE();
     }
 
-    public void selecionarCandidatura(CandidaturaExposicao a) {
+    public void selecionarCandidatura(Candidatura a) {
         this.candidatura = a;
+        getListaAvaliacoes();
     }
 
     public void selecionarExposicao(Exposicao e) {
-        this.expo = expo;
+        this.expo = e;
         this.fae = expo.getListaFAE().obterFAEPorUtilizador(u);
     }
 
@@ -49,10 +52,6 @@ public class AvaliarCandidaturaFAEController {
         this.lstAval = candidatura.getListaAvaliacoes();
     }
 
-    public void novaAvaliacao(boolean avaliacao, String justificacao) {
-        this.avaliacao = new Avaliacao(avaliacao, justificacao);
-    }
-
     public void setFAEAvaliacao(int[] conhecimentoFAE) {
         avaliacao.setConhecimentosFAE(conhecimentoFAE);
     }
@@ -61,7 +60,7 @@ public class AvaliarCandidaturaFAEController {
         lstAval.addAvaliacao(avaliacao);
     }
 
-    public CandidaturaExposicao candidaturaSelecionada() {
+    public Candidatura candidaturaSelecionada() {
         return candidatura;
     }
 

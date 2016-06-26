@@ -24,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import lapr.project.controller.AvaliarCandidaturaFAEController;
+import lapr.project.model.Candidatura;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
@@ -58,7 +59,6 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
         this.ce = ce;
         this.u = u;
         this.crtlAvaliar = new AvaliarCandidaturaFAEController(ce, u);
-
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -69,17 +69,17 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
 
     private void criarComponentes() {
         if (termoParagem == 0) {
-            add(cBox = criarComboBox());
-            add(listaCand = criarPainelListaCanidaturas());
-            add(botoes = Botoes());
+            add(cBox = criarComboBox(), BorderLayout.NORTH);
+            add(listaCand = criarPainelListaCanidaturas(), BorderLayout.CENTER);
+            add(botoes = Botoes(), BorderLayout.SOUTH);
             termoParagem++;
         } else {
             remove(cBox);
             remove(listaCand);
             remove(botoes);
-            add(cBox = criarComboBox());
-            add(listaCand = criarPainelListaCanidaturas());
-            add(botoes = Botoes());
+            add(cBox = criarComboBox(), BorderLayout.NORTH);
+            add(listaCand = criarPainelListaCanidaturas(), BorderLayout.CENTER);
+            add(botoes = Botoes(), BorderLayout.SOUTH);
             revalidate();
         }
     }
@@ -88,14 +88,15 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
         cBox = new JPanel();
         JComboBox cb = new JComboBox(ce.getArrayExposicao());
         cb.setEditable(false);
-        cb.setMaximumRowCount(5);
 
         cb.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                expo = (Exposicao) cb.getSelectedItem();
                 crtlAvaliar.selecionarExposicao(expo);
                 if (crtlAvaliar.getFAE() == null) {
-                    JOptionPane.showMessageDialog(AvaliarCandidaturaSelecionarCandidaturaUI.this, "Não é FAE nessa Expo", "Erro", ERROR);
+                    JOptionPane.showMessageDialog(AvaliarCandidaturaSelecionarCandidaturaUI.this, "Erro não Participa nesta Exposicao");
+                    dispose();
                 } else {
                     criarComponentes();
                 }
@@ -124,7 +125,16 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
     }
 
     private JPanel Botoes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JPanel j = new JPanel();
+        JButton btn = new JButton("Cancelar");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        j.add(btn);
+        return j;
     }
 
     private JButton criarBotaoSelecionarCandidatura(JList lstCompleta) {
@@ -133,8 +143,9 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModeloListaCandidaturas m = (ModeloListaCandidaturas) lstCompleta.getModel();
-                CandidaturaExposicao c = (CandidaturaExposicao) lstCompleta.getSelectedValue();
+                Candidatura c = (Candidatura) lstCompleta.getSelectedValue();
                 crtlAvaliar.selecionarCandidatura(c);
+                m.removeElement(c);
                 if (c != null) {
                     new AvaliarCandidaturaUI(AvaliarCandidaturaSelecionarCandidaturaUI.this, crtlAvaliar);
                 }
@@ -145,7 +156,7 @@ public class AvaliarCandidaturaSelecionarCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelLista(JList lstCompleta, JButton btnSelecionarCandidatura) {
-        JLabel lblTitulo = new JLabel("Selecione Candidatura a Alterar", JLabel.LEFT);
+        JLabel lblTitulo = new JLabel("Selecione Candidatura a Decidir", JLabel.CENTER);
         lstCompleta.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane scrPane = new JScrollPane(lstCompleta);
 

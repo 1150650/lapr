@@ -131,7 +131,6 @@ public class AlterarCandidaturaOpcao extends JFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModeloListaCandidaturas m = (ModeloListaCandidaturas) lstCompleta.getModel();
                 CandidaturaExposicao c = (CandidaturaExposicao) lstCompleta.getSelectedValue();
                 controller.selecionarCandidatura(c);
                 if (c != null) {

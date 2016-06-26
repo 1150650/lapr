@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Simão Pedro
  */
-@XmlRootElement 
+@XmlRootElement
 public class RegistoRepresentantes {
 
     /**
      * Lista de objetos Atribuicao
      */
-    @XmlElement (name = "representante")
+    @XmlElement(name = "representante")
     private List<Representante> lstRepresentante;
 
     /**
@@ -54,10 +54,12 @@ public class RegistoRepresentantes {
 
     public Representante obterRepresentantePorU(Utilizador u) {
         for (int i = 0; i < lstRepresentante.size(); i++) {
-            if (lstRepresentante.get(i).getUtilizador().equals(u));
-            return lstRepresentante.get(i);
+            if (lstRepresentante.get(i).getUtilizador().getUsername().equals(u.getUsername())) {
+                return lstRepresentante.get(i);
+            }
         }
         return new Representante(u);
+
     }
 
     public boolean containsRepresentante(Representante r) {

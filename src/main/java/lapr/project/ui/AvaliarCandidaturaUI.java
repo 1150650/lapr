@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import lapr.project.controller.AvaliarCandidaturaFAEController;
+import lapr.project.model.Avaliacao;
 import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
@@ -33,11 +34,11 @@ import lapr.project.model.Utilizador;
  */
 public class AvaliarCandidaturaUI extends JFrame {
 
-    private JRadioButton jrAceitar, jrNAceitar;
+    private JComboBox simNao;
 
     private Icon icon;
 
-    private JComboBox cb;
+    private JComboBox cb1, cb2, cb3, cb4;
 
     private boolean aceite = true, nAceite = false;
 
@@ -58,7 +59,7 @@ public class AvaliarCandidaturaUI extends JFrame {
         this.ce = ce;
         this.crtlAvaliarCand = crtlAvaliarCand;
 
-        GridLayout g = new GridLayout(1, 1);
+        GridLayout g = new GridLayout(4, 1);
         g.setHgap(20);
         g.setVgap(20);
         setLayout(g);
@@ -80,9 +81,11 @@ public class AvaliarCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelDecisão() {
-        JLabel lbl = new JLabel("Justificação: ", JLabel.RIGHT);
-        jrAceitar = new JRadioButton("Aceite", aceite);
-        jrNAceitar = new JRadioButton("Não Aceite", nAceite);
+        JLabel lbl = new JLabel("Justificação", JLabel.CENTER);
+        String[] decisao = new String[2];
+        decisao[0] = "Aceitar";
+        decisao[1] = "Não Aceite";
+        simNao = new JComboBox(decisao);
         txtJustificacao = new JTextArea();
         txtJustificacao.setColumns(50);
         txtJustificacao.setLineWrap(true);
@@ -93,10 +96,9 @@ public class AvaliarCandidaturaUI extends JFrame {
         JScrollPane jsp1 = new JScrollPane(txtJustificacao);
 
         JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        p.add(lbl);
-        p.add(jrAceitar, FlowLayout.LEFT);
-        p.add(jrNAceitar, FlowLayout.RIGHT);
-        p.add(jsp1, BorderLayout.SOUTH);
+        p.add(lbl, BorderLayout.NORTH);
+        p.add(simNao, FlowLayout.LEFT);;
+        p.add(jsp1, FlowLayout.RIGHT);
 
         return p;
 
@@ -104,8 +106,10 @@ public class AvaliarCandidaturaUI extends JFrame {
 
     private JPanel criarPainelInformaçãoCandidatura() {
         JPanel p = new JPanel();
-        JLabel l = new JLabel("Informação da Candidatura");
-        JTextArea txt = new JTextArea(crtlAvaliarCand.getInfo(), 20, 6);
+        JLabel l = new JLabel("Informação da Candidatura", JLabel.LEFT);
+        JTextArea txt = new JTextArea(crtlAvaliarCand.getInfo());
+        txt.setEditable(false);
+        txt.setAlignmentY(CENTER_ALIGNMENT);
         p.add(l);
         p.add(txt);
 
@@ -113,6 +117,7 @@ public class AvaliarCandidaturaUI extends JFrame {
     }
 
     private JPanel criarPainelConhecimentosFAE() {
+        JPanel pai = new JPanel();
         String[] parametros = {"Conhecimento a cerca da exposição",
             "Adequação da candidatura à exposição",
             "Adequação do número de convites por candidatura",
@@ -120,20 +125,55 @@ public class AvaliarCandidaturaUI extends JFrame {
         GridLayout j = new GridLayout(4, 2);
         setLayout(j);
         JPanel p1 = new JPanel(j);
-        for (int i = 0; i < parametros.length; i++) {
-            p1.add(new JLabel(parametros[i]), new FlowLayout(FlowLayout.LEFT));
-            p1.add(Combo(), new FlowLayout(FlowLayout.CENTER));
-        }
-        return p1;
+        JPanel p2 = new JPanel(j);
+        JPanel p3 = new JPanel(j);
+        JPanel p4 = new JPanel(j);
+        p1.add(new JLabel(parametros[0]), new FlowLayout(FlowLayout.LEFT));
+        p1.add(Combo1(), new FlowLayout(FlowLayout.CENTER));
+        p2.add(new JLabel(parametros[1]), new FlowLayout(FlowLayout.LEFT));
+        p2.add(Combo2(), new FlowLayout(FlowLayout.CENTER));
+        p3.add(new JLabel(parametros[2]), new FlowLayout(FlowLayout.LEFT));
+        p3.add(Combo3(), new FlowLayout(FlowLayout.CENTER));
+        p4.add(new JLabel(parametros[3]), new FlowLayout(FlowLayout.LEFT));
+        p4.add(Combo4(), new FlowLayout(FlowLayout.CENTER));
+        pai.add(p1);
+        pai.add(p2);
+        pai.add(p3);
+        pai.add(p4);
+        return pai;
 
     }
 
-    private JComboBox Combo() {
+    private JComboBox Combo1() {
         String[] items = {"0", "1", "2", "3", "4", "5"};
-        cb = new JComboBox(items);
-        cb.setEditable(false);
-        cb.setMaximumRowCount(4);
-        return cb;
+        cb1 = new JComboBox(items);
+        cb1.setEditable(false);
+        cb1.setMaximumRowCount(4);
+        return cb1;
+    }
+
+    private JComboBox Combo2() {
+        String[] items = {"0", "1", "2", "3", "4", "5"};
+        cb2 = new JComboBox(items);
+        cb2.setEditable(false);
+        cb2.setMaximumRowCount(4);
+        return cb2;
+    }
+
+    private JComboBox Combo3() {
+        String[] items = {"0", "1", "2", "3", "4", "5"};
+        cb3 = new JComboBox(items);
+        cb3.setEditable(false);
+        cb3.setMaximumRowCount(4);
+        return cb3;
+    }
+
+    private JComboBox Combo4() {
+        String[] items = {"0", "1", "2", "3", "4", "5"};
+        cb4 = new JComboBox(items);
+        cb4.setEditable(false);
+        cb4.setMaximumRowCount(4);
+        return cb4;
     }
 
     private JPanel criarPainelBotoes() {
@@ -157,12 +197,29 @@ public class AvaliarCandidaturaUI extends JFrame {
     }
 
     private JButton criarBotaoConfirmar() {
-        JButton btn = new JButton("Alterar");
+        JButton btn = new JButton("Confirmar");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-
+                    boolean decisao;
+                    if (simNao.getSelectedIndex() == 0) {
+                        decisao = true;
+                    } else {
+                        decisao = false;
+                    }
+                    int avaliacao1 = Integer.parseInt(cb1.getSelectedItem().toString());
+                    int avaliacao2 = Integer.parseInt(cb2.getSelectedItem().toString());
+                    int avaliacao3 = Integer.parseInt(cb3.getSelectedItem().toString());
+                    int avaliacao4 = Integer.parseInt(cb4.getSelectedItem().toString());
+                    int[] conhecimentos = new int[4];
+                    conhecimentos[0] = avaliacao1;
+                    conhecimentos[1] = avaliacao2;
+                    conhecimentos[2] = avaliacao3;
+                    conhecimentos[3] = avaliacao4;
+                    Avaliacao a = new Avaliacao(decisao, txtJustificacao.getText(), conhecimentos);
+                    crtlAvaliarCand.adicionarAvaliacao(a);
+                    dispose();
                 } catch (IllegalArgumentException ex) {
                     JOptionPane.showMessageDialog(
                             framePai,

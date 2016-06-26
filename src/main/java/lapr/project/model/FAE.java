@@ -9,13 +9,11 @@ public class FAE implements Comparable<FAE> {
     /**
      * String que contem a sigla de identificação do FAE
      */
-    
     private String identificador;
 
     /**
      * String com o nome de utilizador
      */
-    
     private Utilizador utilizador;
 
     /**
@@ -23,7 +21,7 @@ public class FAE implements Comparable<FAE> {
      * desempenhou o seu papel de FAE
      */
     @XmlElement
-    private int experienciaFAE=0;
+    private int experienciaFAE = 0;
 
     /**
      * Construtor de um objeto do tipo FAE
@@ -47,10 +45,10 @@ public class FAE implements Comparable<FAE> {
     }
 
     public FAE() {
-        
-        listaCandidaturasParaAvaliar=new ListaCandidaturas();
+        listaCandidaturasParaAvaliar = new ListaCandidaturas();
 
     }
+
     /**
      * @return the identificador
      */

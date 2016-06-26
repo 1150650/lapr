@@ -42,9 +42,10 @@ public final class Avaliacao {
      * @param avaliacao avaliacao submetida pelo fae
      * @param justificacao Justificação da decisão
      */
-    public Avaliacao(boolean avaliacao, String justificacao) {
+    public Avaliacao(boolean avaliacao, String justificacao, int[] conhecimentosFAE) {
         setAvaliacao(avaliacao);
         setJustificacao(justificacao);
+        setConhecimentosFAE(conhecimentosFAE);
     }
 
     /**
@@ -102,5 +103,4 @@ public final class Avaliacao {
         return conhecimentoFAE;
     }
 
-   
 }
