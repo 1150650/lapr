@@ -47,7 +47,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Construtor do controller recebendo CE como parametro
      *
-     * @param ce
+     * @param ce Centro de Exposicaos
      */
     public DecidirDemonstraçõesController(CentroExposicoes ce) {
         this.ce = ce;
@@ -57,7 +57,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Exposição selecionada
      *
-     * @param e
+     * @param e Exposicao
      */
     public void selecionarExposicao(Exposicao e) {
         this.expo = e;
@@ -74,7 +74,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Seleciona a demonstração que irá ser deccidida
      *
-     * @param demo
+     * @param demo Demonstracao Selecionada
      */
     public void selecionarDemonstracao(Demonstracao demo) {
         this.demonstraccao = demo;
@@ -83,7 +83,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Apresenta os dados da demonstracoes
      *
-     * @return
+     * @return String com os Dados
      */
     public String apresentarDados() {
         return getDemonstraccao().toString();
@@ -92,7 +92,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Altera o estado da demonstracao ara para aberta a candidaturas
      *
-     * @return
+     * @return boolean
      */
     public boolean setDemonstracaoAberta() {
         return getDemonstraccao().setDemonstracaoCriada();
@@ -101,7 +101,7 @@ public class DecidirDemonstraçõesController {
     /**
      * Altera o estado da exposicao para demonstracoes definidas
      *
-     * @return
+     * @return boolean
      */
     public boolean setExposicaoDemonstracaoDefinidas() {
         return getExpo().getExposicaoEstado().setDemonstracoesSemFAE();

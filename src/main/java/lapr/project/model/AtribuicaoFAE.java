@@ -80,6 +80,9 @@ public class AtribuicaoFAE {
         return candidatura.getNomeEmpresa() + "      :         " + FAE.getIdentificador();
     }
 
+    /**
+     * Adicionar Candidatura a FAE
+     */
     public void addCandidaturaFae() {
         this.FAE.getListacandidatura().adicionarCandidatura(candidatura);
     }

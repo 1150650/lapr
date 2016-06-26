@@ -54,7 +54,7 @@ public class AtribuirCandidaturaController {
     /**
      * Seleciona a Exposicao
      *
-     * @param expo
+     * @param expo exposicao
      */
     public void selecionarExposicao(Exposicao expo) {
         this.expo = expo;

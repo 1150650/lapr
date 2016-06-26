@@ -34,14 +34,23 @@ public class Candidatura {
      */
     private int quantidadeConvites;
 
+    /**
+     * Avaliacao do FAE
+     */
     private int[] avalicaoFAE;
 
+    /**
+     * Stand
+     */
     private Stand stand;
 
+    /**
+     * Construtor de Candidatura Sem Parametros
+     */
     public Candidatura() {
         this.listaAvaliacao = new ListaAvaliacoes();
         state = new CandidaturaAbertaState(this);
-        this.avalicaoFAE=new int [5];
+        this.avalicaoFAE = new int[5];
 
     }
 
@@ -69,7 +78,7 @@ public class Candidatura {
         setQuantidadeConvites(quantidadeConvites);
         this.listaAvaliacao = new ListaAvaliacoes();
         state = new CandidaturaAbertaState(this);
-        this.avalicaoFAE=new int [5];
+        this.avalicaoFAE = new int[5];
     }
 
     /**
@@ -157,6 +166,11 @@ public class Candidatura {
         this.telemovel = telemovel;
     }
 
+    /**
+     * Altera os Produtos
+     *
+     * @param produtos produtos
+     */
     public final void setProdutos(String produtos) {
         if (produtos == null || produtos.trim().isEmpty()) {
             throw new IllegalArgumentException("Produtos inválidos!");
@@ -164,6 +178,11 @@ public class Candidatura {
         this.produtos = produtos;
     }
 
+    /**
+     * Altera quantidade de Convites
+     *
+     * @param quantidadeConvites
+     */
     public final void setQuantidadeConvites(int quantidadeConvites) {
         if (quantidadeConvites < 0) {
             throw new IllegalArgumentException("Quantidade de convites é inválida!");
@@ -171,17 +190,32 @@ public class Candidatura {
         this.quantidadeConvites = quantidadeConvites;
     }
 
+    /**
+     * To String
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return String.format(" Empresa:" + nomeEmpresa + "\n Morada:" + morada + "\nd Telemovel:" + telemovel + "\n Produtos:" + produtos + "\n Número de Convites" + quantidadeConvites);
     }
 
-  
-
+    /**
+     * Altera o Estado de candidatura
+     */
     public boolean setCandidaturaStandAtribuido() {
         return state.setStandsAtribuidos();
     }
 
+    /**
+     * Altera as Avaliacao do FAE
+     *
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param p4
+     * @param p5
+     */
     public void setavalicaoFAE(int p1, int p2, int p3, int p4, int p5) {
         avalicaoFAE[0] = avalicaoFAE[0] + p1;
         avalicaoFAE[1] = avalicaoFAE[1] + p2;
@@ -190,54 +224,101 @@ public class Candidatura {
         avalicaoFAE[4] = avalicaoFAE[4] + p5;
     }
 
+    /**
+     * Retorna o Estado Da Candidatura
+     */
     public CandidaturaState getState() {
         return state;
     }
 
+    /**
+     * Altera o Estado da Candidatura
+     *
+     * @param state estado
+     */
     public void setEstado(CandidaturaState state) {
         this.state = state;
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaEmSubmissao() {
         return state.setCandidaturaEmSubmissao();
     }
 
+    /**
+     * Altera Stand
+     *
+     * @param stand novo stand
+     */
     public void setStand(Stand stand) {
         this.stand = stand;
     }
 
+    /**
+     * Retorna o Stand
+     *
+     * @return
+     */
     public Stand getStand() {
         return this.stand;
     }
 
+    /**
+     * Altera o Estado da Candidatura
+     *
+     * @return
+     */
     public boolean setCandidaturaConflitosDetetados() {
         return state.setConflitosDetetados();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaAceite() {
         return state.setAceite();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaAlterada() {
         return state.setAlterada();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaAvaliada() {
         return state.setAvaliada();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaEmAvaliacao() {
         return state.setCandidaturaEmAvaliacao();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaFechada() {
         return state.setCandidaturaFechada();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaRetirada() {
         return state.setCandidaturaRetirada();
     }
 
+    /**
+     * Altera Estado de Candidatura
+     */
     public boolean setCandidaturaStandsAtribuidos() {
         return state.isEstadoStandAtribuido();
     }

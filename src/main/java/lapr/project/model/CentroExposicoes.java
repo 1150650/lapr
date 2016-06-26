@@ -13,7 +13,10 @@ public class CentroExposicoes {
      * Criação de instância da lista de exposições
      */
     private RegistoExposicoes listaExposicoes;
-
+    
+    /**
+     *Lista de Stands de CE
+     */
     private ListaStands listaStands;
 
     private RegistoTipoDeConflito listaTipoDeConflito;

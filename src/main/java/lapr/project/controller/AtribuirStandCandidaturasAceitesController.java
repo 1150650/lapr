@@ -58,7 +58,7 @@ public class AtribuirStandCandidaturasAceitesController {
      * Retorna uma List de Exposicoes com base no Organizador
      *
      * @param utilizador
-     * @return
+     * @return Lista
      */
     public List getExposicoesOrganizador(Utilizador utilizador) {
         return registoExposicoes.getExposicoesOrganizador(utilizador);
@@ -67,8 +67,8 @@ public class AtribuirStandCandidaturasAceitesController {
     /**
      * Retorna Lista de Candidaturas Aceites de Uma exposição
      *
-     * @param exposicao
-     * @return
+     * @param exposicao Exposicao
+     * @return Lista
      */
     public List getCandidaturasAceites(Exposicao exposicao) {
         this.exposicao = exposicao;
@@ -114,7 +114,7 @@ public class AtribuirStandCandidaturasAceitesController {
     /**
      * Altera o Estado de Candidatura para Stand Atribuido
      *
-     * @return
+     * @return boolean
      */
     public boolean setCandidaturaStandAtribuido() {
         return candidatura.setCandidaturaStandAtribuido();

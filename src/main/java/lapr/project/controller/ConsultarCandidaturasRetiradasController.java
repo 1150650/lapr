@@ -55,7 +55,7 @@ public class ConsultarCandidaturasRetiradasController {
     /**
      * Retorna a lista Candidaturas
      *
-     * @param exposicao
+     * @param exposicao exposicao
      * @return Lista de Candidaturass
      */
     public ListaCandidaturas getListaCandidaturasExposicao(Exposicao exposicao) {
@@ -67,7 +67,7 @@ public class ConsultarCandidaturasRetiradasController {
     /**
      * Retorna Lista de CAndidaturas a Demonstracao Removidas
      *
-     * @param exposicao
+     * @param exposicao Exposicao
      * @return Lista de Candidaturas que foram Removidas
      */
     public ListaCandidaturas getListaCandidaturasDemonstracao(Exposicao exposicao) {

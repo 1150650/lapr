@@ -151,7 +151,7 @@ public class CriarCandidaturaExposicaoController {
     /**
      * Retorna a lista de Demonstracoes
      *
-     * @return
+     * @return lista Demonstracoes
      */
     public ListaDemonstracoes getListaDemonstracoes() {
         return lstDemo;

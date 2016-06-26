@@ -137,7 +137,7 @@ public class AtribuirCandidaturaDemonstracaoController {
     /**
      * Selecionar o Mecanismo
      *
-     * @param mecanismo
+     * @param mecanismo Mecanismo
      */
     public void selecionaMecanismo(Mecanismo mecanismo) {
         this.mecanismo = mecanismo;

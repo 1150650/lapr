@@ -55,7 +55,7 @@ public class DefinirFAEController {
     /**
      * Controller FAE
      *
-     * @param centroExposicoes
+     * @param centroExposicoes Centro de Exposicoes
      */
     public DefinirFAEController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
@@ -64,7 +64,7 @@ public class DefinirFAEController {
     /**
      * Retorna List de Exposicao de um Organizador
      *
-     * s@param utilizador
+     * @param utilizador Utilizador
      *
      * @return List de Exposicoes
      */
@@ -77,7 +77,7 @@ public class DefinirFAEController {
     /**
      * Retorna Lista de Utilizadores
      *
-     * @return
+     * @return List
      */
     public List getListaUtilizadores() {
         listaUtilizadores = registoUtilizadores.getRegistoUtilizadores();
@@ -96,8 +96,8 @@ public class DefinirFAEController {
     /**
      * Retorna um FAE com base no Organizador
      *
-     * @param utilizador
-     * @param id
+     * @param utilizador Utilizador
+     * @param id Identificador
      * @return FAE
      */
     public FAE addFAE(Utilizador utilizador, String id) {
@@ -112,7 +112,7 @@ public class DefinirFAEController {
     /**
      * Regista FAE
      *
-     * @param fae
+     * @param fae Fae
      */
     public void registaFAE(FAE fae) {
         listaFAE.registaFAE(fae);
@@ -130,7 +130,7 @@ public class DefinirFAEController {
     /**
      * Altera Exposicao por uma Recebida por parametro
      *
-     * s * @param exposicao
+     * @param exposicao Exposicao
      */
     public void setExposicao(Exposicao exposicao) {
         this.exposicao = exposicao;
@@ -139,7 +139,7 @@ public class DefinirFAEController {
     /**
      * Obtem Exposicao
      *
-     * @return
+     * @return Exposicao
      */
     public Exposicao getExposicao() {
         return exposicao;

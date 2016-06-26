@@ -40,7 +40,7 @@ public class DetecaoConflitosController {
     /**
      * COntroller de Detecao de Conflitos
      *
-     * @param centroExposicoes
+     * @param centroExposicoes Centro de Exposicao
      */
     public DetecaoConflitosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;

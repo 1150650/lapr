@@ -87,7 +87,7 @@ public class AvaliarCandidaturaFAEController {
     /**
      * Retorna uma String Com a Informacao da Candidatura
      *
-     * @return
+     * @return String info
      */
     public String getInfo() {
         return candidatura.toString();
@@ -103,7 +103,7 @@ public class AvaliarCandidaturaFAEController {
     /**
      * Adiciona a Avaliacao do FAe
      *
-     * @param conhecimentoFAE
+     * @param conhecimentoFAE conhecimento FAE
      */
     public void setFAEAvaliacao(int[] conhecimentoFAE) {
         avaliacao.setConhecimentosFAE(conhecimentoFAE);

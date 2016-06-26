@@ -30,7 +30,7 @@ public class DefinirRecursosController {
     /**
      * Construtor de Definir Recursos
      *
-     * @param centroExposicoes
+     * @param centroExposicoes Centro Exposicao
      */
     public DefinirRecursosController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
@@ -39,7 +39,7 @@ public class DefinirRecursosController {
     /**
      * Novo Recurso
      *
-     * @param recurso
+     * @param recurso Recurso
      * @return
      */
     public Recurso newRecurso(String recurso) {
@@ -50,7 +50,7 @@ public class DefinirRecursosController {
     /**
      * Adiciona Recurso a Lista
      *
-     * @param recurso
+     * @param recurso Recurso
      */
     public void addRecurso(Recurso recurso) {
         registoRecursos.addRecurso(recurso);
@@ -59,7 +59,7 @@ public class DefinirRecursosController {
     /**
      * Retorna Lista de Recursos
      *
-     * @return
+     * @return List
      */
     public List getListaRecursos() {
         return registoRecursos.getListaRecursos();
@@ -68,7 +68,7 @@ public class DefinirRecursosController {
     /**
      * Retorna Lista de Recursos
      *
-     * @return
+     * @return Lista Recursos
      */
     public ListaRecursos getRegistoRecursos() {
         return registoRecursos;

@@ -55,7 +55,7 @@ public class DefinirInteresseStandController {
     /**
      * Retorna Array List de Exposicoes
      *
-     * @return
+     * @return Array de Exposicao
      */
     public Exposicao[] getListaExposicoes() {
         return this.centroexpo.mostrarLista();
@@ -65,7 +65,7 @@ public class DefinirInteresseStandController {
      * Retorna Lista de Candidaturas
      *
      * @param expo Exposicao
-     * @return
+     * @return Lista de Candidaturas
      */
     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
         this.expo = expo;
@@ -90,7 +90,7 @@ public class DefinirInteresseStandController {
     /**
      * Aceita Stand
      *
-     * @param candidatura
+     * @param candidatura Candidatura
      */
     public void aceitarStand(Candidatura candidatura) {
         int i = this.centroexpo.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);

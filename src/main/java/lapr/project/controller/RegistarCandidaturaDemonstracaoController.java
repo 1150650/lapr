@@ -66,8 +66,8 @@ public class RegistarCandidaturaDemonstracaoController {
     /**
      * Construtor do Controller
      *
-     * @param centroExposicoes
-     * @param u
+     * @param centroExposicoes Centro de Exposicao
+     * @param u Utilizador
      */
     public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes, Utilizador u) {
         this.centroExposicoes = centroExposicoes;
@@ -77,7 +77,7 @@ public class RegistarCandidaturaDemonstracaoController {
     /**
      * Retorna Array Lista Exposicaos
      *
-     * @return
+     * @return Array de Exposicao
      */
     public Exposicao[] getListaExposicoes() {
         return this.centroExposicoes.mostrarLista();
@@ -87,7 +87,7 @@ public class RegistarCandidaturaDemonstracaoController {
      * Retorna Lista Candidaturas
      *
      * @param expo Exposicao
-     * @return
+     * @return Lista Candidaturas
      */
     public ListaCandidaturas getListaCandidaturas(Exposicao expo) {
         this.exposicao = expo;
@@ -98,7 +98,7 @@ public class RegistarCandidaturaDemonstracaoController {
     /**
      * Altera Candidatura a Exposicao
      *
-     * @param candidaturaExposicao
+     * @param candidaturaExposicao Candidatura a Exposicao
      */
     public void setCandidaturaExposicao(CandidaturaExposicao candidaturaExposicao) {
         this.candidaturaExposicao = candidaturaExposicao;
@@ -124,8 +124,8 @@ public class RegistarCandidaturaDemonstracaoController {
     /**
      * Returna Candidatura a Demonstracaos
      *
-     * @param candidaturaExposicao
-     * @return
+     * @param candidaturaExposicao Candidatura Exposicaos
+     * @return retorna Candidatura a Demonstracaos
      */
     public CandidaturaDemonstracao newCandidaturaDemo(CandidaturaExposicao candidaturaExposicao) {
         candidaturaDemo = exposicao.getListaCandidaturasExposicoes().newCandidaturaDemo(candidaturaExposicao);
@@ -135,7 +135,7 @@ public class RegistarCandidaturaDemonstracaoController {
     /**
      * Altera o Parametro demonstracao
      *
-     * @param demonstracao
+     * @param demonstracao Demonstracaos
      */
     public void setDemonstracao(Demonstracao demonstracao) {
         candidaturaDemo.setDemonstracao(demonstracao);

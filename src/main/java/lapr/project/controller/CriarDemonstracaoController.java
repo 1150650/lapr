@@ -39,7 +39,7 @@ public class CriarDemonstracaoController {
     /**
      * Criar Construtor de Demonstrações
      *
-     * @param centroexpo
+     * @param centroexpo Centro Exposicoes
      */
     public CriarDemonstracaoController(CentroExposicoes centroexpo) {
         this.centroExposicoes = centroexpo;
@@ -48,7 +48,7 @@ public class CriarDemonstracaoController {
     /**
      * Seleciona Exposicaos
      *
-     * @param exposicao
+     * @param exposicao Exposicao
      */
     public void selecionarExposicao(Exposicao exposicao) {
         this.exposicao = exposicao;
@@ -64,7 +64,7 @@ public class CriarDemonstracaoController {
     /**
      * Altera a descrição
      *
-     * @param Descricao
+     * @param Descricao Descrição
      */
     public void setDados(String Descricao) {
         demonstracao.setDescricao(Descricao);

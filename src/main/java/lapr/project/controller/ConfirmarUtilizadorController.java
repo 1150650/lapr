@@ -50,7 +50,7 @@ public class ConfirmarUtilizadorController {
     /**
      * Retorna o registo de utilizadores que ainda não foram confirmados
      *
-     * @return
+     * @return lista de Utilizadores
      */
     public RegistoUtilizadores getRegistoUtilizadoresNConf() {
         return centroExposicoes.getRegistoUtilizadoresNConf();
@@ -59,7 +59,7 @@ public class ConfirmarUtilizadorController {
     /**
      * Retorna a lista de Utilizadores já registados
      *
-     * @return
+     * @return lista de Utilizadores
      */
     public RegistoUtilizadores getRegistoUtilizadores() {
         return centroExposicoes.getRegistoUtilizadoresConf();
@@ -68,7 +68,7 @@ public class ConfirmarUtilizadorController {
     /**
      * Seleciona o Utilizador
      *
-     * @param u
+     * @param u utilizador
      */
     public void selecionarUtilizador(Utilizador u) {
         this.u = u;

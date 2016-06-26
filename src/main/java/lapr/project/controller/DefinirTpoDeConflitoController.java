@@ -31,7 +31,7 @@ public class DefinirTpoDeConflitoController {
     /**
      * Construtor de DefinirTipoDeConflito
      *
-     * @param centroexpo
+     * @param centroexpo Centro Exposicao
      */
     public DefinirTpoDeConflitoController(CentroExposicoes centroexpo) {
         this.centroexpo = centroexpo;
@@ -55,7 +55,7 @@ public class DefinirTpoDeConflitoController {
     /**
      * Defininr tipo de Conflito
      *
-     * @param descricao
+     * @param descricao Descricao
      */
     public void definirTipoDeConflito(String descricao) {
         this.tipodeconflito.setDescricao(descricao);

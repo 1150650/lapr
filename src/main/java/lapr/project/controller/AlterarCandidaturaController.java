@@ -56,7 +56,7 @@ public class AlterarCandidaturaController {
     /**
      * Construtor do controller a receber o representante
      *
-     * @param r
+     * @param r representante
      */
     public AlterarCandidaturaController(Utilizador u, CentroExposicoes ce) {
         this.ce = ce;
@@ -66,7 +66,7 @@ public class AlterarCandidaturaController {
     /**
      * Seleciona a candidatura escolhida
      *
-     * @param c
+     * @param c candidatura
      */
     public void selecionarCandidatura(CandidaturaExposicao c) {
         this.candidatura = c;
@@ -75,7 +75,7 @@ public class AlterarCandidaturaController {
     /**
      * Valida os novos dados da candidatura para ver se pode alterar
      *
-     * @return
+     * @return boolean
      */
     public boolean validarNovosDadosGlobal() {
         return lstCandidaturas.validaCandidatura(getCandidaturaAlterada());
@@ -98,7 +98,7 @@ public class AlterarCandidaturaController {
     /**
      * Retorna A candidatura selecionada
      *
-     * @return
+     * @return candidatura selecionada
      */
     public CandidaturaExposicao getCandidaturaSelecionada() {
         return candidatura;
@@ -119,7 +119,7 @@ public class AlterarCandidaturaController {
     /**
      * Seleciona a Exposicao
      *
-     * @param expo
+     * @param expo exposicao
      */
     public void selecionaExposicao(Exposicao expo) {
         this.expo = expo;

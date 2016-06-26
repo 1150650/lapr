@@ -94,11 +94,19 @@ public final class Avaliacao {
     public String toString() {
         return "Avaliação: " + avaliacao + "\n Justificação: " + justificacao;
     }
-
+    
+    /**
+     * Set dos Conhecimentos FAE
+     * @param conhecimentosFAE Conhecimentos FAe
+     */
     public void setConhecimentosFAE(int[] conhecimentosFAE) {
         this.conhecimentoFAE = conhecimentosFAE;
     }
-
+    
+    /**
+     * Obter Conhecimentos FAE
+     * @return int[]
+     */
     public int[] getConhecimentosFAE() {
         return conhecimentoFAE;
     }
