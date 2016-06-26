@@ -102,7 +102,11 @@ public class Exposicao {
 
     public final void setPeriodo(Date dataInicio, Date dataFim) {
         if (dataInicio.after(dataFim) || dataInicio.equals(dataFim)) {
+            if(dataInicio.getYear()<2000||dataInicio.getMonth()>13||dataInicio.getDay()>31 ){
+                if(dataFim.getYear()<2000||dataFim.getMonth()>13||dataFim.getDay()>31 ){
             throw new IllegalArgumentException("A data de Início deve ser anterior à data de Fim!");
+        }
+        }
         }
         setDataInicio(dataInicio);
         setDataFim(dataFim);

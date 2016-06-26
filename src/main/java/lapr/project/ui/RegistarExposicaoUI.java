@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -24,6 +25,8 @@ import lapr.project.controller.RegistarExposicaoController;
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Utilizador;
 import lapr.project.utils.HintTextField;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -267,26 +270,51 @@ public class RegistarExposicaoUI extends JDialog {
             public void actionPerformed(ActionEvent e) {
                   
                 
-                
+                try{
                 
                    String Titulo = txtTitulo.getText();
                    String Descricao = txtDescricao.getText();
                    String Local = txtLocal.getText();
-                   
+                   if (txtDateInicio.getText().matches("(\\d\\d\\d\\d)(-)(\\d\\d)-(\\d\\d)")&& txtDateFinal.getText().matches("(\\d\\d\\d\\d)(-)(\\d\\d)-(\\d\\d)")){
+                        
                    String[] data1 =txtDateInicio.getText().split("-");
                    String[] data2 =txtDateFinal.getText().split("-");
                    
-                   
-                      dtInico=new Date(Integer.parseInt(data1[0]),Integer.parseInt(data1[1]),Integer.parseInt(data1[2]));
+                    dtInico=new Date(Integer.parseInt(data1[0]),Integer.parseInt(data1[1]),Integer.parseInt(data1[2]));
                   dtFim = new Date (Integer.parseInt(data2[0]),Integer.parseInt(data2[1]),Integer.parseInt(data2[2]));
                      contr.setDados(Titulo, Descricao, dtInico,dtFim, Local);
                      contr.setEstadoExposicaoCriada();
-                     contr.validaRegistaExposicao();
-                    
-                  
-
-                    dispose();
+                     contr.RegistaExposicao();
+                     dispose();
+                       
+                   }else{
+                        JOptionPane.showMessageDialog(
+                            framePai,
+                            "Data Errada",
+                            "Criar Exposicao",
+                            JOptionPane.WARNING_MESSAGE);
+                   }
+                   
+                   
+                   
+                   
+                     
                 
+                } catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(
+                            framePai,
+                            "Preencha todos os espaços!",
+                            "Criar Exposicao",
+                            JOptionPane.WARNING_MESSAGE);    
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(
+                            framePai,
+                            "Ocorreu um erro na sua ação",
+                            "Criar Exposicao",
+                            JOptionPane.WARNING_MESSAGE);
+                  
+                        }
+                    
             }
         });
 

@@ -92,15 +92,15 @@ public class RegistarExposicaoControllerTest {
     }
 
     /**
-     * Test of validaRegistaExposicao method, of class RegistarExposicaoController.
+     * Test of RegistaExposicao method, of class RegistarExposicaoController.
      */
     @Test
-    public void testValidaRegistaExposicao() {
+    public void testRegistaExposicao() {
         CentroExposicoes ce= new CentroExposicoes();
         System.out.println("validaRegistaExposicao");
         RegistarExposicaoController instance = new  RegistarExposicaoController(ce); 
         instance.novaExposicao();
-        instance.validaRegistaExposicao();
+        instance.RegistaExposicao();
        
     }
 

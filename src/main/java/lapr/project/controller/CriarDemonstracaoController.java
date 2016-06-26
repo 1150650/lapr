@@ -49,6 +49,7 @@ public class CriarDemonstracaoController {
     }
 
     public void validaRegistaDemonstracao() {
+        demonstracao.setDemonstracaoCriada();
         exposicao.getListaDemonstracoes().addDemonstracao(demonstracao);
     }
 

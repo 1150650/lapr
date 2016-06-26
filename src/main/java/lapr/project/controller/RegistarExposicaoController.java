@@ -46,7 +46,7 @@ public class RegistarExposicaoController {
         exposicao.getListaOrganizadores().adicionarOrganizador(u);
     }
     
-    public void validaRegistaExposicao (){
+    public void RegistaExposicao (){
         centroExposicoes.getListaExposicoes().adicionarExposicao(exposicao);
     }
     
