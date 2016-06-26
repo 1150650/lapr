@@ -42,8 +42,8 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
     private MenuPrincipal framePai;
     private Exposicao expo;
     private Icon icon;
-    private int condicaoParagem=0;
-    private JPanel painellista;
+    private int condicaoDeParagem=0;
+    private JPanel painelllista;
 
     public RegistarCandidaturaDemonstracaoUI(MenuPrincipal framePai, CentroExposicoes ce,Utilizador u) {
 
@@ -62,27 +62,27 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
 
     private void criarComponentes() {
         
-         if (condicaoParagem == 0) {
-            JPanel painel1 = criarPainelNorte();
+         if (condicaoDeParagem == 0) {
+            JPanel painl1 = criarPainelNorte();
             JPanel painel2 =  criarPainelSul();
             add(new JPanel().add(new JLabel("Selecione a exposição", JLabel.CENTER)));
-            add(painel1, BorderLayout.NORTH);
+            add(painl1, BorderLayout.NORTH);
             add(painel2, BorderLayout.SOUTH);
            
         }
 
-        if(condicaoParagem ==1){
+        if(condicaoDeParagem ==1){
             
-            painellista = criarPainelCandi();
+            painelllista = criarPainelCandi();
 
-        add(painellista, BorderLayout.CENTER);
+        add(painelllista, BorderLayout.CENTER);
 
         revalidate();
         
         }
 
         
-         condicaoParagem = 1;
+         condicaoDeParagem = 1;
     }
 
     private JPanel criarPainelNorte() {
@@ -118,7 +118,7 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
     private JPanel criarPainelCandi() {
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        painellista = new JPanel(new GridLayout(NUMERO_LINHAS,
+        painelllista = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
@@ -127,12 +127,12 @@ public class RegistarCandidaturaDemonstracaoUI extends JFrame {
 
         btnCandidatarDemonstracao = criarBotaoCandidatarDemonstracao(lstCompleta);
 
-       painellista.add(criarPainelLista("Lista de Candidaturas:",
+       painelllista.add(criarPainelLista("Lista de Candidaturas:",
                 lstCompleta,
                 lstCandidaturas,
                 btnCandidatarDemonstracao));
 
-        return painellista;
+        return painelllista;
     }
 
     private JPanel criarPainelLista(

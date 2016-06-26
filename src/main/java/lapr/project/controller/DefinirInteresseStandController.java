@@ -21,12 +21,12 @@ public class DefinirInteresseStandController {
     private Exposicao expo;
     private int indice;
     private Representante r;
-    private Utilizador u;
+    private Utilizador u1;
 
     public DefinirInteresseStandController(CentroExposicoes centroexpo,Utilizador u) {
 
         this.centroexpo = centroexpo;
-        this.u=u;
+        this.u1=u;
        
         
 
@@ -39,23 +39,23 @@ public class DefinirInteresseStandController {
      public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
         this.expo=expo;
         this.indice=centroexpo.getListaExposicoes().indiceDe(expo);
-         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u);
-        ListaCandidaturas lst = new ListaCandidaturas();
-        ListaCandidaturas lst1 = new ListaCandidaturas();
+         this.r = this.expo.getListaRepresentantes().obterRepresentantePorU(u1);
+        ListaCandidaturas lstcandi = new ListaCandidaturas();
+        ListaCandidaturas lst21 = new ListaCandidaturas();
         
-        lst=r.getListaCandidaturasExposicao();
+        lstcandi=r.getListaCandidaturasExposicao();
         int i;
         
-        for (i=0; i<lst.tamanho();i++){
+        for (i=0; i<lstcandi.tamanho();i++){
             
-            if(lst.obterCandidatura(i).getState().isEstadoStandAtribuido()){
-                lst1.adicionarCandidatura(lst.obterCandidatura(i));
+            if(lstcandi.obterCandidatura(i).getState().isEstadoStandAtribuido()){
+                lst21.adicionarCandidatura(lstcandi.obterCandidatura(i));
             }
         }
         
         
         
-        return lst1;
+        return lst21;
      }
      
      public void aceitarStand (Candidatura candidatura){

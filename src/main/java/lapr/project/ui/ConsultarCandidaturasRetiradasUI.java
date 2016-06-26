@@ -38,8 +38,8 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
     private final CentroExposicoes centroexpo;
     private Icon icon;
     private Exposicao expo;
-    private JPanel painelista;
-    private int condicaoParagem = 0;
+    private JPanel painlista;
+    private int condicaodeParagem = 0;
 
 
     public ConsultarCandidaturasRetiradasUI(MenuPrincipal framePai, CentroExposicoes ce) {
@@ -59,7 +59,7 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
     }
 
     private void criarComponentes() {
-        if (condicaoParagem == 0) {
+        if (condicaodeParagem == 0) {
             JPanel paiel1 = criarPainelN();
             JPanel painel2 = criarPainelS();
             add(new JPanel().add(new JLabel("Selecione a exposição", JLabel.CENTER)));
@@ -68,18 +68,18 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
            
         }
 
-        if(condicaoParagem ==1){
+        if(condicaodeParagem ==1){
             
-            painelista = criarPainelC();
+            painlista = criarPainelC();
 
-        add(painelista, BorderLayout.CENTER);
+        add(painlista, BorderLayout.CENTER);
 
         revalidate();
         
         }
 
         
-         condicaoParagem = 1;
+         condicaodeParagem = 1;
 
     }
     
@@ -94,11 +94,11 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
     }
 
     private JPanel criarPainelS() {
-        JButton btnOK = criarBotaoConcluirProcess();
-        JButton btnCancelar = criarBotaoCancelar();
+        JButton btnconcluiProcess = criarBotaoConcluirProcess();
+        JButton btnCancelar = criarBoottunCancelar();
 
         JPanel pSul = new JPanel();
-        pSul.add(btnOK);
+        pSul.add(btnconcluiProcess);
         pSul.add(btnCancelar);
 
         return pSul;
@@ -108,7 +108,7 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
 
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        painelista = new JPanel(new GridLayout(NUMERO_LINHAS,
+        painlista = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
@@ -117,7 +117,7 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
 
         
 
-        painelista.add(criarPainelListas("Lista de Candidaturas (Exposicao):",
+        painlista.add(criarPainelListas("Lista de Candidaturas (Exposicao):",
                 lstCompleta,
                 lstCandidaturasExposicao));
 
@@ -126,12 +126,12 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
 
         
 
-        painelista.add(criarPainelListas("Lista de Candidaturas (Demonstracao):",
+        painlista.add(criarPainelListas("Lista de Candidaturas (Demonstracao):",
                 lstCompleta1,
                 lstCandidaturasDemonstracao
               ));
 
-        return painelista;
+        return painlista;
     }
 
     private JPanel criarPainelListas(
@@ -162,8 +162,8 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
    
 
     private JButton criarBotaoConcluirProcess() {
-        JButton btn = new JButton("Concluir Processo");
-        btn.addActionListener(new ActionListener() {
+        JButton buttn = new JButton("Concluir Processo");
+        buttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -172,7 +172,7 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
             }
         });
 
-        return btn;
+        return buttn;
     }
 
     private JButton criarBotaoSelecionarExposicao() {
@@ -205,7 +205,7 @@ public class ConsultarCandidaturasRetiradasUI extends JFrame {
         return btn;
     }
 
-    private JButton criarBotaoCancelar() {
+    private JButton criarBoottunCancelar() {
         JButton btn1 = new JButton("Cancelar");
         btn1.addActionListener(new ActionListener() {
             @Override
