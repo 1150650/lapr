@@ -6,6 +6,8 @@
 package lapr.project.controller;
 
 import java.util.Date;
+import java.util.Timer;
+
 import lapr.project.model.CentroExposicoes;
 import lapr.project.model.Exposicao;
 import lapr.project.model.Organizador;
@@ -52,6 +54,9 @@ public class RegistarExposicaoController {
     
     public void setEstadoExposicaoCriada (){
         exposicao.setExposicaoCriada();
+        
+         
+        
     }
     
     
