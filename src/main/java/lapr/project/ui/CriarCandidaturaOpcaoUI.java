@@ -57,7 +57,7 @@ public class CriarCandidaturaOpcaoUI extends JFrame {
         setLayout(g);
         selecionarExposicao();
         criarComponentes();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setMinimumSize(new Dimension(500, 700));
         setLocationRelativeTo(null);
