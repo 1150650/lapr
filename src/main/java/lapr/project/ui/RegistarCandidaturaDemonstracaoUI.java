@@ -19,37 +19,39 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
-import lapr.project.controller.CriarDemonstracaoController;
 import lapr.project.controller.DefinirInteresseStandController;
+import lapr.project.controller.RegistarCandidaturaDemonstracaoController;
 import lapr.project.model.Candidatura;
+import lapr.project.model.CandidaturaExposicao;
 import lapr.project.model.CentroExposicoes;
+import lapr.project.model.Demonstracao;
 import lapr.project.model.Exposicao;
 import lapr.project.model.ModeloListaCandidaturas;
-import lapr.project.model.Recurso;
 import lapr.project.model.Utilizador;
 
 /**
  *
  * @author JOAO
  */
-public class DefinirInteresseStandUI extends JFrame {
-    private JButton btnAceitarStand;
+public class RegistarCandidaturaDemonstracaoUI extends JFrame {
+      private JButton btnCandidatarDemonstracao;
     private ModeloListaCandidaturas lstCandidaturas;
-    private DefinirInteresseStandController contr;
+    private RegistarCandidaturaDemonstracaoController contr;
     private CentroExposicoes centroexpo;
     private MenuPrincipal framePai;
     private Exposicao expo;
     private Icon icon;
+    private int condicaoParagem=0;
+    private JPanel painellista;
 
-    public DefinirInteresseStandUI(MenuPrincipal framePai, CentroExposicoes ce,Utilizador u) {
+    public RegistarCandidaturaDemonstracaoUI(MenuPrincipal framePai, CentroExposicoes ce,Utilizador u) {
 
-        super("Definir Interesse Stand");
+        super("Registar Candidatura A Demonstracao");
         this.centroexpo = ce;
-        this.contr = new DefinirInteresseStandController(ce,u);
+        this.contr = new RegistarCandidaturaDemonstracaoController(ce,u);
         this.framePai = framePai;
-        this.expo=ce.getListaExposicoes().obterExposicao(0);
+      
 
         criarComponentes();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,14 +61,28 @@ public class DefinirInteresseStandUI extends JFrame {
     }
 
     private void criarComponentes() {
+        
+         if (condicaoParagem == 0) {
+            JPanel painel1 = criarPainelNorte();
+            JPanel painel2 =  criarPainelSul();
+            add(new JPanel().add(new JLabel("Selecione a exposição", JLabel.CENTER)));
+            add(painel1, BorderLayout.NORTH);
+            add(painel2, BorderLayout.SOUTH);
+           
+        }
 
-        JPanel pai1 = criarPainelNorte();
-        JPanel p2 = criarPainelCentro();
-        JPanel pain3 = criarPainelSul();
+        if(condicaoParagem ==1){
+            
+            painellista = criarPainelCandi();
 
-        add(pai1, BorderLayout.NORTH);
-        add(p2, BorderLayout.CENTER);
-        add(pain3, BorderLayout.SOUTH);
+        add(painellista, BorderLayout.CENTER);
+
+        revalidate();
+        
+        }
+
+        
+         condicaoParagem = 1;
     }
 
     private JPanel criarPainelNorte() {
@@ -81,14 +97,7 @@ public class DefinirInteresseStandUI extends JFrame {
         return pNorte;
     }
 
-    private JPanel criarPainelCentro() {
-        JPanel p231 = criarPainelRecurso();
-
-        JPanel pCentro = new JPanel(new BorderLayout());
-        pCentro.add(p231, BorderLayout.CENTER);
-
-        return pCentro;
-    }
+   
 
     private JPanel criarPainelSul() {
         JButton btnOK = criarBotaoConclui();
@@ -106,24 +115,24 @@ public class DefinirInteresseStandUI extends JFrame {
 
    
 
-    private JPanel criarPainelRecurso() {
+    private JPanel criarPainelCandi() {
         final int NUMERO_LINHAS = 1, NUMERO_COLUNAS = 2;
         final int INTERVALO_HORIZONTAL = 20, INTERVALO_VERTICAL = 0;
-        JPanel p = new JPanel(new GridLayout(NUMERO_LINHAS,
+        painellista = new JPanel(new GridLayout(NUMERO_LINHAS,
                 NUMERO_COLUNAS,
                 INTERVALO_HORIZONTAL,
                 INTERVALO_VERTICAL));
-        lstCandidaturas = new ModeloListaCandidaturas(contr.getListaCandidaturasExposicoes(expo));
+        lstCandidaturas = new ModeloListaCandidaturas(contr.getListaCandidaturas(expo));
         JList lstCompleta = new JList(lstCandidaturas);
 
-        btnAceitarStand = criarBotaoAceitarStand(lstCompleta);
+        btnCandidatarDemonstracao = criarBotaoCandidatarDemonstracao(lstCompleta);
 
-        p.add(criarPainelLista("Lista de Candidaturas:",
+       painellista.add(criarPainelLista("Lista de Candidaturas:",
                 lstCompleta,
                 lstCandidaturas,
-                btnAceitarStand));
+                btnCandidatarDemonstracao));
 
-        return p;
+        return painellista;
     }
 
     private JPanel criarPainelLista(
@@ -185,16 +194,33 @@ public class DefinirInteresseStandUI extends JFrame {
         return btnCancell;
     }
 
-    private JButton criarBotaoAceitarStand(JList lstCompleta) {
-        JButton btn = new JButton("Confirmar Stand");
+    private JButton criarBotaoCandidatarDemonstracao(JList lstCompleta) {
+        JButton btn = new JButton("Candidatar Demonstracao");
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     ModeloListaCandidaturas m = (ModeloListaCandidaturas) lstCompleta.getModel();
-                    Candidatura r = (Candidatura) lstCompleta.getSelectedValue();
+                    CandidaturaExposicao r = (CandidaturaExposicao) lstCompleta.getSelectedValue();
                     if(r != null){
-                    contr.aceitarStand(r);
+                    contr.setCandidaturaExposicao(r);
+                    contr.newCandidaturaDemo(r);
+                    Demonstracao[] aux = contr.getListaDemonstracoesCInteresse();
+
+                    Demonstracao d = (Demonstracao) JOptionPane.showInputDialog(
+                            RegistarCandidaturaDemonstracaoUI.this,
+                            "Indique a Demonstracao que deseja atribuir a  candidatura"
+                            + ":",
+                            "Seleção De Demonstracao",
+                            JOptionPane.DEFAULT_OPTION,
+                            icon,
+                            aux,
+                            "");
+                    
+                    contr.setDemonstracao(d);
+                    contr.addCandidaturaDemonstracao();
+                    
+                    
                     m.removeElement(r);
                     }
                     
@@ -216,7 +242,7 @@ public class DefinirInteresseStandUI extends JFrame {
                     Exposicao[] aux = contr.getListaExposicoes();
 
                     expo = (Exposicao) JOptionPane.showInputDialog(
-                            DefinirInteresseStandUI.this,
+                            RegistarCandidaturaDemonstracaoUI.this,
                             "Indique a exposição da qual deseja viziualizar a candidatura"
                             + ":",
                             "Seleção De Exposição",
@@ -229,7 +255,7 @@ public class DefinirInteresseStandUI extends JFrame {
 
                 }
 
-                
+                criarComponentes();
             }
 
         });

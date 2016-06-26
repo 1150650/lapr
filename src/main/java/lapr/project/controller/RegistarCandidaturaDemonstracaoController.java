@@ -31,28 +31,36 @@ public class RegistarCandidaturaDemonstracaoController {
     private CandidaturaDemonstracao candidaturaDemo;
 
     private Representante representante;
+    private  Utilizador u;
 
-    public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
+    public RegistarCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes, Utilizador u) {
         this.centroExposicoes = centroExposicoes;
+        this.u=u;
     }
 
-    public ListaCandidaturas getListaCandidaturas() {
-        return listaCandidaturas = representante.getListaCandidaturasSubmetidas();
+    
+     public Exposicao[] getListaExposicoes() {
+        return this.centroExposicoes.mostrarLista();
+    }
+     
+     
+    public ListaCandidaturas getListaCandidaturas(Exposicao expo) {
+        this.exposicao=expo ;
+        this.representante = this.exposicao.getListaRepresentantes().obterRepresentantePorU(u);
+        return listaCandidaturas = representante.getListaCandidaturasExposicao();
     }
 
     public void setCandidaturaExposicao(CandidaturaExposicao candidaturaExposicao) {
         this.candidaturaExposicao = candidaturaExposicao;
     }
 
-    public CandidaturaExposicao setCandidaturaExposicao() {
-        return candidaturaExposicao;
-    }
-
-    public ListaDemonstracoes getListaDemonstracoesCInteresse() {
-        return candidaturaExposicao.getDemonstracoesComInteresse();
+  
+    public Demonstracao[] getListaDemonstracoesCInteresse() {
+        return candidaturaExposicao.mostrarlistDemons();
     }
     
     public void addCandidaturaDemonstracao(){
+        exposicao.getListaCandidaturasDemonstracoes().adicionarCandidatura(candidaturaDemo);    
         representante.getListaCandidaturasDemonstracao().adicionarCandidatura(candidaturaDemo);
     }
 
@@ -65,12 +73,6 @@ public class RegistarCandidaturaDemonstracaoController {
         candidaturaDemo.setDemonstracao(demonstracao);
     }
 
-    public void setRepresentante(Representante representante) {
-        this.representante = representante;
-    }
-
-    public Representante getRepresentante() {
-        return representante;
-    }
+   
 
 }

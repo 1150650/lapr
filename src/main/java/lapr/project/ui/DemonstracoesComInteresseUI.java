@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,7 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import lapr.project.controller.CriarCandidaturaExposicaoController;
 import lapr.project.model.Demonstracao;
-import lapr.project.model.ListaDemonstracoes;
+
 
 /**
  *

@@ -77,6 +77,17 @@ public class CandidaturaExposicao extends Candidatura {
     public ListaDemonstracoes getDemonstracoesComInteresse() {
         return demonstracoesComInteresse;
     }
+    
+    public Demonstracao [] mostrarlistDemons(){
+        Demonstracao[] string = new Demonstracao[demonstracoesComInteresse.tamanho()];
+
+        int tamanho = demonstracoesComInteresse.tamanho();
+        for (int i = 0; i < tamanho; i++) {
+
+            string[i] = demonstracoesComInteresse.obterDemonstracao(i);
+        }
+        return string;
+    }
 
     public boolean addDemonstracoesComInteresse(Demonstracao demonstracao) {
         if (!demonstracoesComInteresse.contains(demonstracao)) {
