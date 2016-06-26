@@ -16,6 +16,7 @@ import lapr.project.model.ListaFAE;
 import lapr.project.model.Mecanismo;
 import lapr.project.model.RegistoExposicoes;
 import lapr.project.model.RegistoMecanismos;
+import lapr.project.model.Representante;
 
 /**
  *
@@ -47,15 +48,14 @@ public class AtribuirCandidaturaDemonstracaoController {
 
     private ListaAtribuicoes listaAtribuicao;
 
+    private Representante representante;
+
     public AtribuirCandidaturaDemonstracaoController(CentroExposicoes centroExposicoes) {
         this.centroExposicoes = centroExposicoes;
     }
 
-    public List getListaExposicoes() {
-        centroExposicoes.getListaExposicoes();
-
-        return listaExposicao = registoExposicoes.getListaExposicoes();
-
+    public void setRepresentante(Representante representante) {
+        this.representante = representante;
     }
 
     public List getListaFAE(Exposicao exposicao) {
@@ -64,10 +64,11 @@ public class AtribuirCandidaturaDemonstracaoController {
         return listFAEs = listaFAE.getListaFAEs();
     }
 
-    public List getListaCandidatura() {
-        listaCandidaturas = exposicao.getListaCandidaturasExposicoes();
-        return listCandidatura = listaCandidaturas.getCandidaturasSemAtribuicao();
+    public ListaCandidaturas getListaCandidatura() {
+        listaCandidaturas = representante.getListaCandidaturasDemonstracao();
+        return listaCandidaturas;
     }
+
 
     public List getRegistoMecanismos() {
         registoMecanismos = centroExposicoes.getRegistoMecanismos();
