@@ -157,6 +157,13 @@
             <passwordDesencriptada>.Organisador404</passwordDesencriptada>
             <username>organizador</username>
         </utilizador>
+        <utilizador>
+            <email>teste@gmail.com</email>
+            <nome>teste</nome>
+            <password>0Vguvg626</password>
+            <passwordDesencriptada>.Teste404</passwordDesencriptada>
+            <username>teste</username>
+        </utilizador>
     </registoUtilizadoresConf>
     <registoUtilizadoresNConf/>
 </CentroExposicoes>
