@@ -23,7 +23,6 @@ public class AceitarCandidaturaController {
      */
     private RegistoExposicoes lstExpo;
 
-    
     private CentroExposicoes ce;
 
     /**
@@ -48,10 +47,21 @@ public class AceitarCandidaturaController {
 
     }
 
+    /**
+     * Obtem uma lista de Exposições em forma de Array
+     *
+     * @return listaExposicao
+     */
     public Exposicao[] getListaExposicoes() {
         return this.ce.mostrarLista();
     }
 
+    /**
+     * Retorna lista candidaturas em Submissão na candidatura
+     *
+     * @param expo lista Candidaturas
+     * @return
+     */
     public ListaCandidaturas getListaCandidaturasExposicoes(Exposicao expo) {
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
@@ -70,6 +80,12 @@ public class AceitarCandidaturaController {
 
     }
 
+    /**
+     * Obtem a lista de candidaturas para demonstracao em submissao
+     *
+     * @param expo lista Demonstrações
+     * @return
+     */
     public ListaCandidaturas getListaCandidaturasDemonstracoes(Exposicao expo) {
         ListaCandidaturas lst = new ListaCandidaturas();
         ListaCandidaturas lst1 = new ListaCandidaturas();
@@ -88,27 +104,48 @@ public class AceitarCandidaturaController {
 
     }
 
+    /**
+     * Aceita a Candidatura a uma demonstracao e adiciona o estado Aceite a
+     * mesma
+     *
+     * @param c Candidatura que foi Aceite
+     */
     public void aceitarCandidaturaDemonstracao(Candidatura c) {
         this.candidatura = c;
         int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasDemonstracoes().obterCandidatura(i).getState().isEstadoAceite();
     }
 
-    public void aceitarCandidaturaExposciao(Candidatura c) {
+    /**
+     * Aceita candidatura a uma Exposicao e altera o estado para Aceite
+     *
+     * @param c candidatura que foi Aceite
+     */
+    public void aceitarCandidaturaExposicao(Candidatura c) {
         this.candidatura = c;
         int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).getState().isEstadoAceite();
     }
 
+    /**
+     * Retorna a Lista de Stands em Array
+     *
+     * @return Stands
+     */
     public Stand[] getListaStands() {
-      return this.ce.mostrarListaStand();
+        return this.ce.mostrarListaStand();
     }
 
+    /**
+     * Adiciona Stand a Candidatura
+     *
+     * @param s stand que vai ser adicionado a candidatura
+     */
     public void adicionarStandCandidaturaExposciao(Stand s) {
 
         int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setStand(s);
-     ;
+        ;
     }
 
 }

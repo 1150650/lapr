@@ -272,7 +272,7 @@ public class AceitarCandidaturaUI extends JFrame {
                     
                     }
                    
-                   contr.aceitarCandidaturaExposciao(m1);
+                   contr.aceitarCandidaturaExposicao(m1);
                    m.removeElement(m1);
                    dispose();
                 }
