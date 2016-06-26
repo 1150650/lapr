@@ -46,13 +46,8 @@ public class AceitarCandidaturaUI extends JFrame {
         super( "Aceitar Candidatura ");
         this.centroexpo = ce;
         this.contr = new AceitarCandidaturaController(ce);
-         this.expo= new Exposicao ();
-         expo.setTitulo("joao");
-        Candidatura c =new Candidatura();
-        c.setMorada("rua");
-        expo.getListaCandidaturasDemonstracoes().adicionarCandidatura(c);
-        expo.getListaCandidaturasExposicoes().adicionarCandidatura(c);
-        centroexpo.getListaExposicoes().adicionarExposicao(expo);
+         this.expo= ce.getListaExposicoes().obterExposicao(0);
+        
         criarComponentes();
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

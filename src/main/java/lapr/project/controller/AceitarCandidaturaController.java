@@ -108,6 +108,7 @@ public class AceitarCandidaturaController {
 
         int i = this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().indiceDe(candidatura);
         this.ce.getListaExposicoes().obterExposicao(indice).getListaCandidaturasExposicoes().obterCandidatura(i).setStand(s);
+     ;
     }
 
 }
