@@ -57,7 +57,8 @@ public class MenuPrincipal extends JFrame {
             btnDefinirRecursos, btnDefinirTipoConflito, btnCandidatarExposicao,
             btnAlterarCandidatura, btnDecidirDemonstracao, btnRetirarCandidatura,
             btnRegistarCandDemonstracao, btnConfirmarStand,
-            btnAlterarDadosUtilizador, btnKeywordStatistics;
+            btnAlterarDadosUtilizador, btnKeywordStatistics,
+            btnCandidaturasRetiradas;
     private static final Dimension LABEL_TAMANHO = new JLabel("Username: ").
             getPreferredSize();
     private JPanel painelDadosUtilizador = new JPanel(),
@@ -403,6 +404,7 @@ public class MenuPrincipal extends JFrame {
         btnDefinirRecursos = criarBotaoDefinirRecursos();
         btnDefinirTipoConflito = criarBotaoDefinirTipoConflito();
         btnKeywordStatistics = criarBotaoKeywordStatistics();
+        btnCandidaturasRetiradas = criarBotaoCandidaturasRetiradas();
 
         painelBotoesGestor = new JPanel();
         final int MARGEM_SUPERIOR = 30, MARGEM_INFERIOR = 30;
@@ -416,6 +418,7 @@ public class MenuPrincipal extends JFrame {
         painelBotoesGestor.add(btnDefinirRecursos);
         painelBotoesGestor.add(btnDefinirTipoConflito);
         painelBotoesGestor.add(btnKeywordStatistics);
+        painelBotoesGestor.add(btnCandidaturasRetiradas);
 
         return painelBotoesGestor;
     }
@@ -739,6 +742,19 @@ public class MenuPrincipal extends JFrame {
             }
         });
         return btnKeywordStatistics;
+    }
+    
+    
+    private JButton criarBotaoCandidaturasRetiradas() {
+        btnCandidaturasRetiradas = new JButton("Ver Candidaturas Retiradas");
+
+        btnCandidaturasRetiradas.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                new ConsultarCandidaturasRetiradasUI(MenuPrincipal.this, ce);
+            }
+        });
+        return btnCandidaturasRetiradas;
     }
 
     private void verificarPapeisUtilizador() {
