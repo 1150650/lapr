@@ -7,13 +7,17 @@ package lapr.project.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author JOAO
  */
+@XmlRootElement
 public class ListaKeywords {
 
+    @XmlElement (name = "KeyWord")
     private List<KeywordExample> listaKeyword;
 
     public ListaKeywords() {

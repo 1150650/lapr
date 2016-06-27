@@ -9,10 +9,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.AfterClass;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import org.junit.BeforeClass;
 
 /**
  * Class to demonstrate a Candidatura simple example.
@@ -20,6 +22,14 @@ import static org.junit.Assert.assertNotEquals;
  * @author Nuno Bettencourt [nmb@isep.ipp.pt] on 29/05/16.
  */
 public class CandidaturaExampleTest {
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
 
     @Test
     public void ensureAddKeywordIsWorking() throws Exception {
@@ -35,55 +45,6 @@ public class CandidaturaExampleTest {
 
     }
 
-
-    @Test
-    public void ensureImportFromXMLElementNodeIsValid() throws Exception {
-        List<KeywordExample> keywordExampleList = new ArrayList<>();
-        keywordExampleList.add(new KeywordExample("Doors"));
-        keywordExampleList.add(new KeywordExample("Windows"));
-
-        CandidaturaExample expected = new CandidaturaExample("MyCandidatura", keywordExampleList);
-
-        DocumentBuilderFactory factory
-                = DocumentBuilderFactory.newInstance();
-
-        //Create document builder
-        DocumentBuilder builder = factory.newDocumentBuilder();
-
-        //Obtain a new document
-        Document document = builder.newDocument();
-
-        //Create root element
-        Element elementCandidatura = document.createElement("candidatura");
-
-        //Create a sub-element
-        Element elementDescription = document.createElement("description");
-
-        //Set the sub-element value
-        elementDescription.setTextContent("MyCandidatura");
-
-        //Add sub-element to root element
-        elementCandidatura.appendChild(elementDescription);
-
-        //Create a sub-element
-        Element elementKeywords = document.createElement("keywords");
-
-        //iterate over keywords
-        for (KeywordExample keyword : keywordExampleList) {
-            Node keywordNode = keyword.exportContentToXMLNode();
-            elementKeywords.appendChild(document.importNode(keywordNode, true));
-        }
-
-        elementCandidatura.appendChild(elementKeywords);
-
-        //Add root element to document
-        document.appendChild(elementCandidatura);
-
-        CandidaturaExample result = new CandidaturaExample();
-        result = result.importContentFromXMLNode(elementCandidatura);
-
-        assertEquals(expected, result);
-    }
 
     @Test
     public void ensureSameContentObjectsAreEqual() {
@@ -155,6 +116,54 @@ public class CandidaturaExampleTest {
         int result = candidaturaExample.hashCode();
         assertEquals(expected, result);
 
+    }
+
+    /**
+     * Test of addKeyword method, of class CandidaturaExample.
+     */
+    @Test
+    public void testAddKeyword() {
+        System.out.println("addKeyword");
+        KeywordExample keyword = null;
+        CandidaturaExample instance = new CandidaturaExample();
+        instance.addKeyword(keyword);
+    }
+
+    /**
+     * Test of getKeywordList method, of class CandidaturaExample.
+     */
+    @Test
+    public void testGetKeywordList() {
+        System.out.println("getKeywordList");
+        CandidaturaExample instance = new CandidaturaExample();
+        List<KeywordExample> expResult = null;
+        List<KeywordExample> result = instance.getKeywordList();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of equals method, of class CandidaturaExample.
+     */
+    @Test
+    public void testEquals() {
+        System.out.println("equals");
+        Object o = null;
+        CandidaturaExample instance = new CandidaturaExample();
+        boolean expResult = false;
+        boolean result = instance.equals(o);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of hashCode method, of class CandidaturaExample.
+     */
+    @Test
+    public void testHashCode() {
+        System.out.println("hashCode");
+        CandidaturaExample instance = new CandidaturaExample();
+        int expResult = 0;
+        int result = instance.hashCode();
+        assertEquals(expResult, result);
     }
 
 }
